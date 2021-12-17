@@ -921,7 +921,8 @@
 - шаблона переписки, внутренней и внешней (писем,
   служебных, докладных и объяснительных записок)
 
-[Unreleased]: https://github.com/test-st-petersburg/DocTemplates/compare/2.9.9...HEAD
+[Unreleased]: https://github.com/test-st-petersburg/DocTemplates/compare/2.9.10...HEAD
+[2.9.10]: https://github.com/test-st-petersburg/DocTemplates/compare/2.9.9...2.9.10
 [2.9.9]: https://github.com/test-st-petersburg/DocTemplates/compare/2.9.8...2.9.9
 [2.9.8]: https://github.com/test-st-petersburg/DocTemplates/compare/2.9.7...2.9.8
 [2.9.7]: https://github.com/test-st-petersburg/DocTemplates/compare/2.9.6...2.9.7
