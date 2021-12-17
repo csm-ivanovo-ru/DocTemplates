@@ -30,7 +30,7 @@
 			</text:section>
 			<text:section text:name="Содержание">
 				<text:p text:style-name="Основной"><text:variable-get text:name="ОрганизацияНаименованиеПолное">Федеральное бюджетное учреждение «Государственный региональный центр стандартизации, метрологии и испытаний в г. Санкт-Петербурге и Ленинградской области»</text:variable-get> 
-					(<text:variable-get text:name="ОрганизацияНаименование">ФБУ «Тест-С.-Петербург»</text:variable-get>),
+					(<text:variable-get text:name="ОрганизацияНаименование">ФБУ «Ивановский ЦСМ»</text:variable-get>),
 					именуемое далее Доверитель,
 					в лице
 					<text:variable-get text:name="ПодписалДолжностьРП">директора Новгородского филиала</text:variable-get>

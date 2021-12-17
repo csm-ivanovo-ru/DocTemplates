@@ -1,6 +1,6 @@
-site_name: Шаблоны документов учреждения (ФБУ "Тест-С.-Петербург")
+site_name: Шаблоны документов учреждения (ФБУ "Ивановский ЦСМ")
 
-repo_url: https://github.com/test-st-petersburg/DocTemplates
+repo_url: https://github.com/csm-ivanovo-ru/DocTemplates
 
 # nav:
 # - В начало: 'index.md'

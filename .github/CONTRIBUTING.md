@@ -3,7 +3,7 @@
 ## Прежде чем создавать задачи `GitHub`
 
 * старайтесь ознакомиться с документацией по проекту в
-  [readme.md](https://github.com/test-st-petersburg/DocTemplates/blob/master/readme.md)
+  [readme.md](https://github.com/csm-ivanovo-ru/DocTemplates/blob/master/readme.md)
 * старайтесь ознакомиться с уже имеющимися задачами с помощью поиска,
   включая закрытые задачи
 * будьте в курсе изменений по проекту
