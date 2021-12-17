@@ -26,8 +26,8 @@ task clean {
 	Remove-BuildItem $DestinationTemplatePath, $PreprocessedTemplatePath;
 };
 
-task BuildLib-TestStPetersburg {
-	Invoke-Build BuildLib -File $SourceLibrariesPath/TestStPetersburg/TestStPetersburg.build.ps1 @parameters;
+task BuildLib-DocTemplatesLib {
+	Invoke-Build BuildLib -File $SourceLibrariesPath/DocTemplatesLib/DocTemplatesLib.build.ps1 @parameters;
 };
 
 task Build-rustest.spb.ru.png {
@@ -48,7 +48,7 @@ openDocumentTemplate BuildTemplate `
 	-Version $Version `
 	-Inputs $sources `
 	-Outputs @( $DestinationTemplatePath, $marker ) `
-	-Jobs BuildLib-TestStPetersburg, rustest.spb.ru.png;
+	-Jobs BuildLib-DocTemplatesLib, rustest.spb.ru.png;
 
 openDocumentTemplate BuildAndOpenTemplate `
 	-OpenAfterBuild `
@@ -58,6 +58,6 @@ openDocumentTemplate BuildAndOpenTemplate `
 	-Version $Version `
 	-Inputs $sources `
 	-Outputs @( $DestinationTemplatePath, $marker ) `
-	-Jobs BuildLib-TestStPetersburg, rustest.spb.ru.png;
+	-Jobs BuildLib-DocTemplatesLib, rustest.spb.ru.png;
 
 task . BuildTemplate;
