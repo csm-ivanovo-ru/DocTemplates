@@ -26,8 +26,8 @@ task clean {
 	Remove-BuildItem $DestinationDocumentPath, $PreprocessedDocumentPath;
 };
 
-task 'ОРД ФБУ Тест-С.-Петербург v2.ott' {
-	Invoke-Build BuildTemplate -File "$SourceTemplatesPath/ОРД ФБУ Тест-С.-Петербург v2.ott/ОРД.build.ps1" @parameters;
+task 'ОРД ФБУ Ивановский ЦСМ v2.ott' {
+	Invoke-Build BuildTemplate -File "$SourceTemplatesPath/ОРД ФБУ Ивановский ЦСМ v2.ott/ОРД.build.ps1" @parameters;
 };
 
 openDocument 'BuildDoc-Служебная записка.odt' `
@@ -38,7 +38,7 @@ openDocument 'BuildDoc-Служебная записка.odt' `
 	-Version $Version `
 	-Inputs @( Get-ChildItem -Path "$SourceDocumentPath/Служебная записка.odt" -File -Recurse -Exclude $MarkerFileName ) `
 	-Outputs @( "$DestinationDocumentPath/Служебная записка.odt", "$DestinationDocumentPath/$MarkerFileName" ) `
-	-Jobs 'ОРД ФБУ Тест-С.-Петербург v2.ott';
+	-Jobs 'ОРД ФБУ Ивановский ЦСМ v2.ott';
 
 openDocument 'BuildAndOpenDoc-Служебная записка.odt' `
 	-OpenAfterBuild `
@@ -49,7 +49,7 @@ openDocument 'BuildAndOpenDoc-Служебная записка.odt' `
 	-Version $Version `
 	-Inputs @( Get-ChildItem -Path "$SourceDocumentPath/Служебная записка.odt" -File -Recurse -Exclude $MarkerFileName ) `
 	-Outputs @( "$DestinationDocumentPath/Служебная записка.odt", "$DestinationDocumentPath/$MarkerFileName" ) `
-	-Jobs 'ОРД ФБУ Тест-С.-Петербург v2.ott';
+	-Jobs 'ОРД ФБУ Ивановский ЦСМ v2.ott';
 
 task BuildDoc 'BuildDoc-Служебная записка.odt';
 

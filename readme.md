@@ -1,7 +1,7 @@
 # Libre Office шаблоны документов
 
-[![GitHub release](https://img.shields.io/github/v/release/test-st-petersburg/DocTemplates.svg?sort=semver&logo=github)](https://github.com/test-st-petersburg/DocTemplates/releases)
-[![Build and Test Status](https://github.com/test-st-petersburg/DocTemplates/workflows/Tests/badge.svg?branch=master)](https://github.com/test-st-petersburg/DocTemplates/actions/workflows/tests.yml)
+[![GitHub release](https://img.shields.io/github/v/release/csm-ivanovo-ru/DocTemplates.svg?sort=semver&logo=github)](https://github.com/csm-ivanovo-ru/DocTemplates/releases)
+[![Build and Test Status](https://github.com/csm-ivanovo-ru/DocTemplates/workflows/Tests/badge.svg?branch=master)](https://github.com/csm-ivanovo-ru/DocTemplates/actions/workflows/tests.yml)
 
 [![Semantic Versioning](https://img.shields.io/static/v1?label=Semantic%20Versioning&message=v2.0.0&color=green&logo=semver)](https://semver.org/lang/ru/spec/v2.0.0.html)
 [![Conventional Commits](https://img.shields.io/badge/Conventional%20Commits-v1.0.0-yellow.svg?logo=git)](https://conventionalcommits.org)
@@ -141,7 +141,7 @@
 ## Внесение изменений
 
 Репозиторий проекта размещён по адресу
-[github.com/test-st-petersburg/DocTemplates](https://github.com/test-st-petersburg/DocTemplates).
+[github.com/csm-ivanovo-ru/DocTemplates](https://github.com/csm-ivanovo-ru/DocTemplates).
 Стратегия ветвления - Git Flow.
 
 При необходимости внесения изменений в сам проект предложите Pull Request в основной
