@@ -20,6 +20,8 @@ if ( [System.IO.Path]::GetFileName( $MyInvocation.ScriptName ) -ne 'Invoke-Build
 	return;
 };
 
+. $PSScriptRoot/../../src/common.build.shared.ps1
+
 task clean {
 	Remove-BuildItem $PSScriptRoot/*.zip;
 };
@@ -33,11 +35,11 @@ task maintainer-clean distclean, {
 foreach ( $FileId in 'emblem_black_bordered', 'emblem_black' )
 {
 	$SVGFileName = "$FileId.svg";
-	$DestFileName = "$PSScriptRoot/$SVGFileName";
+	$DestSVGFileName = "$PSScriptRoot/$SVGFileName";
 
 	task $SVGFileName `
-		-Outputs @( $DestFileName ) `
-		-If { -not ( Test-Path -Path $DestFileName ) } `
+		-Outputs @( $DestSVGFileName ) `
+		-If { -not ( Test-Path -Path $DestSVGFileName ) } `
 		-Job {
 
 		$ZipFileName = "$FileId.zip";
@@ -63,7 +65,7 @@ foreach ( $FileId in 'emblem_black_bordered', 'emblem_black' )
 
 			try
 			{
-				Copy-Item -LiteralPath "$TempUnpackedFolder/$SVGFileName" -Destination $DestFileName -Force `
+				Copy-Item -LiteralPath "$TempUnpackedFolder/$SVGFileName" -Destination $DestSVGFileName -Force `
 					-Verbose:( $PSCmdlet.MyInvocation.BoundParameters['Verbose'] -eq $true ) `
 					-Debug:( $PSCmdlet.MyInvocation.BoundParameters['Debug'] -eq $true );
 			}
@@ -81,8 +83,25 @@ foreach ( $FileId in 'emblem_black_bordered', 'emblem_black' )
 		};
 
 	};
+
+	$PNGFileName = "$FileId.png";
+	$DestPNGFileName = "$PSScriptRoot/$PNGFileName";
+
+	task $PNGFileName `
+		-Outputs @( $DestPNGFileName ) `
+		-Inputs @( $DestSVGFileName ) `
+		-Before emblems `
+		-Job $SVGFileName, {
+		$DestinationPNGFile = $Outputs[0];
+		$SourceSVGFile = $Inputs[0];
+		Write-Verbose "Convert `"$SourceSVGFile`" to `"$DestinationPNGFile`"";
+		& $ConvertToPNGPath -LiteralPath $SourceSVGFile -Destination $DestinationPNGFile -Force `
+			-Verbose:( $PSCmdlet.MyInvocation.BoundParameters['Verbose'] -eq $true ) `
+			-Debug:( $PSCmdlet.MyInvocation.BoundParameters['Debug'] -eq $true );
+	};
+
 };
 
-task emblems emblem_black_bordered.svg, emblem_black.svg;
+task emblems;
 
 task . emblems;
