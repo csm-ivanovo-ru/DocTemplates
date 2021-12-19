@@ -38,11 +38,14 @@ foreach ( $FileId in 'emblem_black_bordered', 'emblem_black' )
 	$DestSVGFileName = "$PSScriptRoot/$SVGFileName";
 
 	task $SVGFileName `
+		-Data @{ FileId = $FileId; SVGFileName = $SVGFileName; DestSVGFileName = $DestSVGFileName; } `
 		-Outputs @( $DestSVGFileName ) `
 		-If { -not ( Test-Path -Path $DestSVGFileName ) } `
 		-Job {
 
-		$ZipFileName = "$FileId.zip";
+		$DestSVGFileName = $Task.Data.DestSVGFileName;
+		$ZipFileName = "$( $Task.Data.FileId ).zip";
+		$SVGFileName = $Task.Data.SVGFileName;
 
 		$TempZIPFileName = Join-Path `
 			-Path ( [System.IO.Path]::GetTempPath() ) `

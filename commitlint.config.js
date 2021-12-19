@@ -29,6 +29,7 @@ module.exports = {
     "scope-enum": [1, "always", [
       "ott",
       "odt",
+      "images",
       "qrcode",
       "vcard",
       "design",

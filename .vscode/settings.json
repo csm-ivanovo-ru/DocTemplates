@@ -129,6 +129,7 @@
 	"conventionalCommits.scopes": [
 		"ott",
 		"odt",
+		"images",
 		"qrcode",
 		"vcard",
 		"design",
