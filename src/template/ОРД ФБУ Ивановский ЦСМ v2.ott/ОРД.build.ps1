@@ -42,14 +42,14 @@ task rustest.spb.ru.png `
 		-Verbose:( $PSCmdlet.MyInvocation.BoundParameters['Verbose'] -eq $true );
 };
 
-task Build-emblem_black_bordered.png {
+task Build-russian_emblem.png {
 	Invoke-Build emblem_black_bordered.png -File $RussiaEmblemPath/.build.ps1 @parameters;
 };
 
-task emblem_black_bordered.png `
+task russian_emblem.png `
 	-Inputs @( "$RussiaEmblemPath/emblem_black_bordered.png" ) `
-	-Outputs @( "$SourceTemplatePath/Pictures/emblem_black_bordered.png" ) `
-	-Jobs Build-emblem_black_bordered.png, {
+	-Outputs @( "$SourceTemplatePath/Pictures/russian_emblem.png" ) `
+	-Jobs Build-russian_emblem.png, {
 	Copy-Item -LiteralPath $Inputs[0] -Destination $Outputs[0] -Force `
 		-Verbose:( $PSCmdlet.MyInvocation.BoundParameters['Verbose'] -eq $true );
 };
@@ -61,7 +61,7 @@ openDocumentTemplate BuildTemplate `
 	-Version $Version `
 	-Inputs $sources `
 	-Outputs @( $DestinationTemplatePath, $marker ) `
-	-Jobs BuildLib-DocTemplatesLib, rustest.spb.ru.png, emblem_black_bordered.png;
+	-Jobs BuildLib-DocTemplatesLib, rustest.spb.ru.png, russian_emblem.png;
 
 openDocumentTemplate BuildAndOpenTemplate `
 	-OpenAfterBuild `
@@ -71,6 +71,6 @@ openDocumentTemplate BuildAndOpenTemplate `
 	-Version $Version `
 	-Inputs $sources `
 	-Outputs @( $DestinationTemplatePath, $marker ) `
-	-Jobs BuildLib-DocTemplatesLib, rustest.spb.ru.png, emblem_black_bordered.png;
+	-Jobs BuildLib-DocTemplatesLib, rustest.spb.ru.png, russian_emblem.png;
 
 task . BuildTemplate;

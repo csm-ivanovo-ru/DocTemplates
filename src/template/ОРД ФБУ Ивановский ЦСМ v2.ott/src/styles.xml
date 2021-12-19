@@ -1038,7 +1038,7 @@
 												<style:style style:family="graphic" style:parent-style-name="БланкЛогоТестВШапке">
 													<style:graphic-properties fo:margin-left="0.199cm" fo:margin-right="0.199cm" fo:margin-top="0.199cm" fo:margin-bottom="0.03cm" style:vertical-pos="from-top" draw:opacity="0%" fo:padding="0cm" fo:border="none"/>
 												</style:style>
-												<draw:image xlink:href="Pictures/emblem_black_bordered.png" xlink:type="simple" xlink:actuate="onLoad" loext:mime-type="image/png"/>
+												<draw:image xlink:href="Pictures/russian_emblem.png" xlink:type="simple" xlink:actuate="onLoad" loext:mime-type="image/png"/>
 											</draw:frame></text:p>
 										</draw:text-box>
 									</draw:frame></text:p>
