@@ -128,7 +128,7 @@
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ОрганизацияНаименование" office:value-type="string">ФБУ «Ивановский ЦСМ»</text:variable-set></text:p>
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ОрганизацияНаименованиеПолное" office:value-type="string">Федеральное бюджетное учреждение «Государственный региональный центр стандартизации, метрологии и испытаний в г. Санкт-Петербурге и Ленинградской области»</text:variable-set></text:p>
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ПодразделениеДляБланка" office:value-type="string">ФБУ «Ивановский ЦСМ»</text:variable-set></text:p>
-				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ОрганизацияАдрес" office:value-type="string">153005, г. Иваново, ул. Почтовая, д. 31/42</text:variable-set></text:p>
+				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ОрганизацияАдрес" office:value-type="string">153000, г. Иваново, ул. Почтовая, д. 31/42</text:variable-set></text:p>
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ОрганизацияТелефон" office:value-type="string">+7 (4932) 32‑84‑85</text:variable-set></text:p>
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ОрганизацияФакс" office:value-type="string">+7 (4932) 41‑60‑79</text:variable-set></text:p>
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ОрганизацияEmail" office:value-type="string">post@ivcsm.ru </text:variable-set></text:p>
@@ -136,7 +136,7 @@
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ОрганизацияОГРН" office:value-type="string">1023700556990</text:variable-set></text:p>
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ОрганизацияИНН" office:value-type="string">3731001541</text:variable-set></text:p>
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ОрганизацияКПП" office:value-type="string">370201001</text:variable-set></text:p>
-				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ОрганизацияОКПО" office:value-type="string">04725993</text:variable-set></text:p>
+				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ОрганизацияОКПО" office:value-type="string">02567308</text:variable-set></text:p>
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="МестоСоставления" office:value-type="string">г. Иваново</text:variable-set></text:p>
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ПодготовилПредставлениеВДокументахИП" office:value-type="string">ПодготовилПредставлениеВДокументахИП</text:variable-set></text:p>
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ПодготовилПодразделениеИП" office:value-type="string">ПодготовилПодразделениеИП</text:variable-set></text:p>
@@ -317,7 +317,7 @@
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ОрганизацияНаименование" office:value-type="string">ФБУ «Ивановский ЦСМ»</text:variable-set></text:p>
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ОрганизацияНаименованиеПолное" office:value-type="string">Федеральное бюджетное учреждение «Государственный региональный центр стандартизации, метрологии и испытаний в г. Санкт-Петербурге и Ленинградской области»</text:variable-set></text:p>
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ПодразделениеДляБланка" office:value-type="string">ФБУ «Ивановский ЦСМ»</text:variable-set></text:p>
-				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ОрганизацияАдрес" office:value-type="string">153005, г. Иваново, ул. Почтовая, д. 31/42</text:variable-set></text:p>
+				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ОрганизацияАдрес" office:value-type="string">153000, г. Иваново, ул. Почтовая, д. 31/42</text:variable-set></text:p>
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ОрганизацияТелефон" office:value-type="string">+7 (4932) 32‑84‑85</text:variable-set></text:p>
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ОрганизацияФакс" office:value-type="string">+7 (4932) 41‑60‑79</text:variable-set></text:p>
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ОрганизацияEmail" office:value-type="string">post@ivcsm.ru </text:variable-set></text:p>
@@ -325,7 +325,7 @@
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ОрганизацияОГРН" office:value-type="string">1023700556990</text:variable-set></text:p>
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ОрганизацияИНН" office:value-type="string">3731001541</text:variable-set></text:p>
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ОрганизацияКПП" office:value-type="string">370201001</text:variable-set></text:p>
-				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ОрганизацияОКПО" office:value-type="string">04725993</text:variable-set></text:p>
+				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ОрганизацияОКПО" office:value-type="string">02567308</text:variable-set></text:p>
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="МестоСоставления" office:value-type="string">г. Иваново</text:variable-set></text:p>
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ПодготовилПредставлениеВДокументахИП" office:value-type="string">ПодготовилПредставлениеВДокументахИП</text:variable-set></text:p>
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ПодготовилПодразделениеИП" office:value-type="string">ПодготовилПодразделениеИП</text:variable-set></text:p>
@@ -882,7 +882,7 @@
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ПодразделениеДляДИ" office:value-type="string">Метрологический отдел поверки и калибровки средств изменений</text:variable-set></text:p>
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="КодПодразделенияДляДИ" office:value-type="string">460</text:variable-set></text:p>
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ДолжностьДляДИРП" office:value-type="string">инженера</text:variable-set></text:p>
-				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ОрганизацияАдрес" office:value-type="string">153005, г. Иваново, ул. Почтовая, д. 31/42</text:variable-set></text:p>
+				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ОрганизацияАдрес" office:value-type="string">153000, г. Иваново, ул. Почтовая, д. 31/42</text:variable-set></text:p>
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ОрганизацияТелефон" office:value-type="string">+7 (4932) 32‑84‑85</text:variable-set></text:p>
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ОрганизацияФакс" office:value-type="string">+7 (4932) 41‑60‑79</text:variable-set></text:p>
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ОрганизацияEmail" office:value-type="string">post@ivcsm.ru </text:variable-set></text:p>
@@ -890,7 +890,7 @@
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ОрганизацияОГРН" office:value-type="string">1023700556990</text:variable-set></text:p>
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ОрганизацияИНН" office:value-type="string">3731001541</text:variable-set></text:p>
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ОрганизацияКПП" office:value-type="string">370201001</text:variable-set></text:p>
-				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ОрганизацияОКПО" office:value-type="string">04725993</text:variable-set></text:p>
+				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ОрганизацияОКПО" office:value-type="string">02567308</text:variable-set></text:p>
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="МестоСоставления" office:value-type="string">г. Иваново</text:variable-set></text:p>
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ПодготовилПредставлениеВДокументахИП" office:value-type="string">Кудрявцев Дмитрий Иванович</text:variable-set></text:p>
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ПодготовилПодразделениеИП" office:value-type="string">ФБУ «Ивановский ЦСМ»</text:variable-set></text:p>
@@ -1408,7 +1408,7 @@
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ПодразделениеДляДИ" office:value-type="string">Сектор обеспечения функционирования филиала</text:variable-set></text:p>
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="КодПодразделенияДляДИ" office:value-type="string">460</text:variable-set></text:p>
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ДолжностьДляДИРП" office:value-type="string">электромонтёра по ремонту и обслуживанию электрооборудования 2&#160;разряда</text:variable-set></text:p>
-				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ОрганизацияАдрес" office:value-type="string">153005, г. Иваново, ул. Почтовая, д. 31/42</text:variable-set></text:p>
+				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ОрганизацияАдрес" office:value-type="string">153000, г. Иваново, ул. Почтовая, д. 31/42</text:variable-set></text:p>
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ОрганизацияТелефон" office:value-type="string">+7 (4932) 32‑84‑85</text:variable-set></text:p>
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ОрганизацияФакс" office:value-type="string">+7 (4932) 41‑60‑79</text:variable-set></text:p>
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ОрганизацияEmail" office:value-type="string">post@ivcsm.ru </text:variable-set></text:p>
@@ -1416,7 +1416,7 @@
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ОрганизацияОГРН" office:value-type="string">1023700556990</text:variable-set></text:p>
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ОрганизацияИНН" office:value-type="string">3731001541</text:variable-set></text:p>
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ОрганизацияКПП" office:value-type="string">370201001</text:variable-set></text:p>
-				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ОрганизацияОКПО" office:value-type="string">04725993</text:variable-set></text:p>
+				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ОрганизацияОКПО" office:value-type="string">02567308</text:variable-set></text:p>
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="МестоСоставления" office:value-type="string">г. Иваново</text:variable-set></text:p>
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ПодготовилПредставлениеВДокументахИП" office:value-type="string">Кудрявцев Дмитрий Иванович</text:variable-set></text:p>
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ПодготовилПодразделениеИП" office:value-type="string">ФБУ «Ивановский ЦСМ»</text:variable-set></text:p>
@@ -1777,7 +1777,7 @@
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ОрганизацияНаименование" office:value-type="string">ФБУ «Ивановский ЦСМ»</text:variable-set></text:p>
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ОрганизацияНаименованиеПолное" office:value-type="string">Федеральное бюджетное учреждение «Государственный региональный центр стандартизации, метрологии и испытаний в г. Санкт-Петербурге и Ленинградской области»</text:variable-set></text:p>
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ПодразделениеДляБланка" office:value-type="string">ФБУ «Ивановский ЦСМ»</text:variable-set></text:p>
-				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ОрганизацияАдрес" office:value-type="string">153005, г. Иваново, ул. Почтовая, д. 31/42</text:variable-set></text:p>
+				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ОрганизацияАдрес" office:value-type="string">153000, г. Иваново, ул. Почтовая, д. 31/42</text:variable-set></text:p>
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ОрганизацияТелефон" office:value-type="string">+7 (4932) 32‑84‑85</text:variable-set></text:p>
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ОрганизацияФакс" office:value-type="string">+7 (4932) 41‑60‑79</text:variable-set></text:p>
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ОрганизацияEmail" office:value-type="string">post@ivcsm.ru </text:variable-set></text:p>
@@ -1785,7 +1785,7 @@
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ОрганизацияОГРН" office:value-type="string">1023700556990</text:variable-set></text:p>
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ОрганизацияИНН" office:value-type="string">3731001541</text:variable-set></text:p>
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ОрганизацияКПП" office:value-type="string">370201001</text:variable-set></text:p>
-				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ОрганизацияОКПО" office:value-type="string">04725993</text:variable-set></text:p>
+				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ОрганизацияОКПО" office:value-type="string">02567308</text:variable-set></text:p>
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="МестоСоставления" office:value-type="string">г. Иваново</text:variable-set></text:p>
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ПодготовилПредставлениеВДокументахИП" office:value-type="string">Кудрявцев Дмитрий Иванович</text:variable-set></text:p>
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ПодготовилПодразделениеИП" office:value-type="string">ФБУ «Ивановский ЦСМ»</text:variable-set></text:p>
@@ -1889,7 +1889,7 @@
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ОрганизацияНаименование" office:value-type="string">ФБУ «Ивановский ЦСМ»</text:variable-set></text:p>
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ОрганизацияНаименованиеПолное" office:value-type="string">Федеральное бюджетное учреждение «Государственный региональный центр стандартизации, метрологии и испытаний в г. Санкт-Петербурге и Ленинградской области»</text:variable-set></text:p>
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ПодразделениеДляБланка" office:value-type="string">ФБУ «Ивановский ЦСМ»</text:variable-set></text:p>
-				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ОрганизацияАдрес" office:value-type="string">153005, г. Иваново, ул. Почтовая, д. 31/42</text:variable-set></text:p>
+				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ОрганизацияАдрес" office:value-type="string">153000, г. Иваново, ул. Почтовая, д. 31/42</text:variable-set></text:p>
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ОрганизацияТелефон" office:value-type="string">+7 (4932) 32‑84‑85</text:variable-set></text:p>
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ОрганизацияФакс" office:value-type="string">+7 (4932) 41‑60‑79</text:variable-set></text:p>
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ОрганизацияEmail" office:value-type="string">post@ivcsm.ru </text:variable-set></text:p>
@@ -1897,7 +1897,7 @@
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ОрганизацияОГРН" office:value-type="string">1023700556990</text:variable-set></text:p>
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ОрганизацияИНН" office:value-type="string">3731001541</text:variable-set></text:p>
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ОрганизацияКПП" office:value-type="string">370201001</text:variable-set></text:p>
-				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ОрганизацияОКПО" office:value-type="string">04725993</text:variable-set></text:p>
+				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ОрганизацияОКПО" office:value-type="string">02567308</text:variable-set></text:p>
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="МестоСоставления" office:value-type="string">г. Иваново</text:variable-set></text:p>
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ПодготовилПредставлениеВДокументахИП" office:value-type="string">Кудрявцев Дмитрий Иванович</text:variable-set></text:p>
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ПодготовилПодразделениеИП" office:value-type="string">ФБУ «Ивановский ЦСМ»</text:variable-set></text:p>
@@ -1982,7 +1982,7 @@
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ОрганизацияНаименование" office:value-type="string">ФБУ «Ивановский ЦСМ»</text:variable-set></text:p>
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ОрганизацияНаименованиеПолное" office:value-type="string">Федеральное бюджетное учреждение «Государственный региональный центр стандартизации, метрологии и испытаний в г. Санкт-Петербурге и Ленинградской области»</text:variable-set></text:p>
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ПодразделениеДляБланка" office:value-type="string">ФБУ «Ивановский ЦСМ»</text:variable-set></text:p>
-				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ОрганизацияАдрес" office:value-type="string">153005, г. Иваново, ул. Почтовая, д. 31/42</text:variable-set></text:p>
+				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ОрганизацияАдрес" office:value-type="string">153000, г. Иваново, ул. Почтовая, д. 31/42</text:variable-set></text:p>
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ОрганизацияТелефон" office:value-type="string">+7 (4932) 32‑84‑85</text:variable-set></text:p>
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ОрганизацияФакс" office:value-type="string">+7 (4932) 41‑60‑79</text:variable-set></text:p>
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ОрганизацияEmail" office:value-type="string">post@ivcsm.ru </text:variable-set></text:p>
@@ -1990,7 +1990,7 @@
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ОрганизацияОГРН" office:value-type="string">1023700556990</text:variable-set></text:p>
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ОрганизацияИНН" office:value-type="string">3731001541</text:variable-set></text:p>
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ОрганизацияКПП" office:value-type="string">370201001</text:variable-set></text:p>
-				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ОрганизацияОКПО" office:value-type="string">04725993</text:variable-set></text:p>
+				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ОрганизацияОКПО" office:value-type="string">02567308</text:variable-set></text:p>
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="МестоСоставления" office:value-type="string">г. Иваново</text:variable-set></text:p>
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="Дело" office:value-type="string"> </text:variable-set></text:p>
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ДелоГод" office:value-type="string"> </text:variable-set></text:p>
@@ -2059,7 +2059,7 @@
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ОрганизацияНаименование" office:value-type="string">ФБУ «Ивановский ЦСМ»</text:variable-set></text:p>
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ОрганизацияНаименованиеПолное" office:value-type="string">Федеральное бюджетное учреждение «Государственный региональный центр стандартизации, метрологии и испытаний в г. Санкт-Петербурге и Ленинградской области»</text:variable-set></text:p>
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ПодразделениеДляБланка" office:value-type="string">ФБУ «Ивановский ЦСМ»</text:variable-set></text:p>
-				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ОрганизацияАдрес" office:value-type="string">153005, г. Иваново, ул. Почтовая, д. 31/42</text:variable-set></text:p>
+				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ОрганизацияАдрес" office:value-type="string">153000, г. Иваново, ул. Почтовая, д. 31/42</text:variable-set></text:p>
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ОрганизацияТелефон" office:value-type="string">+7 (4932) 32‑84‑85</text:variable-set></text:p>
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ОрганизацияФакс" office:value-type="string">+7 (4932) 41‑60‑79</text:variable-set></text:p>
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ОрганизацияEmail" office:value-type="string">post@ivcsm.ru </text:variable-set></text:p>
@@ -2067,7 +2067,7 @@
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ОрганизацияОГРН" office:value-type="string">1023700556990</text:variable-set></text:p>
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ОрганизацияИНН" office:value-type="string">3731001541</text:variable-set></text:p>
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ОрганизацияКПП" office:value-type="string">370201001</text:variable-set></text:p>
-				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ОрганизацияОКПО" office:value-type="string">04725993</text:variable-set></text:p>
+				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ОрганизацияОКПО" office:value-type="string">02567308</text:variable-set></text:p>
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="МестоСоставления" office:value-type="string">г. Иваново</text:variable-set></text:p>
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="Дело" office:value-type="string"> </text:variable-set></text:p>
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ДелоГод" office:value-type="string"> </text:variable-set></text:p>

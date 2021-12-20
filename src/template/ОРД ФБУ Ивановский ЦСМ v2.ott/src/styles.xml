@@ -1972,10 +1972,10 @@
 									<style:style style:family="section">
 										<style:section-properties style:editable="false"/>
 									</style:style>
-									<text:p text:style-name="БланкСправочныеДанныеОбОрганизации"><text:variable-get text:name="ОрганизацияАдрес">153005, г. Иваново, ул. Почтовая, д. 31/42</text:variable-get><text:line-break/>тел. <text:variable-get text:name="ОрганизацияТелефон">+7 (4932) 32‑84‑85</text:variable-get>,
+									<text:p text:style-name="БланкСправочныеДанныеОбОрганизации"><text:variable-get text:name="ОрганизацияАдрес">153000, г. Иваново, ул. Почтовая, д. 31/42</text:variable-get><text:line-break/>тел. <text:variable-get text:name="ОрганизацияТелефон">+7 (4932) 32‑84‑85</text:variable-get>,
 										факс <text:variable-get text:name="ОрганизацияФакс">+7 (4932) 41‑60‑79</text:variable-get>,
 										e-mail:<text:variable-get text:name="ОрганизацияEmail">post@ivcsm.ru </text:variable-get>;
-										<text:variable-get text:name="ОрганизацияWebСайт">https://ivcsm.ru</text:variable-get><text:line-break/>ОКПО <text:variable-get text:name="ОрганизацияОКПО">04725993</text:variable-get>,
+										<text:variable-get text:name="ОрганизацияWebСайт">https://ivcsm.ru</text:variable-get><text:line-break/>ОКПО <text:variable-get text:name="ОрганизацияОКПО">02567308</text:variable-get>,
 										ОГРН <text:variable-get text:name="ОрганизацияОГРН">1023700556990</text:variable-get>,
 										ИНН/КПП <text:variable-get text:name="ОрганизацияИНН">3731001541</text:variable-get>/<text:variable-get text:name="ОрганизацияКПП">370201001</text:variable-get></text:p>
 								</text:section>
@@ -2441,13 +2441,13 @@
 								</style:style>
 								<text:p text:style-name="БланкФирменныйСправочныеДанныеОбОрганизации"><text:variable-get text:name="ОрганизацияНаименованиеПолное">Федеральное бюджетное учреждение «Государственный региональный центр стандартизации, метрологии и испытаний в г. Санкт-Петербурге и Ленинградской области»</text:variable-get></text:p>
 								<text:p text:style-name="КонецКолонки"/>
-								<text:p text:style-name="БланкФирменныйСправочныеДанныеОбОрганизации"><text:variable-get text:name="ОрганизацияАдрес">153005, г. Иваново, ул. Почтовая, д. 31/42</text:variable-get></text:p>
+								<text:p text:style-name="БланкФирменныйСправочныеДанныеОбОрганизации"><text:variable-get text:name="ОрганизацияАдрес">153000, г. Иваново, ул. Почтовая, д. 31/42</text:variable-get></text:p>
 								<text:p text:style-name="БланкФирменныйСправочныеДанныеОбОрганизации">Тел. <text:variable-get text:name="ОрганизацияТелефон">+7 (4932) 32‑84‑85</text:variable-get></text:p>
 								<text:p text:style-name="БланкФирменныйСправочныеДанныеОбОрганизации">e-mail <text:variable-get text:name="ОрганизацияEmail">post@ivcsm.ru </text:variable-get>,<text:variable-get text:name="ОрганизацияWebСайт">https://ivcsm.ru</text:variable-get></text:p>
 								<text:p text:style-name="КонецКолонки"/>
 								<text:p text:style-name="БланкФирменныйСправочныеДанныеОбОрганизации">ОГРН <text:variable-get text:name="ОрганизацияОГРН">1023700556990</text:variable-get></text:p>
 								<text:p text:style-name="БланкФирменныйСправочныеДанныеОбОрганизации">ИНН/КПП <text:variable-get text:name="ОрганизацияИНН">3731001541</text:variable-get>/<text:variable-get text:name="ОрганизацияКПП">370201001</text:variable-get></text:p>
-								<text:p text:style-name="БланкФирменныйСправочныеДанныеОбОрганизации">код ОКПО <text:variable-get text:name="ОрганизацияОКПО">04725993</text:variable-get></text:p>
+								<text:p text:style-name="БланкФирменныйСправочныеДанныеОбОрганизации">код ОКПО <text:variable-get text:name="ОрганизацияОКПО">02567308</text:variable-get></text:p>
 							</text:section>
 							<text:p text:style-name="БланкФирменныйОкончаниеШапки"/>
 						</draw:text-box>
