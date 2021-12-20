@@ -365,8 +365,8 @@
 			<style:paragraph-properties fo:margin-top="0.199cm" fo:margin-bottom="0cm" loext:contextual-spacing="false"/>
 		</style:style>
 		<style:style style:name="БланкСправочныеДанныеОбОрганизации" style:family="paragraph" loext:hidden="true" style:parent-style-name="БланкШапка" style:class="extra">
-			<style:paragraph-properties fo:line-height="90%"/>
-			<style:text-properties fo:font-size="7pt" style:letter-kerning="true"/>
+			<style:paragraph-properties fo:margin-top="0.3cm" fo:margin-bottom="0cm" loext:contextual-spacing="true" fo:text-align="center"/>
+			<style:text-properties fo:font-size="10pt" style:letter-kerning="true" fo:hyphenate="false"/>
 		</style:style>
 		<style:style style:name="БланкЛоготипыВШапке" style:family="paragraph" loext:hidden="true" style:parent-style-name="БланкШапка" style:class="extra">
 			<style:paragraph-properties fo:text-align="center"/>
