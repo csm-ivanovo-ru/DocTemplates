@@ -935,7 +935,7 @@
 				<text:p text:style-name="Footer"/>
 			</style:footer>
 			<loext:footer-first>
-				<text:p text:style-name="БланкТитульныйЛистМестоИГодИздания"><text:span text:style-name="БланкТитульныйЛистМестоСоставления"><text:variable-get text:name="МестоСоставления">Великий Новгород</text:variable-get></text:span><text:s/>— <text:span text:style-name="БланкТитульныйЛистГодИздания"><text:variable-get text:name="ГодИздания">2020</text:variable-get></text:span></text:p>
+				<text:p text:style-name="БланкТитульныйЛистМестоИГодИздания"><text:span text:style-name="БланкТитульныйЛистМестоСоставления"><text:variable-get text:name="МестоСоставления">г. Иваново</text:variable-get></text:span><text:s/>— <text:span text:style-name="БланкТитульныйЛистГодИздания"><text:variable-get text:name="ГодИздания">2020</text:variable-get></text:span></text:p>
 			</loext:footer-first>
 		</style:master-page>
 		<style:master-page style:name="БланкОРДПервыйЛист" style:next-style-name="БланкОРДПоследующиеЛисты">
@@ -1102,7 +1102,7 @@
 						</draw:text-box>
 					</draw:frame></text:p>
 					<text:p text:style-name="КонецКолонки"/>
-					<text:p text:style-name="БланкМестоСоставления"><text:variable-get text:name="МестоСоставления">Великий Новгород</text:variable-get></text:p>
+					<text:p text:style-name="БланкМестоСоставления"><text:variable-get text:name="МестоСоставления">г. Иваново</text:variable-get></text:p>
 					<text:p text:style-name="КонецКолонки"/>
 					<text:p text:style-name="БланкРегДанныеРегНомерВн">№ <draw:frame draw:name="Поле РегистрационныйНомерВн" text:anchor-type="as-char" draw:z-index="32">
 						<style:style style:family="graphic" style:parent-style-name="БланкПолеСПодстрочникомВТексте">
@@ -1668,7 +1668,7 @@
 							<style:style style:family="table-cell">
 								<style:table-cell-properties fo:padding="0cm" fo:border="none"/>
 							</style:style>
-							<text:p text:style-name="БланкИсполнитель">Исп.: <text:variable-get text:name="ПодготовилПредставлениеВДокументахИП">Бетке Сергей Сергеевич</text:variable-get><text:line-break/><text:variable-get text:name="ПодготовилПодразделениеИП">Новгородский филиал</text:variable-get>, <text:variable-get text:name="ПодготовилДолжностьИП">Директор</text:variable-get>,<text:line-break/><text:variable-get text:name="ПодготовилТелефон">+ 7 (911) 649-90-80</text:variable-get>, <text:variable-get text:name="ПодготовилПочта">Sergei.S.Betke@csm.nov.ru</text:variable-get></text:p>
+							<text:p text:style-name="БланкИсполнитель">Исп.: <text:variable-get text:name="ПодготовилПредставлениеВДокументахИП">Кудрявцев Дмитрий Иванович</text:variable-get><text:line-break/><text:variable-get text:name="ПодготовилПодразделениеИП">ФБУ «Ивановский ЦСМ»</text:variable-get>, <text:variable-get text:name="ПодготовилДолжностьИП">Директор</text:variable-get>,<text:line-break/><text:variable-get text:name="ПодготовилТелефон">+7 (4932) 32‑84‑85</text:variable-get>, <text:variable-get text:name="ПодготовилПочта">post@ivcsm.ru</text:variable-get></text:p>
 						</table:table-cell>
 						<table:table-cell office:value-type="string">
 							<style:style style:family="table-cell">
@@ -1962,28 +1962,23 @@
 								<style:style style:family="section">
 									<style:section-properties style:editable="false"/>
 								</style:style>
-
 								<text:section text:name="Бланк: Шапка: Логотип, гриф, штрихкод и код формы (ПГ)" text:protected="true">
 									<text:section-source text:section-name="Бланк: Шапка: Логотип, гриф, штрихкод и код формы" xlink:type="simple" xlink:actuate="other" xlink:title="ПГ" xlink:show="replace"/>
 								</text:section>
-
 								<text:section text:name="Бланк: Шапка: Наименование организации и подразделения (ПГ)" text:protected="true">
 									<text:section-source text:section-name="Бланк: Шапка: Наименование организации и подразделения" xlink:type="simple" xlink:actuate="other" xlink:title="ПГ" xlink:show="replace"/>
 								</text:section>
-
 								<text:section text:name="Справочные данные об организации (ПГ)" text:protected="true">
 									<style:style style:family="section">
 										<style:section-properties style:editable="false"/>
 									</style:style>
-									<text:p text:style-name="БланкФирменныйСправочныеДанныеОбОрганизации"><text:variable-get text:name="ОрганизацияАдрес">173024,
-										Новгородская обл, Великий Новгород г, Александра Корсунова пр-кт,
-										дом № 32</text:variable-get><text:line-break/>тел. <text:variable-get text:name="ОрганизацияТелефон">+7 (8162) 60-77-27</text:variable-get>;
-										e-mail:<text:variable-get text:name="ОрганизацияEmail">mail@csm.nov.ru</text:variable-get>;
-										<text:variable-get text:name="ОрганизацияWebСайт">http://rustest.spb.ru</text:variable-get><text:line-break/>ОКПО <text:variable-get text:name="ОрганизацияОКПО">04725993</text:variable-get>;
-										ОГРН <text:variable-get text:name="ОрганизацияОГРН">1027810289286</text:variable-get>;
-										ИНН/КПП <text:variable-get text:name="ОрганизацияИНН">7809018702</text:variable-get>/<text:variable-get text:name="ОрганизацияКПП">783901001</text:variable-get></text:p>
+									<text:p text:style-name="БланкСправочныеДанныеОбОрганизации"><text:variable-get text:name="ОрганизацияАдрес">153005, г. Иваново, ул. Почтовая, д. 31/42</text:variable-get><text:line-break/>тел. <text:variable-get text:name="ОрганизацияТелефон">+7 (4932) 32‑84‑85</text:variable-get>,
+										факс <text:variable-get text:name="ОрганизацияФакс">+7 (4932) 41‑60‑79</text:variable-get>,
+										e-mail:<text:variable-get text:name="ОрганизацияEmail">post@ivcsm.ru </text:variable-get>;
+										<text:variable-get text:name="ОрганизацияWebСайт">https://ivcsm.ru</text:variable-get><text:line-break/>ОКПО <text:variable-get text:name="ОрганизацияОКПО">04725993</text:variable-get>,
+										ОГРН <text:variable-get text:name="ОрганизацияОГРН">1023700556990</text:variable-get>,
+										ИНН/КПП <text:variable-get text:name="ОрганизацияИНН">3731001541</text:variable-get>/<text:variable-get text:name="ОрганизацияКПП">370201001</text:variable-get></text:p>
 								</text:section>
-
 							</text:section>
 							<text:p text:style-name="БланкОкончаниеШапки"/>
 						</draw:text-box>
@@ -2208,7 +2203,7 @@
 							<style:style style:family="table-cell">
 								<style:table-cell-properties fo:padding="0cm" fo:border="none"/>
 							</style:style>
-							<text:p text:style-name="БланкИсполнитель">Исп.: <text:variable-get text:name="ПодготовилПредставлениеВДокументахИП">Бетке Сергей Сергеевич</text:variable-get><text:line-break/><text:variable-get text:name="ПодготовилПодразделениеИП">Новгородский филиал</text:variable-get>, <text:variable-get text:name="ПодготовилДолжностьИП">Директор</text:variable-get>,<text:line-break/><text:variable-get text:name="ПодготовилТелефон">+ 7 (911) 649-90-80</text:variable-get>, <text:variable-get text:name="ПодготовилПочта">Sergei.S.Betke@csm.nov.ru</text:variable-get></text:p>
+							<text:p text:style-name="БланкИсполнитель">Исп.: <text:variable-get text:name="ПодготовилПредставлениеВДокументахИП">Кудрявцев Дмитрий Иванович</text:variable-get><text:line-break/><text:variable-get text:name="ПодготовилПодразделениеИП">ФБУ «Ивановский ЦСМ»</text:variable-get>, <text:variable-get text:name="ПодготовилДолжностьИП">Директор</text:variable-get>,<text:line-break/><text:variable-get text:name="ПодготовилТелефон">+7 (4932) 32‑84‑85</text:variable-get>, <text:variable-get text:name="ПодготовилПочта">post@ivcsm.ru</text:variable-get></text:p>
 						</table:table-cell>
 						<table:table-cell office:value-type="string">
 							<style:style style:family="table-cell">
@@ -2446,12 +2441,12 @@
 								</style:style>
 								<text:p text:style-name="БланкФирменныйСправочныеДанныеОбОрганизации"><text:variable-get text:name="ОрганизацияНаименованиеПолное">Федеральное бюджетное учреждение «Государственный региональный центр стандартизации, метрологии и испытаний в г. Санкт-Петербурге и Ленинградской области»</text:variable-get></text:p>
 								<text:p text:style-name="КонецКолонки"/>
-								<text:p text:style-name="БланкФирменныйСправочныеДанныеОбОрганизации"><text:variable-get text:name="ОрганизацияАдрес">173024, Новгородская обл, Великий Новгород г, Александра Корсунова пр-кт, дом № 32</text:variable-get></text:p>
-								<text:p text:style-name="БланкФирменныйСправочныеДанныеОбОрганизации">Тел. <text:variable-get text:name="ОрганизацияТелефон">+7 (8162) 60-77-27</text:variable-get></text:p>
-								<text:p text:style-name="БланкФирменныйСправочныеДанныеОбОрганизации">e-mail <text:variable-get text:name="ОрганизацияEmail">mail@csm.nov.ru</text:variable-get>,<text:variable-get text:name="ОрганизацияWebСайт">http://rustest.spb.ru</text:variable-get></text:p>
+								<text:p text:style-name="БланкФирменныйСправочныеДанныеОбОрганизации"><text:variable-get text:name="ОрганизацияАдрес">153005, г. Иваново, ул. Почтовая, д. 31/42</text:variable-get></text:p>
+								<text:p text:style-name="БланкФирменныйСправочныеДанныеОбОрганизации">Тел. <text:variable-get text:name="ОрганизацияТелефон">+7 (4932) 32‑84‑85</text:variable-get></text:p>
+								<text:p text:style-name="БланкФирменныйСправочныеДанныеОбОрганизации">e-mail <text:variable-get text:name="ОрганизацияEmail">post@ivcsm.ru </text:variable-get>,<text:variable-get text:name="ОрганизацияWebСайт">https://ivcsm.ru</text:variable-get></text:p>
 								<text:p text:style-name="КонецКолонки"/>
-								<text:p text:style-name="БланкФирменныйСправочныеДанныеОбОрганизации">ОГРН <text:variable-get text:name="ОрганизацияОГРН">1027810289286</text:variable-get></text:p>
-								<text:p text:style-name="БланкФирменныйСправочныеДанныеОбОрганизации">ИНН/КПП <text:variable-get text:name="ОрганизацияИНН">7809018702</text:variable-get>/<text:variable-get text:name="ОрганизацияКПП">783901001</text:variable-get></text:p>
+								<text:p text:style-name="БланкФирменныйСправочныеДанныеОбОрганизации">ОГРН <text:variable-get text:name="ОрганизацияОГРН">1023700556990</text:variable-get></text:p>
+								<text:p text:style-name="БланкФирменныйСправочныеДанныеОбОрганизации">ИНН/КПП <text:variable-get text:name="ОрганизацияИНН">3731001541</text:variable-get>/<text:variable-get text:name="ОрганизацияКПП">370201001</text:variable-get></text:p>
 								<text:p text:style-name="БланкФирменныйСправочныеДанныеОбОрганизации">код ОКПО <text:variable-get text:name="ОрганизацияОКПО">04725993</text:variable-get></text:p>
 							</text:section>
 							<text:p text:style-name="БланкФирменныйОкончаниеШапки"/>
@@ -2728,7 +2723,7 @@
 								<style:style style:family="table-cell">
 									<style:table-cell-properties fo:padding="0cm" fo:border="none"/>
 								</style:style>
-								<text:p text:style-name="БланкИсполнитель">Исп.: <text:variable-get text:name="ПодготовилПредставлениеВДокументахИП">Бетке Сергей Сергеевич</text:variable-get><text:line-break/><text:variable-get text:name="ПодготовилПодразделениеИП">Новгородский филиал</text:variable-get>, <text:variable-get text:name="ПодготовилДолжностьИП">Директор</text:variable-get>,<text:line-break/><text:variable-get text:name="ПодготовилТелефон">+ 7 (911) 649-90-80</text:variable-get>, <text:variable-get text:name="ПодготовилПочта">Sergei.S.Betke@csm.nov.ru</text:variable-get></text:p>
+								<text:p text:style-name="БланкИсполнитель">Исп.: <text:variable-get text:name="ПодготовилПредставлениеВДокументахИП">Кудрявцев Дмитрий Иванович</text:variable-get><text:line-break/><text:variable-get text:name="ПодготовилПодразделениеИП">ФБУ «Ивановский ЦСМ»</text:variable-get>, <text:variable-get text:name="ПодготовилДолжностьИП">Директор</text:variable-get>,<text:line-break/><text:variable-get text:name="ПодготовилТелефон">+7 (4932) 32‑84‑85</text:variable-get>, <text:variable-get text:name="ПодготовилПочта">post@ivcsm.ru</text:variable-get></text:p>
 							</table:table-cell>
 							<table:table-cell office:value-type="string">
 								<style:style style:family="table-cell">
