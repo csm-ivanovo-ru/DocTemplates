@@ -20,7 +20,7 @@ if ( [System.IO.Path]::GetFileName( $MyInvocation.ScriptName ) -ne 'Invoke-Build
 	return;
 };
 
-. $PSScriptRoot/../../src/common.build.shared.ps1
+. $PSScriptRoot/../../common.build.shared.ps1
 
 task clean {
 	Remove-BuildItem $PSScriptRoot/*.zip;
