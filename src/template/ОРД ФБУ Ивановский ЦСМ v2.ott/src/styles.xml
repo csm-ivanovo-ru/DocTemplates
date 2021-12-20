@@ -1456,7 +1456,7 @@
 						</style:section-properties>
 					</style:style>
 					<text:p text:style-name="ПустойАбзац"/>
-					<text:p text:style-name="БланкВидДокументаВоВнутреннейПереписке"><text:variable-get text:name="ВидДокумента">Служебная записка</text:variable-get></text:p>
+					<text:p text:style-name="БланкВидДокумента"><text:variable-get text:name="ВидДокумента">Служебная записка</text:variable-get></text:p>
 					<text:p text:style-name="ПустойАбзац"/>
 				</text:section>
 				<text:section text:name="Регистрационные данные и адресат (СЗ)">
