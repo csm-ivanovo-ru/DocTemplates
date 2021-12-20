@@ -1176,7 +1176,7 @@
 					<text:p text:style-name="КонецКолонки"/>
 					<text:p text:style-name="ПустойАбзац"/>
 					<text:p text:style-name="ГрифУтверждаю">Утверждаю</text:p>
-					<text:p text:style-name="ПодписьВГрифеДолжность"><text:variable-get text:name="УтвердилДолжностьИП">Генеральный директор</text:variable-get></text:p>
+					<text:p text:style-name="ПодписьВГрифеДолжность"><text:variable-get text:name="УтвердилДолжностьИП">Директор</text:variable-get></text:p>
 					<text:p text:style-name="ПодписьВГрифеПодписьИФИО"><text:tab/><text:variable-get text:name="УтвердилПредставлениеВПодписиИП">Д.И. Кудрявцев</text:variable-get></text:p>
 					<text:p text:style-name="ПодписьВГрифеДата">«<draw:frame draw:name="ДатаЧислоВГрифеУтверждения" text:anchor-type="as-char" draw:z-index="0">
 						<style:style style:family="graphic" style:parent-style-name="ДатаПодписиЧисло">
@@ -1361,7 +1361,7 @@
 					<text:p text:style-name="КонецКолонки"/>
 					<text:p text:style-name="ПустойАбзац"/>
 					<text:p text:style-name="ГрифУтверждаю">Утверждаю</text:p>
-					<text:p text:style-name="ПодписьВГрифеДолжность"><text:variable-get text:name="УтвердилДолжностьИП">Генеральный директор</text:variable-get></text:p>
+					<text:p text:style-name="ПодписьВГрифеДолжность"><text:variable-get text:name="УтвердилДолжностьИП">Директор</text:variable-get></text:p>
 					<text:p text:style-name="ПодписьВГрифеПодписьИФИО"><text:tab/><text:variable-get text:name="УтвердилПредставлениеВПодписиИП">Д.И. Кудрявцев</text:variable-get></text:p>
 					<text:p text:style-name="ПодписьВГрифеДата">«<draw:frame draw:name="ДатаЧислоВГрифеУтверждения" text:anchor-type="as-char" draw:z-index="0">
 						<style:style style:family="graphic" style:parent-style-name="ДатаПодписиЧисло">
