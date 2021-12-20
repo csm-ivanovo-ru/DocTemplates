@@ -1034,7 +1034,7 @@
 														</table:table-row>
 													</table:table>
 												</draw:text-box>
-											</draw:frame><draw:frame draw:name="Бланк: лого в шапке Тест" text:anchor-type="as-char" svg:y="0cm" svg:width="1.425cm" svg:height="1.7cm">
+											</draw:frame><draw:frame draw:name="Бланк: лого в шапке Тест" text:anchor-type="as-char" svg:y="0cm" svg:width="1.8cm" svg:height="2.147cm">
 												<style:style style:family="graphic" style:parent-style-name="БланкЛогоТестВШапке">
 													<style:graphic-properties fo:margin-left="0.199cm" fo:margin-right="0.199cm" fo:margin-top="0cm" fo:margin-bottom="0cm" style:vertical-pos="from-top"/>
 												</style:style>
