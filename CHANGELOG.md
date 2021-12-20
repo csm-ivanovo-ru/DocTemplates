@@ -19,6 +19,12 @@
 
 - логотип организации заменён на Герб РФ
   [#1](https://github.com/csm-ivanovo-ru/DocTemplates/issues/1)
+- исправлено оформление вида документа во внутренней переписке
+  (по ГОСТ Р 7.0.97-2016)
+  [#3](https://github.com/csm-ivanovo-ru/DocTemplates/issues/3)
+- оформление первого листа должностной инструкции приведено в соответствие
+  с ГОСТ Р 7.0.97-2016
+  [#3](https://github.com/csm-ivanovo-ru/DocTemplates/issues/3)
 
 ## [2.9.10]
 
