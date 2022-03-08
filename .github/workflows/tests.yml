@@ -34,15 +34,9 @@ jobs:
           check-latest: true
 
       - name: Install required PowerShell and NuGet modules
-        shell: powershell
-        run: |
-          Set-PSRepository -Name PSGallery -InstallationPolicy Trusted;
-          Register-PackageSource -Name 'nuget.org' -Location 'https://api.nuget.org/v3/index.json' -ProviderName NuGet -Trusted -Force | Out-Null;
-          Install-Module -Name PSDepend | Out-Null;
-          Import-Module -Name PSDepend | Out-Null;
-          Invoke-PSDepend -Recurse:$true -Confirm:$false -Verbose;
-          # Import-Module -Name InvokeBuild | Out-Null;
-          # Invoke-Build pre-build -Verbose;
+        uses: IT-Service/Invoke-PSDepend@v1
+        with:
+          recurse: true
 
       - name: Install ODFValidator
         shell: powershell
