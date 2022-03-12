@@ -120,7 +120,7 @@ jobs:
           Set-GitHubConfiguration -DefaultOwnerName '${{ github.repository_owner }}' -DefaultRepositoryName '${{ github.event.repository.name }}' -SessionOnly;
           $Version = '${{ env.version }}';
           $milestoneNumber = ${{ fromJSON(steps.milestone_search.outputs.data).repository.milestones.nodes[0].number }};
-          $releaseNotes = ( Get-Content -Path '${{ steps.generate_release_notes.outputs.releaseNotesPath }}' -Encoding UTF8 -Raw );
+          $releaseNotes = ( Get-Content -Path '${{ steps.generate_release_notes.outputs.release-notes-path }}' -Encoding UTF8 -Raw );
           $releaseDescription = `
             "[![${{ steps.release.outputs.tag_name }}](https://img.shields.io/badge/release-${{ steps.release.outputs.tag_name }}-blue?style=plastic&logo=github)](${{ steps.release.outputs.url }})" +
             "`r`n`r`n" + $releaseNotes;
