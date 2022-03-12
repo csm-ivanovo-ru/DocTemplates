@@ -48,6 +48,7 @@ jobs:
           useConfigFile: true
 
       - name: Build .ott and .odt files
+        id: build
         uses: IT-Service/Invoke-Build@v1.0.0
         with:
           task: "BuildAssets"
@@ -55,26 +56,10 @@ jobs:
 
       - name: Generate release notes
         id: generate_release_notes
-        shell: powershell
-        run: |
-          $releaseNotesPath = 'tmp/ReleaseNotes.md';
-          $ChangeLog = ( Get-Content -Path './CHANGELOG.md' -Encoding UTF8 );
-          $releaseNotes = @( $ChangeLog | ForEach-Object `
-            -Begin {
-              $isExpectedSection = $false;
-            } `
-            -Process {
-              $isReleaseSectionHeader = ( $_ -match '##\s+(?:(?<version>\d+\.\d+\.\d+)|\[(?<version>\d+\.\d+\.\d+)\])' );
-              if ( $isReleaseSectionHeader ) {
-                $releaseVersion = $Matches[ 'version' ];
-                $isExpectedSection = ( $releaseVersion -eq '${{ steps.gitversion.outputs.semVer }}' );
-              } else {
-                if ( $isExpectedSection ) { return $_; };
-              };
-            }
-          ) -join "`r`n";
-          $releaseNotes | Out-File -Encoding utf8 -FilePath $releaseNotesPath -NoNewLine;
-          echo "::set-output name=releaseNotesPath::$releaseNotesPath";
+        uses: IT-Service/New-ReleaseNotesFromChangeLog@v1.0.0
+        with:
+          version: "${{ steps.gitversion.outputs.semVer }}"
+          verbose: true
 
       - name: Search GitHub Milestone
         id: milestone_search
@@ -107,7 +92,7 @@ jobs:
           $GitHubToken = ( ConvertTo-SecureString -String '${{ github.token }}' -AsPlainText -Force );
           Set-GitHubAuthentication -Credential ( New-Object System.Management.Automation.PSCredential 'username is ignored', $GitHubToken ) -SessionOnly;
           Set-GitHubConfiguration -DefaultOwnerName '${{ github.repository_owner }}' -DefaultRepositoryName '${{ github.event.repository.name }}' -SessionOnly;
-          $releaseNotes = ( Get-Content -Path '${{ steps.generate_release_notes.outputs.releaseNotesPath }}' -Encoding UTF8 -Raw );
+          $releaseNotes = ( Get-Content -Path '${{ steps.generate_release_notes.outputs.release-notes-path }}' -Encoding UTF8 -Raw );
           if ( $${{ steps.milestone_search.outputs.exists == 'true' }} ) {
             $releaseDescription = `
               "[![${{ steps.milestone_search.outputs.title }}](https://img.shields.io/badge/milestone-${{ steps.milestone_search.outputs.title }}-blue?style=plastic&logo=github)](${{ steps.milestone_search.outputs.url }})" +
@@ -130,7 +115,8 @@ jobs:
           echo "::set-output name=url::$( $release.html_url )";
           echo "::set-output name=tag_name::$( $release.tag_name )";
           Write-Verbose 'Adding produced files...';
-          $asset = New-GitHubReleaseAsset -Release ( $release.ID ) -Path '${{ steps.build.outputs.assetsContainerPath }}' -Verbose;
+          $assetsContainerPath = 'tmp/templatesAndDocs.zip';
+          $asset = New-GitHubReleaseAsset -Release ( $release.ID ) -Path $assetsContainerPath -Verbose;
           # Get-ChildItem -Path 'output/template'-Recurse -Filter '*.ott' | ForEach-Object {
           #   $release | New-GitHubReleaseAsset -Path ( $_.FullName ) -ContentType 'application/vnd.oasis.opendocument.text-template' -Verbose;
           # };
