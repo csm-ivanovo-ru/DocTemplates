@@ -17,7 +17,6 @@ permissions:
 jobs:
   release:
     name: Release to GihHub
-    # needs: []
     runs-on: windows-latest
     steps:
       - name: Checkout repository
@@ -36,16 +35,14 @@ jobs:
         with:
           recurse: true
 
-      - name: Install GitVersion
-        uses: gittools/actions/gitversion/setup@v0.9.11
+      - name: Generate release notes
+        id: generate_release_notes
+        uses: IT-Service/New-ReleaseNotesFromChangeLog@v1.1.0
         with:
-          versionSpec: "5.x"
-
-      - name: Determine Version
-        id: gitversion
-        uses: gittools/actions/gitversion/execute@v0.9.11
-        with:
-          useConfigFile: true
+          use-gitversion: true
+          gitversion-use-config-file: true
+          gitversion-version: "5.x"
+          verbose: true
 
       - name: Build .ott and .odt files
         id: build
@@ -53,13 +50,6 @@ jobs:
         with:
           task: "BuildAssets"
           verbose: false
-
-      - name: Generate release notes
-        id: generate_release_notes
-        uses: IT-Service/New-ReleaseNotesFromChangeLog@v1.0.0
-        with:
-          version: "${{ steps.gitversion.outputs.semVer }}"
-          verbose: true
 
       - name: Search GitHub Milestone
         id: milestone_search
@@ -73,7 +63,7 @@ jobs:
           $milestones = Get-GitHubMilestone `
             -OwnerName '${{ github.repository_owner }}' -RepositoryName '${{ github.event.repository.name }}' `
             -State All;
-          $currentMilestone = $milestones | Where-Object -Property title -EQ '${{ steps.gitversion.outputs.semVer }}';
+          $currentMilestone = $milestones | Where-Object -Property title -EQ '${{ steps.generate_release_notes.outputs.actual-version }}';
           if ( $currentMilestone ) {
             echo "::set-output name=exists::${{ true }}";
             echo "::set-output name=url::$( $currentMilestone.html_url )";
@@ -92,6 +82,7 @@ jobs:
           $GitHubToken = ( ConvertTo-SecureString -String '${{ github.token }}' -AsPlainText -Force );
           Set-GitHubAuthentication -Credential ( New-Object System.Management.Automation.PSCredential 'username is ignored', $GitHubToken ) -SessionOnly;
           Set-GitHubConfiguration -DefaultOwnerName '${{ github.repository_owner }}' -DefaultRepositoryName '${{ github.event.repository.name }}' -SessionOnly;
+          $Version = '${{ steps.generate_release_notes.outputs.actual-version }}';
           $releaseNotes = ( Get-Content -Path '${{ steps.generate_release_notes.outputs.release-notes-path }}' -Encoding UTF8 -Raw );
           if ( $${{ steps.milestone_search.outputs.exists == 'true' }} ) {
             $releaseDescription = `
@@ -101,14 +92,14 @@ jobs:
             $releaseDescription = $releaseNotes;
           };
           $release = Get-GitHubRelease `
-            -Tag '${{ steps.gitversion.outputs.semVer }}' `
+            -Tag $Version `
             -ErrorAction SilentlyContinue;
           if ( $release ) {
             Remove-GitHubRelease -Release ( $release.ID ) -Force;
           };
           $release = New-GitHubRelease `
-            -Tag '${{ steps.gitversion.outputs.semVer }}' `
-            -Name '${{ steps.gitversion.outputs.semVer }}' `
+            -Tag $Version `
+            -Name $Version `
             -Body $releaseDescription `
             -Committish '${{ github.sha }}' `
             -Verbose;
@@ -117,12 +108,6 @@ jobs:
           Write-Verbose 'Adding produced files...';
           $assetsContainerPath = 'tmp/templatesAndDocs.zip';
           $asset = New-GitHubReleaseAsset -Release ( $release.ID ) -Path $assetsContainerPath -Verbose;
-          # Get-ChildItem -Path 'output/template'-Recurse -Filter '*.ott' | ForEach-Object {
-          #   $release | New-GitHubReleaseAsset -Path ( $_.FullName ) -ContentType 'application/vnd.oasis.opendocument.text-template' -Verbose;
-          # };
-          # Get-ChildItem -Path 'output/doc'-Recurse -Filter '*.odt' | ForEach-Object {
-          #   $release | New-GitHubReleaseAsset -Path ( $_.FullName ) -ContentType 'application/vnd.oasis.opendocument.text' -Verbose;
-          # };
 
       - name: Close GitHub Milestone
         if: steps.milestone_search.outputs.exists == 'true'
@@ -133,6 +118,7 @@ jobs:
           $GitHubToken = ( ConvertTo-SecureString -String '${{ github.token }}' -AsPlainText -Force );
           Set-GitHubAuthentication -Credential ( New-Object System.Management.Automation.PSCredential 'username is ignored', $GitHubToken ) -SessionOnly;
           Set-GitHubConfiguration -DefaultOwnerName '${{ github.repository_owner }}' -DefaultRepositoryName '${{ github.event.repository.name }}' -SessionOnly;
+          $Version = '${{ steps.generate_release_notes.outputs.actual-version }}';
           $releaseNotes = ( Get-Content -Path '${{ steps.generate_release_notes.outputs.releaseNotesPath }}' -Encoding UTF8 -Raw );
           $releaseDescription = `
             "[![${{ steps.release.outputs.tag_name }}](https://img.shields.io/badge/release-${{ steps.release.outputs.tag_name }}-blue?style=plastic&logo=github)](${{ steps.release.outputs.url }})" +
@@ -140,7 +126,7 @@ jobs:
           Set-GitHubMilestone `
             -OwnerName '${{ github.repository_owner }}' -RepositoryName '${{ github.event.repository.name }}' `
             -Milestone ${{ steps.milestone_search.outputs.number }} `
-            -Title '${{ steps.gitversion.outputs.semVer }}' `
+            -Title $Version `
             -State Closed `
             -Description $releaseDescription `
             -DueOn ( Get-Date ) `
