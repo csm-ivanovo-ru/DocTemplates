@@ -48,15 +48,10 @@ jobs:
           useConfigFile: true
 
       - name: Build .ott and .odt files
-        id: build
-        shell: powershell
-        run: |
-          Import-Module -Name InvokeBuild | Out-Null;
-          Write-Information "Templates version: ${{ steps.gitversion.outputs.semVer }}" -InformationAction Continue;
-          Invoke-Build -Task Build;
-          $assetsContainerPath = 'tmp/templatesAndDocs.zip';
-          Compress-Archive -Path 'output' -DestinationPath $assetsContainerPath -Verbose;
-          echo "::set-output name=assetsContainerPath::$assetsContainerPath"
+        uses: IT-Service/Invoke-Build@v1.0.0
+        with:
+          task: "BuildAssets"
+          verbose: false
 
       - name: Generate release notes
         id: generate_release_notes

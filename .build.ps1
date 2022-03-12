@@ -182,6 +182,12 @@ task Build BuildTemplates, BuildDocs;
 
 task BuildAndOpen BuildAndOpenTemplates, BuildAndOpenDocs;
 
+task BuildAssets Build, {
+	$assetsContainerPath = 'tmp/templatesAndDocs.zip';
+	Compress-Archive -Path 'output' -DestinationPath $assetsContainerPath -Verbose;
+	Write-Output "::set-output name=assetsContainerPath::$assetsContainerPath"
+};
+
 # Synopsis: тестирование собранных шаблонов и файлов
 task Test Build, {
 	Invoke-Pester -Configuration ( Import-PowerShellDataFile -LiteralPath '.\tests\ODFValidator.pester-config.psd1' );
