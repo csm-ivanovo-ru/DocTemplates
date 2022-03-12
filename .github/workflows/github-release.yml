@@ -2,9 +2,6 @@ name: Release to GihHub
 
 on:
   push:
-    # branches:
-    #   - master
-
     tags:
       - "[0-9]+.[0-9]+.[0-9]+"
 
@@ -18,6 +15,8 @@ jobs:
   release:
     name: Release to GihHub
     runs-on: windows-latest
+    env:
+      version: "${{ github.ref_name }}"
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2.4.0
@@ -39,9 +38,7 @@ jobs:
         id: generate_release_notes
         uses: IT-Service/New-ReleaseNotesFromChangeLog@v1.1.0
         with:
-          use-gitversion: true
-          gitversion-use-config-file: true
-          gitversion-version: "5.x"
+          version: "${{ env.version }}"
           verbose: true
 
       - name: Build .ott and .odt files
@@ -60,10 +57,11 @@ jobs:
           $GitHubToken = ( ConvertTo-SecureString -String '${{ github.token }}' -AsPlainText -Force );
           Set-GitHubAuthentication -Credential ( New-Object System.Management.Automation.PSCredential 'username is ignored', $GitHubToken ) -SessionOnly;
           Set-GitHubConfiguration -DefaultOwnerName '${{ github.repository_owner }}' -DefaultRepositoryName '${{ github.event.repository.name }}' -SessionOnly;
+          $Version = '${{ env.version }}';
           $milestones = Get-GitHubMilestone `
             -OwnerName '${{ github.repository_owner }}' -RepositoryName '${{ github.event.repository.name }}' `
             -State All;
-          $currentMilestone = $milestones | Where-Object -Property title -EQ '${{ steps.generate_release_notes.outputs.actual-version }}';
+          $currentMilestone = $milestones | Where-Object -Property title -EQ $Version;
           if ( $currentMilestone ) {
             echo "::set-output name=exists::${{ true }}";
             echo "::set-output name=url::$( $currentMilestone.html_url )";
@@ -82,7 +80,7 @@ jobs:
           $GitHubToken = ( ConvertTo-SecureString -String '${{ github.token }}' -AsPlainText -Force );
           Set-GitHubAuthentication -Credential ( New-Object System.Management.Automation.PSCredential 'username is ignored', $GitHubToken ) -SessionOnly;
           Set-GitHubConfiguration -DefaultOwnerName '${{ github.repository_owner }}' -DefaultRepositoryName '${{ github.event.repository.name }}' -SessionOnly;
-          $Version = '${{ steps.generate_release_notes.outputs.actual-version }}';
+          $Version = '${{ env.version }}';
           $releaseNotes = ( Get-Content -Path '${{ steps.generate_release_notes.outputs.release-notes-path }}' -Encoding UTF8 -Raw );
           if ( $${{ steps.milestone_search.outputs.exists == 'true' }} ) {
             $releaseDescription = `
@@ -118,7 +116,7 @@ jobs:
           $GitHubToken = ( ConvertTo-SecureString -String '${{ github.token }}' -AsPlainText -Force );
           Set-GitHubAuthentication -Credential ( New-Object System.Management.Automation.PSCredential 'username is ignored', $GitHubToken ) -SessionOnly;
           Set-GitHubConfiguration -DefaultOwnerName '${{ github.repository_owner }}' -DefaultRepositoryName '${{ github.event.repository.name }}' -SessionOnly;
-          $Version = '${{ steps.generate_release_notes.outputs.actual-version }}';
+          $Version = '${{ env.version }}';
           $releaseNotes = ( Get-Content -Path '${{ steps.generate_release_notes.outputs.releaseNotesPath }}' -Encoding UTF8 -Raw );
           $releaseDescription = `
             "[![${{ steps.release.outputs.tag_name }}](https://img.shields.io/badge/release-${{ steps.release.outputs.tag_name }}-blue?style=plastic&logo=github)](${{ steps.release.outputs.url }})" +
