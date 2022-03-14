@@ -11,7 +11,7 @@ task distclean clean, {
 };
 
 [System.String] $QRCodePackagesConfig = Join-Path -Path $QRCodeToolsPath -ChildPath 'packages.config';
-[System.String] $OutputLibFiles = @(
+[System.String[]] $OutputLibFiles = @(
 	Select-Xml -LiteralPath $QRCodePackagesConfig `
 		-XPath 'packages/package' `
 	| Select-Object -ExpandProperty Node `

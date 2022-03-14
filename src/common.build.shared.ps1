@@ -28,8 +28,8 @@ if ( -not ( Test-Path variable:RepoRootPath ) -or ( [System.String]::IsNullOrEmp
 [System.String] $PreprocessedTemplatesPath = ( Join-Path -Path $TempPath -ChildPath 'template' );
 [System.String] $PreprocessedDocumentsPath = ( Join-Path -Path $TempPath -ChildPath 'doc' );
 
-[System.String] $ImagesPath = ( Join-Path -Path $RepoRootPath -ChildPath 'gallery' -Resolve );
-[System.String] $RussiaEmblemPath = ( Join-Path -Path $ImagesPath -ChildPath 'Герб' -Resolve );
+[System.String] $ImagesPath = ( Join-Path -Path $SourcePath -ChildPath 'images' -Resolve );
+[System.String] $RussiaEmblemPath = ( Join-Path -Path $ImagesPath -ChildPath 'russian-emblems' -Resolve );
 
 [System.String] $DestinationPath = ( Join-Path -Path $RepoRootPath -ChildPath 'output' );
 [System.String] $DestinationLibrariesPath = ( Join-Path -Path $DestinationPath -ChildPath 'basic' );
@@ -211,8 +211,14 @@ Function Add-BuildSubTask
 	}
 }
 
-
-[System.String] $Version = ( dotnet-gitversion /output json /showvariable SemVer );
+if ( $env:version )
+{
+	[System.String] $Version = $env:version;
+}
+else
+{
+	[System.String] $Version = ( dotnet-gitversion /output json /showvariable SemVer );
+};
 
 $JobOpenFile = {
 	$filePath = $Outputs[0];

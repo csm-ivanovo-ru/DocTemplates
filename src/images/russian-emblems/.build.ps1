@@ -20,7 +20,7 @@ if ( [System.IO.Path]::GetFileName( $MyInvocation.ScriptName ) -ne 'Invoke-Build
 	return;
 };
 
-. $PSScriptRoot/../../src/common.build.shared.ps1
+. $PSScriptRoot/../../common.build.shared.ps1
 
 task clean {
 	Remove-BuildItem $PSScriptRoot/*.zip;
@@ -30,6 +30,34 @@ task distclean clean;
 
 task maintainer-clean distclean, {
 	Remove-BuildItem $PSScriptRoot/*.svg, $PSScriptRoot/*.png;
+};
+
+[System.String] $ImagesToolsPackagesConfig = Join-Path -Path $ImagesToolsPath -ChildPath 'packages.config';
+[System.String[]] $OutputLibFiles = @(
+	Select-Xml -LiteralPath $ImagesToolsPackagesConfig `
+		-XPath 'packages/package' `
+	| Select-Object -ExpandProperty Node `
+	| ForEach-Object {
+		"$ImagesToolsPath/packages/$( $_.id ).$( $_.version )/lib/$( $_.targetFramework )/$( $_.id ).dll"
+	}
+);
+
+task Images-tools `
+	-Inputs @( $ImagesToolsPackagesConfig ) `
+	-Outputs $OutputLibFiles `
+	-Jobs nuget, {
+
+	. $NuGetPath restore $ImagesToolsPackagesConfig -PackagesDirectory "$ImagesToolsPath/packages";
+
+	foreach ( $packageFile in $Outputs )
+	{
+		if ( -not ( Test-Path -Path $packageFile ) )
+		{
+			Write-Error "Не удалось установить требуемый файл '$packageFile'.";
+		};
+		& $UpdateFileLastWriteTimePath -LiteralPath $packageFile;
+	};
+
 };
 
 foreach ( $FileId in 'emblem_black_bordered', 'emblem_black' )
@@ -94,7 +122,7 @@ foreach ( $FileId in 'emblem_black_bordered', 'emblem_black' )
 		-Outputs @( $DestPNGFileName ) `
 		-Inputs @( $DestSVGFileName ) `
 		-Before emblems `
-		-Job $SVGFileName, {
+		-Job $SVGFileName, Images-tools, {
 		$DestinationPNGFile = $Outputs[0];
 		$SourceSVGFile = $Inputs[0];
 		Write-Verbose "Convert `"$SourceSVGFile`" to `"$DestinationPNGFile`"";
