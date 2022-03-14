@@ -212,7 +212,7 @@
 		<style:style style:name="БланкОРДПервыйЛистЗаписки" style:family="paragraph" style:parent-style-name="ПервыйЛистБазовый" style:next-style-name="Основной" style:class="extra" style:master-page-name="БланкОРДПервыйЛистЗаписки">
 			<style:paragraph-properties style:page-number="1"/>
 		</style:style>
-		<style:style style:name="БланкОРДПервыйЛистПисьма" style:family="paragraph" style:parent-style-name="ПервыйЛистБазовый" style:next-style-name="Основной" style:class="extra" style:master-page-name="БланкОРДПервыйЛистПисьмаГОСТУгловой">
+		<style:style style:name="БланкОРДПервыйЛистПисьма" style:family="paragraph" style:parent-style-name="ПервыйЛистБазовый" style:next-style-name="Основной" style:class="extra" style:master-page-name="БланкОРДПервыйЛистПисьмаГОСТПродольный">
 			<style:paragraph-properties style:page-number="1"/>
 		</style:style>
 		<style:style style:name="БланкОРДПервыйЛистНаБланке" style:family="paragraph" style:parent-style-name="ПервыйЛистБазовый" style:next-style-name="Основной" style:class="extra" style:master-page-name="БланкОРДПервыйЛистНаБланке">
@@ -355,6 +355,9 @@
 		<style:style style:name="БланкНаименованиеОрганизацииВЛогоблоке" style:family="paragraph" loext:hidden="true" style:parent-style-name="БланкШапка" style:class="extra">
 			<style:paragraph-properties fo:margin-top="0.199cm" fo:margin-bottom="0cm" loext:contextual-spacing="false" fo:text-align="center"/>
 			<style:text-properties fo:text-transform="uppercase" fo:letter-spacing="0.101cm" fo:font-weight="bold"/>
+		</style:style>
+		<style:style style:name="БланкНаименованиеВедомстваВЛогоблоке" style:family="paragraph" loext:hidden="true" style:parent-style-name="БланкНаименованиеОрганизацииВЛогоблоке" style:class="extra">
+			<style:text-properties fo:font-size="10pt" fo:text-transform="none"/>
 		</style:style>
 		<style:style style:name="БланкНаименованиеСтруктурногоПодразделения" style:family="paragraph" loext:hidden="true" style:parent-style-name="БланкНаименованиеОрганизацииВЛогоблоке" style:class="extra"/>
 		<style:style style:name="БланкДИНаименованиеСтруктурногоПодразделения" style:family="paragraph" loext:hidden="true" style:parent-style-name="Standard" style:class="extra">
@@ -1024,6 +1027,12 @@
 									<style:style style:family="section">
 										<style:section-properties style:editable="false"/>
 									</style:style>
+									<text:section text:name="Бланк: Шапка: Наименование ведомства" text:protected="true">
+										<style:style style:family="section">
+											<style:section-properties style:editable="false"/>
+										</style:style>
+										<text:p text:style-name="БланкНаименованиеВедомстваВЛогоблоке">Федеральное агентство<text:line-break/>по техническому регулированию и метрологии</text:p>
+									</text:section>
 									<text:section text:name="Бланк: Шапка: Наименование организации" text:protected="true">
 										<style:style style:family="section">
 											<style:section-properties style:editable="false"/>
@@ -1497,51 +1506,7 @@
 						</style:style>
 						<draw:text-box fo:min-height="1.7cm">
 							<text:section text:name="Бланк: Шапка: Гриф, штрихкод и код формы (ПГ)" text:protected="true">
-								<!-- <text:section-source text:section-name="Бланк: Шапка: Гриф, штрихкод и код формы" xlink:type="simple" xlink:actuate="other" xlink:title="ПГ" xlink:show="replace"/> -->
-								<table:table table:name="ШтрихкодГрифКодФормыТаблица">
-									<style:style style:family="table">
-										<style:table-properties style:width="7cm" fo:break-before="auto" fo:break-after="auto" table:align="right" style:may-break-between-rows="false"/>
-									</style:style>
-									<table:table-column>
-										<style:style style:family="table-column">
-											<style:table-column-properties style:column-width="4cm"/>
-										</style:style>
-									</table:table-column>
-									<table:table-column>
-										<style:style style:family="table-column">
-											<style:table-column-properties style:column-width="3cm"/>
-										</style:style>
-									</table:table-column>
-									<table:table-row>
-										<style:style style:family="table-row">
-											<style:table-row-properties style:row-height="1.2cm"/>
-										</style:style>
-										<table:table-cell table:number-columns-spanned="2" office:value-type="string">
-											<style:style style:family="table-cell">
-												<style:table-cell-properties style:vertical-align="top" fo:padding="0cm" fo:border="none"/>
-											</style:style>
-											<text:p text:style-name="Штрихкод">ВставитьИзображениеШтрихкода</text:p>
-										</table:table-cell>
-										<table:covered-table-cell/>
-									</table:table-row>
-									<table:table-row>
-										<style:style style:family="table-row">
-											<style:table-row-properties style:row-height="0.5cm"/>
-										</style:style>
-										<table:table-cell office:value-type="string">
-											<style:style style:family="table-cell">
-												<style:table-cell-properties style:vertical-align="bottom" fo:padding="0cm" fo:border="none"/>
-											</style:style>
-											<text:p text:style-name="ГрифОграниченияДоступа"/>
-										</table:table-cell>
-										<table:table-cell office:value-type="string">
-											<style:style style:family="table-cell">
-												<style:table-cell-properties style:vertical-align="bottom" fo:padding="0cm" fo:border="none"/>
-											</style:style>
-											<text:p text:style-name="КодФормыДокумента"><text:variable-get text:name="КодФормыДокумента"/></text:p>
-										</table:table-cell>
-									</table:table-row>
-								</table:table>
+								<text:section-source text:section-name="Бланк: Шапка: Гриф, штрихкод и код формы" xlink:type="simple" xlink:actuate="other" xlink:title="ПГ" xlink:show="replace"/>
 							</text:section>
 						</draw:text-box>
 					</draw:frame><draw:frame draw:name="Бланк: Шапка (ПГ)" text:anchor-type="as-char" style:rel-width="100%" draw:z-index="17">
