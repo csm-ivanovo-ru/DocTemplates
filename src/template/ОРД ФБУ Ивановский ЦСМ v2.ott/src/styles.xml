@@ -53,6 +53,9 @@
 			<style:paragraph-properties fo:margin-top="0cm" fo:margin-bottom="0cm" loext:contextual-spacing="true" fo:text-align="center" fo:keep-together="always"/>
 			<style:text-properties fo:hyphenate="false"/>
 		</style:style>
+		<style:style style:name="БланкПередПолучателями" style:family="paragraph" loext:hidden="true" style:parent-style-name="ПустойАбзац" style:next-style-name="Addressee" style:class="extra">
+			<style:paragraph-properties fo:margin-bottom="2.5cm"/>
+		</style:style>
 		<style:style style:name="БланкФирменныйАдресат" style:family="paragraph" loext:hidden="true" style:parent-style-name="Addressee" style:class="extra">
 			<style:paragraph-properties fo:margin-top="0.6cm" fo:margin-bottom="0cm" loext:contextual-spacing="true"/>
 		</style:style>
@@ -208,6 +211,7 @@
 		<style:style style:name="БланкОРДПервыйЛистПрофессиональнойИнструкции" style:family="paragraph" style:parent-style-name="БланкОРДПервыйЛистДолжностнойИнструкции" style:class="extra"/>
 		<style:style style:name="БланкОРДПервыйЛистЗаписки" style:family="paragraph" style:parent-style-name="ПервыйЛистБазовый" style:next-style-name="Основной" style:class="extra" style:master-page-name="БланкОРДПервыйЛистЗаписки"/>
 		<style:style style:name="БланкОРДПервыйЛистПисьма" style:family="paragraph" style:parent-style-name="ПервыйЛистБазовый" style:next-style-name="Основной" style:class="extra" style:master-page-name="БланкОРДПервыйЛистПисьмаГОСТПродольный"/>
+		<style:style style:name="БланкОРДПервыйЛистПисьмаНаУгловомБланке" style:family="paragraph" style:parent-style-name="ПервыйЛистБазовый" style:next-style-name="Основной" style:class="extra" style:master-page-name="БланкОРДПервыйЛистПисьмаГОСТУгловой"/>
 		<style:style style:name="БланкОРДПервыйЛистДоверенности" style:family="paragraph" style:parent-style-name="БланкОРДПервыйЛистСИсполнителем" style:next-style-name="Основной" style:class="extra"/>
 		<style:style style:name="БланкОРДПервыйЛистСправки" style:family="paragraph" style:parent-style-name="БланкОРДПервыйЛистСИсполнителем" style:next-style-name="Основной" style:class="extra"/>
 		<style:style style:name="БланкОРДТитульныйЛист" style:family="paragraph" style:parent-style-name="ПервыйЛистБазовый" style:next-style-name="Основной" style:class="extra" style:master-page-name="БланкОРДТитульныйЛист"/>
@@ -342,10 +346,19 @@
 			<style:paragraph-properties fo:margin-top="0.199cm" fo:margin-bottom="0cm" loext:contextual-spacing="false" fo:text-align="center"/>
 			<style:text-properties fo:text-transform="uppercase" fo:letter-spacing="0.101cm" fo:font-weight="bold"/>
 		</style:style>
+		<style:style style:name="БланкУгловойНаименованиеОрганизацииВЛогоблоке" style:family="paragraph" loext:hidden="true" style:parent-style-name="БланкНаименованиеОрганизацииВЛогоблоке" style:class="extra">
+			<style:text-properties fo:font-size="70%" fo:letter-spacing="0"/>
+		</style:style>
 		<style:style style:name="БланкНаименованиеВедомстваВЛогоблоке" style:family="paragraph" loext:hidden="true" style:parent-style-name="БланкНаименованиеОрганизацииВЛогоблоке" style:class="extra">
 			<style:text-properties fo:font-size="10pt" fo:text-transform="uppercase"/>
 		</style:style>
+		<style:style style:name="БланкУгловойНаименованиеВедомстваВЛогоблоке" style:family="paragraph" loext:hidden="true" style:parent-style-name="БланкНаименованиеВедомстваВЛогоблоке" style:class="extra">
+			<style:text-properties fo:font-size="70%" fo:letter-spacing="0"/>
+		</style:style>
 		<style:style style:name="БланкНаименованиеСтруктурногоПодразделения" style:family="paragraph" loext:hidden="true" style:parent-style-name="БланкНаименованиеОрганизацииВЛогоблоке" style:class="extra"/>
+		<style:style style:name="БланкУгловойНаименованиеСтруктурногоПодразделения" style:family="paragraph" loext:hidden="true" style:parent-style-name="БланкНаименованиеСтруктурногоПодразделения" style:class="extra">
+			<style:text-properties fo:font-size="70%" fo:letter-spacing="0"/>
+		</style:style>
 		<style:style style:name="БланкДИНаименованиеСтруктурногоПодразделения" style:family="paragraph" loext:hidden="true" style:parent-style-name="Standard" style:class="extra">
 			<style:paragraph-properties fo:margin-top="2.05cm" fo:margin-bottom="0cm" loext:contextual-spacing="true" fo:line-height="150%" fo:text-align="center" fo:keep-together="always" text:number-lines="false" style:snap-to-layout-grid="false"/>
 			<style:text-properties fo:font-style="italic" fo:font-weight="bold" fo:hyphenate="false"/>
@@ -356,6 +369,9 @@
 		<style:style style:name="БланкСправочныеДанныеОбОрганизации" style:family="paragraph" loext:hidden="true" style:parent-style-name="БланкШапка" style:class="extra">
 			<style:paragraph-properties fo:margin-top="0.3cm" fo:margin-bottom="0cm" loext:contextual-spacing="true" fo:text-align="center"/>
 			<style:text-properties fo:font-size="10pt" style:letter-kerning="true" fo:hyphenate="false"/>
+		</style:style>
+		<style:style style:name="БланкУгловойСправочныеДанныеОбОрганизации" style:family="paragraph" loext:hidden="true" style:parent-style-name="БланкСправочныеДанныеОбОрганизации" style:class="extra">
+			<style:text-properties fo:font-size="70%"/>
 		</style:style>
 		<style:style style:name="БланкЛоготипыВШапке" style:family="paragraph" loext:hidden="true" style:parent-style-name="БланкШапка" style:class="extra">
 			<style:paragraph-properties style:line-height-at-least="1.7cm" fo:text-align="center"/>
@@ -402,9 +418,11 @@
 			<style:text-properties fo:font-size="9pt"/>
 		</style:style>
 		<style:style style:name="БланкРегДанныеПрефикс" style:family="paragraph" loext:hidden="true" style:parent-style-name="БланкРегДанные" style:class="extra"/>
+		<style:style style:name="БланкУгловойРегДанныеПрефикс" style:family="paragraph" loext:hidden="true" style:parent-style-name="БланкРегДанныеПрефикс" style:class="extra"/>
 		<style:style style:name="БланкРегДанныеПоля" style:family="paragraph" loext:hidden="true" style:parent-style-name="БланкРегДанные" style:class="extra">
 			<style:paragraph-properties fo:text-align="center"/>
 		</style:style>
+		<style:style style:name="БланкУгловойРегДанныеПоля" style:family="paragraph" loext:hidden="true" style:parent-style-name="БланкРегДанныеПоля" style:class="extra"/>
 		<style:style style:name="БланкРегДанныеВПодвале" style:family="paragraph" loext:hidden="true" style:parent-style-name="Footer" style:class="extra">
 			<style:paragraph-properties fo:margin-top="0cm" fo:margin-bottom="0cm" loext:contextual-spacing="true" style:line-height-at-least="0.7cm" fo:keep-together="always" text:number-lines="false"/>
 			<style:text-properties fo:font-size="8pt"/>
@@ -464,6 +482,9 @@
 		<style:style style:name="БланкВидДокумента" style:family="paragraph" loext:hidden="true" style:parent-style-name="БланкШапка" style:class="extra">
 			<style:paragraph-properties fo:margin-top="0cm" fo:margin-bottom="0.3cm" loext:contextual-spacing="true" fo:text-align="center"/>
 			<style:text-properties fo:text-transform="uppercase" fo:font-size="18pt" fo:font-weight="bold"/>
+		</style:style>
+		<style:style style:name="БланкУгловойВидДокумента" style:family="paragraph" loext:hidden="true" style:parent-style-name="БланкВидДокумента" style:class="extra">
+			<style:text-properties fo:font-size="90%"/>
 		</style:style>
 		<style:style style:name="БланкВидДокументаВоВнутреннейПереписке" style:family="paragraph" loext:hidden="true" style:parent-style-name="БланкВидДокумента" style:class="extra">
 			<style:paragraph-properties fo:text-align="start"/>
@@ -941,7 +962,7 @@
 					</style:style>
 					<text:p text:style-name="БланкШапкаКонтейнер"><draw:frame draw:name="Шапка: Гриф, штрихкод и код формы" text:anchor-type="paragraph" fo:min-width="7cm">
 						<style:style style:family="graphic" style:parent-style-name="БланкШтрихкодГрифКодФормы">
-							<style:graphic-properties style:print-content="true" style:protect="content size position" style:vertical-pos="top" style:vertical-rel="paragraph" style:horizontal-pos="right" style:horizontal-rel="paragraph"/>
+							<style:graphic-properties style:print-content="true" style:protect="content size position" style:vertical-pos="top" style:vertical-rel="paragraph" style:horizontal-pos="right" style:horizontal-rel="page-content"/>
 						</style:style>
 						<draw:text-box fo:min-height="1.7cm">
 							<text:section text:name="Шапка: Гриф, штрихкод и код формы" text:protected="true">
@@ -1666,19 +1687,18 @@
 				<text:p text:style-name="Header"/>
 			</style:header>
 			<loext:header-first>
-				<text:section text:name="Структура шапки (УГ)">
+				<text:section text:name="Шапка (УГ)">
 					<style:style style:family="section">
 						<style:section-properties text:dont-balance-text-columns="true" style:editable="false">
 							<style:columns fo:column-count="2">
-								<style:column style:rel-width="4961*" fo:start-indent="0cm" fo:end-indent="1.499cm"/>
-								<style:column style:rel-width="4962*" fo:start-indent="1.499cm" fo:end-indent="0cm"/>
+								<style:column style:rel-width="4961*" fo:start-indent="0cm" fo:end-indent="1.5cm"/>
+								<style:column style:rel-width="4962*" fo:start-indent="1.5cm" fo:end-indent="0cm"/>
 							</style:columns>
 						</style:section-properties>
 					</style:style>
-					<!-- TODO: сюда вставить из шапки логотип / герб и собственно шапку -->
 					<text:p text:style-name="БланкШапкаКонтейнер"><draw:frame draw:name="Шапка: Гриф, штрихкод и код формы (УГ)" text:anchor-type="paragraph" fo:min-width="7cm">
 						<style:style style:family="graphic" style:parent-style-name="БланкШтрихкодГрифКодФормы">
-							<style:graphic-properties style:print-content="true" style:protect="content size position" style:vertical-pos="top" style:vertical-rel="paragraph" style:horizontal-pos="right" style:horizontal-rel="paragraph"/>
+							<style:graphic-properties style:print-content="true" style:protect="content size position" style:vertical-pos="top" style:vertical-rel="paragraph" style:horizontal-pos="right" style:horizontal-rel="page-content"/>
 						</style:style>
 						<draw:text-box fo:min-height="1.7cm">
 							<text:section text:name="Шапка: Гриф, штрихкод и код формы (УГ)" text:protected="true">
@@ -1737,21 +1757,56 @@
 								<style:style style:family="section">
 									<style:section-properties style:editable="false"/>
 								</style:style>
-								<text:section text:name="Бланк: Шапка: Наименование организации и подразделения (УГ)" text:protected="true">
-									<text:section-source text:section-name="Бланк: Шапка: Наименование организации и подразделения" xlink:type="simple" xlink:actuate="other" xlink:title="ПГ" xlink:show="replace"/>
-								</text:section>
-								<text:section text:name="Справочные данные об организации (УГ)" text:protected="true">
+								<text:section text:name="Бланк: Шапка: Логоблок, наименование организации (УГ)" text:protected="true">
 									<style:style style:family="section">
 										<style:section-properties style:editable="false"/>
 									</style:style>
-										<!-- TODO: поменять стиль на специальный для углового бланка -->
-										<text:p text:style-name="БланкСправочныеДанныеОбОрганизации"><text:variable-get text:name="ОрганизацияАдрес">153000, г. Иваново, ул. Почтовая, д. 31/42</text:variable-get><text:line-break/>тел. <text:variable-get text:name="ОрганизацияТелефон">+7 (4932) 32‑84‑85</text:variable-get>,
-										факс <text:variable-get text:name="ОрганизацияФакс">+7 (4932) 41‑60‑79</text:variable-get>,
-										e-mail:<text:variable-get text:name="ОрганизацияEmail">post@ivcsm.ru </text:variable-get>;
-										<text:variable-get text:name="ОрганизацияWebСайт">https://ivcsm.ru</text:variable-get><text:line-break/>ОКПО <text:variable-get text:name="ОрганизацияОКПО">02567308</text:variable-get>,
-										ОГРН <text:variable-get text:name="ОрганизацияОГРН">1023700556990</text:variable-get>,
-										ИНН/КПП <text:variable-get text:name="ОрганизацияИНН">3731001541</text:variable-get>/<text:variable-get text:name="ОрганизацияКПП">370201001</text:variable-get></text:p>
+									<text:section text:name="Бланк: Шапка: Логотип (УГ)" text:protected="true">
+										<style:style style:family="section">
+											<style:section-properties style:editable="false"/>
+										</style:style>
+										<text:p text:style-name="БланкЛоготипыВШапке"><draw:frame draw:name="Бланк: Герб в шапке (УГ)" text:anchor-type="as-char" svg:y="0cm" svg:width="1.8cm" svg:height="2.147cm">
+											<style:style style:family="graphic" style:parent-style-name="БланкЛоготипВШапке"/>
+											<draw:image xlink:href="Pictures/russian_emblem.png" xlink:type="simple" xlink:actuate="onLoad" loext:mime-type="image/png"/>
+										</draw:frame></text:p>
+									</text:section>
+									<text:section text:name="Бланк: Шапка: Наименование организации (УГ)" text:protected="true">
+										<style:style style:family="section">
+											<style:section-properties style:editable="false"/>
+										</style:style>
+										<text:section text:name="Бланк: Шапка: Наименование ведомства (УГ)" text:protected="true">
+											<style:style style:family="section">
+												<style:section-properties style:editable="false"/>
+											</style:style>
+											<text:p text:style-name="БланкУгловойНаименованиеВедомстваВЛогоблоке">Федеральное агентство<text:line-break/>по техническому регулированию и метрологии</text:p>
+										</text:section>
+										<text:section text:name="Бланк: Шапка: Наименование организации (УГ)" text:protected="true">
+											<style:style style:family="section">
+												<style:section-properties style:editable="false"/>
+											</style:style>
+											<text:p text:style-name="БланкУгловойНаименованиеОрганизацииВЛогоблоке">Федеральное бюджетное учреждение<text:line-break/>«Государственный региональный центр<text:line-break/>стандартизации, метрологии и испытаний<text:line-break/>в Ивановской области»<text:line-break/>(<text:variable-get text:name="ОрганизацияНаименование">ФБУ «Ивановский ЦСМ»</text:variable-get>)</text:p>
+										</text:section>
+									</text:section>
 								</text:section>
+								<text:section text:name="Бланк: Шапка: Наименование структурного подразделения (УГ)" text:condition="ooow:( ПодразделениеДляБланка EQ &#34;&#34; ) OR ( ПодразделениеДляБланка EQ ОрганизацияНаименование )" text:display="condition" text:is-hidden="true" text:protected="true">
+									<style:style style:family="section">
+										<style:section-properties style:editable="false"/>
+									</style:style>
+									<text:p text:style-name="БланкУгловойНаименованиеСтруктурногоПодразделения"><text:variable-get text:name="ПодразделениеДляБланка">ФБУ «Ивановский ЦСМ»</text:variable-get></text:p>
+								</text:section>
+							</text:section>
+							<text:section text:name="Справочные данные об организации (УГ)" text:protected="true">
+								<style:style style:family="section">
+									<style:section-properties style:editable="false"/>
+								</style:style>
+								<text:p text:style-name="БланкУгловойСправочныеДанныеОбОрганизации"><text:variable-get text:name="ОрганизацияАдрес">153000, г. Иваново, ул. Почтовая, д. 31/42</text:variable-get><text:line-break/>
+								тел. <text:variable-get text:name="ОрганизацияТелефон">+7 (4932) 32‑84‑85</text:variable-get>,
+								факс <text:variable-get text:name="ОрганизацияФакс">+7 (4932) 41‑60‑79</text:variable-get><text:line-break/>
+								e-mail:<text:variable-get text:name="ОрганизацияEmail">post@ivcsm.ru</text:variable-get>,
+								<text:variable-get text:name="ОрганизацияWebСайт">https://ivcsm.ru</text:variable-get><text:line-break/>
+								ОКПО <text:variable-get text:name="ОрганизацияОКПО">02567308</text:variable-get>,
+								ОГРН <text:variable-get text:name="ОрганизацияОГРН">1023700556990</text:variable-get><text:line-break/>
+								ИНН/КПП <text:variable-get text:name="ОрганизацияИНН">3731001541</text:variable-get>/<text:variable-get text:name="ОрганизацияКПП">370201001</text:variable-get></text:p>
 							</text:section>
 							<text:p text:style-name="БланкОкончаниеШапки"/>
 						</draw:text-box>
@@ -1759,10 +1814,9 @@
 					<text:p text:style-name="БланкПослеШапки"/>
 
 					<text:p text:style-name="ПустойАбзац"/>
-					<!-- TODO: поменять стиль на специальный для углового бланка -->
 					<text:section text:name="Вид документа (УГ)" text:protected="true" text:condition="ooow:ВидДокумента EQ &#34;Письмо&#34;" text:display="condition" text:is-hidden="true">
 						<text:p text:style-name="ПустойАбзац"/>
-						<text:p text:style-name="БланкВидДокумента"><text:variable-get text:name="ВидДокумента">Письмо</text:variable-get></text:p>
+						<text:p text:style-name="БланкУгловойВидДокумента"><text:variable-get text:name="ВидДокумента">Письмо</text:variable-get></text:p>
 						<text:p text:style-name="ПустойАбзац"/>
 					</text:section>
 					<text:p text:style-name="ПустойАбзац"/>
@@ -1795,25 +1849,25 @@
 								<style:style style:family="table-cell">
 									<style:table-cell-properties style:vertical-align="bottom" fo:padding="0cm" fo:border="none"/>
 								</style:style>
-								<text:p text:style-name="БланкРегДанныеПрефикс">от</text:p>
+								<text:p text:style-name="БланкУгловойРегДанныеПрефикс">от</text:p>
 							</table:table-cell>
 							<table:table-cell office:value-type="string">
 								<style:style style:family="table-cell">
 									<style:table-cell-properties style:vertical-align="bottom" fo:padding="0cm" fo:border-left="none" fo:border-right="none" fo:border-top="none" fo:border-bottom="0.5pt solid #000000"/>
 								</style:style>
-								<text:p text:style-name="БланкРегДанныеПоля"><text:hidden-paragraph text:condition="ooow:( ЭтоИсходящийДокумент EQ &#34;ИСТИНА&#34; )" text:is-hidden="true"/><text:span text:style-name="БланкДатаРегистрации"><text:s/></text:span><text:span text:style-name="БланкДатаРегистрации"><text:variable-get text:name="ДатаРегистрации">29.05.2020</text:variable-get></text:span><text:span text:style-name="БланкДатаРегистрации"><text:s/></text:span></text:p>
+								<text:p text:style-name="БланкУгловойРегДанныеПоля"><text:hidden-paragraph text:condition="ooow:( ЭтоИсходящийДокумент EQ &#34;ИСТИНА&#34; )" text:is-hidden="true"/><text:span text:style-name="БланкДатаРегистрации"><text:s/></text:span><text:span text:style-name="БланкДатаРегистрации"><text:variable-get text:name="ДатаРегистрации">29.05.2020</text:variable-get></text:span><text:span text:style-name="БланкДатаРегистрации"><text:s/></text:span></text:p>
 							</table:table-cell>
 							<table:table-cell office:value-type="string">
 								<style:style style:family="table-cell">
 									<style:table-cell-properties style:vertical-align="bottom" fo:padding="0cm" fo:border="none"/>
 								</style:style>
-								<text:p text:style-name="БланкРегДанныеПрефикс">№</text:p>
+								<text:p text:style-name="БланкУгловойРегДанныеПрефикс">№</text:p>
 							</table:table-cell>
 							<table:table-cell office:value-type="string">
 								<style:style style:family="table-cell">
 									<style:table-cell-properties style:vertical-align="bottom" fo:padding="0cm" fo:border-left="none" fo:border-right="none" fo:border-top="none" fo:border-bottom="0.5pt solid #000000"/>
 								</style:style>
-								<text:p text:style-name="БланкРегДанныеПоля"><text:hidden-paragraph text:condition="ooow:( ЭтоИсходящийДокумент EQ &#34;ИСТИНА&#34; )" text:is-hidden="true"/><text:span text:style-name="БланкРегНомер"><text:s/></text:span><text:span text:style-name="БланкРегНомер"><text:variable-get text:name="РегистрационныйНомер">460/20-84/1999-2020</text:variable-get></text:span><text:span text:style-name="БланкРегНомер"><text:s/></text:span></text:p>
+								<text:p text:style-name="БланкУгловойРегДанныеПоля"><text:hidden-paragraph text:condition="ooow:( ЭтоИсходящийДокумент EQ &#34;ИСТИНА&#34; )" text:is-hidden="true"/><text:span text:style-name="БланкРегНомер"><text:s/></text:span><text:span text:style-name="БланкРегНомер"><text:variable-get text:name="РегистрационныйНомер">460/20-84/1999-2020</text:variable-get></text:span><text:span text:style-name="БланкРегНомер"><text:s/></text:span></text:p>
 							</table:table-cell>
 						</table:table-row>
 						<table:table-row>
@@ -1821,29 +1875,29 @@
 								<style:style style:family="table-cell">
 									<style:table-cell-properties style:vertical-align="bottom" fo:padding="0cm" fo:border="none"/>
 								</style:style>
-								<text:p text:style-name="БланкРегДанныеПрефикс">На №</text:p>
+								<text:p text:style-name="БланкУгловойРегДанныеПрефикс">На №</text:p>
 							</table:table-cell>
 							<table:table-cell office:value-type="string">
 								<style:style style:family="table-cell">
 									<style:table-cell-properties style:vertical-align="bottom" fo:padding="0cm" fo:border-left="none" fo:border-right="none" fo:border-top="none" fo:border-bottom="0.5pt solid #000000"/>
 								</style:style>
-								<text:p text:style-name="БланкРегДанныеПоля"><text:span text:style-name="БланкРегНомер"><text:s/></text:span><text:span text:style-name="БланкРегНомер"><text:variable-get text:name="ВОтветНаНомер"> </text:variable-get></text:span><text:span text:style-name="БланкРегНомер"><text:s/></text:span></text:p>
+								<text:p text:style-name="БланкУгловойРегДанныеПоля"><text:span text:style-name="БланкРегНомер"><text:s/></text:span><text:span text:style-name="БланкРегНомер"><text:variable-get text:name="ВОтветНаНомер"> </text:variable-get></text:span><text:span text:style-name="БланкРегНомер"><text:s/></text:span></text:p>
 							</table:table-cell>
 							<table:table-cell office:value-type="string">
 								<style:style style:family="table-cell">
 									<style:table-cell-properties style:vertical-align="bottom" fo:padding="0cm" fo:border="none"/>
 								</style:style>
-								<text:p text:style-name="БланкРегДанныеПрефикс">от</text:p>
+								<text:p text:style-name="БланкУгловойРегДанныеПрефикс">от</text:p>
 							</table:table-cell>
 							<table:table-cell office:value-type="string">
 								<style:style style:family="table-cell">
 									<style:table-cell-properties style:vertical-align="bottom" fo:padding="0cm" fo:border-left="none" fo:border-right="none" fo:border-top="none" fo:border-bottom="0.5pt solid #000000"/>
 								</style:style>
-								<text:p text:style-name="БланкРегДанныеПоля"><text:span text:style-name="БланкДатаРегистрации"><text:s/></text:span><text:span text:style-name="БланкДатаРегистрации"><text:variable-get text:name="ВОтветНаДату"> </text:variable-get></text:span><text:span text:style-name="БланкДатаРегистрации"><text:s/></text:span></text:p>
+								<text:p text:style-name="БланкУгловойРегДанныеПоля"><text:span text:style-name="БланкДатаРегистрации"><text:s/></text:span><text:span text:style-name="БланкДатаРегистрации"><text:variable-get text:name="ВОтветНаДату"> </text:variable-get></text:span><text:span text:style-name="БланкДатаРегистрации"><text:s/></text:span></text:p>
 							</table:table-cell>
 						</table:table-row>
 					</table:table>
-					<text:p text:style-name="БланкЗаголовокДокументаВПереписке"><draw:frame draw:name="Заголовок документа" text:anchor-type="as-char" svg:y="0cm" style:rel-width="100%" draw:z-index="10">
+					<text:p text:style-name="БланкУгловойЗаголовокДокументаВПереписке"><draw:frame draw:name="Заголовок документа" text:anchor-type="as-char" svg:y="0cm" style:rel-width="100%" draw:z-index="10">
 						<style:style style:family="graphic" style:parent-style-name="БланкПолеЗаголовокДокументаВПереписке">
 							<style:graphic-properties style:vertical-pos="from-top" style:horizontal-pos="from-left" style:horizontal-rel="paragraph-content" loext:rel-width-rel="paragraph"/>
 						</style:style>
@@ -1920,8 +1974,7 @@
 						</draw:text-box>
 					</draw:frame></text:p>
 					<text:p text:style-name="КонецКолонки"/>
-					<!-- TODO: сюда вставить из шапки гриф доступа и код формы -->
-					<text:p text:style-name="ПустойАбзац"/>
+					<text:p text:style-name="БланкПередПолучателями"/>
 					<text:p text:style-name="Addressee"><text:variable-get text:name="Получатели">Кому</text:variable-get></text:p>
 					<text:p text:style-name="ПустойАбзац"/>
 				</text:section>
