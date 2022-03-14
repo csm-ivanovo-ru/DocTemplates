@@ -36,7 +36,7 @@ task Build-rustest.spb.ru.png {
 
 task rustest.spb.ru.png `
 	-Inputs @( "$DestinationQRCodesURIPath/rustest.spb.ru.png" ) `
-	-Outputs @( "$SourceTemplatePath/Pictures/1000000000000025000000257FD278A9E707D95C.png" ) `
+	-Outputs @( "$SourceTemplatePath/Pictures/org-qr.png" ) `
 	-Jobs Build-rustest.spb.ru.png, {
 	Copy-Item -LiteralPath $Inputs[0] -Destination $Outputs[0] -Force `
 		-Verbose:( $PSCmdlet.MyInvocation.BoundParameters['Verbose'] -eq $true );
