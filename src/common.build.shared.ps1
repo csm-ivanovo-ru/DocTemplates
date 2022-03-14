@@ -217,7 +217,7 @@ if ( $env:version )
 }
 else
 {
-	[System.String] $Version = ( dotnet-gitversion /output json /showvariable SemVer );
+	[System.String] $Version = ( gitversion /output json /showvariable SemVer );
 };
 
 $JobOpenFile = {
