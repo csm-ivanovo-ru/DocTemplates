@@ -211,8 +211,14 @@ Function Add-BuildSubTask
 	}
 }
 
-
-[System.String] $Version = ( dotnet-gitversion /output json /showvariable SemVer );
+if ( $env:version )
+{
+	[System.String] $Version = $env:version;
+}
+else
+{
+	[System.String] $Version = ( dotnet-gitversion /output json /showvariable SemVer );
+};
 
 $JobOpenFile = {
 	$filePath = $Outputs[0];
