@@ -343,7 +343,7 @@
 			<style:text-properties fo:text-transform="uppercase" fo:letter-spacing="0.101cm" fo:font-weight="bold"/>
 		</style:style>
 		<style:style style:name="БланкНаименованиеВедомстваВЛогоблоке" style:family="paragraph" loext:hidden="true" style:parent-style-name="БланкНаименованиеОрганизацииВЛогоблоке" style:class="extra">
-			<style:text-properties fo:font-size="10pt" fo:text-transform="none"/>
+			<style:text-properties fo:font-size="10pt" fo:text-transform="uppercase"/>
 		</style:style>
 		<style:style style:name="БланкНаименованиеСтруктурногоПодразделения" style:family="paragraph" loext:hidden="true" style:parent-style-name="БланкНаименованиеОрганизацииВЛогоблоке" style:class="extra"/>
 		<style:style style:name="БланкДИНаименованиеСтруктурногоПодразделения" style:family="paragraph" loext:hidden="true" style:parent-style-name="Standard" style:class="extra">
