@@ -22,30 +22,32 @@
 ### Изменено
 
 - логотип организации заменён на Герб РФ
-  [#1](https://github.com/csm-ivanovo-ru/DocTemplates/issues/1)
+  [csm-ivanovo-ru/DocTemplates#1](https://github.com/csm-ivanovo-ru/DocTemplates/issues/1)
 - исправлено оформление вида документа во внутренней переписке
   (по ГОСТ Р 7.0.97-2016)
-  [#3](https://github.com/csm-ivanovo-ru/DocTemplates/issues/3)
+  [csm-ivanovo-ru/DocTemplates#3](https://github.com/csm-ivanovo-ru/DocTemplates/issues/3)
 - оформление первого листа должностной инструкции приведено в соответствие
   с ГОСТ Р 7.0.97-2016
-  [#3](https://github.com/csm-ivanovo-ru/DocTemplates/issues/3)
+  [csm-ivanovo-ru/DocTemplates#3](https://github.com/csm-ivanovo-ru/DocTemplates/issues/3)
 - нормализованы разделы "Сведения об исполнителе и деле"
 - нормализованы разделы первого листа служебных записок
   и горизонтального бланка письма по ГОСТ Р 7.0.97-2016
 - добавлена информация о федеральном агентстве
-  [#3](https://github.com/csm-ivanovo-ru/DocTemplates/issues/3)
+  [csm-ivanovo-ru/DocTemplates#3](https://github.com/csm-ivanovo-ru/DocTemplates/issues/3)
 - убран бланк должностной / профессиональной инструкции
   (переведёны на продольный бланк по ГОСТ Р 7.0.97-2016)
-  [#3](https://github.com/csm-ivanovo-ru/DocTemplates/issues/3)
+  [csm-ivanovo-ru/DocTemplates#3](https://github.com/csm-ivanovo-ru/DocTemplates/issues/3)
 - убран бланк доверенности / справки на фирменном бланке
   (переведены на продольный бланк по ГОСТ Р 7.0.97-2016)
-  [#3](https://github.com/csm-ivanovo-ru/DocTemplates/issues/3)
+  [csm-ivanovo-ru/DocTemplates#3](https://github.com/csm-ivanovo-ru/DocTemplates/issues/3)
 
 ### Исправлено
 
 - восстановлено выравнивание подписей для Libre Writer 7.1+
   (добавлена опция `TabOverSpacing`)
   [csm-ivanovo-ru/DocTemplates#2](https://github.com/csm-ivanovo-ru/DocTemplates/issues/2)
+- устранены ошибки при использовании `GitVersion`
+  [csm-ivanovo-ru/DocTemplates#12](https://github.com/csm-ivanovo-ru/DocTemplates/issues/12)
 
 ## [2.9.11]
 

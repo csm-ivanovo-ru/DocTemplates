@@ -51,6 +51,9 @@ if ( -not ( Test-Path variable:RepoRootPath ) -or ( [System.String]::IsNullOrEmp
 [System.String] $BuildToolsPath = ( Join-Path -Path $ToolsPath -ChildPath 'build' -Resolve );
 [System.String] $UpdateFileLastWriteTimePath = ( Join-Path -Path $BuildToolsPath -ChildPath 'Update-FileLastWriteTime.ps1' -Resolve );
 
+[System.String] $GitVersionToolsPath = ( Join-Path -Path $ToolsPath -ChildPath 'GitVersion' -Resolve );
+[System.String] $GetGitVersionToolsPath = ( Join-Path -Path $GitVersionToolsPath -ChildPath 'Get-GitVersionSemVer.ps1' -Resolve );
+
 [System.String] $XSLTToolsPath = ( Join-Path -Path $ToolsPath -ChildPath 'xslt' -Resolve );
 
 [System.String] $DocsToolsPath = ( Join-Path -Path $ToolsPath -ChildPath 'docs' -Resolve );
@@ -217,7 +220,7 @@ if ( $env:version )
 }
 else
 {
-	[System.String] $Version = ( gitversion /output json /showvariable SemVer );
+	[System.String] $Version = ( & $GetGitVersionToolsPath );
 };
 
 $JobOpenFile = {
