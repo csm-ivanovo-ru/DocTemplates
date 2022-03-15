@@ -346,11 +346,17 @@
 			<style:paragraph-properties fo:margin-top="0.199cm" fo:margin-bottom="0cm" loext:contextual-spacing="false" fo:text-align="center"/>
 			<style:text-properties fo:text-transform="uppercase" fo:letter-spacing="0.101cm" fo:font-weight="bold"/>
 		</style:style>
+		<style:style style:name="БланкНаименованиеОрганизацииКраткоеВЛогоблоке" style:family="paragraph" loext:hidden="true" style:parent-style-name="БланкНаименованиеОрганизацииВЛогоблоке" style:class="extra">
+			<style:text-properties fo:font-weight="normal"/>
+		</style:style>
 		<style:style style:name="БланкУгловойНаименованиеОрганизацииВЛогоблоке" style:family="paragraph" loext:hidden="true" style:parent-style-name="БланкНаименованиеОрганизацииВЛогоблоке" style:class="extra">
 			<style:text-properties fo:font-size="70%" fo:letter-spacing="0"/>
 		</style:style>
+		<style:style style:name="БланкУгловойНаименованиеОрганизацииКраткоеВЛогоблоке" style:family="paragraph" loext:hidden="true" style:parent-style-name="БланкУгловойНаименованиеОрганизацииВЛогоблоке" style:class="extra">
+			<style:text-properties fo:font-weight="normal"/>
+		</style:style>
 		<style:style style:name="БланкНаименованиеВедомстваВЛогоблоке" style:family="paragraph" loext:hidden="true" style:parent-style-name="БланкНаименованиеОрганизацииВЛогоблоке" style:class="extra">
-			<style:text-properties fo:font-size="10pt" fo:text-transform="uppercase"/>
+			<style:text-properties fo:font-size="9pt" fo:text-transform="uppercase" fo:font-weight="normal"/>
 		</style:style>
 		<style:style style:name="БланкУгловойНаименованиеВедомстваВЛогоблоке" style:family="paragraph" loext:hidden="true" style:parent-style-name="БланкНаименованиеВедомстваВЛогоблоке" style:class="extra">
 			<style:text-properties fo:font-size="70%" fo:letter-spacing="0"/>
@@ -1048,7 +1054,8 @@
 											<style:style style:family="section">
 												<style:section-properties style:editable="false"/>
 											</style:style>
-											<text:p text:style-name="БланкНаименованиеОрганизацииВЛогоблоке">Федеральное бюджетное учреждение<text:line-break/>«Государственный региональный центр<text:line-break/>стандартизации, метрологии и испытаний<text:line-break/>в Ивановской области»<text:line-break/>(<text:variable-get text:name="ОрганизацияНаименование">ФБУ «Ивановский ЦСМ»</text:variable-get>)</text:p>
+											<text:p text:style-name="БланкНаименованиеОрганизацииВЛогоблоке">Федеральное бюджетное учреждение<text:line-break/>«Государственный региональный центр<text:line-break/>стандартизации, метрологии и испытаний<text:line-break/>в Ивановской области»</text:p>
+											<text:p text:style-name="БланкНаименованиеОрганизацииКраткоеВЛогоблоке">(<text:variable-get text:name="ОрганизацияНаименование">ФБУ «Ивановский ЦСМ»</text:variable-get>)</text:p>
 										</text:section>
 									</text:section>
 								</text:section>
@@ -1784,7 +1791,8 @@
 											<style:style style:family="section">
 												<style:section-properties style:editable="false"/>
 											</style:style>
-											<text:p text:style-name="БланкУгловойНаименованиеОрганизацииВЛогоблоке">Федеральное бюджетное учреждение<text:line-break/>«Государственный региональный центр<text:line-break/>стандартизации, метрологии и испытаний<text:line-break/>в Ивановской области»<text:line-break/>(<text:variable-get text:name="ОрганизацияНаименование">ФБУ «Ивановский ЦСМ»</text:variable-get>)</text:p>
+											<text:p text:style-name="БланкУгловойНаименованиеОрганизацииВЛогоблоке">Федеральное бюджетное учреждение<text:line-break/>«Государственный региональный центр<text:line-break/>стандартизации, метрологии и испытаний<text:line-break/>в Ивановской области»</text:p>
+											<text:p text:style-name="БланкУгловойНаименованиеОрганизацииКраткоеВЛогоблоке">(<text:variable-get text:name="ОрганизацияНаименование">ФБУ «Ивановский ЦСМ»</text:variable-get>)</text:p>
 										</text:section>
 									</text:section>
 								</text:section>
