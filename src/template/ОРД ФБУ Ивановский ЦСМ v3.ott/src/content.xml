@@ -221,76 +221,55 @@
 					</text:list-item>
 				</text:list>
 			</text:section>
-			<text:section text:name="Подписи">
-				<style:style style:family="section">
-					<style:section-properties style:editable="false">
-						<style:columns fo:column-count="1" fo:column-gap="0cm"/>
-					</style:section-properties>
-				</style:style>
-				<text:p text:style-name="Подпись2"><text:span text:style-name="Подпись2Должность"><text:variable-get text:name="ПодписалДолжностьИП">ПодписалДолжностьИП</text:variable-get></text:span><text:span text:style-name="Подпись2МестоДляПодписи"><text:tab/></text:span><text:span text:style-name="Подпись2ФИО"><text:variable-get text:name="ПодписалПредставлениеВПодписиИП">ПодписалПредставлениеВПодписиИП</text:variable-get></text:span></text:p>
+			<text:section text:name="Подпись">
+				<text:section-source text:section-name="Шаблон: подпись во внутреннем документе" xlink:type="simple" xlink:actuate="other" xlink:show="embed"/>
 			</text:section>
 			<text:section text:name="Визы и сведения об ознакомлении">
 				<style:style style:family="section">
-					<style:section-properties style:editable="false">
-						<style:columns fo:column-count="1" fo:column-gap="0cm"/>
-					</style:section-properties>
+					<style:section-properties style:editable="false"/>
 				</style:style>
 				<text:p text:style-name="БланкОРДЛНАЛистСогласования"/>
 				<text:section text:name="Визы">
 					<style:style style:family="section">
-						<style:section-properties style:editable="false">
-							<style:columns fo:column-count="1" fo:column-gap="0cm"/>
-						</style:section-properties>
+						<style:section-properties style:editable="false"/>
 					</style:style>
 					<text:p text:style-name="Виза2"><text:span text:style-name="Виза2Должность">Начальник юридического отдела</text:span><text:span text:style-name="Виза2МестоДляПодписи"><text:tab/></text:span><text:span text:style-name="Виза2ФИО">Е.А. Кузнецова</text:span></text:p>
 					<text:section text:name="Поле даты">
 						<style:style style:family="section">
-							<style:section-properties style:editable="false">
-								<style:columns fo:column-count="1" fo:column-gap="0cm"/>
-							</style:section-properties>
+							<style:section-properties style:editable="false"/>
 						</style:style>
 						<text:section-source text:section-name="Шаблон: поле даты в сведениях об ознакомлении" xlink:type="simple" xlink:actuate="other" xlink:title="ЮрОтд" xlink:show="replace"/>
 					</text:section>
 				</text:section>
 				<text:section text:name="Сведения об экземплярах">
 					<style:style style:family="section">
-						<style:section-properties style:editable="false">
-							<style:columns fo:column-count="1" fo:column-gap="0cm"/>
-						</style:section-properties>
+						<style:section-properties style:editable="false"/>
 					</style:style>
 					<text:p text:style-name="СведенияОбЭкземплярах">Отпечатано: 1 экз. – дело _____</text:p>
 				</text:section>
 				<text:section text:name="Сведения об ознакомлении">
 					<style:style style:family="section">
-						<style:section-properties style:editable="false">
-							<style:columns fo:column-count="1" fo:column-gap="0cm"/>
-						</style:section-properties>
+						<style:section-properties style:editable="false"/>
 					</style:style>
 					<text:p text:style-name="ЗаголовокСведенийОбОзнакомлении">С приказом ознакомлены:</text:p>
 					<text:p text:style-name="ЗаписьОбОзнакомлении2"><text:span text:style-name="ЗаписьОбОзнакомлении2Должность">Директор</text:span><text:span text:style-name="ЗаписьОбОзнакомлении2МестоДляПодписи"><text:tab/></text:span><text:span text:style-name="ЗаписьОбОзнакомлении2ФИО">Д.И. Кудрявцев</text:span></text:p>
 					<text:section text:name="Поле даты">
 						<style:style style:family="section">
-							<style:section-properties style:editable="false">
-								<style:columns fo:column-count="1" fo:column-gap="0cm"/>
-							</style:section-properties>
+							<style:section-properties style:editable="false"/>
 						</style:style>
 						<text:section-source text:section-name="Шаблон: поле даты в сведениях об ознакомлении" xlink:type="simple" xlink:actuate="other" xlink:title="Пр" xlink:show="replace"/>
 					</text:section>
 					<text:p text:style-name="ЗаписьОбОзнакомлении2"><text:span text:style-name="ЗаписьОбОзнакомлении2Должность">Начальник юридического отдела</text:span><text:span text:style-name="ЗаписьОбОзнакомлении2МестоДляПодписи"><text:tab/></text:span><text:span text:style-name="ЗаписьОбОзнакомлении2ФИО">Е.А. Кузнецова</text:span></text:p>
 					<text:section text:name="Поле даты">
 						<style:style style:family="section">
-							<style:section-properties style:editable="false">
-								<style:columns fo:column-count="1" fo:column-gap="0cm"/>
-							</style:section-properties>
+							<style:section-properties style:editable="false"/>
 						</style:style>
 						<text:section-source text:section-name="Шаблон: поле даты в сведениях об ознакомлении" xlink:type="simple" xlink:actuate="other" xlink:title="Пр" xlink:show="replace"/>
 					</text:section>
 					<text:p text:style-name="ЗаписьОбОзнакомлении2"><text:span text:style-name="ЗаписьОбОзнакомлении2Должность">Начальник сектора планово-экономической работы бухгалтерско-финансового отдела №483</text:span><text:span text:style-name="ЗаписьОбОзнакомлении2МестоДляПодписи"><text:tab/></text:span><text:span text:style-name="ЗаписьОбОзнакомлении2ФИО">О.В. Гарбузова</text:span></text:p>
 					<text:section text:name="Поле даты">
 						<style:style style:family="section">
-							<style:section-properties style:editable="false">
-								<style:columns fo:column-count="1" fo:column-gap="0cm"/>
-							</style:section-properties>
+							<style:section-properties style:editable="false"/>
 						</style:style>
 						<text:section-source text:section-name="Шаблон: поле даты в сведениях об ознакомлении" xlink:type="simple" xlink:actuate="other" xlink:title="Пр" xlink:show="replace"/>
 					</text:section>
@@ -300,9 +279,7 @@
 			<!-- #region(collapsed) Пример положения о подразделении -->
 			<text:section text:name="Служебный" text:display="none">
 				<style:style style:family="section">
-					<style:section-properties style:editable="false">
-						<style:columns fo:column-count="1" fo:column-gap="0cm"/>
-					</style:section-properties>
+					<style:section-properties style:editable="false"/>
 				</style:style>
 				<text:p text:style-name="НачалоСлужебнойСтраницы"/>
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ВидДокумента" office:value-type="string">Положение</text:variable-set></text:p>
@@ -795,60 +772,43 @@
 					</text:list-item>
 				</text:list>
 			</text:section>
-			<text:section text:name="Подписи">
-				<style:style style:family="section">
-					<style:section-properties style:editable="false">
-						<style:columns fo:column-count="1" fo:column-gap="0cm"/>
-					</style:section-properties>
-				</style:style>
-				<text:p text:style-name="Подпись2"><text:span text:style-name="Подпись2Должность"><text:variable-get text:name="ПодписалДолжностьИП">ПодписалДолжностьИП</text:variable-get></text:span><text:span text:style-name="Подпись2МестоДляПодписи"><text:tab/></text:span><text:span text:style-name="Подпись2ФИО"><text:variable-get text:name="ПодписалПредставлениеВПодписиИП">ПодписалПредставлениеВПодписиИП</text:variable-get></text:span></text:p>
+			<text:section text:name="Подпись">
+				<text:section-source text:section-name="Шаблон: подпись во внутреннем документе" xlink:type="simple" xlink:actuate="other" xlink:show="embed"/>
 			</text:section>
 			<text:section text:name="Визы и сведения об ознакомлении">
 				<style:style style:family="section">
-					<style:section-properties style:editable="false">
-						<style:columns fo:column-count="1" fo:column-gap="0cm"/>
-					</style:section-properties>
+					<style:section-properties style:editable="false"/>
 				</style:style>
 				<text:p text:style-name="БланкОРДЛистСогласования"/>
 				<text:section text:name="Визы">
 					<style:style style:family="section">
-						<style:section-properties style:editable="false">
-							<style:columns fo:column-count="1" fo:column-gap="0cm"/>
-						</style:section-properties>
+						<style:section-properties style:editable="false"/>
 					</style:style>
 					<text:p text:style-name="ЗаголовокВиз">Согласовано:</text:p>
 					<text:p text:style-name="Виза2"><text:span text:style-name="Виза2Должность">Начальник юридического отдела</text:span><text:span text:style-name="Виза2МестоДляПодписи"><text:tab/></text:span><text:span text:style-name="Виза2ФИО">Е.А. Кузнецова</text:span></text:p>
 					<text:section text:name="Поле даты">
 						<style:style style:family="section">
-							<style:section-properties style:editable="false">
-								<style:columns fo:column-count="1" fo:column-gap="0cm"/>
-							</style:section-properties>
+							<style:section-properties style:editable="false"/>
 						</style:style>
 						<text:section-source text:section-name="Шаблон: поле даты в сведениях об ознакомлении" xlink:type="simple" xlink:actuate="other" xlink:title="ЮрОтд" xlink:show="replace"/>
 					</text:section>
 					<text:p text:style-name="Виза2"><text:span text:style-name="Виза2Должность">Начальник сектора планово-экономической работы бухгалтерско-финансового отдела №483</text:span><text:span text:style-name="Виза2МестоДляПодписи"><text:tab/></text:span><text:span text:style-name="Виза2ФИО">О.В. Гарбузова</text:span></text:p>
 					<text:section text:name="Поле даты">
 						<style:style style:family="section">
-							<style:section-properties style:editable="false">
-								<style:columns fo:column-count="1" fo:column-gap="0cm"/>
-							</style:section-properties>
+							<style:section-properties style:editable="false"/>
 						</style:style>
 						<text:section-source text:section-name="Шаблон: поле даты в сведениях об ознакомлении" xlink:type="simple" xlink:actuate="other" xlink:title="ПЭО" xlink:show="replace"/>
 					</text:section>
 				</text:section>
 				<text:section text:name="Сведения об ознакомлении">
 					<style:style style:family="section">
-						<style:section-properties style:editable="false">
-							<style:columns fo:column-count="1" fo:column-gap="0cm"/>
-						</style:section-properties>
+						<style:section-properties style:editable="false"/>
 					</style:style>
 					<text:p text:style-name="ЗаголовокСведенийОбОзнакомлении">Ознакомлены:</text:p>
 					<text:p text:style-name="ЗаписьОбОзнакомлении2"><text:span text:style-name="ЗаписьОбОзнакомлении2Должность">Начальник сектора по обеспечению функционирования филиала</text:span><text:span text:style-name="ЗаписьОбОзнакомлении2МестоДляПодписи"><text:tab/></text:span><text:span text:style-name="ЗаписьОбОзнакомлении2ФИО">С.Э. Гущин</text:span></text:p>
 					<text:section text:name="Поле даты">
 						<style:style style:family="section">
-							<style:section-properties style:editable="false">
-								<style:columns fo:column-count="1" fo:column-gap="0cm"/>
-							</style:section-properties>
+							<style:section-properties style:editable="false"/>
 						</style:style>
 						<text:section-source text:section-name="Шаблон: поле даты в сведениях об ознакомлении" xlink:type="simple" xlink:actuate="other" xlink:title="ПП" xlink:show="replace"/>
 					</text:section>
@@ -1326,60 +1286,43 @@
 					</text:list-item>
 				</text:list>
 			</text:section>
-			<text:section text:name="Подписи">
-				<style:style style:family="section">
-					<style:section-properties style:editable="false">
-						<style:columns fo:column-count="1" fo:column-gap="0cm"/>
-					</style:section-properties>
-				</style:style>
-				<text:p text:style-name="Подпись2"><text:span text:style-name="Подпись2Должность"><text:variable-get text:name="ПодписалДолжностьИП">ПодписалДолжностьИП</text:variable-get></text:span><text:span text:style-name="Подпись2МестоДляПодписи"><text:tab/></text:span><text:span text:style-name="Подпись2ФИО"><text:variable-get text:name="ПодписалПредставлениеВПодписиИП">ПодписалПредставлениеВПодписиИП</text:variable-get></text:span></text:p>
+			<text:section text:name="Подпись">
+				<text:section-source text:section-name="Шаблон: подпись во внутреннем документе" xlink:type="simple" xlink:actuate="other" xlink:show="embed"/>
 			</text:section>
 			<text:section text:name="Визы и сведения об ознакомлении">
 				<style:style style:family="section">
-					<style:section-properties style:editable="false">
-						<style:columns fo:column-count="1" fo:column-gap="0cm"/>
-					</style:section-properties>
+					<style:section-properties style:editable="false"/>
 				</style:style>
 				<text:p text:style-name="БланкОРДЛистСогласования"/>
 				<text:section text:name="Визы">
 					<style:style style:family="section">
-						<style:section-properties style:editable="false">
-							<style:columns fo:column-count="1" fo:column-gap="0cm"/>
-						</style:section-properties>
+						<style:section-properties style:editable="false"/>
 					</style:style>
 					<text:p text:style-name="ЗаголовокВиз">Согласовано:</text:p>
 					<text:p text:style-name="Виза2"><text:span text:style-name="Виза2Должность">Начальник юридического отдела</text:span><text:span text:style-name="Виза2МестоДляПодписи"><text:tab/></text:span><text:span text:style-name="Виза2ФИО">Е.А. Кузнецова</text:span></text:p>
 					<text:section text:name="Поле даты">
 						<style:style style:family="section">
-							<style:section-properties style:editable="false">
-								<style:columns fo:column-count="1" fo:column-gap="0cm"/>
-							</style:section-properties>
+							<style:section-properties style:editable="false"/>
 						</style:style>
 						<text:section-source text:section-name="Шаблон: поле даты в сведениях об ознакомлении" xlink:type="simple" xlink:actuate="other" xlink:title="ЮрОтд" xlink:show="replace"/>
 					</text:section>
 					<text:p text:style-name="Виза2"><text:span text:style-name="Виза2Должность">Начальник сектора планово-экономической работы бухгалтерско-финансового отдела №483</text:span><text:span text:style-name="Виза2МестоДляПодписи"><text:tab/></text:span><text:span text:style-name="Виза2ФИО">О.В. Гарбузова</text:span></text:p>
 					<text:section text:name="Поле даты">
 						<style:style style:family="section">
-							<style:section-properties style:editable="false">
-								<style:columns fo:column-count="1" fo:column-gap="0cm"/>
-							</style:section-properties>
+							<style:section-properties style:editable="false"/>
 						</style:style>
 						<text:section-source text:section-name="Шаблон: поле даты в сведениях об ознакомлении" xlink:type="simple" xlink:actuate="other" xlink:title="ПЭО" xlink:show="replace"/>
 					</text:section>
 				</text:section>
 				<text:section text:name="Сведения об ознакомлении">
 					<style:style style:family="section">
-						<style:section-properties style:editable="false">
-							<style:columns fo:column-count="1" fo:column-gap="0cm"/>
-						</style:section-properties>
+						<style:section-properties style:editable="false"/>
 					</style:style>
 					<text:p text:style-name="ЗаголовокСведенийОбОзнакомлении">Ознакомлены:</text:p>
 					<text:p text:style-name="ЗаписьОбОзнакомлении2"><text:span text:style-name="ЗаписьОбОзнакомлении2Должность">Инженер 2 категории</text:span><text:span text:style-name="ЗаписьОбОзнакомлении2МестоДляПодписи"><text:tab/></text:span><text:span text:style-name="ЗаписьОбОзнакомлении2ФИО">О.Г. Григорьев</text:span></text:p>
 					<text:section text:name="Поле даты">
 						<style:style style:family="section">
-							<style:section-properties style:editable="false">
-								<style:columns fo:column-count="1" fo:column-gap="0cm"/>
-							</style:section-properties>
+							<style:section-properties style:editable="false"/>
 						</style:style>
 						<text:section-source text:section-name="Шаблон: поле даты в сведениях об ознакомлении" xlink:type="simple" xlink:actuate="other" xlink:title="ДИ" xlink:show="replace"/>
 					</text:section>
@@ -1728,8 +1671,8 @@
 					</text:list-item>
 				</text:list>
 			</text:section>
-			<text:section text:name="Подписи">
-				<text:p text:style-name="Подпись2"><text:span text:style-name="Подпись2Должность"><text:variable-get text:name="ПодписалДолжностьИП">Начальник сектора обеспечения функционирования филиала</text:variable-get></text:span><text:span text:style-name="Подпись2МестоДляПодписи"><text:tab/></text:span><text:span text:style-name="Подпись2ФИО"><text:variable-get text:name="ПодписалПредставлениеВПодписиИП">С.Э. Гущин</text:variable-get></text:span></text:p>
+			<text:section text:name="Подпись">
+				<text:section-source text:section-name="Шаблон: подпись во внутреннем документе" xlink:type="simple" xlink:actuate="other" xlink:show="embed"/>
 			</text:section>
 			<text:section text:name="Визы и сведения об ознакомлении">
 				<text:p text:style-name="БланкОРДЛистСогласования"/>
@@ -1756,9 +1699,7 @@
 			<!-- #region(collapsed) Пример служебной записки -->
 			<text:section text:name="Служебный" text:display="none">
 				<style:style style:family="section">
-					<style:section-properties style:editable="false">
-						<style:columns fo:column-count="1" fo:column-gap="0cm"/>
-					</style:section-properties>
+					<style:section-properties style:editable="false"/>
 				</style:style>
 				<text:p text:style-name="НачалоСлужебнойСтраницы"/>
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ВидДокумента" office:value-type="string">Служебная записка</text:variable-set></text:p>
@@ -1839,27 +1780,18 @@
 					</text:list-item>
 				</text:list>
 			</text:section>
-			<text:section text:name="Подписи">
-				<style:style style:family="section">
-					<style:section-properties style:editable="false">
-						<style:columns fo:column-count="1" fo:column-gap="0cm"/>
-					</style:section-properties>
-				</style:style>
-				<text:p text:style-name="Подпись2"><text:span text:style-name="Подпись2Должность"><text:variable-get text:name="ПодписалДолжностьИП">ПодписалДолжностьИП</text:variable-get></text:span><text:span text:style-name="Подпись2МестоДляПодписи"><text:tab/></text:span><text:span text:style-name="Подпись2ФИО"><text:variable-get text:name="ПодписалПредставлениеВПодписиИП">ПодписалПредставлениеВПодписиИП</text:variable-get></text:span></text:p>
+			<text:section text:name="Подпись">
+				<text:section-source text:section-name="Шаблон: подпись во внутреннем документе" xlink:type="simple" xlink:actuate="other" xlink:show="embed"/>
 			</text:section>
 			<text:section text:name="Визы">
 				<style:style style:family="section">
-					<style:section-properties style:editable="false">
-						<style:columns fo:column-count="1" fo:column-gap="0cm"/>
-					</style:section-properties>
+					<style:section-properties style:editable="false"/>
 				</style:style>
 				<text:p text:style-name="ЗаголовокВиз">Согласен:</text:p>
 				<text:p text:style-name="Виза2"><text:span text:style-name="Виза2Должность">Инженер по метрологии</text:span><text:span text:style-name="Виза2МестоДляПодписи"><text:tab/></text:span><text:span text:style-name="Виза2ФИО">И.И. Иванов</text:span></text:p>
 				<text:section text:name="Поле даты">
 					<style:style style:family="section">
-						<style:section-properties style:editable="false">
-							<style:columns fo:column-count="1" fo:column-gap="0cm"/>
-						</style:section-properties>
+						<style:section-properties style:editable="false"/>
 					</style:style>
 					<text:section-source text:section-name="Шаблон: поле даты в сведениях об ознакомлении" xlink:type="simple" xlink:actuate="other" xlink:title="Согласие1" xlink:show="replace"/>
 				</text:section>
@@ -1868,9 +1800,7 @@
 			<!-- #region(collapsed) Пример письма -->
 			<text:section text:name="Служебный" text:display="none">
 				<style:style style:family="section">
-					<style:section-properties style:editable="false">
-						<style:columns fo:column-count="1" fo:column-gap="0cm"/>
-					</style:section-properties>
+					<style:section-properties style:editable="false"/>
 				</style:style>
 				<text:p text:style-name="НачалоСлужебнойСтраницы"/>
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ВидДокумента" office:value-type="string">Письмо</text:variable-set></text:p>
@@ -1952,7 +1882,7 @@
 				</text:list>
 			</text:section>
 			<text:section text:name="Подписи">
-				<text:section-source text:section-name="Шаблон: подпись на фирменном бланке" xlink:type="simple" xlink:actuate="other" xlink:show="embed"/>
+				<text:section-source text:section-name="Шаблон: подпись в переписке" xlink:type="simple" xlink:actuate="other" xlink:show="embed"/>
 			</text:section>
 			<!-- #endregion Пример письма -->
 			<!-- #region(collapsed) Пример письма на угловом бланке -->
@@ -2033,7 +1963,7 @@
 				</text:list>
 			</text:section>
 			<text:section text:name="Подписи">
-				<text:section-source text:section-name="Шаблон: подпись на фирменном бланке" xlink:type="simple" xlink:actuate="other" xlink:show="embed"/>
+				<text:section-source text:section-name="Шаблон: подпись в переписке" xlink:type="simple" xlink:actuate="other" xlink:show="embed"/>
 			</text:section>
 			<!-- #endregion Пример письма на угловом бланке -->
 			<!-- #region(collapsed) Пример доверенности -->
@@ -2117,7 +2047,7 @@
 			<text:section text:name="Подписи">
 				<text:p text:style-name="Подпись2">Образец подписи Поверенного<text:span text:style-name="Подпись2МестоДляПодписи"><text:tab/></text:span><text:span text:style-name="Подпись2ФИО"><text:variable-get text:name="ПоверенныйПредставлениеВПодписиИП">М.С. Комлаткин</text:variable-get></text:span></text:p>
 				<text:section text:name="Подпись">
-					<text:section-source text:section-name="Шаблон: подпись на фирменном бланке" xlink:type="simple" xlink:actuate="other" xlink:show="embed"/>
+					<text:section-source text:section-name="Шаблон: подпись во внутреннем документе" xlink:type="simple" xlink:actuate="other" xlink:show="embed"/>
 				</text:section>
 			</text:section>
 			<text:p text:style-name="КонецСтраницы"/>
@@ -2165,7 +2095,7 @@
 				<text:p text:style-name="Основной">Справка дана по месту требования.</text:p>
 			</text:section>
 			<text:section text:name="Подписи">
-				<text:section-source text:section-name="Шаблон: подпись на фирменном бланке" xlink:type="simple" xlink:actuate="other" xlink:show="embed"/>
+				<text:section-source text:section-name="Шаблон: подпись во внутреннем документе" xlink:type="simple" xlink:actuate="other" xlink:show="embed"/>
 			</text:section>
 			<!-- #endregion Пример справки -->
 			<!-- #region(collapsed) Разделяемые компоненты в скрытом разделе -->
@@ -2227,10 +2157,16 @@
 				</text:section>
 				<!-- #endregion Заготовка поля даты в сведениях об ознакомлении -->
 				<!-- #region Заготовка подписи на бланке письма -->
-				<text:section text:name="Шаблон: подпись на фирменном бланке">
+				<text:section text:name="Шаблон: подпись в переписке">
+					<text:p text:style-name="Salutation">С уважением,</text:p>
 					<text:p text:style-name="Подпись2"><text:span text:style-name="ПодписьНаБланкеДолжность"><text:variable-get text:name="ПодписалДолжностьИП">ПодписалДолжностьИП</text:variable-get></text:span><text:span text:style-name="ПодписьНаБланкеМестоДляПодписи"><text:tab/></text:span><text:span text:style-name="ПодписьНаБланкеФИО"><text:variable-get text:name="ПодписалПредставлениеВПодписиИП">ПодписалПредставлениеВПодписиИП</text:variable-get></text:span></text:p>
 				</text:section>
 				<!-- #endregion Заготовка подписи на бланке письма -->
+				<!-- #region Заготовка подписи на внутреннем документе -->
+				<text:section text:name="Шаблон: подпись во внутреннем документе">
+					<text:p text:style-name="Подпись2"><text:span text:style-name="ПодписьНаБланкеДолжность"><text:variable-get text:name="ПодписалДолжностьИП">ПодписалДолжностьИП</text:variable-get></text:span><text:span text:style-name="ПодписьНаБланкеМестоДляПодписи"><text:tab/></text:span><text:span text:style-name="ПодписьНаБланкеФИО"><text:variable-get text:name="ПодписалПредставлениеВПодписиИП">ПодписалПредставлениеВПодписиИП</text:variable-get></text:span></text:p>
+				</text:section>
+				<!-- #endregion Заготовка подписи на внутреннем документе -->
 				<text:p text:style-name="ПустойАбзац"/>
 			</text:section>
 			<!-- #endregion Разделяемые компоненты в скрытом разделе -->

@@ -60,6 +60,10 @@
 			<style:paragraph-properties fo:margin-top="0.6cm" fo:margin-bottom="0cm" loext:contextual-spacing="true"/>
 		</style:style>
 		<style:style style:name="Sender" style:family="paragraph" loext:hidden="true" style:parent-style-name="Standard" style:class="extra"/>
+		<style:style style:name="Salutation" style:family="paragraph" style:parent-style-name="Text_20_body" style:next-style-name="Signature" style:class="text">
+			<style:paragraph-properties fo:margin-left="0cm" fo:margin-right="0cm" fo:margin-top="0.499cm" loext:contextual-spacing="false" fo:keep-together="always" fo:keep-with-next="always"/>
+			<style:text-properties fo:font-style="italic" fo:hyphenate="false"/>
+		</style:style>
 		<style:style style:name="Signature" style:family="paragraph" loext:hidden="true" style:parent-style-name="Text_20_body" style:class="text">
 			<style:paragraph-properties fo:margin-top="0.499cm" fo:margin-bottom="0cm" loext:contextual-spacing="false" fo:keep-together="always"/>
 			<style:text-properties fo:hyphenate="false"/>
@@ -245,11 +249,10 @@
 		<style:style style:name="Heading_20_10" style:display-name="Heading 10" style:family="paragraph" loext:hidden="true" style:parent-style-name="Heading" style:next-style-name="Основной" style:default-outline-level="10" style:list-style-name="Numbering_20_123" style:class="text"/>
 		<style:style style:name="Title" style:family="paragraph" loext:hidden="true" style:parent-style-name="Heading" style:next-style-name="Subtitle" style:class="chapter"/>
 		<style:style style:name="Subtitle" style:family="paragraph" loext:hidden="true" style:parent-style-name="Heading" style:next-style-name="Основной" style:class="chapter"/>
-		<style:style style:name="Salutation" style:family="paragraph" style:parent-style-name="Text_20_body" style:next-style-name="Основной" style:class="text">
+		<style:style style:name="ВступительноеОбращение" style:family="paragraph" style:parent-style-name="Text_20_body" style:next-style-name="Основной" style:class="text">
 			<style:paragraph-properties fo:margin-left="0cm" fo:margin-right="0cm" fo:margin-top="0.499cm" fo:margin-bottom="0.3cm" loext:contextual-spacing="false" fo:text-align="center" fo:keep-together="always" fo:text-indent="0cm" style:auto-text-indent="false" fo:keep-with-next="always"/>
 			<style:text-properties fo:font-weight="bold" fo:hyphenate="false"/>
 		</style:style>
-		<style:style style:name="ВступительноеОбращение" style:family="paragraph" style:parent-style-name="Salutation" style:next-style-name="Основной" style:class="text"/>
 		<style:style style:name="Caption" style:family="paragraph" loext:hidden="true" style:parent-style-name="Standard" style:class="extra">
 			<style:paragraph-properties fo:margin-top="0cm" fo:margin-bottom="0cm" loext:contextual-spacing="false" text:number-lines="false"/>
 			<style:text-properties fo:font-style="italic"/>
