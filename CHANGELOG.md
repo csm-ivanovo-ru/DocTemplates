@@ -41,6 +41,12 @@
   (переведены на продольный бланк по ГОСТ Р 7.0.97-2016)
   [#3](https://github.com/csm-ivanovo-ru/DocTemplates/issues/3)
 
+### Исправлено
+
+- восстановлено выравнивание подписей для Libre Writer 7.1+
+  (добавлена опция `TabOverSpacing`)
+  [csm-ivanovo-ru/DocTemplates#2](https://github.com/csm-ivanovo-ru/DocTemplates/issues/2)
+
 ## [2.9.11]
 
 ### Исправлено
