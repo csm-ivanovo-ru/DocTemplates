@@ -61,12 +61,6 @@ configuration xITGODTDevWindowsPC
 			DependsOn = @('[cChocoInstaller]choco')
 		}
 
-		cChocoPackageInstaller GitVersion
-		{
-			Name = 'gitversion.portable'
-			DependsOn = @('[cChocoInstaller]choco')
-		}
-
 		PSModuleResource 7Zip4Powershell
 		{
 			Module_Name = '7Zip4Powershell'
@@ -86,22 +80,5 @@ configuration xITGODTDevWindowsPC
 		{
 			Module_Name = 'Pester'
 		}
-
-		# PackageManagement SaxonHE
-		# {
-		# 	Ensure = 'Present'
-		# 	Name = 'Saxon-HE'
-		# 	Source = 'NuGet'
-		# 	MinimumVersion = '9.8'
-		# 	MaximumVersion = '9.8.999'
-		# }
-
-		# PackageManagement QRCoder
-		# {
-		# 	Ensure = 'Present'
-		# 	Name = 'QRCoder'
-		# 	Source = 'NuGet'
-		# }
-
 	}
 }
