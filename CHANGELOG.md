@@ -48,6 +48,8 @@
   [csm-ivanovo-ru/DocTemplates#2](https://github.com/csm-ivanovo-ru/DocTemplates/issues/2)
 - устранены ошибки при использовании `GitVersion`
   [csm-ivanovo-ru/DocTemplates#12](https://github.com/csm-ivanovo-ru/DocTemplates/issues/12)
+- устранены использование стиля `Salutation`не по назначению
+  [csm-ivanovo-ru/DocTemplates#13](https://github.com/csm-ivanovo-ru/DocTemplates/issues/13)
 
 ## [2.9.11]
 

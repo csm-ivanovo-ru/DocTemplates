@@ -20,6 +20,11 @@
   (переведены на продольный бланк по ГОСТ Р 7.0.97-2016)
   [#3](https://github.com/csm-ivanovo-ru/DocTemplates/issues/3)
 
+### Изменено
+
+- устранены использование стиля `Salutation`не по назначению
+  [csm-ivanovo-ru/DocTemplates#13](https://github.com/csm-ivanovo-ru/DocTemplates/issues/13)
+
 ## [2.4.0]
 
 ### Изменено
