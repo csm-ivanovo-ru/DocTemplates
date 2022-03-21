@@ -9,7 +9,25 @@
 Этот проект придерживается
 [![Semantic Versioning](https://img.shields.io/static/v1?label=Semantic%20Versioning&message=v2.0.0&color=green&logo=semver)](https://semver.org/lang/ru/spec/v2.0.0.html).
 
+<!--
+
 ## [Unreleased] Неопубликованные изменения (не вошедшие в релиз)
+
+### Изменено
+
+- поведение
+
+### Устарело
+
+- скоро будут удалены
+
+### Удалено
+
+- удалённые возможности
+
+-->
+
+## [3.0.0]
 
 ### Удалены
 
@@ -29,7 +47,7 @@
 
 ### Изменено
 
-- устранены использование стиля `Salutation`не по назначению
+- устранены использование стиля `Salutation` не по назначению
   [csm-ivanovo-ru/DocTemplates#13](https://github.com/csm-ivanovo-ru/DocTemplates/issues/13)
 - стиль `Виза2` переименован в `Виза`
   (с переименованием зависимых стилей)
@@ -41,7 +59,7 @@
 ### Изменено
 
 - заполнение обращения к адресату реализовано через
-  переменную "ВступительноеОбращение" (вместо "ПолучателиВОбращении")
+  переменную `ВступительноеОбращение` (вместо `ПолучателиВОбращении`)
 - оформление даты сведений об ознакомлении реализовано
   без таблиц, с помощью позиций табуляции
   [test-st-petersburg/DocTemplates#91](https://github.com/test-st-petersburg/DocTemplates/issues/91)
@@ -88,7 +106,8 @@
   (Письмо, ОРД)
   [test-st-petersburg/DocTemplates#71](https://github.com/test-st-petersburg/DocTemplates/issues/71)
 
-[Unreleased]: https://github.com/csm-ivanovo-ru/DocTemplates/compare/2.9.11...HEAD
+[Unreleased]: https://github.com/csm-ivanovo-ru/DocTemplates/compare/3.0.0...HEAD
+[3.0.0]: https://github.com/csm-ivanovo-ru/DocTemplates/compare/2.9.11...3.0.0
 [2.9.11]: https://github.com/csm-ivanovo-ru/DocTemplates/compare/2.9.10...2.9.11
 [2.9.10]: https://github.com/csm-ivanovo-ru/DocTemplates/compare/2.9.9...2.9.10
 [2.9.9]: https://github.com/test-st-petersburg/DocTemplates/compare/2.9.8...2.9.9
