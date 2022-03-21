@@ -40,6 +40,10 @@
 - убран бланк доверенности / справки на фирменном бланке
   (переведены на продольный бланк по ГОСТ Р 7.0.97-2016)
   [csm-ivanovo-ru/DocTemplates#3](https://github.com/csm-ivanovo-ru/DocTemplates/issues/3)
+- убраны стили, использованные для фирменных бланков ФБУ "Тест-С.-Петербург"
+  [csm-ivanovo-ru/DocTemplates#3](https://github.com/csm-ivanovo-ru/DocTemplates/issues/3)
+- убраны шрифты, использованные для фирменных бланков ФБУ "Тест-С.-Петербург"
+  [csm-ivanovo-ru/DocTemplates#3](https://github.com/csm-ivanovo-ru/DocTemplates/issues/3)
 
 ### Исправлено
 
