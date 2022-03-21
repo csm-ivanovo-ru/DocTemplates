@@ -105,9 +105,9 @@
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ЭтоВнутреннийДокумент" office:value-type="string">ИСТИНА</text:variable-set></text:p>
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ЭтоВходящийДокумент" office:value-type="string">ЛОЖЬ</text:variable-set></text:p>
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ЭтоИсходящийДокумент" office:value-type="string">ЛОЖЬ</text:variable-set></text:p>
-				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ПодписалДолжностьИП" office:value-type="string">ПодписалДолжностьИП</text:variable-set></text:p>
+				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ПодписалДолжностьИП" office:value-type="string">Директор</text:variable-set></text:p>
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ПодписалПредставлениеВДокументахИП" office:value-type="string">ПодписалПредставлениеВДокументахИП</text:variable-set></text:p>
-				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ПодписалПредставлениеВПодписиИП" office:value-type="string">ПодписалПредставлениеВПодписиИП</text:variable-set></text:p>
+				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ПодписалПредставлениеВПодписиИП" office:value-type="string">Д.И. Кудрявцев</text:variable-set></text:p>
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="УтвердилДолжностьИП" office:value-type="string"/></text:p>
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="УтвердилПредставлениеВПодписиИП" office:value-type="string"/></text:p>
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ДатаРегистрации" office:value-type="string">25.01.2020</text:variable-set></text:p>
@@ -2123,17 +2123,17 @@
 				<!-- #region Заготовка подписи на бланке письма -->
 				<text:section text:name="Шаблон: подпись в переписке">
 					<text:p text:style-name="Salutation">С уважением,</text:p>
-					<text:p text:style-name="ПодписьСSalutation"><text:span text:style-name="ПодписьНаБланкеДолжность"><text:variable-get text:name="ПодписалДолжностьИП">ПодписалДолжностьИП</text:variable-get></text:span><text:span text:style-name="ПодписьНаБланкеМестоДляПодписи"><text:tab/></text:span><text:span text:style-name="ПодписьНаБланкеФИО"><text:variable-get text:name="ПодписалПредставлениеВПодписиИП">ПодписалПредставлениеВПодписиИП</text:variable-get></text:span></text:p>
+					<text:p text:style-name="ПодписьСSalutation"><text:span text:style-name="ПодписьНаБланкеДолжность"><text:variable-get text:name="ПодписалДолжностьИП">Директор</text:variable-get></text:span><text:span text:style-name="ПодписьНаБланкеМестоДляПодписи"><text:tab/></text:span><text:span text:style-name="ПодписьНаБланкеФИО"><text:variable-get text:name="ПодписалПредставлениеВПодписиИП">Д.И. Кудрявцев</text:variable-get></text:span></text:p>
 				</text:section>
 				<!-- #endregion Заготовка подписи на бланке письма -->
 				<!-- #region Заготовка подписи единственного подписанта -->
 				<text:section text:name="Шаблон: подпись единственного подписанта">
-					<text:p text:style-name="Подпись2"><text:span text:style-name="ПодписьНаБланкеДолжность"><text:variable-get text:name="ПодписалДолжностьИП">ПодписалДолжностьИП</text:variable-get></text:span><text:span text:style-name="ПодписьНаБланкеМестоДляПодписи"><text:tab/></text:span><text:span text:style-name="ПодписьНаБланкеФИО"><text:variable-get text:name="ПодписалПредставлениеВПодписиИП">ПодписалПредставлениеВПодписиИП</text:variable-get></text:span></text:p>
+					<text:p text:style-name="Подпись2"><text:span text:style-name="ПодписьНаБланкеДолжность"><text:variable-get text:name="ПодписалДолжностьИП">Директор</text:variable-get></text:span><text:span text:style-name="ПодписьНаБланкеМестоДляПодписи"><text:tab/></text:span><text:span text:style-name="ПодписьНаБланкеФИО"><text:variable-get text:name="ПодписалПредставлениеВПодписиИП">Д.И. Кудрявцев</text:variable-get></text:span></text:p>
 				</text:section>
 				<!-- #endregion Заготовка подписи единственного подписанта -->
 				<!-- #region Заготовка подписи на внутреннем документе -->
 				<text:section text:name="Шаблон: подпись во внутреннем документе">
-					<text:p text:style-name="Signature"><text:span text:style-name="ПодписьДолжность"><text:variable-get text:name="ПодписалДолжностьИП">ПодписалДолжностьИП</text:variable-get></text:span><text:span text:style-name="ПодписьМестоДляПодписи"><text:tab/></text:span><text:span text:style-name="ПодписьФИО"><text:variable-get text:name="ПодписалПредставлениеВПодписиИП">ПодписалПредставлениеВПодписиИП</text:variable-get></text:span></text:p>
+					<text:p text:style-name="Signature"><text:span text:style-name="ПодписьДолжность"><text:variable-get text:name="ПодписалДолжностьИП">Директор</text:variable-get></text:span><text:span text:style-name="ПодписьМестоДляПодписи"><text:tab/></text:span><text:span text:style-name="ПодписьФИО"><text:variable-get text:name="ПодписалПредставлениеВПодписиИП">Д.И. Кудрявцев</text:variable-get></text:span></text:p>
 				</text:section>
 				<!-- #endregion Заготовка подписи на внутреннем документе -->
 				<text:p text:style-name="ПустойАбзац"/>
