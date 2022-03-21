@@ -36,6 +36,27 @@
 
 -->
 
+## [Unreleased] Неопубликованные изменения (не вошедшие в релиз)
+
+### Добавлено
+
+- для телефонов в справочных сведениях об учреждении
+  добавлена гиперссылка
+  по [RFC 3966](https://www.ietf.org/rfc/rfc3966.html)
+  [csm-ivanovo-ru/DocTemplates#19](https://github.com/csm-ivanovo-ru/DocTemplates/issues/19)
+- для адреса сайта в справочных сведениях об учреждении
+  добавлена гиперссылка
+  [csm-ivanovo-ru/DocTemplates#19](https://github.com/csm-ivanovo-ru/DocTemplates/issues/19)
+- для адреса почты в справочных сведениях об учреждении
+  добавлена гиперссылка
+  по [RFC 6068](https://www.ietf.org/rfc/rfc6068.html)
+  [csm-ivanovo-ru/DocTemplates#19](https://github.com/csm-ivanovo-ru/DocTemplates/issues/19)
+- для адреса регистрации в справочных сведениях об учреждении
+  добавлена гиперссылка (для карт Яндекса).
+  [RFC 5870](https://www.ietf.org/rfc/rfc5870.html)
+  не используем из-за отсутствия должной поддержки в Windows
+  [csm-ivanovo-ru/DocTemplates#19](https://github.com/csm-ivanovo-ru/DocTemplates/issues/19)
+
 ## [3.0.2]
 
 ### Исправлено
