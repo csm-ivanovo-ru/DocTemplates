@@ -110,7 +110,7 @@ jobs:
           $asset = New-GitHubReleaseAsset -Release ( $release.ID ) -Path $assetsContainerPath -Verbose;
 
       - name: Close GitHub Milestone
-        if: fromJSON(steps.milestone_search.outputs.data).repository.milestones.nodes.length > 0
+        if: fromJSON(steps.milestone_search.outputs.data).repository.milestones.nodes[0] != null
         shell: powershell
         run: |
           Import-Module -Name PowerShellForGitHub | Out-Null;

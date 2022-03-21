@@ -120,7 +120,7 @@
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ОрганизацияТелефон" office:value-type="string">+7 (4932) 32‑84‑85</text:variable-set></text:p>
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ОрганизацияФакс" office:value-type="string">+7 (4932) 41‑60‑79</text:variable-set></text:p>
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ОрганизацияEmail" office:value-type="string">post@ivcsm.ru </text:variable-set></text:p>
-				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ОрганизацияWebСайт" office:value-type="string">https://ivcsm.ru</text:variable-set></text:p>
+				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ОрганизацияWebСайт" office:value-type="string">https://www.ivcsm.ru</text:variable-set></text:p>
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ОрганизацияОГРН" office:value-type="string">1023700556990</text:variable-set></text:p>
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ОрганизацияИНН" office:value-type="string">3731001541</text:variable-set></text:p>
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ОрганизацияКПП" office:value-type="string">370201001</text:variable-set></text:p>
@@ -282,7 +282,7 @@
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ОрганизацияТелефон" office:value-type="string">+7 (4932) 32‑84‑85</text:variable-set></text:p>
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ОрганизацияФакс" office:value-type="string">+7 (4932) 41‑60‑79</text:variable-set></text:p>
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ОрганизацияEmail" office:value-type="string">post@ivcsm.ru </text:variable-set></text:p>
-				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ОрганизацияWebСайт" office:value-type="string">https://ivcsm.ru</text:variable-set></text:p>
+				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ОрганизацияWebСайт" office:value-type="string">https://www.ivcsm.ru</text:variable-set></text:p>
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ОрганизацияОГРН" office:value-type="string">1023700556990</text:variable-set></text:p>
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ОрганизацияИНН" office:value-type="string">3731001541</text:variable-set></text:p>
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ОрганизацияКПП" office:value-type="string">370201001</text:variable-set></text:p>
@@ -824,7 +824,7 @@
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ОрганизацияТелефон" office:value-type="string">+7 (4932) 32‑84‑85</text:variable-set></text:p>
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ОрганизацияФакс" office:value-type="string">+7 (4932) 41‑60‑79</text:variable-set></text:p>
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ОрганизацияEmail" office:value-type="string">post@ivcsm.ru </text:variable-set></text:p>
-				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ОрганизацияWebСайт" office:value-type="string">https://ivcsm.ru</text:variable-set></text:p>
+				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ОрганизацияWebСайт" office:value-type="string">https://www.ivcsm.ru</text:variable-set></text:p>
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ОрганизацияОГРН" office:value-type="string">1023700556990</text:variable-set></text:p>
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ОрганизацияИНН" office:value-type="string">3731001541</text:variable-set></text:p>
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ОрганизацияКПП" office:value-type="string">370201001</text:variable-set></text:p>
@@ -1329,7 +1329,7 @@
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ОрганизацияТелефон" office:value-type="string">+7 (4932) 32‑84‑85</text:variable-set></text:p>
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ОрганизацияФакс" office:value-type="string">+7 (4932) 41‑60‑79</text:variable-set></text:p>
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ОрганизацияEmail" office:value-type="string">post@ivcsm.ru </text:variable-set></text:p>
-				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ОрганизацияWebСайт" office:value-type="string">https://ivcsm.ru</text:variable-set></text:p>
+				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ОрганизацияWebСайт" office:value-type="string">https://www.ivcsm.ru</text:variable-set></text:p>
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ОрганизацияОГРН" office:value-type="string">1023700556990</text:variable-set></text:p>
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ОрганизацияИНН" office:value-type="string">3731001541</text:variable-set></text:p>
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ОрганизацияКПП" office:value-type="string">370201001</text:variable-set></text:p>
@@ -1696,7 +1696,7 @@
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ОрганизацияТелефон" office:value-type="string">+7 (4932) 32‑84‑85</text:variable-set></text:p>
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ОрганизацияФакс" office:value-type="string">+7 (4932) 41‑60‑79</text:variable-set></text:p>
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ОрганизацияEmail" office:value-type="string">post@ivcsm.ru </text:variable-set></text:p>
-				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ОрганизацияWebСайт" office:value-type="string">https://ivcsm.ru</text:variable-set></text:p>
+				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ОрганизацияWebСайт" office:value-type="string">https://www.ivcsm.ru</text:variable-set></text:p>
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ОрганизацияОГРН" office:value-type="string">1023700556990</text:variable-set></text:p>
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ОрганизацияИНН" office:value-type="string">3731001541</text:variable-set></text:p>
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ОрганизацияКПП" office:value-type="string">370201001</text:variable-set></text:p>
@@ -1793,7 +1793,7 @@
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ОрганизацияТелефон" office:value-type="string">+7 (4932) 32‑84‑85</text:variable-set></text:p>
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ОрганизацияФакс" office:value-type="string">+7 (4932) 41‑60‑79</text:variable-set></text:p>
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ОрганизацияEmail" office:value-type="string">post@ivcsm.ru </text:variable-set></text:p>
-				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ОрганизацияWebСайт" office:value-type="string">https://ivcsm.ru</text:variable-set></text:p>
+				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ОрганизацияWebСайт" office:value-type="string">https://www.ivcsm.ru</text:variable-set></text:p>
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ОрганизацияОГРН" office:value-type="string">1023700556990</text:variable-set></text:p>
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ОрганизацияИНН" office:value-type="string">3731001541</text:variable-set></text:p>
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ОрганизацияКПП" office:value-type="string">370201001</text:variable-set></text:p>
@@ -1874,7 +1874,7 @@
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ОрганизацияТелефон" office:value-type="string">+7 (4932) 32‑84‑85</text:variable-set></text:p>
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ОрганизацияФакс" office:value-type="string">+7 (4932) 41‑60‑79</text:variable-set></text:p>
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ОрганизацияEmail" office:value-type="string">post@ivcsm.ru </text:variable-set></text:p>
-				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ОрганизацияWebСайт" office:value-type="string">https://ivcsm.ru</text:variable-set></text:p>
+				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ОрганизацияWebСайт" office:value-type="string">https://www.ivcsm.ru</text:variable-set></text:p>
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ОрганизацияОГРН" office:value-type="string">1023700556990</text:variable-set></text:p>
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ОрганизацияИНН" office:value-type="string">3731001541</text:variable-set></text:p>
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ОрганизацияКПП" office:value-type="string">370201001</text:variable-set></text:p>
@@ -1963,7 +1963,7 @@
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ОрганизацияТелефон" office:value-type="string">+7 (4932) 32‑84‑85</text:variable-set></text:p>
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ОрганизацияФакс" office:value-type="string">+7 (4932) 41‑60‑79</text:variable-set></text:p>
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ОрганизацияEmail" office:value-type="string">post@ivcsm.ru </text:variable-set></text:p>
-				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ОрганизацияWebСайт" office:value-type="string">https://ivcsm.ru</text:variable-set></text:p>
+				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ОрганизацияWebСайт" office:value-type="string">https://www.ivcsm.ru</text:variable-set></text:p>
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ОрганизацияОГРН" office:value-type="string">1023700556990</text:variable-set></text:p>
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ОрганизацияИНН" office:value-type="string">3731001541</text:variable-set></text:p>
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ОрганизацияКПП" office:value-type="string">370201001</text:variable-set></text:p>
@@ -2040,7 +2040,7 @@
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ОрганизацияТелефон" office:value-type="string">+7 (4932) 32‑84‑85</text:variable-set></text:p>
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ОрганизацияФакс" office:value-type="string">+7 (4932) 41‑60‑79</text:variable-set></text:p>
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ОрганизацияEmail" office:value-type="string">post@ivcsm.ru </text:variable-set></text:p>
-				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ОрганизацияWebСайт" office:value-type="string">https://ivcsm.ru</text:variable-set></text:p>
+				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ОрганизацияWebСайт" office:value-type="string">https://www.ivcsm.ru</text:variable-set></text:p>
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ОрганизацияОГРН" office:value-type="string">1023700556990</text:variable-set></text:p>
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ОрганизацияИНН" office:value-type="string">3731001541</text:variable-set></text:p>
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ОрганизацияКПП" office:value-type="string">370201001</text:variable-set></text:p>
