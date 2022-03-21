@@ -36,7 +36,7 @@ jobs:
 
       - name: Generate release notes
         id: generate_release_notes
-        uses: IT-Service/New-ReleaseNotesFromChangeLog@v1.2.0
+        uses: IT-Service/New-ReleaseNotesFromChangeLog@v1.2.1
         with:
           version: "${{ env.version }}"
           verbose: true
@@ -110,7 +110,7 @@ jobs:
           $asset = New-GitHubReleaseAsset -Release ( $release.ID ) -Path $assetsContainerPath -Verbose;
 
       - name: Close GitHub Milestone
-        if: $${{ fromJSON(steps.milestone_search.outputs.data).repository.milestones.nodes[0] != null }}
+        if: fromJSON(steps.milestone_search.outputs.data).repository.milestones.nodes.length > 0
         shell: powershell
         run: |
           Import-Module -Name PowerShellForGitHub | Out-Null;
