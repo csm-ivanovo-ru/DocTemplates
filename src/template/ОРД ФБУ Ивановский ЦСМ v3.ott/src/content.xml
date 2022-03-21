@@ -206,7 +206,7 @@
 				</text:list>
 			</text:section>
 			<text:section text:name="Подпись">
-				<text:section-source text:section-name="Шаблон: подпись во внутреннем документе" xlink:type="simple" xlink:actuate="other" xlink:show="embed"/>
+				<text:section-source text:section-name="Шаблон: подпись единственного подписанта" xlink:type="simple" xlink:actuate="other" xlink:show="embed"/>
 			</text:section>
 			<text:section text:name="Визы и сведения об ознакомлении">
 				<style:style style:family="section">
@@ -217,7 +217,7 @@
 					<style:style style:family="section">
 						<style:section-properties style:editable="false"/>
 					</style:style>
-					<text:p text:style-name="Виза2"><text:span text:style-name="Виза2Должность">Начальник юридического отдела</text:span><text:span text:style-name="Виза2МестоДляПодписи"><text:tab/></text:span><text:span text:style-name="Виза2ФИО">Е.А. Кузнецова</text:span></text:p>
+					<text:p text:style-name="Виза"><text:span text:style-name="ВизаДолжность">Начальник юридического отдела</text:span><text:span text:style-name="ВизаМестоДляПодписи"><text:tab/></text:span><text:span text:style-name="ВизаФИО">Е.А. Кузнецова</text:span></text:p>
 					<text:section text:name="Поле даты">
 						<style:style style:family="section">
 							<style:section-properties style:editable="false"/>
@@ -236,21 +236,21 @@
 						<style:section-properties style:editable="false"/>
 					</style:style>
 					<text:p text:style-name="ЗаголовокСведенийОбОзнакомлении">С приказом ознакомлены:</text:p>
-					<text:p text:style-name="ЗаписьОбОзнакомлении2"><text:span text:style-name="ЗаписьОбОзнакомлении2Должность">Директор</text:span><text:span text:style-name="ЗаписьОбОзнакомлении2МестоДляПодписи"><text:tab/></text:span><text:span text:style-name="ЗаписьОбОзнакомлении2ФИО">Д.И. Кудрявцев</text:span></text:p>
+					<text:p text:style-name="ЗаписьОбОзнакомлении"><text:span text:style-name="ЗаписьОбОзнакомленииДолжность">Директор</text:span><text:span text:style-name="ЗаписьОбОзнакомленииМестоДляПодписи"><text:tab/></text:span><text:span text:style-name="ЗаписьОбОзнакомленииФИО">Д.И. Кудрявцев</text:span></text:p>
 					<text:section text:name="Поле даты">
 						<style:style style:family="section">
 							<style:section-properties style:editable="false"/>
 						</style:style>
 						<text:section-source text:section-name="Шаблон: поле даты в сведениях об ознакомлении" xlink:type="simple" xlink:actuate="other" xlink:title="Пр" xlink:show="replace"/>
 					</text:section>
-					<text:p text:style-name="ЗаписьОбОзнакомлении2"><text:span text:style-name="ЗаписьОбОзнакомлении2Должность">Начальник юридического отдела</text:span><text:span text:style-name="ЗаписьОбОзнакомлении2МестоДляПодписи"><text:tab/></text:span><text:span text:style-name="ЗаписьОбОзнакомлении2ФИО">Е.А. Кузнецова</text:span></text:p>
+					<text:p text:style-name="ЗаписьОбОзнакомлении"><text:span text:style-name="ЗаписьОбОзнакомленииДолжность">Начальник юридического отдела</text:span><text:span text:style-name="ЗаписьОбОзнакомленииМестоДляПодписи"><text:tab/></text:span><text:span text:style-name="ЗаписьОбОзнакомленииФИО">Е.А. Кузнецова</text:span></text:p>
 					<text:section text:name="Поле даты">
 						<style:style style:family="section">
 							<style:section-properties style:editable="false"/>
 						</style:style>
 						<text:section-source text:section-name="Шаблон: поле даты в сведениях об ознакомлении" xlink:type="simple" xlink:actuate="other" xlink:title="Пр" xlink:show="replace"/>
 					</text:section>
-					<text:p text:style-name="ЗаписьОбОзнакомлении2"><text:span text:style-name="ЗаписьОбОзнакомлении2Должность">Начальник сектора планово-экономической работы бухгалтерско-финансового отдела №483</text:span><text:span text:style-name="ЗаписьОбОзнакомлении2МестоДляПодписи"><text:tab/></text:span><text:span text:style-name="ЗаписьОбОзнакомлении2ФИО">О.В. Гарбузова</text:span></text:p>
+					<text:p text:style-name="ЗаписьОбОзнакомлении"><text:span text:style-name="ЗаписьОбОзнакомленииДолжность">Начальник сектора планово-экономической работы бухгалтерско-финансового отдела №483</text:span><text:span text:style-name="ЗаписьОбОзнакомленииМестоДляПодписи"><text:tab/></text:span><text:span text:style-name="ЗаписьОбОзнакомленииФИО">О.В. Гарбузова</text:span></text:p>
 					<text:section text:name="Поле даты">
 						<style:style style:family="section">
 							<style:section-properties style:editable="false"/>
@@ -765,14 +765,14 @@
 						<style:section-properties style:editable="false"/>
 					</style:style>
 					<text:p text:style-name="ЗаголовокВиз">Согласовано:</text:p>
-					<text:p text:style-name="Виза2"><text:span text:style-name="Виза2Должность">Начальник юридического отдела</text:span><text:span text:style-name="Виза2МестоДляПодписи"><text:tab/></text:span><text:span text:style-name="Виза2ФИО">Е.А. Кузнецова</text:span></text:p>
+					<text:p text:style-name="Виза"><text:span text:style-name="ВизаДолжность">Начальник юридического отдела</text:span><text:span text:style-name="ВизаМестоДляПодписи"><text:tab/></text:span><text:span text:style-name="ВизаФИО">Е.А. Кузнецова</text:span></text:p>
 					<text:section text:name="Поле даты">
 						<style:style style:family="section">
 							<style:section-properties style:editable="false"/>
 						</style:style>
 						<text:section-source text:section-name="Шаблон: поле даты в сведениях об ознакомлении" xlink:type="simple" xlink:actuate="other" xlink:title="ЮрОтд" xlink:show="replace"/>
 					</text:section>
-					<text:p text:style-name="Виза2"><text:span text:style-name="Виза2Должность">Начальник сектора планово-экономической работы бухгалтерско-финансового отдела №483</text:span><text:span text:style-name="Виза2МестоДляПодписи"><text:tab/></text:span><text:span text:style-name="Виза2ФИО">О.В. Гарбузова</text:span></text:p>
+					<text:p text:style-name="Виза"><text:span text:style-name="ВизаДолжность">Начальник сектора планово-экономической работы бухгалтерско-финансового отдела №483</text:span><text:span text:style-name="ВизаМестоДляПодписи"><text:tab/></text:span><text:span text:style-name="ВизаФИО">О.В. Гарбузова</text:span></text:p>
 					<text:section text:name="Поле даты">
 						<style:style style:family="section">
 							<style:section-properties style:editable="false"/>
@@ -785,7 +785,7 @@
 						<style:section-properties style:editable="false"/>
 					</style:style>
 					<text:p text:style-name="ЗаголовокСведенийОбОзнакомлении">Ознакомлены:</text:p>
-					<text:p text:style-name="ЗаписьОбОзнакомлении2"><text:span text:style-name="ЗаписьОбОзнакомлении2Должность">Начальник сектора по обеспечению функционирования филиала</text:span><text:span text:style-name="ЗаписьОбОзнакомлении2МестоДляПодписи"><text:tab/></text:span><text:span text:style-name="ЗаписьОбОзнакомлении2ФИО">С.Э. Гущин</text:span></text:p>
+					<text:p text:style-name="ЗаписьОбОзнакомлении"><text:span text:style-name="ЗаписьОбОзнакомленииДолжность">Начальник сектора по обеспечению функционирования филиала</text:span><text:span text:style-name="ЗаписьОбОзнакомленииМестоДляПодписи"><text:tab/></text:span><text:span text:style-name="ЗаписьОбОзнакомленииФИО">С.Э. Гущин</text:span></text:p>
 					<text:section text:name="Поле даты">
 						<style:style style:family="section">
 							<style:section-properties style:editable="false"/>
@@ -1273,14 +1273,14 @@
 						<style:section-properties style:editable="false"/>
 					</style:style>
 					<text:p text:style-name="ЗаголовокВиз">Согласовано:</text:p>
-					<text:p text:style-name="Виза2"><text:span text:style-name="Виза2Должность">Начальник юридического отдела</text:span><text:span text:style-name="Виза2МестоДляПодписи"><text:tab/></text:span><text:span text:style-name="Виза2ФИО">Е.А. Кузнецова</text:span></text:p>
+					<text:p text:style-name="Виза"><text:span text:style-name="ВизаДолжность">Начальник юридического отдела</text:span><text:span text:style-name="ВизаМестоДляПодписи"><text:tab/></text:span><text:span text:style-name="ВизаФИО">Е.А. Кузнецова</text:span></text:p>
 					<text:section text:name="Поле даты">
 						<style:style style:family="section">
 							<style:section-properties style:editable="false"/>
 						</style:style>
 						<text:section-source text:section-name="Шаблон: поле даты в сведениях об ознакомлении" xlink:type="simple" xlink:actuate="other" xlink:title="ЮрОтд" xlink:show="replace"/>
 					</text:section>
-					<text:p text:style-name="Виза2"><text:span text:style-name="Виза2Должность">Начальник сектора планово-экономической работы бухгалтерско-финансового отдела №483</text:span><text:span text:style-name="Виза2МестоДляПодписи"><text:tab/></text:span><text:span text:style-name="Виза2ФИО">О.В. Гарбузова</text:span></text:p>
+					<text:p text:style-name="Виза"><text:span text:style-name="ВизаДолжность">Начальник сектора планово-экономической работы бухгалтерско-финансового отдела №483</text:span><text:span text:style-name="ВизаМестоДляПодписи"><text:tab/></text:span><text:span text:style-name="ВизаФИО">О.В. Гарбузова</text:span></text:p>
 					<text:section text:name="Поле даты">
 						<style:style style:family="section">
 							<style:section-properties style:editable="false"/>
@@ -1293,7 +1293,7 @@
 						<style:section-properties style:editable="false"/>
 					</style:style>
 					<text:p text:style-name="ЗаголовокСведенийОбОзнакомлении">Ознакомлены:</text:p>
-					<text:p text:style-name="ЗаписьОбОзнакомлении2"><text:span text:style-name="ЗаписьОбОзнакомлении2Должность">Инженер 2 категории</text:span><text:span text:style-name="ЗаписьОбОзнакомлении2МестоДляПодписи"><text:tab/></text:span><text:span text:style-name="ЗаписьОбОзнакомлении2ФИО">О.Г. Григорьев</text:span></text:p>
+					<text:p text:style-name="ЗаписьОбОзнакомлении"><text:span text:style-name="ЗаписьОбОзнакомленииДолжность">Инженер 2 категории</text:span><text:span text:style-name="ЗаписьОбОзнакомленииМестоДляПодписи"><text:tab/></text:span><text:span text:style-name="ЗаписьОбОзнакомленииФИО">О.Г. Григорьев</text:span></text:p>
 					<text:section text:name="Поле даты">
 						<style:style style:family="section">
 							<style:section-properties style:editable="false"/>
@@ -1652,18 +1652,18 @@
 				<text:p text:style-name="БланкОРДЛистСогласования"/>
 				<text:section text:name="Визы">
 					<text:p text:style-name="ЗаголовокВиз">Согласовано:</text:p>
-					<text:p text:style-name="Виза2"><text:span text:style-name="Виза2Должность">Начальник юридического отдела</text:span><text:span text:style-name="Виза2МестоДляПодписи"><text:tab/></text:span><text:span text:style-name="Виза2ФИО">Е.А. Кузнецова</text:span></text:p>
+					<text:p text:style-name="Виза"><text:span text:style-name="ВизаДолжность">Начальник юридического отдела</text:span><text:span text:style-name="ВизаМестоДляПодписи"><text:tab/></text:span><text:span text:style-name="ВизаФИО">Е.А. Кузнецова</text:span></text:p>
 					<text:section text:name="Поле даты">
 						<text:section-source text:section-name="Шаблон: поле даты в сведениях об ознакомлении" xlink:type="simple" xlink:actuate="other" xlink:title="ЮрОтд" xlink:show="replace"/>
 					</text:section>
-					<text:p text:style-name="Виза2"><text:span text:style-name="Виза2Должность">Начальник сектора планово-экономической работы бухгалтерско-финансового отдела №483</text:span><text:span text:style-name="Виза2МестоДляПодписи"><text:tab/></text:span><text:span text:style-name="Виза2ФИО">О.В. Гарбузова</text:span></text:p>
+					<text:p text:style-name="Виза"><text:span text:style-name="ВизаДолжность">Начальник сектора планово-экономической работы бухгалтерско-финансового отдела №483</text:span><text:span text:style-name="ВизаМестоДляПодписи"><text:tab/></text:span><text:span text:style-name="ВизаФИО">О.В. Гарбузова</text:span></text:p>
 					<text:section text:name="Поле даты">
 						<text:section-source text:section-name="Шаблон: поле даты в сведениях об ознакомлении" xlink:type="simple" xlink:actuate="other" xlink:title="ПЭО" xlink:show="replace"/>
 					</text:section>
 				</text:section>
 				<text:section text:name="Сведения об ознакомлении">
 					<text:p text:style-name="ЗаголовокСведенийОбОзнакомлении">Ознакомлены:</text:p>
-					<text:p text:style-name="ЗаписьОбОзнакомлении2"><text:span text:style-name="ЗаписьОбОзнакомлении2Должность">Электромонтёр по ремонту и обслуживанию электрооборудования 2&#160;разряда</text:span><text:span text:style-name="ЗаписьОбОзнакомлении2МестоДляПодписи"><text:tab/></text:span><text:span text:style-name="ЗаписьОбОзнакомлении2ФИО">И.А. Васяшин</text:span></text:p>
+					<text:p text:style-name="ЗаписьОбОзнакомлении"><text:span text:style-name="ЗаписьОбОзнакомленииДолжность">Электромонтёр по ремонту и обслуживанию электрооборудования 2&#160;разряда</text:span><text:span text:style-name="ЗаписьОбОзнакомленииМестоДляПодписи"><text:tab/></text:span><text:span text:style-name="ЗаписьОбОзнакомленииФИО">И.А. Васяшин</text:span></text:p>
 					<text:section text:name="Поле даты">
 						<text:section-source text:section-name="Шаблон: поле даты в сведениях об ознакомлении" xlink:type="simple" xlink:actuate="other" xlink:title="ДИ" xlink:show="replace"/>
 					</text:section>
@@ -1751,14 +1751,14 @@
 				</text:list>
 			</text:section>
 			<text:section text:name="Подпись">
-				<text:section-source text:section-name="Шаблон: подпись во внутреннем документе" xlink:type="simple" xlink:actuate="other" xlink:show="embed"/>
+				<text:section-source text:section-name="Шаблон: подпись единственного подписанта" xlink:type="simple" xlink:actuate="other" xlink:show="embed"/>
 			</text:section>
 			<text:section text:name="Визы">
 				<style:style style:family="section">
 					<style:section-properties style:editable="false"/>
 				</style:style>
 				<text:p text:style-name="ЗаголовокВиз">Согласен:</text:p>
-				<text:p text:style-name="Виза2"><text:span text:style-name="Виза2Должность">Инженер по метрологии</text:span><text:span text:style-name="Виза2МестоДляПодписи"><text:tab/></text:span><text:span text:style-name="Виза2ФИО">И.И. Иванов</text:span></text:p>
+				<text:p text:style-name="Виза"><text:span text:style-name="ВизаДолжность">Инженер по метрологии</text:span><text:span text:style-name="ВизаМестоДляПодписи"><text:tab/></text:span><text:span text:style-name="ВизаФИО">И.И. Иванов</text:span></text:p>
 				<text:section text:name="Поле даты">
 					<style:style style:family="section">
 						<style:section-properties style:editable="false"/>
@@ -1836,7 +1836,7 @@
 						<text:p text:style-name="Основной">пример маркированного списка.</text:p>
 					</text:list-item>
 				</text:list>
-				<text:p text:style-name="Основной">Пример текста. Такой вот длинный абзац. Такой вот длинный абзац. Такой вот длинный абзац. Такой вот длинный абзац. Такой вот длинный абзац. Такой вот длинный абзац. Такой вот длинный абзац. Такой вот длинный абзац. Такой вот длинный абзац. Такой вот длинный абзац. Такой вот длинный абзац. Такой вот длинный абзац.</text:p>
+				<text:p text:style-name="Основной">Пример текста. Такой вот длинный абзац. Такой вот длинный абзац.</text:p>
 				<text:p text:style-name="ЗаголовокПеречняПриложений">Приложения:</text:p>
 				<text:list xml:id="list1896758410" text:style-name="Нумерация_20_списка_20_приложений">
 					<text:list-item>
@@ -1917,7 +1917,7 @@
 						<text:p text:style-name="Основной">пример маркированного списка.</text:p>
 					</text:list-item>
 				</text:list>
-				<text:p text:style-name="Основной">Пример текста. Такой вот длинный абзац. Такой вот длинный абзац. Такой вот длинный абзац. Такой вот длинный абзац. Такой вот длинный абзац. Такой вот длинный абзац. Такой вот длинный абзац. Такой вот длинный абзац. Такой вот длинный абзац. Такой вот длинный абзац. Такой вот длинный абзац. Такой вот длинный абзац.</text:p>
+				<text:p text:style-name="Основной">Пример текста. Такой вот длинный абзац. Такой вот длинный абзац.</text:p>
 				<text:p text:style-name="ЗаголовокПеречняПриложений">Приложения:</text:p>
 				<text:list xml:id="list1896758410" text:style-name="Нумерация_20_списка_20_приложений">
 					<text:list-item>
@@ -2011,9 +2011,9 @@
 					<text:variable-get text:name="ДействуетДоДаты">31.12.2021</text:variable-get>.</text:p>
 			</text:section>
 			<text:section text:name="Подписи">
-				<text:p text:style-name="Подпись2">Образец подписи Поверенного<text:span text:style-name="Подпись2МестоДляПодписи"><text:tab/></text:span><text:span text:style-name="Подпись2ФИО"><text:variable-get text:name="ПоверенныйПредставлениеВПодписиИП">М.С. Комлаткин</text:variable-get></text:span></text:p>
+				<text:p text:style-name="Подпись2">Образец подписи Поверенного<text:span text:style-name="ПодписьМестоДляПодписи"><text:tab/></text:span><text:span text:style-name="ПодписьФИО"><text:variable-get text:name="ПоверенныйПредставлениеВПодписиИП">М.С. Комлаткин</text:variable-get></text:span></text:p>
 				<text:section text:name="Подпись">
-					<text:section-source text:section-name="Шаблон: подпись во внутреннем документе" xlink:type="simple" xlink:actuate="other" xlink:show="embed"/>
+					<text:section-source text:section-name="Шаблон: подпись единственного подписанта" xlink:type="simple" xlink:actuate="other" xlink:show="embed"/>
 				</text:section>
 			</text:section>
 			<text:p text:style-name="КонецСтраницы"/>
@@ -2061,7 +2061,7 @@
 				<text:p text:style-name="Основной">Справка дана по месту требования.</text:p>
 			</text:section>
 			<text:section text:name="Подписи">
-				<text:section-source text:section-name="Шаблон: подпись во внутреннем документе" xlink:type="simple" xlink:actuate="other" xlink:show="embed"/>
+				<text:section-source text:section-name="Шаблон: подпись единственного подписанта" xlink:type="simple" xlink:actuate="other" xlink:show="embed"/>
 			</text:section>
 			<!-- #endregion Пример справки -->
 			<!-- #region(collapsed) Разделяемые компоненты в скрытом разделе -->
@@ -2075,7 +2075,7 @@
 					<style:style style:family="section">
 						<style:section-properties style:editable="false"/>
 					</style:style>
-					<text:p text:style-name="ЗаписьОбОзнакомлении2Дата">«<draw:frame draw:name="ДатаЧисло1" text:anchor-type="as-char" draw:z-index="16">
+					<text:p text:style-name="ЗаписьОбОзнакомленииДата">«<draw:frame draw:name="ДатаЧисло1" text:anchor-type="as-char" draw:z-index="16">
 						<style:style style:family="graphic" style:parent-style-name="ДатаПодписиЧисло">
 							<style:graphic-properties style:vertical-pos="bottom" style:vertical-rel="text" style:horizontal-pos="from-left" style:horizontal-rel="paragraph-content"/>
 						</style:style>
@@ -2123,12 +2123,17 @@
 				<!-- #region Заготовка подписи на бланке письма -->
 				<text:section text:name="Шаблон: подпись в переписке">
 					<text:p text:style-name="Salutation">С уважением,</text:p>
-					<text:p text:style-name="Подпись2"><text:span text:style-name="ПодписьНаБланкеДолжность"><text:variable-get text:name="ПодписалДолжностьИП">ПодписалДолжностьИП</text:variable-get></text:span><text:span text:style-name="ПодписьНаБланкеМестоДляПодписи"><text:tab/></text:span><text:span text:style-name="ПодписьНаБланкеФИО"><text:variable-get text:name="ПодписалПредставлениеВПодписиИП">ПодписалПредставлениеВПодписиИП</text:variable-get></text:span></text:p>
+					<text:p text:style-name="ПодписьСSalutation"><text:span text:style-name="ПодписьНаБланкеДолжность"><text:variable-get text:name="ПодписалДолжностьИП">ПодписалДолжностьИП</text:variable-get></text:span><text:span text:style-name="ПодписьНаБланкеМестоДляПодписи"><text:tab/></text:span><text:span text:style-name="ПодписьНаБланкеФИО"><text:variable-get text:name="ПодписалПредставлениеВПодписиИП">ПодписалПредставлениеВПодписиИП</text:variable-get></text:span></text:p>
 				</text:section>
 				<!-- #endregion Заготовка подписи на бланке письма -->
+				<!-- #region Заготовка подписи единственного подписанта -->
+				<text:section text:name="Шаблон: подпись единственного подписанта">
+					<text:p text:style-name="Подпись2"><text:span text:style-name="ПодписьНаБланкеДолжность"><text:variable-get text:name="ПодписалДолжностьИП">ПодписалДолжностьИП</text:variable-get></text:span><text:span text:style-name="ПодписьНаБланкеМестоДляПодписи"><text:tab/></text:span><text:span text:style-name="ПодписьНаБланкеФИО"><text:variable-get text:name="ПодписалПредставлениеВПодписиИП">ПодписалПредставлениеВПодписиИП</text:variable-get></text:span></text:p>
+				</text:section>
+				<!-- #endregion Заготовка подписи единственного подписанта -->
 				<!-- #region Заготовка подписи на внутреннем документе -->
 				<text:section text:name="Шаблон: подпись во внутреннем документе">
-					<text:p text:style-name="Подпись2"><text:span text:style-name="ПодписьНаБланкеДолжность"><text:variable-get text:name="ПодписалДолжностьИП">ПодписалДолжностьИП</text:variable-get></text:span><text:span text:style-name="ПодписьНаБланкеМестоДляПодписи"><text:tab/></text:span><text:span text:style-name="ПодписьНаБланкеФИО"><text:variable-get text:name="ПодписалПредставлениеВПодписиИП">ПодписалПредставлениеВПодписиИП</text:variable-get></text:span></text:p>
+					<text:p text:style-name="Signature"><text:span text:style-name="ПодписьДолжность"><text:variable-get text:name="ПодписалДолжностьИП">ПодписалДолжностьИП</text:variable-get></text:span><text:span text:style-name="ПодписьМестоДляПодписи"><text:tab/></text:span><text:span text:style-name="ПодписьФИО"><text:variable-get text:name="ПодписалПредставлениеВПодписиИП">ПодписалПредставлениеВПодписиИП</text:variable-get></text:span></text:p>
 				</text:section>
 				<!-- #endregion Заготовка подписи на внутреннем документе -->
 				<text:p text:style-name="ПустойАбзац"/>

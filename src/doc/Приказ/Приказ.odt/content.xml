@@ -82,12 +82,12 @@
 				</text:list>
 			</text:section>
 			<text:section text:name="Подпись">
-				<text:section-source text:section-name="Шаблон: подпись во внутреннем документе" xlink:type="simple" xlink:actuate="other" xlink:show="embed"/>
+				<text:section-source text:section-name="Шаблон: подпись единственного подписанта" xlink:type="simple" xlink:actuate="other" xlink:show="embed"/>
 			</text:section>
 			<text:section text:name="Визы и сведения об ознакомлении">
 				<text:p text:style-name="БланкОРДЛНАЛистСогласования"/>
 				<text:section text:name="Визы">
-					<text:p text:style-name="Виза2"><text:span text:style-name="Виза2Должность">Начальник юридического отдела</text:span><text:span text:style-name="Виза2МестоДляПодписи"><text:tab/></text:span><text:span text:style-name="Виза2ФИО">Е.А. Кузнецова</text:span></text:p>
+					<text:p text:style-name="Виза"><text:span text:style-name="ВизаДолжность">Начальник юридического отдела</text:span><text:span text:style-name="ВизаМестоДляПодписи"><text:tab/></text:span><text:span text:style-name="ВизаФИО">Е.А. Кузнецова</text:span></text:p>
 					<text:section text:name="Поле даты" text:protected="false">
 						<text:section-source text:section-name="Шаблон: поле даты в сведениях об ознакомлении" xlink:type="simple" xlink:show="replace" xlink:actuate="other" xlink:title="ЮрОтд"/>
 					</text:section>
@@ -97,15 +97,15 @@
 				</text:section>
 				<text:section text:name="Сведения об ознакомлении">
 					<text:p text:style-name="ЗаголовокСведенийОбОзнакомлении">С приказом ознакомлены:</text:p>
-					<text:p text:style-name="ЗаписьОбОзнакомлении2"><text:span text:style-name="ЗаписьОбОзнакомлении2Должность">Директор</text:span><text:span text:style-name="ЗаписьОбОзнакомлении2МестоДляПодписи"><text:tab/></text:span><text:span text:style-name="ЗаписьОбОзнакомлении2ФИО">Д.И. Кудрявцев</text:span></text:p>
+					<text:p text:style-name="ЗаписьОбОзнакомлении"><text:span text:style-name="ЗаписьОбОзнакомленииДолжность">Директор</text:span><text:span text:style-name="ЗаписьОбОзнакомленииМестоДляПодписи"><text:tab/></text:span><text:span text:style-name="ЗаписьОбОзнакомленииФИО">Д.И. Кудрявцев</text:span></text:p>
 					<text:section text:name="Поле даты" text:protected="false">
 						<text:section-source text:section-name="Шаблон: поле даты в сведениях об ознакомлении" xlink:type="simple" xlink:show="replace" xlink:actuate="other" xlink:title="Пр"/>
 					</text:section>
-					<text:p text:style-name="ЗаписьОбОзнакомлении2"><text:span text:style-name="ЗаписьОбОзнакомлении2Должность">Начальник юридического отдела</text:span><text:span text:style-name="ЗаписьОбОзнакомлении2МестоДляПодписи"><text:tab/></text:span><text:span text:style-name="ЗаписьОбОзнакомлении2ФИО">Е.А. Кузнецова</text:span></text:p>
+					<text:p text:style-name="ЗаписьОбОзнакомлении"><text:span text:style-name="ЗаписьОбОзнакомленииДолжность">Начальник юридического отдела</text:span><text:span text:style-name="ЗаписьОбОзнакомленииМестоДляПодписи"><text:tab/></text:span><text:span text:style-name="ЗаписьОбОзнакомленииФИО">Е.А. Кузнецова</text:span></text:p>
 					<text:section text:name="Поле даты" text:protected="false">
 						<text:section-source text:section-name="Шаблон: поле даты в сведениях об ознакомлении" xlink:type="simple" xlink:show="replace" xlink:actuate="other" xlink:title="Пр"/>
 					</text:section>
-					<text:p text:style-name="ЗаписьОбОзнакомлении2"><text:span text:style-name="ЗаписьОбОзнакомлении2Должность">Начальник сектора планово-экономической работы бухгалтерско-финансового отдела №483</text:span><text:span text:style-name="ЗаписьОбОзнакомлении2МестоДляПодписи"><text:tab/></text:span><text:span text:style-name="ЗаписьОбОзнакомлении2ФИО">О.В. Гарбузова</text:span></text:p>
+					<text:p text:style-name="ЗаписьОбОзнакомлении"><text:span text:style-name="ЗаписьОбОзнакомленииДолжность">Начальник сектора планово-экономической работы бухгалтерско-финансового отдела №483</text:span><text:span text:style-name="ЗаписьОбОзнакомленииМестоДляПодписи"><text:tab/></text:span><text:span text:style-name="ЗаписьОбОзнакомленииФИО">О.В. Гарбузова</text:span></text:p>
 					<text:section text:name="Поле даты" text:protected="false">
 						<text:section-source text:section-name="Шаблон: поле даты в сведениях об ознакомлении" xlink:type="simple" xlink:show="replace" xlink:actuate="other" xlink:title="Пр"/>
 					</text:section>

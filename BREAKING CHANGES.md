@@ -23,11 +23,18 @@
   [csm-ivanovo-ru/DocTemplates#3](https://github.com/csm-ivanovo-ru/DocTemplates/issues/3)
 - убраны шрифты, использованные для фирменных бланков ФБУ "Тест-С.-Петербург"
   [csm-ivanovo-ru/DocTemplates#3](https://github.com/csm-ivanovo-ru/DocTemplates/issues/3)
+- убраны стили поддержки оформления подписей, виз, сведений об ознакомлении
+  в виде таблиц
+  [csm-ivanovo-ru/DocTemplates#3](https://github.com/csm-ivanovo-ru/DocTemplates/issues/3)
 
 ### Изменено
 
 - устранены использование стиля `Salutation`не по назначению
   [csm-ivanovo-ru/DocTemplates#13](https://github.com/csm-ivanovo-ru/DocTemplates/issues/13)
+- стиль `Виза2` переименован в `Виза`
+  (с переименованием зависимых стилей)
+- стиль `ЗаписьОбОзнакомлении2` переименован в `ЗаписьОбОзнакомлении`
+  (с переименованием зависимых стилей)
 
 ## [2.4.0]
 
@@ -40,7 +47,7 @@
   [test-st-petersburg/DocTemplates#91](https://github.com/test-st-petersburg/DocTemplates/issues/91)
 - оформление даты виз реализовано без таблиц, с помощью позиций табуляции
   [test-st-petersburg/DocTemplates#91](https://github.com/test-st-petersburg/DocTemplates/issues/91)
-- оформление подписей (Подпись2) и виз (Виза2) реализовано без
+- оформление подписей (Подпись) и виз (Виза) реализовано без
   таблиц, с помощью позиций табуляции
   [test-st-petersburg/DocTemplates#91](https://github.com/test-st-petersburg/DocTemplates/issues/91)
 - переменная документа `Название` переименована в `НазваниеДокумента`
