@@ -36,6 +36,13 @@
 
 -->
 
+## [3.0.2]
+
+### Исправлено
+
+- исправлена пунктуация в справочных сведениях об учреждении
+  [csm-ivanovo-ru/DocTemplates#20](https://github.com/csm-ivanovo-ru/DocTemplates/issues/20)
+
 ## [3.0.1]
 
 ### Исправлено
@@ -1020,7 +1027,8 @@
 - шаблона переписки, внутренней и внешней (писем,
   служебных, докладных и объяснительных записок)
 
-[Unreleased]: https://github.com/csm-ivanovo-ru/DocTemplates/compare/3.0.1...HEAD
+[Unreleased]: https://github.com/csm-ivanovo-ru/DocTemplates/compare/3.0.2...HEAD
+[3.0.2]: https://github.com/csm-ivanovo-ru/DocTemplates/compare/3.0.1...3.0.2
 [3.0.1]: https://github.com/csm-ivanovo-ru/DocTemplates/compare/3.0.0...3.0.1
 [3.0.0]: https://github.com/csm-ivanovo-ru/DocTemplates/compare/2.9.11...3.0.0
 [2.9.11]: https://github.com/csm-ivanovo-ru/DocTemplates/compare/2.9.10...2.9.11

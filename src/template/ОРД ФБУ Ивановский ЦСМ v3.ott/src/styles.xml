@@ -1330,8 +1330,8 @@
 								</style:style>
 								<text:p text:style-name="БланкСправочныеДанныеОбОрганизации"><text:variable-get text:name="ОрганизацияАдрес">153000, г. Иваново, ул. Почтовая, д. 31/42</text:variable-get><text:line-break/>тел. <text:variable-get text:name="ОрганизацияТелефон">+7 (4932) 32‑84‑85</text:variable-get>,
 									факс <text:variable-get text:name="ОрганизацияФакс">+7 (4932) 41‑60‑79</text:variable-get>,
-									e-mail:<text:variable-get text:name="ОрганизацияEmail">post@ivcsm.ru </text:variable-get>;
-									<text:variable-get text:name="ОрганизацияWebСайт">https://ivcsm.ru</text:variable-get><text:line-break/>ОКПО <text:variable-get text:name="ОрганизацияОКПО">02567308</text:variable-get>,
+									e-mail:<text:variable-get text:name="ОрганизацияEmail">post@ivcsm.ru</text:variable-get>,
+									<text:variable-get text:name="ОрганизацияWebСайт">https://www.ivcsm.ru</text:variable-get><text:line-break/>ОКПО <text:variable-get text:name="ОрганизацияОКПО">02567308</text:variable-get>,
 									ОГРН <text:variable-get text:name="ОрганизацияОГРН">1023700556990</text:variable-get>,
 									ИНН/КПП <text:variable-get text:name="ОрганизацияИНН">3731001541</text:variable-get>/<text:variable-get text:name="ОрганизацияКПП">370201001</text:variable-get></text:p>
 							</text:section>
@@ -1759,7 +1759,7 @@
 								тел. <text:variable-get text:name="ОрганизацияТелефон">+7 (4932) 32‑84‑85</text:variable-get>,
 								факс <text:variable-get text:name="ОрганизацияФакс">+7 (4932) 41‑60‑79</text:variable-get><text:line-break/>
 								e-mail:<text:variable-get text:name="ОрганизацияEmail">post@ivcsm.ru</text:variable-get>,
-								<text:variable-get text:name="ОрганизацияWebСайт">https://ivcsm.ru</text:variable-get><text:line-break/>
+								<text:variable-get text:name="ОрганизацияWebСайт">https://www.ivcsm.ru</text:variable-get><text:line-break/>
 								ОКПО <text:variable-get text:name="ОрганизацияОКПО">02567308</text:variable-get>,
 								ОГРН <text:variable-get text:name="ОрганизацияОГРН">1023700556990</text:variable-get><text:line-break/>
 								ИНН/КПП <text:variable-get text:name="ОрганизацияИНН">3731001541</text:variable-get>/<text:variable-get text:name="ОрганизацияКПП">370201001</text:variable-get></text:p>
