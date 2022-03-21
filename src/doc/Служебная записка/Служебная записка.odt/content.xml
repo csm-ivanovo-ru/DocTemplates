@@ -58,11 +58,11 @@
 				</text:list>
 			</text:section>
 			<text:section text:name="Подпись">
-				<text:section-source text:section-name="Шаблон: подпись во внутреннем документе" xlink:type="simple" xlink:actuate="other" xlink:show="embed"/>
+				<text:section-source text:section-name="Шаблон: подпись единственного подписанта" xlink:type="simple" xlink:actuate="other" xlink:show="embed"/>
 			</text:section>
 			<text:section text:name="Визы">
 				<text:p text:style-name="ЗаголовокВиз">Согласен:</text:p>
-				<text:p text:style-name="Виза2"><text:span text:style-name="Виза2Должность">Инженер по метрологии</text:span><text:span text:style-name="Виза2МестоДляПодписи"><text:tab/></text:span><text:span text:style-name="Виза2ФИО">И.И. Иванов</text:span></text:p>
+				<text:p text:style-name="Виза"><text:span text:style-name="ВизаДолжность">Инженер по метрологии</text:span><text:span text:style-name="ВизаМестоДляПодписи"><text:tab/></text:span><text:span text:style-name="ВизаФИО">И.И. Иванов</text:span></text:p>
 				<text:section text:name="Поле даты" text:protected="false">
 					<text:section-source text:section-name="Шаблон: поле даты в сведениях об ознакомлении" xlink:type="simple" xlink:show="replace" xlink:actuate="other" xlink:title="Согласие1"/>
 				</text:section>

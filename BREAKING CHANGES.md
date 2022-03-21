@@ -15,15 +15,26 @@
 
 - убран бланк должностной / профессиональной инструкции
   (переведёны на продольный бланк по ГОСТ Р 7.0.97-2016)
-  [#3](https://github.com/csm-ivanovo-ru/DocTemplates/issues/3)
+  [csm-ivanovo-ru/DocTemplates#3](https://github.com/csm-ivanovo-ru/DocTemplates/issues/3)
 - убран бланк доверенности / справки на фирменном бланке
   (переведены на продольный бланк по ГОСТ Р 7.0.97-2016)
-  [#3](https://github.com/csm-ivanovo-ru/DocTemplates/issues/3)
+  [csm-ivanovo-ru/DocTemplates#3](https://github.com/csm-ivanovo-ru/DocTemplates/issues/3)
+- убраны стили, использованные для фирменных бланков ФБУ "Тест-С.-Петербург"
+  [csm-ivanovo-ru/DocTemplates#3](https://github.com/csm-ivanovo-ru/DocTemplates/issues/3)
+- убраны шрифты, использованные для фирменных бланков ФБУ "Тест-С.-Петербург"
+  [csm-ivanovo-ru/DocTemplates#3](https://github.com/csm-ivanovo-ru/DocTemplates/issues/3)
+- убраны стили поддержки оформления подписей, виз, сведений об ознакомлении
+  в виде таблиц
+  [csm-ivanovo-ru/DocTemplates#3](https://github.com/csm-ivanovo-ru/DocTemplates/issues/3)
 
 ### Изменено
 
 - устранены использование стиля `Salutation`не по назначению
   [csm-ivanovo-ru/DocTemplates#13](https://github.com/csm-ivanovo-ru/DocTemplates/issues/13)
+- стиль `Виза2` переименован в `Виза`
+  (с переименованием зависимых стилей)
+- стиль `ЗаписьОбОзнакомлении2` переименован в `ЗаписьОбОзнакомлении`
+  (с переименованием зависимых стилей)
 
 ## [2.4.0]
 
@@ -33,18 +44,18 @@
   переменную "ВступительноеОбращение" (вместо "ПолучателиВОбращении")
 - оформление даты сведений об ознакомлении реализовано
   без таблиц, с помощью позиций табуляции
-  [#91](https://github.com/test-st-petersburg/DocTemplates/issues/91)
+  [test-st-petersburg/DocTemplates#91](https://github.com/test-st-petersburg/DocTemplates/issues/91)
 - оформление даты виз реализовано без таблиц, с помощью позиций табуляции
-  [#91](https://github.com/test-st-petersburg/DocTemplates/issues/91)
-- оформление подписей (Подпись2) и виз (Виза2) реализовано без
+  [test-st-petersburg/DocTemplates#91](https://github.com/test-st-petersburg/DocTemplates/issues/91)
+- оформление подписей (Подпись) и виз (Виза) реализовано без
   таблиц, с помощью позиций табуляции
-  [#91](https://github.com/test-st-petersburg/DocTemplates/issues/91)
+  [test-st-petersburg/DocTemplates#91](https://github.com/test-st-petersburg/DocTemplates/issues/91)
 - переменная документа `Название` переименована в `НазваниеДокумента`
   (Переменная `Название` воспринимается LibreOffice как переменная `Caption`)
 - вступительное обращение в Письме перенесено в шаблон первой страницы
-  [#67](https://github.com/test-st-petersburg/DocTemplates/issues/67)
+  [test-st-petersburg/DocTemplates#67](https://github.com/test-st-petersburg/DocTemplates/issues/67)
 - шаблон Письмо включен в состав шаблона ОРД v2
-  [#67](https://github.com/test-st-petersburg/DocTemplates/issues/67)
+  [test-st-petersburg/DocTemplates#67](https://github.com/test-st-petersburg/DocTemplates/issues/67)
 
 ## [2.3.0]
 
@@ -60,22 +71,22 @@
 - шаблон Записки объединён с шаблоном ОРД
   (добавлен шаблон первого листа записки).
   Отдельный шаблон Записки более не поддерживается
-  [#67](https://github.com/test-st-petersburg/DocTemplates/issues/67)
+  [test-st-petersburg/DocTemplates#67](https://github.com/test-st-petersburg/DocTemplates/issues/67)
 - шаблон Документа СМК объединён с шаблоном ОРД
   (добавлен шаблон титульного листа).
   Отдельный шаблон Документа СМК более не поддерживается
-  [#46](https://github.com/test-st-petersburg/DocTemplates/issues/46)
-  [#67](https://github.com/test-st-petersburg/DocTemplates/issues/67)
+  [test-st-petersburg/DocTemplates#46](https://github.com/test-st-petersburg/DocTemplates/issues/46)
+  [test-st-petersburg/DocTemplates#67](https://github.com/test-st-petersburg/DocTemplates/issues/67)
 - шаблон Внутренние документы преобразован в шаблон ОРД v2
   (Приказы, Распоряжения, Инструкции без титульного листа).
   Отдельный шаблон Внутренние документы более не поддерживается
-  [#46](https://github.com/test-st-petersburg/DocTemplates/issues/46)
+  [test-st-petersburg/DocTemplates#46](https://github.com/test-st-petersburg/DocTemplates/issues/46)
 - исключены стили абзацев Нумерованный список, Маркированный список
   (Письмо, ОРД)
-  [#68](https://github.com/test-st-petersburg/DocTemplates/issues/68)
+  [test-st-petersburg/DocTemplates#68](https://github.com/test-st-petersburg/DocTemplates/issues/68)
 - переименована библиотека макросов в `TestStPetersburg`
   (Письмо, ОРД)
-  [#71](https://github.com/test-st-petersburg/DocTemplates/issues/71)
+  [test-st-petersburg/DocTemplates#71](https://github.com/test-st-petersburg/DocTemplates/issues/71)
 
 [Unreleased]: https://github.com/csm-ivanovo-ru/DocTemplates/compare/2.9.11...HEAD
 [2.9.11]: https://github.com/csm-ivanovo-ru/DocTemplates/compare/2.9.10...2.9.11
