@@ -26,8 +26,8 @@ task clean {
 	Remove-BuildItem $DestinationDocumentPath, $PreprocessedDocumentPath;
 };
 
-task 'ОРД ФБУ Ивановский ЦСМ v2.ott' {
-	Invoke-Build BuildTemplate -File "$SourceTemplatesPath/ОРД ФБУ Ивановский ЦСМ v2.ott/ОРД.build.ps1" @parameters;
+task 'ОРД ФБУ Ивановский ЦСМ v3.ott' {
+	Invoke-Build BuildTemplate -File "$SourceTemplatesPath/ОРД ФБУ Ивановский ЦСМ v3.ott/ОРД.build.ps1" @parameters;
 };
 
 openDocument 'BuildDoc-Профессиональная инструкция.odt' `
@@ -38,7 +38,7 @@ openDocument 'BuildDoc-Профессиональная инструкция.odt
 	-Version $Version `
 	-Inputs @( Get-ChildItem -Path "$SourceDocumentPath/Профессиональная инструкция.odt" -File -Recurse -Exclude $MarkerFileName ) `
 	-Outputs @( "$DestinationDocumentPath/Профессиональная инструкция.odt", "$DestinationDocumentPath/$MarkerFileName" ) `
-	-Jobs 'ОРД ФБУ Ивановский ЦСМ v2.ott';
+	-Jobs 'ОРД ФБУ Ивановский ЦСМ v3.ott';
 
 openDocument 'BuildAndOpenDoc-Профессиональная инструкция.odt' `
 	-OpenAfterBuild `
@@ -49,7 +49,7 @@ openDocument 'BuildAndOpenDoc-Профессиональная инструкц�
 	-Version $Version `
 	-Inputs @( Get-ChildItem -Path "$SourceDocumentPath/Профессиональная инструкция.odt" -File -Recurse -Exclude $MarkerFileName ) `
 	-Outputs @( "$DestinationDocumentPath/Профессиональная инструкция.odt", "$DestinationDocumentPath/$MarkerFileName" ) `
-	-Jobs 'ОРД ФБУ Ивановский ЦСМ v2.ott';
+	-Jobs 'ОРД ФБУ Ивановский ЦСМ v3.ott';
 
 task BuildDoc 'BuildDoc-Профессиональная инструкция.odt';
 

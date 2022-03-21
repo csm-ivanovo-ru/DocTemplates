@@ -60,6 +60,17 @@
 			}
 		},
 		{
+			"label": "Install dependencies",
+			"command": ".\\prepare.ps1",
+			"options": {
+				"cwd": "${workspaceRoot}/install"
+			},
+			"presentation": {
+				"reveal": "always",
+				"clear": true
+			}
+		},
+		{
 			"label": "Clean",
 			"command": "Invoke-Build -Task clean"
 		},

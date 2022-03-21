@@ -28,6 +28,9 @@ if ( -not ( Test-Path variable:RepoRootPath ) -or ( [System.String]::IsNullOrEmp
 [System.String] $PreprocessedTemplatesPath = ( Join-Path -Path $TempPath -ChildPath 'template' );
 [System.String] $PreprocessedDocumentsPath = ( Join-Path -Path $TempPath -ChildPath 'doc' );
 
+[System.String] $ImagesPath = ( Join-Path -Path $SourcePath -ChildPath 'images' -Resolve );
+[System.String] $RussiaEmblemPath = ( Join-Path -Path $ImagesPath -ChildPath 'russian-emblems' -Resolve );
+
 [System.String] $DestinationPath = ( Join-Path -Path $RepoRootPath -ChildPath 'output' );
 [System.String] $DestinationLibrariesPath = ( Join-Path -Path $DestinationPath -ChildPath 'basic' );
 [System.String] $DestinationTemplatesPath = ( Join-Path -Path $DestinationPath -ChildPath 'template' );
@@ -48,6 +51,9 @@ if ( -not ( Test-Path variable:RepoRootPath ) -or ( [System.String]::IsNullOrEmp
 [System.String] $BuildToolsPath = ( Join-Path -Path $ToolsPath -ChildPath 'build' -Resolve );
 [System.String] $UpdateFileLastWriteTimePath = ( Join-Path -Path $BuildToolsPath -ChildPath 'Update-FileLastWriteTime.ps1' -Resolve );
 
+[System.String] $GitVersionToolsPath = ( Join-Path -Path $ToolsPath -ChildPath 'GitVersion' -Resolve );
+[System.String] $GetGitVersionToolsPath = ( Join-Path -Path $GitVersionToolsPath -ChildPath 'Get-GitVersionSemVer.ps1' -Resolve );
+
 [System.String] $XSLTToolsPath = ( Join-Path -Path $ToolsPath -ChildPath 'xslt' -Resolve );
 
 [System.String] $DocsToolsPath = ( Join-Path -Path $ToolsPath -ChildPath 'docs' -Resolve );
@@ -58,6 +64,8 @@ if ( -not ( Test-Path variable:RepoRootPath ) -or ( [System.String]::IsNullOrEmp
 [System.String] $OptimizePlainXMLPath = ( Join-Path -Path $DocsToolsPath -ChildPath 'Optimize-PlainXML.ps1' -Resolve );
 [System.String] $QRCodeToolsPath = ( Join-Path -Path $ToolsPath -ChildPath 'QRCode' -Resolve );
 [System.String] $OutQRCodePath = ( Join-Path -Path $QRCodeToolsPath -ChildPath 'Out-QRCode.ps1' -Resolve );
+[System.String] $ImagesToolsPath = ( Join-Path -Path $ToolsPath -ChildPath 'Images' -Resolve );
+[System.String] $ConvertToPNGPath = ( Join-Path -Path $ImagesToolsPath -ChildPath 'ConvertTo-MonochromePNG.ps1' -Resolve );
 
 [System.String] $vCardToolsPath = ( Join-Path -Path $ToolsPath -ChildPath 'xCard' -Resolve );
 [System.String] $OutVCardPath = ( Join-Path -Path $vCardToolsPath -ChildPath 'Out-vCardFile.ps1' -Resolve );
@@ -212,7 +220,7 @@ if ( $env:version )
 }
 else
 {
-	[System.String] $Version = ( dotnet-gitversion /output json /showvariable SemVer );
+	[System.String] $Version = ( & $GetGitVersionToolsPath );
 };
 
 $JobOpenFile = {

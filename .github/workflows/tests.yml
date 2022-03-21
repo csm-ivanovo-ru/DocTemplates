@@ -38,22 +38,6 @@ jobs:
         with:
           recurse: true
 
-      # - name: Install ODFValidator
-      #   shell: powershell
-      #   run: |
-      #     ./tests/Prepare-ODFValidator.ps1;
-
-      - name: Install GitVersion
-        uses: gittools/actions/gitversion/setup@v0.9.13
-        with:
-          versionSpec: "5.x"
-
-      - name: Determine Version
-        id: gitversion
-        uses: gittools/actions/gitversion/execute@v0.9.13
-        with:
-          useConfigFile: true
-
       - name: Build .ott and .odt files
         uses: IT-Service/Invoke-Build@v1.0.0
         with:

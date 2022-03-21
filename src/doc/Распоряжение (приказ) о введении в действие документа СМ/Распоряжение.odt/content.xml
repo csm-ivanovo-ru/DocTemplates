@@ -16,19 +16,19 @@
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ЭтоВнутреннийДокумент" office:value-type="string">ИСТИНА</text:variable-set></text:p>
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ЭтоВходящийДокумент" office:value-type="string">ЛОЖЬ</text:variable-set></text:p>
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ЭтоИсходящийДокумент" office:value-type="string">ЛОЖЬ</text:variable-set></text:p>
-				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ПодписалДолжностьИП" office:value-type="string">Директор Новгородского филиала</text:variable-set></text:p>
-				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ПодписалПредставлениеВДокументахИП" office:value-type="string">Бетке С.С.</text:variable-set></text:p>
-				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ПодписалПредставлениеВПодписиИП" office:value-type="string">С.С. Бетке</text:variable-set></text:p>
+				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ПодписалДолжностьИП" office:value-type="string">Директор</text:variable-set></text:p>
+				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ПодписалПредставлениеВДокументахИП" office:value-type="string">Кудрявцев Д.И.</text:variable-set></text:p>
+				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ПодписалПредставлениеВПодписиИП" office:value-type="string">Д.И. Кудрявцев</text:variable-set></text:p>
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="УтвердилДолжностьИП" office:value-type="string"></text:variable-set></text:p>
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="УтвердилПредставлениеВПодписиИП" office:value-type="string"></text:variable-set></text:p>
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ДатаРегистрации" office:value-type="string">25.01.2020</text:variable-set></text:p>
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="РегистрационныйНомер" office:value-type="string">460/20-84/1999-2020</text:variable-set></text:p>
-				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="МестоСоставления" office:value-type="string">Великий Новгород</text:variable-set></text:p>
-				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ПодготовилПредставлениеВДокументахИП" office:value-type="string">Бетке С.С.</text:variable-set></text:p>
-				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ПодготовилПодразделениеИП" office:value-type="string">Новгородский филиал</text:variable-set></text:p>
+				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="МестоСоставления" office:value-type="string">г. Иваново</text:variable-set></text:p>
+				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ПодготовилПредставлениеВДокументахИП" office:value-type="string">Кудрявцев Д.И.</text:variable-set></text:p>
+				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ПодготовилПодразделениеИП" office:value-type="string">ФБУ «Ивановский ЦСМ»</text:variable-set></text:p>
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ПодготовилДолжностьИП" office:value-type="string">Директор</text:variable-set></text:p>
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ПодготовилТелефон" office:value-type="string">+7 (911) 649-90-80</text:variable-set></text:p>
-				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ПодготовилПочта" office:value-type="string">Sergei.S.Betke@csm.nov.ru</text:variable-set></text:p>
+				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="ПодготовилПочта" office:value-type="string">post@ivcsm.ru</text:variable-set></text:p>
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="Тема" office:value-type="string">О введении в действие СК 04/460‑01.02‑31‑2020/ред.1 «Положение об обеспечении средствами индивидуальной защиты работников Новгородского филиала»</text:variable-set></text:p>
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="НазваниеДокумента" office:value-type="string">Распоряжение «О введении в действие СК 04/460‑01.02‑31‑2020/ред.1 «Положение об обеспечении средствами индивидуальной защиты работников Новгородского филиала»»</text:variable-set></text:p>
 				<text:p text:style-name="Preformatted_20_Text"><text:variable-set text:name="Описание" office:value-type="string"></text:variable-set></text:p>
@@ -70,37 +70,37 @@
 					</text:list-item>
 				</text:list>
 			</text:section>
-			<text:section text:name="Подписи">
-				<text:p text:style-name="Подпись2"><text:span text:style-name="Подпись2Должность"><text:variable-get text:name="ПодписалДолжностьИП">Директор Новгородского филиала</text:variable-get></text:span><text:span text:style-name="Подпись2МестоДляПодписи"><text:tab/></text:span><text:span text:style-name="Подпись2ФИО"><text:variable-get text:name="ПодписалПредставлениеВПодписиИП">С.С. Бетке</text:variable-get></text:span></text:p>
+			<text:section text:name="Подпись">
+				<text:section-source text:section-name="Шаблон: подпись единственного подписанта" xlink:type="simple" xlink:actuate="other" xlink:show="embed"/>
 			</text:section>
 			<text:section text:name="Визы и сведения об ознакомлении">
 				<text:p text:style-name="БланкОРДЛНАЛистСогласования"/>
 				<text:section text:name="Визы">
-					<text:p text:style-name="Виза2"><text:span text:style-name="Виза2Должность">Юрисконсульт</text:span><text:span text:style-name="Виза2МестоДляПодписи"><text:tab/></text:span><text:span text:style-name="Виза2ФИО">И.В. Бабкова</text:span></text:p>
+					<text:p text:style-name="Виза"><text:span text:style-name="ВизаДолжность">Юрисконсульт</text:span><text:span text:style-name="ВизаМестоДляПодписи"><text:tab/></text:span><text:span text:style-name="ВизаФИО">И.В. Бабкова</text:span></text:p>
 				</text:section>
 				<text:section text:name="Сведения об ознакомлении">
 					<text:p text:style-name="ЗаголовокСведенийОбОзнакомлении">С распоряжением ознакомлены:</text:p>
-					<text:p text:style-name="ЗаписьОбОзнакомлении2"><text:span text:style-name="ЗаписьОбОзнакомлении2Должность">Секретарь руководителя</text:span><text:span text:style-name="ЗаписьОбОзнакомлении2МестоДляПодписи"><text:tab/></text:span><text:span text:style-name="ЗаписьОбОзнакомлении2ФИО">И.В. Коновалова</text:span></text:p>
+					<text:p text:style-name="ЗаписьОбОзнакомлении"><text:span text:style-name="ЗаписьОбОзнакомленииДолжность">Секретарь руководителя</text:span><text:span text:style-name="ЗаписьОбОзнакомленииМестоДляПодписи"><text:tab/></text:span><text:span text:style-name="ЗаписьОбОзнакомленииФИО">И.В. Коновалова</text:span></text:p>
 					<text:section text:name="Поле даты" text:protected="false">
 						<text:section-source text:section-name="Шаблон: поле даты в сведениях об ознакомлении" xlink:type="simple" xlink:show="replace" xlink:actuate="other" xlink:title="Пр"/>
 					</text:section>
-					<text:p text:style-name="ЗаписьОбОзнакомлении2"><text:span text:style-name="ЗаписьОбОзнакомлении2Должность">Начальник сектора специальной оценки условий труда</text:span><text:span text:style-name="ЗаписьОбОзнакомлении2МестоДляПодписи"><text:tab/></text:span><text:span text:style-name="ЗаписьОбОзнакомлении2ФИО">П.Ю. Зернов</text:span></text:p>
+					<text:p text:style-name="ЗаписьОбОзнакомлении"><text:span text:style-name="ЗаписьОбОзнакомленииДолжность">Начальник сектора специальной оценки условий труда</text:span><text:span text:style-name="ЗаписьОбОзнакомленииМестоДляПодписи"><text:tab/></text:span><text:span text:style-name="ЗаписьОбОзнакомленииФИО">П.Ю. Зернов</text:span></text:p>
 					<text:section text:name="Поле даты" text:protected="false">
 						<text:section-source text:section-name="Шаблон: поле даты в сведениях об ознакомлении" xlink:type="simple" xlink:show="replace" xlink:actuate="other" xlink:title="Пр"/>
 					</text:section>
-					<text:p text:style-name="ЗаписьОбОзнакомлении2"><text:span text:style-name="ЗаписьОбОзнакомлении2Должность">Начальник сектора обеспечения функционирования филиала</text:span><text:span text:style-name="ЗаписьОбОзнакомлении2МестоДляПодписи"><text:tab/></text:span><text:span text:style-name="ЗаписьОбОзнакомлении2ФИО">С.Э. Гущин</text:span></text:p>
+					<text:p text:style-name="ЗаписьОбОзнакомлении"><text:span text:style-name="ЗаписьОбОзнакомленииДолжность">Начальник сектора обеспечения функционирования филиала</text:span><text:span text:style-name="ЗаписьОбОзнакомленииМестоДляПодписи"><text:tab/></text:span><text:span text:style-name="ЗаписьОбОзнакомленииФИО">С.Э. Гущин</text:span></text:p>
 					<text:section text:name="Поле даты" text:protected="false">
 						<text:section-source text:section-name="Шаблон: поле даты в сведениях об ознакомлении" xlink:type="simple" xlink:show="replace" xlink:actuate="other" xlink:title="Пр"/>
 					</text:section>
-					<text:p text:style-name="ЗаписьОбОзнакомлении2"><text:span text:style-name="ЗаписьОбОзнакомлении2Должность">Начальник метрологического отдела поверки и калибровки средств измерений</text:span><text:span text:style-name="ЗаписьОбОзнакомлении2МестоДляПодписи"><text:tab/></text:span><text:span text:style-name="ЗаписьОбОзнакомлении2ФИО">И.С. Ядрышникова</text:span></text:p>
+					<text:p text:style-name="ЗаписьОбОзнакомлении"><text:span text:style-name="ЗаписьОбОзнакомленииДолжность">Начальник метрологического отдела поверки и калибровки средств измерений</text:span><text:span text:style-name="ЗаписьОбОзнакомленииМестоДляПодписи"><text:tab/></text:span><text:span text:style-name="ЗаписьОбОзнакомленииФИО">И.С. Ядрышникова</text:span></text:p>
 					<text:section text:name="Поле даты" text:protected="false">
 						<text:section-source text:section-name="Шаблон: поле даты в сведениях об ознакомлении" xlink:type="simple" xlink:show="replace" xlink:actuate="other" xlink:title="Пр"/>
 					</text:section>
-					<text:p text:style-name="ЗаписьОбОзнакомлении2"><text:span text:style-name="ЗаписьОбОзнакомлении2Должность">Руководитель сектора по ремонту средств измерений</text:span><text:span text:style-name="ЗаписьОбОзнакомлении2МестоДляПодписи"><text:tab/></text:span><text:span text:style-name="ЗаписьОбОзнакомлении2ФИО">А.Ю. Сулацков</text:span></text:p>
+					<text:p text:style-name="ЗаписьОбОзнакомлении"><text:span text:style-name="ЗаписьОбОзнакомленииДолжность">Руководитель сектора по ремонту средств измерений</text:span><text:span text:style-name="ЗаписьОбОзнакомленииМестоДляПодписи"><text:tab/></text:span><text:span text:style-name="ЗаписьОбОзнакомленииФИО">А.Ю. Сулацков</text:span></text:p>
 					<text:section text:name="Поле даты" text:protected="false">
 						<text:section-source text:section-name="Шаблон: поле даты в сведениях об ознакомлении" xlink:type="simple" xlink:show="replace" xlink:actuate="other" xlink:title="Пр"/>
 					</text:section>
-					<text:p text:style-name="ЗаписьОбОзнакомлении2"><text:span text:style-name="ЗаписьОбОзнакомлении2Должность">Начальник сектора сертификации</text:span><text:span text:style-name="ЗаписьОбОзнакомлении2МестоДляПодписи"><text:tab/></text:span><text:span text:style-name="ЗаписьОбОзнакомлении2ФИО">Е.В. Фёдорова</text:span></text:p>
+					<text:p text:style-name="ЗаписьОбОзнакомлении"><text:span text:style-name="ЗаписьОбОзнакомленииДолжность">Начальник сектора сертификации</text:span><text:span text:style-name="ЗаписьОбОзнакомленииМестоДляПодписи"><text:tab/></text:span><text:span text:style-name="ЗаписьОбОзнакомленииФИО">Е.В. Фёдорова</text:span></text:p>
 					<text:section text:name="Поле даты" text:protected="false">
 						<text:section-source text:section-name="Шаблон: поле даты в сведениях об ознакомлении" xlink:type="simple" xlink:show="replace" xlink:actuate="other" xlink:title="Пр"/>
 					</text:section>

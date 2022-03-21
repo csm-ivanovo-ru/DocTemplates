@@ -37,6 +37,12 @@
 		"files.trimTrailingWhitespace": true,
 		"files.insertFinalNewline": false
 	},
+	"[svg]": {
+		"editor.formatOnSave": false,
+		"editor.autoClosingBrackets": "never",
+		"files.trimTrailingWhitespace": true,
+		"files.insertFinalNewline": false
+	},
 	"editor.autoClosingTags": false,
 	"editor.linkedEditing": true,
 	"xml.autoCloseTags.enabled": true,
@@ -129,6 +135,7 @@
 	"conventionalCommits.scopes": [
 		"ott",
 		"odt",
+		"images",
 		"qrcode",
 		"vcard",
 		"design",
