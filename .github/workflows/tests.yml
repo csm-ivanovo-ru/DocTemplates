@@ -23,7 +23,7 @@ jobs:
     runs-on: windows-latest
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v3.0.0
         with:
           fetch-depth: 0
 
@@ -32,6 +32,34 @@ jobs:
           distribution: "adopt"
           java-version: "11"
           cache: "maven"
+
+      - uses: nuget/setup-nuget@v1.0.5
+        with:
+          nuget-version: latest
+
+      - name: NuGet packages cache
+        uses: actions/cache@v3.0.0
+        id: nuget-packages-cache
+        with:
+          path: |
+            **/packages
+          key: ${{ runner.os }}-nuget-${{ hashFiles('**/packages.config') }}
+
+      - name: Restore NuGet packages for XSLT processing
+        if: steps.nuget-packages-cache.outputs.cache-hit != 'true'
+        run: nuget.exe restore "tools/xslt/packages.config" -PackagesDirectory "tools/xslt/packages" -Source "https://api.nuget.org/v3/index.json" -NonInteractive
+
+      - name: Restore NuGet packages for QRCodes processing
+        if: steps.nuget-packages-cache.outputs.cache-hit != 'true'
+        run: nuget.exe restore "tools/QRCode/packages.config" -PackagesDirectory "tools/QRCode/packages" -Source "https://api.nuget.org/v3/index.json" -NonInteractive
+
+      - name: Restore NuGet packages for Images processing
+        if: steps.nuget-packages-cache.outputs.cache-hit != 'true'
+        run: nuget.exe restore "tools/Images/packages.config" -PackagesDirectory "tools/Images/packages" -Source "https://api.nuget.org/v3/index.json" -NonInteractive
+
+      - name: Restore GitVersion NuGet package
+        if: steps.nuget-packages-cache.outputs.cache-hit != 'true'
+        run: nuget.exe restore "tools/GitVersion/packages.config" -PackagesDirectory "tools/GitVersion/packages" -Source "https://api.nuget.org/v3/index.json" -NonInteractive
 
       - name: Install dependencies
         uses: IT-Service/Invoke-PSDepend@v1.0.0
@@ -45,7 +73,7 @@ jobs:
           verbose: true
 
       - name: Validate documents and templates
-        uses: zyborg/pester-tests-report@v1
+        uses: zyborg/pester-tests-report@v1.5.0
         with:
           include_paths: tests
           report_title: Результаты тестирования
@@ -53,14 +81,14 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Upload .ott files
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3.0.0
         with:
           name: doc-templates
           path: ${{ github.workspace }}/output/template/*.ott
           if-no-files-found: warn
 
       - name: Upload documents
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3.0.0
         with:
           name: docs
           path: |
