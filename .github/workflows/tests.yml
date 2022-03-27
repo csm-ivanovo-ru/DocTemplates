@@ -28,6 +28,7 @@ jobs:
           fetch-depth: 0
 
       - uses: actions/setup-java@v3.0.0
+        id: java-setup
         with:
           distribution: "adopt"
           java-version: "11"
@@ -39,38 +40,64 @@ jobs:
 
       - name: NuGet packages cache
         uses: actions/cache@v3.0.0
-        id: nuget-packages-cache
+        id: nuget-xslt-packages-cache
         with:
-          path: |
-            **/packages
-          key: ${{ runner.os }}-nuget-${{ hashFiles('**/packages.config') }}
+          path: tools/xslt/packages
+          key: ${{ runner.os }}-nuget-${{ hashFiles('tools/xslt/packages.config') }}
 
       - name: Restore NuGet packages for XSLT processing
-        if: steps.nuget-packages-cache.outputs.cache-hit != 'true'
+        if: steps.nuget-xslt-packages-cache.outputs.cache-hit != 'true'
         run: nuget.exe restore "tools/xslt/packages.config" -PackagesDirectory "tools/xslt/packages" -Source "https://api.nuget.org/v3/index.json" -NonInteractive
 
+      - name: NuGet packages cache
+        uses: actions/cache@v3.0.0
+        id: nuget-QRcode-packages-cache
+        with:
+          path: tools/QRCode/packages
+          key: ${{ runner.os }}-nuget-${{ hashFiles('tools/QRCode/packages.config') }}
+
       - name: Restore NuGet packages for QRCodes processing
-        if: steps.nuget-packages-cache.outputs.cache-hit != 'true'
+        if: steps.nuget-QRcode-packages-cache.outputs.cache-hit != 'true'
         run: nuget.exe restore "tools/QRCode/packages.config" -PackagesDirectory "tools/QRCode/packages" -Source "https://api.nuget.org/v3/index.json" -NonInteractive
 
+      - name: NuGet packages cache
+        uses: actions/cache@v3.0.0
+        id: nuget-images-packages-cache
+        with:
+          path: tools/Images/packages
+          key: ${{ runner.os }}-nuget-${{ hashFiles('tools/Images/packages.config') }}
+
       - name: Restore NuGet packages for Images processing
-        if: steps.nuget-packages-cache.outputs.cache-hit != 'true'
+        if: steps.nuget-images-packages-cache.outputs.cache-hit != 'true'
         run: nuget.exe restore "tools/Images/packages.config" -PackagesDirectory "tools/Images/packages" -Source "https://api.nuget.org/v3/index.json" -NonInteractive
 
+      - name: NuGet packages cache
+        uses: actions/cache@v3.0.0
+        id: nuget-GitVersion-packages-cache
+        with:
+          path: tools/GitVersion/packages
+          key: ${{ runner.os }}-nuget-${{ hashFiles('tools/GitVersion/packages.config') }}
+
       - name: Restore GitVersion NuGet package
-        if: steps.nuget-packages-cache.outputs.cache-hit != 'true'
+        if: steps.nuget-GitVersion-packages-cache.outputs.cache-hit != 'true'
         run: nuget.exe restore "tools/GitVersion/packages.config" -PackagesDirectory "tools/GitVersion/packages" -Source "https://api.nuget.org/v3/index.json" -NonInteractive
 
-      - name: Install dependencies
-        uses: IT-Service/Invoke-PSDepend@v1.0.0
+      - name: Restore PowerShell modules
+        uses: potatoqualitee/psmodulecache@v4.5
         with:
-          recurse: true
+          modules-to-cache: InvokeBuild:5.5.1, PowerShellForGitHub:0.16.0, 7Zip4Powershell:2.0.0, Pester:5.3.0
+          shell: powershell
 
       - name: Build .ott and .odt files
         uses: IT-Service/Invoke-Build@v1.0.0
         with:
           task: "Build"
           verbose: true
+
+      - name: Install ODFToolkit
+        # if: steps.java-setup.outputs.cache-hit != 'true'
+        # https://github.com/actions/setup-java/issues/306
+        run: cd tests && mvn dependency:copy-dependencies
 
       - name: Validate documents and templates
         uses: zyborg/pester-tests-report@v1.5.0
