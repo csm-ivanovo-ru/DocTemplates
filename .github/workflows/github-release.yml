@@ -39,19 +39,19 @@ jobs:
 
       - name: Restore NuGet packages for XSLT processing
         if: steps.nuget-packages-cache.outputs.cache-hit != 'true'
-        run: nuget.exe restore "tools/xslt/packages.config" -PackagesDirectory "tools/xslt/packages" -Source "https://api.nuget.org/v3/index.json" -NonInteractive
+        run: nuget.exe restore "tools/xslt/packages.config" -PackagesDirectory "tools/xslt/packages" -Source "https://api.nuget.org/v3/index.json" -NonInteractive -UseLockFile -LockedMode
 
       - name: Restore NuGet packages for QRCodes processing
         if: steps.nuget-packages-cache.outputs.cache-hit != 'true'
-        run: nuget.exe restore "tools/QRCode/packages.config" -PackagesDirectory "tools/QRCode/packages" -Source "https://api.nuget.org/v3/index.json" -NonInteractive
+        run: nuget.exe restore "tools/QRCode/packages.config" -PackagesDirectory "tools/QRCode/packages" -Source "https://api.nuget.org/v3/index.json" -NonInteractive -UseLockFile -LockedMode
 
       - name: Restore NuGet packages for Images processing
         if: steps.nuget-packages-cache.outputs.cache-hit != 'true'
-        run: nuget.exe restore "tools/Images/packages.config" -PackagesDirectory "tools/Images/packages" -Source "https://api.nuget.org/v3/index.json" -NonInteractive
+        run: nuget.exe restore "tools/Images/packages.config" -PackagesDirectory "tools/Images/packages" -Source "https://api.nuget.org/v3/index.json" -NonInteractive -UseLockFile -LockedMode
 
       - name: Restore GitVersion NuGet package
         if: steps.nuget-packages-cache.outputs.cache-hit != 'true'
-        run: nuget.exe restore "tools/GitVersion/packages.config" -PackagesDirectory "tools/GitVersion/packages" -Source "https://api.nuget.org/v3/index.json" -NonInteractive
+        run: nuget.exe restore "tools/GitVersion/packages.config" -PackagesDirectory "tools/GitVersion/packages" -Source "https://api.nuget.org/v3/index.json" -NonInteractive -UseLockFile -LockedMode
 
       - name: Install dependencies
         uses: IT-Service/Invoke-PSDepend@v1.0.0
