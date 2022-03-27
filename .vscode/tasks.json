@@ -61,10 +61,7 @@
 		},
 		{
 			"label": "Install dependencies",
-			"command": ".\\prepare.ps1",
-			"options": {
-				"cwd": "${workspaceRoot}/install"
-			},
+			"command": "Invoke-PSDepend -Recurse $true -Force -Verbose",
 			"presentation": {
 				"reveal": "always",
 				"clear": true
