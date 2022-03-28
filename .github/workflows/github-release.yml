@@ -54,12 +54,12 @@ jobs:
         run: nuget.exe restore "tools/GitVersion/packages.config" -PackagesDirectory "tools/GitVersion/packages" -Source "https://api.nuget.org/v3/index.json" -NonInteractive -UseLockFile -LockedMode
 
       - name: Install dependencies
-        uses: IT-Service/Invoke-PSDepend@v1.0.0
+        uses: IT-Service/Invoke-PSDepend@v1.0.1
         with:
           recurse: true
 
       - name: Install required PowerShell and NuGet modules
-        uses: IT-Service/Invoke-PSDepend@v1
+        uses: IT-Service/Invoke-PSDepend@v1.0.1
         with:
           recurse: true
 
