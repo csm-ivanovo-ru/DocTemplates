@@ -1,0 +1,13 @@
+{
+  "version": 1,
+  "dependencies": {
+    "Any,Version=v0.0": {
+      "GitVersion.CommandLine": {
+        "type": "Direct",
+        "requested": "[5.9.0, 5.9.0]",
+        "resolved": "5.9.0",
+        "contentHash": "XTvfgR5JsgiIgqb9ED7XCLcfuIvGYYs4Vu1obe1ThPBhScv9vhJOhCGJxFNkA21sDFLLdyS6lB5T3CREtP1VKQ=="
+      }
+    }
+  }
+}

@@ -46,7 +46,15 @@ if ( -not ( Test-Path variable:RepoRootPath ) -or ( [System.String]::IsNullOrEmp
 [System.String] $ToolsPath = ( Join-Path -Path $RepoRootPath -ChildPath 'tools' -Resolve );
 
 [System.String] $NuGetToolsPath = $ToolsPath;
-[System.String] $NuGetPath = ( Join-Path -Path $NuGetToolsPath -ChildPath 'nuget.exe' );
+if ( Get-Command 'nuget.exe' -ErrorAction 'SilentlyContinue' )
+{
+	$NuGetPath = 'nuget.exe';
+	[System.String] $NuGetPath = 'nuget.exe';
+}
+else
+{
+	[System.String] $NuGetPath = ( Join-Path -Path $NuGetToolsPath -ChildPath 'nuget.exe' );
+};
 
 [System.String] $BuildToolsPath = ( Join-Path -Path $ToolsPath -ChildPath 'build' -Resolve );
 [System.String] $UpdateFileLastWriteTimePath = ( Join-Path -Path $BuildToolsPath -ChildPath 'Update-FileLastWriteTime.ps1' -Resolve );
@@ -236,8 +244,12 @@ $JobOpenFile = {
 };
 
 
+[System.String] $NuGetPath = ( Join-Path -Path $NuGetToolsPath -ChildPath 'nuget.exe' );
+[System.Boolean] $NuGetInstalled = $false;
+
+
 task nuget `
-	-If { -not ( Test-Path -Path $NuGetPath ) } `
+	-If { -not ( Get-Command $NuGetPath -ErrorAction 'SilentlyContinue' ) } `
 	-Jobs {
 	$NuGetURI = 'https://dist.nuget.org/win-x86-commandline/latest/nuget.exe';
 	Invoke-WebRequest $NuGetURI -OutFile $NuGetPath `

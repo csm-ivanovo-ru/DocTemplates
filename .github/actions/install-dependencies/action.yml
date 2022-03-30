@@ -1,0 +1,47 @@
+name: "install-dependencies"
+description: "Install dependencies"
+author: "Sergey.S.Betke@yandex.ru"
+outputs:
+  maven-cache-hit:
+    description: "maven packages cache status"
+    value: ${{ steps.java-setup.outputs.cache-hit }}
+    # https://github.com/actions/setup-java/issues/306
+runs:
+  using: "composite"
+  steps:
+    - uses: actions/setup-java@v3.0.0
+      id: java-setup
+      with:
+        distribution: "adopt"
+        java-version: "11"
+        cache: "maven"
+
+    - name: Restore NuGet packages for XSLT processing
+      uses: IT-Service/restore-nuget-packages@v1.0.0
+      with:
+        packages-config-path: tools/xslt/packages.config
+        packages-directory-path: tools/xslt/packages
+
+    - name: Restore NuGet packages for QRCodes processing
+      uses: IT-Service/restore-nuget-packages@v1.0.0
+      with:
+        packages-config-path: tools/QRCode/packages.config
+        packages-directory-path: tools/QRCode/packages
+
+    - name: Restore NuGet packages for images processing
+      uses: IT-Service/restore-nuget-packages@v1.0.0
+      with:
+        packages-config-path: tools/Images/packages.config
+        packages-directory-path: tools/Images/packages
+
+    - name: Restore NuGet packages for GitVersion
+      uses: IT-Service/restore-nuget-packages@v1.0.0
+      with:
+        packages-config-path: tools/GitVersion/packages.config
+        packages-directory-path: tools/GitVersion/packages
+
+    - name: Restore PowerShell modules
+      uses: potatoqualitee/psmodulecache@v4.5
+      with:
+        modules-to-cache: InvokeBuild:5.5.1, PowerShellForGitHub:0.16.0, 7Zip4Powershell:2.0.0, Pester:5.3.0
+        shell: powershell
