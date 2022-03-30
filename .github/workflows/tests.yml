@@ -34,53 +34,29 @@ jobs:
           java-version: "11"
           cache: "maven"
 
-      - uses: nuget/setup-nuget@v1.0.5
-        with:
-          nuget-version: latest
-
-      - name: NuGet packages cache
-        uses: actions/cache@v3.0.0
-        id: nuget-xslt-packages-cache
-        with:
-          path: tools/xslt/packages
-          key: ${{ runner.os }}-nuget-${{ hashFiles('tools/xslt/packages.config') }}
-
       - name: Restore NuGet packages for XSLT processing
-        if: steps.nuget-xslt-packages-cache.outputs.cache-hit != 'true'
-        run: nuget.exe restore "tools/xslt/packages.config" -PackagesDirectory "tools/xslt/packages" -Source "https://api.nuget.org/v3/index.json" -NonInteractive -UseLockFile -LockedMode
-
-      - name: NuGet packages cache
-        uses: actions/cache@v3.0.0
-        id: nuget-QRcode-packages-cache
+        uses: ./.github/actions/restore-nuget-packages
         with:
-          path: tools/QRCode/packages
-          key: ${{ runner.os }}-nuget-${{ hashFiles('tools/QRCode/packages.config') }}
+          packages-config-path: tools/xslt/packages.config
+          packages-directory-path: tools/xslt/packages
 
       - name: Restore NuGet packages for QRCodes processing
-        if: steps.nuget-QRcode-packages-cache.outputs.cache-hit != 'true'
-        run: nuget.exe restore "tools/QRCode/packages.config" -PackagesDirectory "tools/QRCode/packages" -Source "https://api.nuget.org/v3/index.json" -NonInteractive -UseLockFile -LockedMode
-
-      - name: NuGet packages cache
-        uses: actions/cache@v3.0.0
-        id: nuget-images-packages-cache
+        uses: ./.github/actions/restore-nuget-packages
         with:
-          path: tools/Images/packages
-          key: ${{ runner.os }}-nuget-${{ hashFiles('tools/Images/packages.config') }}
+          packages-config-path: tools/QRCode/packages.config
+          packages-directory-path: tools/QRCode/packages
 
-      - name: Restore NuGet packages for Images processing
-        if: steps.nuget-images-packages-cache.outputs.cache-hit != 'true'
-        run: nuget.exe restore "tools/Images/packages.config" -PackagesDirectory "tools/Images/packages" -Source "https://api.nuget.org/v3/index.json" -NonInteractive -UseLockFile -LockedMode
-
-      - name: NuGet packages cache
-        uses: actions/cache@v3.0.0
-        id: nuget-GitVersion-packages-cache
+      - name: Restore NuGet packages for images processing
+        uses: ./.github/actions/restore-nuget-packages
         with:
-          path: tools/GitVersion/packages
-          key: ${{ runner.os }}-nuget-${{ hashFiles('tools/GitVersion/packages.config') }}
+          packages-config-path: tools/Images/packages.config
+          packages-directory-path: tools/Images/packages
 
-      - name: Restore GitVersion NuGet package
-        if: steps.nuget-GitVersion-packages-cache.outputs.cache-hit != 'true'
-        run: nuget.exe restore "tools/GitVersion/packages.config" -PackagesDirectory "tools/GitVersion/packages" -Source "https://api.nuget.org/v3/index.json" -NonInteractive -UseLockFile -LockedMode
+      - name: Restore NuGet packages for GitVersion
+        uses: ./.github/actions/restore-nuget-packages
+        with:
+          packages-config-path: tools/GitVersion/packages.config
+          packages-directory-path: tools/GitVersion/packages
 
       - name: Restore PowerShell modules
         uses: potatoqualitee/psmodulecache@v4.5
