@@ -23,45 +23,15 @@ jobs:
         with:
           fetch-depth: 0
 
-      - uses: actions/setup-java@v3.0.0
-        with:
-          distribution: "adopt"
-          java-version: "11"
-          cache: "maven"
-
-      - name: NuGet packages cache
-        uses: actions/cache@v3.0.0
-        id: nuget-packages-cache
-        with:
-          path: |
-            **/packages
-          key: ${{ runner.os }}-nuget-${{ hashFiles('**/packages.config') }}
-
-      - name: Restore NuGet packages for XSLT processing
-        if: steps.nuget-packages-cache.outputs.cache-hit != 'true'
-        run: nuget.exe restore "tools/xslt/packages.config" -PackagesDirectory "tools/xslt/packages" -Source "https://api.nuget.org/v3/index.json" -NonInteractive -UseLockFile -LockedMode
-
-      - name: Restore NuGet packages for QRCodes processing
-        if: steps.nuget-packages-cache.outputs.cache-hit != 'true'
-        run: nuget.exe restore "tools/QRCode/packages.config" -PackagesDirectory "tools/QRCode/packages" -Source "https://api.nuget.org/v3/index.json" -NonInteractive -UseLockFile -LockedMode
-
-      - name: Restore NuGet packages for Images processing
-        if: steps.nuget-packages-cache.outputs.cache-hit != 'true'
-        run: nuget.exe restore "tools/Images/packages.config" -PackagesDirectory "tools/Images/packages" -Source "https://api.nuget.org/v3/index.json" -NonInteractive -UseLockFile -LockedMode
-
-      - name: Restore GitVersion NuGet package
-        if: steps.nuget-packages-cache.outputs.cache-hit != 'true'
-        run: nuget.exe restore "tools/GitVersion/packages.config" -PackagesDirectory "tools/GitVersion/packages" -Source "https://api.nuget.org/v3/index.json" -NonInteractive -UseLockFile -LockedMode
-
       - name: Install dependencies
-        uses: IT-Service/Invoke-PSDepend@v1.0.1
-        with:
-          recurse: true
+        id: install-dependencies
+        uses: ./.github/actions/install-dependencies
 
-      - name: Install required PowerShell and NuGet modules
-        uses: IT-Service/Invoke-PSDepend@v1.0.1
+      - name: Build .ott and .odt files
+        uses: IT-Service/Invoke-Build@v1.0.0
         with:
-          recurse: true
+          task: "BuildAssets"
+          verbose: true
 
       - name: Generate release notes
         id: generate_release_notes
@@ -69,13 +39,6 @@ jobs:
         with:
           version: "${{ env.version }}"
           verbose: true
-
-      - name: Build .ott and .odt files
-        id: build
-        uses: IT-Service/Invoke-Build@v1.0.0
-        with:
-          task: "BuildAssets"
-          verbose: false
 
       - name: Search GitHub Milestone
         id: milestone_search
