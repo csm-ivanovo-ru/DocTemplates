@@ -9,7 +9,7 @@
 
 	'Images-tools-nuget-packages' = @{
 		DependencyType = 'Command';
-		Source = '. "$DependencyPath\..\nuget.exe" restore "$DependencyPath/packages.config" -PackagesDirectory "$DependencyPath/packages" -Source "https://api.nuget.org/v3/index.json" -NonInteractive -UseLockFile -LockedMode;';
+		Source = '. "$DependencyPath\..\nuget.exe" restore "$DependencyPath/packages.config" -PackagesDirectory "$DependencyPath/packages" -Source "https://api.nuget.org/v3/index.json" -NonInteractive -UseLockFile;';
 		DependsOn = 'nuget';
 	};
 }
