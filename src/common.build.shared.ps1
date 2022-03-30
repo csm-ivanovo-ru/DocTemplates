@@ -47,6 +47,7 @@ if ( -not ( Test-Path variable:RepoRootPath ) -or ( [System.String]::IsNullOrEmp
 
 [System.String] $NuGetToolsPath = $ToolsPath;
 [System.String] $NuGetPath = ( Join-Path -Path $NuGetToolsPath -ChildPath 'nuget.exe' );
+[System.Boolean] $NuGetInstalled = $false;
 
 [System.String] $BuildToolsPath = ( Join-Path -Path $ToolsPath -ChildPath 'build' -Resolve );
 [System.String] $UpdateFileLastWriteTimePath = ( Join-Path -Path $BuildToolsPath -ChildPath 'Update-FileLastWriteTime.ps1' -Resolve );
@@ -236,13 +237,37 @@ $JobOpenFile = {
 };
 
 
+[System.String] $NuGetPath = ( Join-Path -Path $NuGetToolsPath -ChildPath 'nuget.exe' );
+[System.Boolean] $NuGetInstalled = $false;
+
+
 task nuget `
-	-If { -not ( Test-Path -Path $NuGetPath ) } `
+	-If { -not $NuGetInstalled } `
 	-Jobs {
-	$NuGetURI = 'https://dist.nuget.org/win-x86-commandline/latest/nuget.exe';
-	Invoke-WebRequest $NuGetURI -OutFile $NuGetPath `
-		-Verbose:( $VerbosePreference -ne [System.Management.Automation.ActionPreference]::SilentlyContinue ) `
-		-Debug:( $DebugPreference -ne [System.Management.Automation.ActionPreference]::SilentlyContinue );
+	if ( Test-Path $NugetPath )
+	{
+		$NuGetInstalled = $true;
+	}
+	else
+	{
+		try
+		{
+			. nuget.exe >>  nul
+			$NugetPath = 'nuget.exe';
+			$NuGetInstalled = $true;
+		}
+		catch
+		{
+		};
+		if ( -not $NuGetInstalled )
+		{
+			$NuGetURI = 'https://dist.nuget.org/win-x86-commandline/latest/nuget.exe';
+			Invoke-WebRequest $NuGetURI -OutFile $NuGetPath `
+				-Verbose:( $VerbosePreference -ne [System.Management.Automation.ActionPreference]::SilentlyContinue ) `
+				-Debug:( $DebugPreference -ne [System.Management.Automation.ActionPreference]::SilentlyContinue );
+			$NuGetInstalled = $true;
+		};
+	};
 	. $NuGetPath sources add -Name 'nuget.org' -Source 'https://api.nuget.org/v3/index.json';
 };
 
