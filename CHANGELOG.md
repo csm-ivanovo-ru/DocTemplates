@@ -57,6 +57,10 @@
   не используем из-за отсутствия должной поддержки в Windows
   [csm-ivanovo-ru/DocTemplates#19](https://github.com/csm-ivanovo-ru/DocTemplates/issues/19)
 
+### Изменено
+
+- обновлены пакеты Magick.NET до v11.0.0
+
 ## [3.0.2]
 
 ### Исправлено
