@@ -38,6 +38,11 @@
 
 ## [Unreleased] Неопубликованные изменения (не вошедшие в релиз)
 
+### Изменено
+
+- заменены GitHub actions для releases и milestones
+  [csm-ivanovo-ru/DocTemplates#6](https://github.com/csm-ivanovo-ru/DocTemplates/issues/6)
+
 ## [3.1.0]
 
 ### Добавлено
