@@ -4,15 +4,15 @@
     "Any,Version=v0.0": {
       "Magick.NET.Core": {
         "type": "Direct",
-        "requested": "[8.5.0, 8.5.0]",
-        "resolved": "8.5.0",
-        "contentHash": "fT5A3TU4YWUwg1HBrWvzrq0CVbue+Dv8VfMNgWTyXVrLTpLKyrPRZhY6vAkLuJ+jTfeixEnEh/rP7v+0dyOw5A=="
+        "requested": "[11.0.0, 11.0.0]",
+        "resolved": "11.0.0",
+        "contentHash": "zCRE8N9PtEqTeHuxxadKNcU5FC/UuqJ/LZTunOHX4qECYjESddATK8WPTrauoLYQfnc5SyRLR5SIv/OQJAiLyA=="
       },
       "Magick.NET-Q8-AnyCPU": {
         "type": "Direct",
-        "requested": "[8.5.0, 8.5.0]",
-        "resolved": "8.5.0",
-        "contentHash": "95McKaPyBHBnATVyKM60losb01HnXVtObYJOdwyVhmaP7rPj7LYNGm0OXo0DhD+30y1ZQ1Fg5YnR9CiOO2juIQ=="
+        "requested": "[11.0.0, 11.0.0]",
+        "resolved": "11.0.0",
+        "contentHash": "mUTCErN3KsauOrakOxNwRTii+1XSbN7ru2R7wuy5BzIasGDHRanRGFH2OgZKsSQPxfdc9lj71olUhf1bbU/FbQ=="
       }
     }
   }

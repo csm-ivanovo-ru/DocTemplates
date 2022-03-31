@@ -36,6 +36,37 @@
 
 -->
 
+## [Unreleased] Неопубликованные изменения (не вошедшие в релиз)
+
+## [3.1.0]
+
+### Добавлено
+
+- для телефонов в справочных сведениях об учреждении
+  добавлена гиперссылка
+  по [RFC 3966](https://www.ietf.org/rfc/rfc3966.html)
+  [csm-ivanovo-ru/DocTemplates#19](https://github.com/csm-ivanovo-ru/DocTemplates/issues/19)
+- для адреса сайта в справочных сведениях об учреждении
+  добавлена гиперссылка
+  [csm-ivanovo-ru/DocTemplates#19](https://github.com/csm-ivanovo-ru/DocTemplates/issues/19)
+- для адреса почты в справочных сведениях об учреждении
+  добавлена гиперссылка
+  по [RFC 6068](https://www.ietf.org/rfc/rfc6068.html)
+  [csm-ivanovo-ru/DocTemplates#19](https://github.com/csm-ivanovo-ru/DocTemplates/issues/19)
+- для адреса регистрации в справочных сведениях об учреждении
+  добавлена гиперссылка (для карт Яндекса).
+  [RFC 5870](https://www.ietf.org/rfc/rfc5870.html)
+  не используем из-за отсутствия должной поддержки в Windows
+  [csm-ivanovo-ru/DocTemplates#19](https://github.com/csm-ivanovo-ru/DocTemplates/issues/19)
+
+### Изменено
+
+- обновлены пакеты Magick.NET до v11.0.0
+- выделены GitHub actions
+  [csm-ivanovo-ru/DocTemplates#6](https://github.com/csm-ivanovo-ru/DocTemplates/issues/6)
+- добавлено кеширование используемых пакетов в GitHub actions
+  [csm-ivanovo-ru/DocTemplates#7](https://github.com/csm-ivanovo-ru/DocTemplates/issues/7)
+
 ## [3.0.2]
 
 ### Исправлено
@@ -1027,7 +1058,8 @@
 - шаблона переписки, внутренней и внешней (писем,
   служебных, докладных и объяснительных записок)
 
-[Unreleased]: https://github.com/csm-ivanovo-ru/DocTemplates/compare/3.0.2...HEAD
+[Unreleased]: https://github.com/csm-ivanovo-ru/DocTemplates/compare/3.1.0...HEAD
+[3.1.0]: https://github.com/csm-ivanovo-ru/DocTemplates/compare/3.0.2...3.1.0
 [3.0.2]: https://github.com/csm-ivanovo-ru/DocTemplates/compare/3.0.1...3.0.2
 [3.0.1]: https://github.com/csm-ivanovo-ru/DocTemplates/compare/3.0.0...3.0.1
 [3.0.0]: https://github.com/csm-ivanovo-ru/DocTemplates/compare/2.9.11...3.0.0
