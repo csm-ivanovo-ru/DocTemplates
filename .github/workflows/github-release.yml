@@ -47,12 +47,11 @@ jobs:
           body_path: "${{ steps.generate-release-notes.outputs.release-notes-path }}"
           files: "tmp/templatesAndDocs.zip"
 
-      # - name: Close the milestone
-      #   uses: julb/action-manage-milestone@1.0.5
-      #   with:
-      #     title: "${{ env.version }}"
-      #     state: closed
-      #     description: |
-      #       [![${{ env.version }}](https://img.shields.io/badge/release-${{ env.version }}-blue?style=plastic&logo=github)](${{ steps.create-release.outputs.url }})
-      #   env:
-      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Close the milestone
+        uses: Akkjon/close-milestone@v2
+        with:
+          milestone_name: "${{ env.version }}"
+          # description: |
+          #   [![${{ env.version }}](https://img.shields.io/badge/release-${{ env.version }}-blue?style=plastic&logo=github)](${{ steps.create-release.outputs.url }})
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
