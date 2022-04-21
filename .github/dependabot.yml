@@ -11,6 +11,17 @@ updates:
       - dependencies
       - build
 
+  - package-ecosystem: github-actions
+    target-branch: master
+    directory: /.github/actions/install-dependencies
+    schedule:
+      interval: weekly
+    commit-message:
+      prefix: "ci(deps)"
+    labels:
+      - dependencies
+      - build
+
   - package-ecosystem: maven
     target-branch: master
     directory: /tests/
