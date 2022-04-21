@@ -17,25 +17,25 @@ runs:
         cache: "maven"
 
     - name: Restore NuGet packages for XSLT processing
-      uses: IT-Service/restore-nuget-packages@v1.0.0
+      uses: IT-Service/restore-nuget-packages@v1.0.1
       with:
         packages-config-path: tools/xslt/packages.config
         packages-directory-path: tools/xslt/packages
 
     - name: Restore NuGet packages for QRCodes processing
-      uses: IT-Service/restore-nuget-packages@v1.0.0
+      uses: IT-Service/restore-nuget-packages@v1.0.1
       with:
         packages-config-path: tools/QRCode/packages.config
         packages-directory-path: tools/QRCode/packages
 
     - name: Restore NuGet packages for images processing
-      uses: IT-Service/restore-nuget-packages@v1.0.0
+      uses: IT-Service/restore-nuget-packages@v1.0.1
       with:
         packages-config-path: tools/Images/packages.config
         packages-directory-path: tools/Images/packages
 
     - name: Restore NuGet packages for GitVersion
-      uses: IT-Service/restore-nuget-packages@v1.0.0
+      uses: IT-Service/restore-nuget-packages@v1.0.1
       with:
         packages-config-path: tools/GitVersion/packages.config
         packages-directory-path: tools/GitVersion/packages
