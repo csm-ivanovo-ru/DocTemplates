@@ -200,7 +200,7 @@
 		<style:style style:name="БланкОРДПервыйЛистЗаписки" style:family="paragraph" style:parent-style-name="ПервыйЛистБазовый" style:next-style-name="Основной" style:class="extra" style:master-page-name="БланкОРДПервыйЛистЗаписки"/>
 		<style:style style:name="БланкОРДПервыйЛистПисьма" style:family="paragraph" style:parent-style-name="ПервыйЛистБазовый" style:next-style-name="Основной" style:class="extra" style:master-page-name="БланкОРДПервыйЛистПисьмаГОСТПродольный"/>
 		<style:style style:name="БланкОРДПервыйЛистПисьмаНаУгловомБланке" style:family="paragraph" style:parent-style-name="ПервыйЛистБазовый" style:next-style-name="Основной" style:class="extra" style:master-page-name="БланкОРДПервыйЛистПисьмаГОСТУгловой"/>
-		<style:style style:name="БланкОРДПервыйЛистДоверенности" style:family="paragraph" style:parent-style-name="БланкОРДПервыйЛистСИсполнителем" style:next-style-name="Основной" style:class="extra"/>
+		<style:style style:name="БланкОРДПервыйЛистДоверенности" style:family="paragraph" style:parent-style-name="БланкОРДПервыйЛист" style:next-style-name="Основной" style:class="extra"/>
 		<style:style style:name="БланкОРДПервыйЛистСправки" style:family="paragraph" style:parent-style-name="БланкОРДПервыйЛистСИсполнителем" style:next-style-name="Основной" style:class="extra"/>
 		<style:style style:name="БланкОРДТитульныйЛист" style:family="paragraph" style:parent-style-name="ПервыйЛистБазовый" style:next-style-name="Основной" style:class="extra" style:master-page-name="БланкОРДТитульныйЛист"/>
 		<style:style style:name="БланкОРДПервыйЛистПоложенияОПодразделении" style:family="paragraph" style:parent-style-name="БланкОРДТитульныйЛист" style:class="extra"/>
