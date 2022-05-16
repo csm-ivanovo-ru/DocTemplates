@@ -45,15 +45,11 @@ if ( -not ( Test-Path variable:RepoRootPath ) -or ( [System.String]::IsNullOrEmp
 
 [System.String] $ToolsPath = ( Join-Path -Path $RepoRootPath -ChildPath 'tools' -Resolve );
 
-[System.String] $NuGetToolsPath = $ToolsPath;
+[System.String] $NuGetToolsPath = ( Join-Path -Path $ToolsPath -ChildPath 'nuget' -Resolve );
+[System.String] $NuGetPath = ( Join-Path -Path $NuGetToolsPath -ChildPath 'nuget.exe' );
 if ( Get-Command 'nuget.exe' -ErrorAction 'SilentlyContinue' )
 {
 	$NuGetPath = 'nuget.exe';
-	[System.String] $NuGetPath = 'nuget.exe';
-}
-else
-{
-	[System.String] $NuGetPath = ( Join-Path -Path $NuGetToolsPath -ChildPath 'nuget.exe' );
 };
 
 [System.String] $BuildToolsPath = ( Join-Path -Path $ToolsPath -ChildPath 'build' -Resolve );
