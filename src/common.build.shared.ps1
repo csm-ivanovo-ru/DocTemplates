@@ -245,7 +245,6 @@ $JobOpenFile = {
 
 
 [System.String] $NuGetPath = ( Join-Path -Path $NuGetToolsPath -ChildPath 'nuget.exe' );
-[System.Boolean] $NuGetInstalled = $false;
 
 
 task nuget `
