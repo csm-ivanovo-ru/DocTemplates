@@ -49,14 +49,14 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Upload .ott files
-        uses: actions/upload-artifact@v3.0.0
+        uses: actions/upload-artifact@v3.1.0
         with:
           name: doc-templates
           path: ${{ github.workspace }}/output/template/*.ott
           if-no-files-found: warn
 
       - name: Upload documents
-        uses: actions/upload-artifact@v3.0.0
+        uses: actions/upload-artifact@v3.1.0
         with:
           name: docs
           path: |
