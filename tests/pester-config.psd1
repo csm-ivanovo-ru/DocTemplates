@@ -9,5 +9,11 @@
 	};
 	Output = @{
 		Verbosity = 'Detailed';
+		CIFormat = 'GitHubActions';
+	};
+	TestResult = @{
+		OutputFormat = 'JUnitXml';
+		OutputPath = 'tests/results.xml';
+		Enabled = $true;
 	};
 }
