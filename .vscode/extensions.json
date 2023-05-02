@@ -3,7 +3,7 @@
 	// for the documentation about the extensions.json format
 	"recommendations": [
 		"github.vscode-pull-request-github",
-		"cschleiden.vscode-github-actions",
+		"github.vscode-github-actions",
 		"gimenete.github-linker",
 		"pod212.vscode-github-projects",
 		"jasonnutter.vscode-codeowners",
