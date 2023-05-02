@@ -36,7 +36,12 @@
 
 -->
 
-## [Unreleased] Неопубликованные изменения (не вошедшие в релиз)
+## [3.1.3]
+
+### Исправлено
+
+- исправлен вывод результатов тестов
+  [csm-ivanovo-ru/DocTemplates#43](https://github.com/csm-ivanovo-ru/DocTemplates/issues/43)
 
 ## [3.1.2]
 
