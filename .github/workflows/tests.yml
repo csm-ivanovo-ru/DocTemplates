@@ -41,12 +41,17 @@ jobs:
         run: cd tests && mvn dependency:copy-dependencies
 
       - name: Validate documents and templates
-        uses: zyborg/pester-tests-report@v1.5.0
+        shell: pwsh
+        run: |
+          Import-Module Pester;
+          $PesterConfig = [PesterConfiguration]( Import-PowerShellDataFile -Path '.\tests\pester-config.psd1' );
+          Invoke-Pester -Configuration $PesterConfig;
+
+      - name: Publish Tests Results
+        uses: EnricoMi/publish-unit-test-result-action/composite@v2.7.0
+        if: always()
         with:
-          include_paths: tests
-          report_title: Результаты тестирования
-          tests_fail_step: true
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          files: tests/results.xml
 
       - name: Upload .ott files
         uses: actions/upload-artifact@v3.1.2

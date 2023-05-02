@@ -48,7 +48,7 @@ jobs:
           files: "tmp/templatesAndDocs.zip"
 
       - name: Close the milestone
-        uses: Akkjon/close-milestone@v2
+        uses: Akkjon/close-milestone@v2.1.0
         with:
           milestone_name: "${{ env.version }}"
           # description: |
