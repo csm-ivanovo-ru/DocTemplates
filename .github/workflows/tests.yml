@@ -43,6 +43,7 @@ jobs:
       - name: Validate documents and templates
         shell: pwsh
         run: |
+          Import-Module Pester;
           $PesterConfig = [PesterConfiguration]( Import-PowerShellDataFile -Path '.\tests\pester-config.psd1' );
           Invoke-Pester -Configuration $PesterConfig;
 
