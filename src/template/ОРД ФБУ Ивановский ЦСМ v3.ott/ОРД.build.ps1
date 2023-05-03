@@ -54,6 +54,18 @@ task russian_emblem.png `
 		-Verbose:( $PSCmdlet.MyInvocation.BoundParameters['Verbose'] -eq $true );
 };
 
+task Build-org-logo.png {
+	Invoke-Build org-logo.png -File $OrgLogoPath/.build.ps1 @parameters;
+};
+
+task org_logo.png `
+	-Inputs @( "$OrgLogoPath/org-logo.png" ) `
+	-Outputs @( "$SourceTemplatePath/Pictures/org-logo.png" ) `
+	-Jobs Build-org-logo.png, {
+	Copy-Item -LiteralPath $Inputs[0] -Destination $Outputs[0] -Force `
+		-Verbose:( $PSCmdlet.MyInvocation.BoundParameters['Verbose'] -eq $true );
+};
+
 openDocumentTemplate BuildTemplate `
 	-LiteralPath $SourceTemplatePath `
 	-PreprocessedPath $PreprocessedTemplatePath `
@@ -61,7 +73,7 @@ openDocumentTemplate BuildTemplate `
 	-Version $Version `
 	-Inputs $sources `
 	-Outputs @( $DestinationTemplatePath, $marker ) `
-	-Jobs BuildLib-DocTemplatesLib, rustest.spb.ru.png, russian_emblem.png;
+	-Jobs BuildLib-DocTemplatesLib, rustest.spb.ru.png, russian_emblem.png, org_logo.png;
 
 openDocumentTemplate BuildAndOpenTemplate `
 	-OpenAfterBuild `
@@ -71,6 +83,6 @@ openDocumentTemplate BuildAndOpenTemplate `
 	-Version $Version `
 	-Inputs $sources `
 	-Outputs @( $DestinationTemplatePath, $marker ) `
-	-Jobs BuildLib-DocTemplatesLib, rustest.spb.ru.png, russian_emblem.png;
+	-Jobs BuildLib-DocTemplatesLib, rustest.spb.ru.png, russian_emblem.png, org_logo.png;
 
 task . BuildTemplate;
