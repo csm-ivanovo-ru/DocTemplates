@@ -36,6 +36,18 @@
 
 -->
 
+## [Unreleased] Неопубликованные изменения (не вошедшие в релиз)
+
+### Добавлено
+
+- подготовка логотипа организации для шапки документов
+  [csm-ivanovo-ru/DocTemplates#88](https://github.com/csm-ivanovo-ru/DocTemplates/issues/88)
+
+### Изменено
+
+- заменён герб России в шапке документов на логотип организации
+  [csm-ivanovo-ru/DocTemplates#88](https://github.com/csm-ivanovo-ru/DocTemplates/issues/88)
+
 ## [3.1.3]
 
 ### Исправлено

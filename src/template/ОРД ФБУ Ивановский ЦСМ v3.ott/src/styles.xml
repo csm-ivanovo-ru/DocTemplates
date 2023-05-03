@@ -986,9 +986,9 @@
 										<style:style style:family="section">
 											<style:section-properties style:editable="false"/>
 										</style:style>
-										<text:p text:style-name="БланкЛоготипыВШапке"><draw:frame draw:name="Бланк: Герб в шапке" text:anchor-type="as-char" svg:y="0cm" svg:width="1.8cm" svg:height="2.147cm">
+										<text:p text:style-name="БланкЛоготипыВШапке"><draw:frame draw:name="Бланк: Герб в шапке" text:anchor-type="as-char" svg:y="0cm" svg:width="1.8cm" svg:height="1.8cm">
 											<style:style style:family="graphic" style:parent-style-name="БланкЛоготипВШапке"/>
-											<draw:image xlink:href="Pictures/russian_emblem.png" xlink:type="simple" xlink:actuate="onLoad" loext:mime-type="image/png"/>
+											<draw:image xlink:href="Pictures/org-logo.png" xlink:type="simple" xlink:actuate="onLoad" loext:mime-type="image/png"/>
 										</draw:frame></text:p>
 									</text:section>
 									<text:section text:name="Бланк: Шапка: Наименование организации" text:protected="true">
@@ -1721,9 +1721,9 @@
 										<style:style style:family="section">
 											<style:section-properties style:editable="false"/>
 										</style:style>
-										<text:p text:style-name="БланкЛоготипыВШапке"><draw:frame draw:name="Бланк: Герб в шапке (УГ)" text:anchor-type="as-char" svg:y="0cm" svg:width="1.8cm" svg:height="2.147cm">
+										<text:p text:style-name="БланкЛоготипыВШапке"><draw:frame draw:name="Бланк: Герб в шапке (УГ)" text:anchor-type="as-char" svg:y="0cm" svg:width="1.8cm" svg:height="1.8cm">
 											<style:style style:family="graphic" style:parent-style-name="БланкЛоготипВШапке"/>
-											<draw:image xlink:href="Pictures/russian_emblem.png" xlink:type="simple" xlink:actuate="onLoad" loext:mime-type="image/png"/>
+											<draw:image xlink:href="Pictures/org-logo.png" xlink:type="simple" xlink:actuate="onLoad" loext:mime-type="image/png"/>
 										</draw:frame></text:p>
 									</text:section>
 									<text:section text:name="Бланк: Шапка: Наименование организации (УГ)" text:protected="true">

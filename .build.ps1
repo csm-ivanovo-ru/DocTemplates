@@ -109,6 +109,7 @@ task clean {
 	Invoke-Build clean -File $SourceTemplatesPath/OpenDocumentTemplates.build.ps1 @parameters;
 	Invoke-Build clean -File $SourceDocumentsPath/Documents.build.ps1 @parameters;
 	Invoke-Build clean -File $RussiaEmblemPath/.build.ps1 @parameters;
+	Invoke-Build clean -File $OrgLogoPath/.build.ps1 @parameters;
 	Remove-BuildItem $DestinationPath, $TempPath;
 };
 
@@ -119,11 +120,13 @@ task distclean clean, {
 	Invoke-Build distclean -File $SourceTemplatesPath/OpenDocumentTemplates.build.ps1 @parameters;
 	Invoke-Build distclean -File $SourceDocumentsPath/Documents.build.ps1 @parameters;
 	Invoke-Build distclean -File $RussiaEmblemPath/.build.ps1 @parameters;
+	Invoke-Build distclean -File $OrgLogoPath/.build.ps1 @parameters;
 	Remove-BuildItem $NuGetPath, "$XSLTToolsPath/packages", "$TestsPath/java/dependency";
 };
 
 task maintainer-clean distclean, {
 	Invoke-Build maintainer-clean -File $RussiaEmblemPath/.build.ps1 @parameters;
+	Invoke-Build maintainer-clean -File $OrgLogoPath/.build.ps1 @parameters;
 };
 
 task pre-build nuget, {
