@@ -9,7 +9,6 @@
 		"jasonnutter.vscode-codeowners",
 		"ymotongpoo.licenser",
 		"eamodio.gitlens",
-		"vector-of-bool.gitflow",
 		"sidneys1.gitconfig",
 		"mhutchie.git-graph",
 		"editorconfig.editorconfig",
@@ -37,6 +36,7 @@
 		"pspester.pester-test",
 		"ms-vscode.powershell",
 		"usernamehw.errorlens",
-		"jock.svg"
+		"jock.svg",
+		"serhioromano.vscode-gitflow"
 	]
 }
