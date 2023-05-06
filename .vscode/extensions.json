@@ -37,6 +37,7 @@
 		"ms-vscode.powershell",
 		"usernamehw.errorlens",
 		"jock.svg",
-		"serhioromano.vscode-gitflow"
+		"serhioromano.vscode-gitflow",
+		"alefragnani.bookmarks"
 	]
 }
