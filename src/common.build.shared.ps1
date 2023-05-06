@@ -47,7 +47,7 @@ if ( -not ( Test-Path variable:RepoRootPath ) -or ( [System.String]::IsNullOrEmp
 [System.String] $ToolsPath = ( Join-Path -Path $RepoRootPath -ChildPath 'tools' -Resolve );
 
 [System.String] $NuGetToolsPath = ( Join-Path -Path $ToolsPath -ChildPath 'nuget' -Resolve );
-. $NuGetToolsPath/.build.ps1;
+. $NuGetToolsPath/nuget.build.inc.ps1;
 
 [System.String] $BuildToolsPath = ( Join-Path -Path $ToolsPath -ChildPath 'build' -Resolve );
 [System.String] $UpdateFileLastWriteTimePath = ( Join-Path -Path $BuildToolsPath -ChildPath 'Update-FileLastWriteTime.ps1' -Resolve );

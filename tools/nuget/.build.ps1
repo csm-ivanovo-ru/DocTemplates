@@ -3,23 +3,36 @@
 #Requires -Version 5.0
 #Requires -Modules InvokeBuild
 
+param(
+	[Parameter( Position = 0 )]
+	[System.String[]]
+	$Tasks
+)
+
 Set-StrictMode -Version Latest;
+$ErrorActionPreference = [System.Management.Automation.ActionPreference]::Stop;
 
-[System.String] $NuGetVersion = 'latest';
+$parameters = $PSBoundParameters;
 
-[System.String] $NuGetPath = ( Join-Path -Path $PSScriptRoot -ChildPath 'nuget.exe' );
-if ( Get-Command 'nuget.exe' -ErrorAction 'SilentlyContinue' )
+if ( [System.IO.Path]::GetFileName( $MyInvocation.ScriptName ) -ne 'Invoke-Build.ps1' )
 {
-	$NuGetPath = 'nuget.exe';
+	Invoke-Build -Task $Tasks -File $MyInvocation.MyCommand.Path @parameters;
+	return;
 };
 
 
-task nuget `
-	-If { -not ( Get-Command $NuGetPath -ErrorAction 'SilentlyContinue' ) } `
-	-Jobs {
-	$NuGetURI = "https://dist.nuget.org/win-x86-commandline/$NuGetVersion/nuget.exe";
-	Invoke-WebRequest $NuGetURI -OutFile $NuGetPath `
-		-Verbose:( $VerbosePreference -ne [System.Management.Automation.ActionPreference]::SilentlyContinue ) `
-		-Debug:( $DebugPreference -ne [System.Management.Automation.ActionPreference]::SilentlyContinue );
-	. $NuGetPath sources add -Name 'nuget.org' -Source 'https://api.nuget.org/v3/index.json';
+. $PSScriptRoot/nuget.build.inc.ps1;
+
+task clean {};
+
+task distclean clean, {
+	Remove-BuildItem $NuGetLocalPath;
 };
+
+task maintainer-clean distclean;
+
+task pre-build nuget;
+
+task all pre-build;
+
+task . all;
