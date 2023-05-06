@@ -898,7 +898,12 @@
 				<text:p text:style-name="Footer"/>
 			</style:footer>
 			<loext:footer-first>
-				<text:p text:style-name="БланкТитульныйЛистМестоИГодИздания"><text:span text:style-name="БланкТитульныйЛистМестоСоставления"><text:variable-get text:name="МестоСоставления">г. Иваново</text:variable-get></text:span><text:s/>— <text:span text:style-name="БланкТитульныйЛистГодИздания"><text:variable-get text:name="ГодИздания">2020</text:variable-get></text:span></text:p>
+				<text:section text:name="Место и год издания на титульном листе">
+					<style:style style:family="section">
+						<style:section-properties style:editable="false"/>
+					</style:style>
+					<text:p text:style-name="БланкТитульныйЛистМестоИГодИздания"><text:span text:style-name="БланкТитульныйЛистМестоСоставления"><text:variable-get text:name="МестоСоставления">г. Иваново</text:variable-get></text:span><text:s/>— <text:span text:style-name="БланкТитульныйЛистГодИздания"><text:variable-get text:name="ГодИздания">2020</text:variable-get></text:span></text:p>
+				</text:section>
 			</loext:footer-first>
 		</style:master-page>
 		<style:master-page style:name="БланкОРДПервыйЛист" style:next-style-name="БланкОРДПоследующиеЛисты">
@@ -1231,7 +1236,9 @@
 				<text:p text:style-name="Footer"/>
 			</style:footer>
 			<loext:footer-first>
-				<text:p text:style-name="БланкТитульныйЛистМестоИГодИздания"><text:span text:style-name="БланкТитульныйЛистМестоСоставления"><text:variable-get text:name="МестоСоставления">г. Иваново</text:variable-get></text:span><text:s/>— <text:span text:style-name="БланкТитульныйЛистГодИздания"><text:variable-get text:name="ГодИздания">2024</text:variable-get></text:span></text:p>
+				<text:section text:name="Место и год издания на титульном листе (ТЛсПС)">
+					<text:section-source text:section-name="Место и год издания на титульном листе" xlink:type="simple" xlink:actuate="other" xlink:title="ТЛсПС" xlink:show="replace"/>
+				</text:section>
 			</loext:footer-first>
 		</style:master-page>
 		<style:master-page style:name="БланкОРДПервыйЛистЗаписки" style:next-style-name="БланкОРДПоследующиеЛисты">
