@@ -1123,49 +1123,54 @@
 					<text:p text:style-name="ГрифУтверждаю">Утверждаю</text:p>
 					<text:p text:style-name="ПодписьВГрифеДолжность"><text:variable-get text:name="УтвердилДолжностьИП">Директор</text:variable-get></text:p>
 					<text:p text:style-name="ПодписьВГрифеПодписьИФИО"><text:tab/><text:variable-get text:name="УтвердилПредставлениеВПодписиИП">Д.И. Кудрявцев</text:variable-get></text:p>
-					<text:p text:style-name="ПодписьВГрифеДата">«<draw:frame draw:name="ДатаЧислоВГрифеУтверждения" text:anchor-type="as-char" draw:z-index="0">
-						<style:style style:family="graphic" style:parent-style-name="ДатаПодписиЧисло">
-							<style:graphic-properties style:vertical-pos="top" style:vertical-rel="baseline" style:horizontal-pos="from-left" style:horizontal-rel="paragraph-content"/>
+					<text:section text:name="Дата в грифе">
+						<style:style style:family="section">
+							<style:section-properties style:editable="false"/>
 						</style:style>
-						<draw:text-box fo:min-height="0.041cm" fo:min-width="0.6cm">
-							<text:p text:style-name="ПодписьДатаЧисло"><draw:frame draw:name="ДатаЧислоВГрифеУтвержденияПодстрочник" text:anchor-type="char" svg:x="0cm" svg:y="0cm" style:rel-width="100%" draw:z-index="0">
-								<style:style style:family="graphic" style:parent-style-name="БланкПодстрочникПоляВТексте">
-									<style:graphic-properties style:vertical-pos="from-top" style:vertical-rel="char" style:horizontal-pos="from-left" style:horizontal-rel="paragraph" loext:rel-width-rel="paragraph"/>
-								</style:style>
-								<draw:text-box fo:min-height="0.041cm">
-									<text:p text:style-name="Подстрочник"><text:s/></text:p>
-								</draw:text-box>
-							</draw:frame></text:p>
-						</draw:text-box>
-					</draw:frame>» <draw:frame draw:name="ДатаМесяцВГрифеУтверждения" text:anchor-type="as-char" draw:z-index="0">
-						<style:style style:family="graphic" style:parent-style-name="ДатаПодписиМесяц">
-							<style:graphic-properties style:vertical-pos="top" style:vertical-rel="baseline" style:horizontal-pos="from-left" style:horizontal-rel="paragraph-content"/>
-						</style:style>
-						<draw:text-box fo:min-height="0.041cm" fo:min-width="3cm">
-							<text:p text:style-name="ПодписьДатаМесяц"><draw:frame draw:name="ДатаМесяцВГрифеУтвержденияПодстрочник" text:anchor-type="char" svg:x="0cm" svg:y="0cm" style:rel-width="100%" draw:z-index="0">
-								<style:style style:family="graphic" style:parent-style-name="БланкПодстрочникПоляВТексте">
-									<style:graphic-properties style:vertical-pos="from-top" style:vertical-rel="char" style:horizontal-pos="from-left" style:horizontal-rel="paragraph" loext:rel-width-rel="paragraph"/>
-								</style:style>
-								<draw:text-box fo:min-height="0.041cm">
-									<text:p text:style-name="Подстрочник"><text:s/></text:p>
-								</draw:text-box>
-							</draw:frame></text:p>
-						</draw:text-box>
-					</draw:frame> <draw:frame draw:name="ДатаГодВГрифеУтверждения" text:anchor-type="as-char" draw:z-index="0">
-						<style:style style:family="graphic" style:parent-style-name="ДатаПодписиГод">
-							<style:graphic-properties style:vertical-pos="top" style:vertical-rel="baseline" style:horizontal-pos="from-left" style:horizontal-rel="paragraph-content"/>
-						</style:style>
-						<draw:text-box fo:min-height="0.041cm" fo:min-width="0.4cm">
-							<text:p text:style-name="ПодписьДатаГод"><draw:frame draw:name="ДатаГодВГрифеУтвержденияПодстрочник" text:anchor-type="char" svg:x="0cm" svg:y="0cm" style:rel-width="99%" draw:z-index="0">
-								<style:style style:family="graphic" style:parent-style-name="БланкПодстрочникПоляВТексте">
-									<style:graphic-properties style:vertical-pos="from-top" style:vertical-rel="char" style:horizontal-pos="from-left" style:horizontal-rel="paragraph-content" loext:rel-width-rel="paragraph"/>
-								</style:style>
-								<draw:text-box fo:min-height="0.041cm">
-									<text:p text:style-name="Подстрочник"><text:s/></text:p>
-								</draw:text-box>
-							</draw:frame>20 <text:s text:c="4"/></text:p>
-						</draw:text-box>
-					</draw:frame> г.</text:p>
+						<text:p text:style-name="ПодписьВГрифеДата">«<draw:frame draw:name="ДатаЧислоВГрифеУтверждения" text:anchor-type="as-char" draw:z-index="0">
+							<style:style style:family="graphic" style:parent-style-name="ДатаПодписиЧисло">
+								<style:graphic-properties style:vertical-pos="top" style:vertical-rel="baseline" style:horizontal-pos="from-left" style:horizontal-rel="paragraph-content"/>
+							</style:style>
+							<draw:text-box fo:min-height="0.041cm" fo:min-width="0.6cm">
+								<text:p text:style-name="ПодписьДатаЧисло"><draw:frame draw:name="ДатаЧислоВГрифеУтвержденияПодстрочник" text:anchor-type="char" svg:x="0cm" svg:y="0cm" style:rel-width="100%" draw:z-index="0">
+									<style:style style:family="graphic" style:parent-style-name="БланкПодстрочникПоляВТексте">
+										<style:graphic-properties style:vertical-pos="from-top" style:vertical-rel="char" style:horizontal-pos="from-left" style:horizontal-rel="paragraph" loext:rel-width-rel="paragraph"/>
+									</style:style>
+									<draw:text-box fo:min-height="0.041cm">
+										<text:p text:style-name="Подстрочник"><text:s/></text:p>
+									</draw:text-box>
+								</draw:frame></text:p>
+							</draw:text-box>
+						</draw:frame>» <draw:frame draw:name="ДатаМесяцВГрифеУтверждения" text:anchor-type="as-char" draw:z-index="0">
+							<style:style style:family="graphic" style:parent-style-name="ДатаПодписиМесяц">
+								<style:graphic-properties style:vertical-pos="top" style:vertical-rel="baseline" style:horizontal-pos="from-left" style:horizontal-rel="paragraph-content"/>
+							</style:style>
+							<draw:text-box fo:min-height="0.041cm" fo:min-width="3cm">
+								<text:p text:style-name="ПодписьДатаМесяц"><draw:frame draw:name="ДатаМесяцВГрифеУтвержденияПодстрочник" text:anchor-type="char" svg:x="0cm" svg:y="0cm" style:rel-width="100%" draw:z-index="0">
+									<style:style style:family="graphic" style:parent-style-name="БланкПодстрочникПоляВТексте">
+										<style:graphic-properties style:vertical-pos="from-top" style:vertical-rel="char" style:horizontal-pos="from-left" style:horizontal-rel="paragraph" loext:rel-width-rel="paragraph"/>
+									</style:style>
+									<draw:text-box fo:min-height="0.041cm">
+										<text:p text:style-name="Подстрочник"><text:s/></text:p>
+									</draw:text-box>
+								</draw:frame></text:p>
+							</draw:text-box>
+						</draw:frame> <draw:frame draw:name="ДатаГодВГрифеУтверждения" text:anchor-type="as-char" draw:z-index="0">
+							<style:style style:family="graphic" style:parent-style-name="ДатаПодписиГод">
+								<style:graphic-properties style:vertical-pos="top" style:vertical-rel="baseline" style:horizontal-pos="from-left" style:horizontal-rel="paragraph-content"/>
+							</style:style>
+							<draw:text-box fo:min-height="0.041cm" fo:min-width="0.4cm">
+								<text:p text:style-name="ПодписьДатаГод"><draw:frame draw:name="ДатаГодВГрифеУтвержденияПодстрочник" text:anchor-type="char" svg:x="0cm" svg:y="0cm" style:rel-width="99%" draw:z-index="0">
+									<style:style style:family="graphic" style:parent-style-name="БланкПодстрочникПоляВТексте">
+										<style:graphic-properties style:vertical-pos="from-top" style:vertical-rel="char" style:horizontal-pos="from-left" style:horizontal-rel="paragraph-content" loext:rel-width-rel="paragraph"/>
+									</style:style>
+									<draw:text-box fo:min-height="0.041cm">
+										<text:p text:style-name="Подстрочник"><text:s/></text:p>
+									</draw:text-box>
+								</draw:frame>20 <text:s text:c="4"/></text:p>
+							</draw:text-box>
+						</draw:frame> г.</text:p>
+					</text:section>
 					<text:p text:style-name="ПустойАбзац"/>
 				</text:section>
 				<text:section text:name="Заголовок документа (ПЛсГУ)">
@@ -1204,98 +1209,18 @@
 					<text:p text:style-name="ПодписьВГрифеДолжность"><text:variable-get text:name="ПодписалСторона2ДолжностьИП">Председатель</text:variable-get></text:p>
 					<text:p text:style-name="ПодписьВГрифеОрганизация"><text:variable-get text:name="Сторона2Наименование">ППО Ивановского ЦСМ РОСПРОФПРОМ</text:variable-get></text:p>
 					<text:p text:style-name="ПодписьВГрифеПодписьИФИО"><text:tab/><text:variable-get text:name="ПодписалСторона2ПредставлениеВПодписиИП">И. Г. Ежикова</text:variable-get></text:p>
-					<text:p text:style-name="ПодписьВГрифеДата">«<draw:frame draw:name="ДатаЧислоВПодписиСтороны2" text:anchor-type="as-char" draw:z-index="0">
-						<style:style style:family="graphic" style:parent-style-name="ДатаПодписиЧисло">
-							<style:graphic-properties style:vertical-pos="top" style:vertical-rel="baseline" style:horizontal-pos="from-left" style:horizontal-rel="paragraph-content"/>
-						</style:style>
-						<draw:text-box fo:min-height="0.041cm" fo:min-width="0.6cm">
-							<text:p text:style-name="ПодписьДатаЧисло"><draw:frame draw:name="ДатаЧислоВГрифеУтвержденияПодстрочник" text:anchor-type="char" svg:x="0cm" svg:y="0cm" style:rel-width="100%" draw:z-index="0">
-								<style:style style:family="graphic" style:parent-style-name="БланкПодстрочникПоляВТексте">
-									<style:graphic-properties style:vertical-pos="from-top" style:vertical-rel="char" style:horizontal-pos="from-left" style:horizontal-rel="paragraph" loext:rel-width-rel="paragraph"/>
-								</style:style>
-								<draw:text-box fo:min-height="0.041cm">
-									<text:p text:style-name="Подстрочник"><text:s/></text:p>
-								</draw:text-box>
-							</draw:frame></text:p>
-						</draw:text-box>
-					</draw:frame>» <draw:frame draw:name="ДатаМесяцВПодписиСтороны2" text:anchor-type="as-char" draw:z-index="0">
-						<style:style style:family="graphic" style:parent-style-name="ДатаПодписиМесяц">
-							<style:graphic-properties style:vertical-pos="top" style:vertical-rel="baseline" style:horizontal-pos="from-left" style:horizontal-rel="paragraph-content"/>
-						</style:style>
-						<draw:text-box fo:min-height="0.041cm" fo:min-width="3cm">
-							<text:p text:style-name="ПодписьДатаМесяц"><draw:frame draw:name="ДатаМесяцВГрифеУтвержденияПодстрочник" text:anchor-type="char" svg:x="0cm" svg:y="0cm" style:rel-width="100%" draw:z-index="0">
-								<style:style style:family="graphic" style:parent-style-name="БланкПодстрочникПоляВТексте">
-									<style:graphic-properties style:vertical-pos="from-top" style:vertical-rel="char" style:horizontal-pos="from-left" style:horizontal-rel="paragraph" loext:rel-width-rel="paragraph"/>
-								</style:style>
-								<draw:text-box fo:min-height="0.041cm">
-									<text:p text:style-name="Подстрочник"><text:s/></text:p>
-								</draw:text-box>
-							</draw:frame></text:p>
-						</draw:text-box>
-					</draw:frame> <draw:frame draw:name="ДатаГодВПодписиСтороны2" text:anchor-type="as-char" draw:z-index="0">
-						<style:style style:family="graphic" style:parent-style-name="ДатаПодписиГод">
-							<style:graphic-properties style:vertical-pos="top" style:vertical-rel="baseline" style:horizontal-pos="from-left" style:horizontal-rel="paragraph-content"/>
-						</style:style>
-						<draw:text-box fo:min-height="0.041cm" fo:min-width="0.4cm">
-							<text:p text:style-name="ПодписьДатаГод"><draw:frame draw:name="ДатаГодВГрифеУтвержденияПодстрочник" text:anchor-type="char" svg:x="0cm" svg:y="0cm" style:rel-width="99%" draw:z-index="0">
-								<style:style style:family="graphic" style:parent-style-name="БланкПодстрочникПоляВТексте">
-									<style:graphic-properties style:vertical-pos="from-top" style:vertical-rel="char" style:horizontal-pos="from-left" style:horizontal-rel="paragraph-content" loext:rel-width-rel="paragraph"/>
-								</style:style>
-								<draw:text-box fo:min-height="0.041cm">
-									<text:p text:style-name="Подстрочник"><text:s/></text:p>
-								</draw:text-box>
-							</draw:frame>20 <text:s text:c="4"/></text:p>
-						</draw:text-box>
-					</draw:frame> г.</text:p>
+					<text:section text:name="Дата в грифе (ТЛсПС2)">
+						<text:section-source text:section-name="Дата в грифе" xlink:type="simple" xlink:actuate="other" xlink:title="ТЛсПС2" xlink:show="replace"/>
+					</text:section>
 					<text:p text:style-name="ПустойАбзац"/>
 					<text:p text:style-name="КонецКолонки"/>
 					<text:p text:style-name="ПустойАбзац"/>
 					<text:p text:style-name="ПодписьВГрифеДолжность"><text:variable-get text:name="ПодписалДолжностьИП">Директор</text:variable-get></text:p>
 					<text:p text:style-name="ПодписьВГрифеОрганизация"><text:variable-get text:name="ОрганизацияНаименование">ФБУ «Ивановский ЦСМ»</text:variable-get></text:p>
 					<text:p text:style-name="ПодписьВГрифеПодписьИФИО"><text:tab/><text:variable-get text:name="ПодписалПредставлениеВПодписиИП">Д.И. Кудрявцев</text:variable-get></text:p>
-					<text:p text:style-name="ПодписьВГрифеДата">«<draw:frame draw:name="ДатаЧислоВПодписиОрганизации" text:anchor-type="as-char" draw:z-index="0">
-						<style:style style:family="graphic" style:parent-style-name="ДатаПодписиЧисло">
-							<style:graphic-properties style:vertical-pos="top" style:vertical-rel="baseline" style:horizontal-pos="from-left" style:horizontal-rel="paragraph-content"/>
-						</style:style>
-						<draw:text-box fo:min-height="0.041cm" fo:min-width="0.6cm">
-							<text:p text:style-name="ПодписьДатаЧисло"><draw:frame draw:name="ДатаЧислоВГрифеУтвержденияПодстрочник" text:anchor-type="char" svg:x="0cm" svg:y="0cm" style:rel-width="100%" draw:z-index="0">
-								<style:style style:family="graphic" style:parent-style-name="БланкПодстрочникПоляВТексте">
-									<style:graphic-properties style:vertical-pos="from-top" style:vertical-rel="char" style:horizontal-pos="from-left" style:horizontal-rel="paragraph" loext:rel-width-rel="paragraph"/>
-								</style:style>
-								<draw:text-box fo:min-height="0.041cm">
-									<text:p text:style-name="Подстрочник"><text:s/></text:p>
-								</draw:text-box>
-							</draw:frame></text:p>
-						</draw:text-box>
-					</draw:frame>» <draw:frame draw:name="ДатаМесяцВПодписиОрганизации" text:anchor-type="as-char" draw:z-index="0">
-						<style:style style:family="graphic" style:parent-style-name="ДатаПодписиМесяц">
-							<style:graphic-properties style:vertical-pos="top" style:vertical-rel="baseline" style:horizontal-pos="from-left" style:horizontal-rel="paragraph-content"/>
-						</style:style>
-						<draw:text-box fo:min-height="0.041cm" fo:min-width="3cm">
-							<text:p text:style-name="ПодписьДатаМесяц"><draw:frame draw:name="ДатаМесяцВГрифеУтвержденияПодстрочник" text:anchor-type="char" svg:x="0cm" svg:y="0cm" style:rel-width="100%" draw:z-index="0">
-								<style:style style:family="graphic" style:parent-style-name="БланкПодстрочникПоляВТексте">
-									<style:graphic-properties style:vertical-pos="from-top" style:vertical-rel="char" style:horizontal-pos="from-left" style:horizontal-rel="paragraph" loext:rel-width-rel="paragraph"/>
-								</style:style>
-								<draw:text-box fo:min-height="0.041cm">
-									<text:p text:style-name="Подстрочник"><text:s/></text:p>
-								</draw:text-box>
-							</draw:frame></text:p>
-						</draw:text-box>
-					</draw:frame> <draw:frame draw:name="ДатаГодВПодписиОрганизации" text:anchor-type="as-char" draw:z-index="0">
-						<style:style style:family="graphic" style:parent-style-name="ДатаПодписиГод">
-							<style:graphic-properties style:vertical-pos="top" style:vertical-rel="baseline" style:horizontal-pos="from-left" style:horizontal-rel="paragraph-content"/>
-						</style:style>
-						<draw:text-box fo:min-height="0.041cm" fo:min-width="0.4cm">
-							<text:p text:style-name="ПодписьДатаГод"><draw:frame draw:name="ДатаГодВГрифеУтвержденияПодстрочник" text:anchor-type="char" svg:x="0cm" svg:y="0cm" style:rel-width="99%" draw:z-index="0">
-								<style:style style:family="graphic" style:parent-style-name="БланкПодстрочникПоляВТексте">
-									<style:graphic-properties style:vertical-pos="from-top" style:vertical-rel="char" style:horizontal-pos="from-left" style:horizontal-rel="paragraph-content" loext:rel-width-rel="paragraph"/>
-								</style:style>
-								<draw:text-box fo:min-height="0.041cm">
-									<text:p text:style-name="Подстрочник"><text:s/></text:p>
-								</draw:text-box>
-							</draw:frame>20 <text:s text:c="4"/></text:p>
-						</draw:text-box>
-					</draw:frame> г.</text:p>
+					<text:section text:name="Дата в грифе (ТЛсПС)">
+						<text:section-source text:section-name="Дата в грифе" xlink:type="simple" xlink:actuate="other" xlink:title="ТЛсПС" xlink:show="replace"/>
+					</text:section>
 					<text:p text:style-name="ПустойАбзац"/>
 				</text:section>
 				<text:section text:name="Заголовок документа на ТЛ (ТЛсПС)">
