@@ -207,7 +207,7 @@
 		<style:style style:name="БланкОРДПервыйЛистСТО" style:family="paragraph" style:parent-style-name="БланкОРДТитульныйЛист" style:class="extra"/>
 		<style:style style:name="БланкОРДПервыйЛистИнструкцииСистемыМенеджмента" style:family="paragraph" style:parent-style-name="БланкОРДТитульныйЛист" style:class="extra"/>
 		<style:style style:name="БланкОРДПервыйЛистИнструкцииПоОТ" style:family="paragraph" style:parent-style-name="БланкОРДТитульныйЛист" style:class="extra"/>
-		<style:style style:name="БланкОРДПервыйЛистКоллективногоДоговора" style:family="paragraph" style:parent-style-name="ПервыйЛистБазовый" style:next-style-name="Основной" style:class="extra" style:master-page-name="БланкОРДПервыйЛистСПодписямиСторон"/>
+		<style:style style:name="БланкОРДПервыйЛистКоллективногоДоговора" style:family="paragraph" style:parent-style-name="ПервыйЛистБазовый" style:next-style-name="Основной" style:class="extra" style:master-page-name="БланкОРДТитульныйЛистСПодписямиСторон"/>
 		<style:style style:name="БланкОРДЛистСогласования" style:family="paragraph" style:parent-style-name="ПустойАбзац" style:next-style-name="Основной" style:class="extra"/>
 		<style:style style:name="БланкОРДЛНАЛистСогласования" style:family="paragraph" style:parent-style-name="ПустойАбзац" style:next-style-name="Основной" style:class="extra" style:master-page-name="БланкОРДЛистыСогласования"/>
 		<style:style style:name="Heading" style:family="paragraph" loext:hidden="true" style:parent-style-name="First_20_line_20_indent" style:next-style-name="Основной" style:class="text">
@@ -1178,7 +1178,7 @@
 				</text:section>
 			</loext:header-first>
 		</style:master-page>
-		<style:master-page style:name="БланкОРДПервыйЛистСПодписямиСторон" style:next-style-name="БланкОРДПоследующиеЛисты">
+		<style:master-page style:name="БланкОРДТитульныйЛистСПодписямиСторон" style:next-style-name="БланкОРДПоследующиеЛисты">
 			<style:page-layout style:page-usage="mirrored">
 				<style:page-layout-properties fo:page-width="21.001cm" fo:page-height="29.7cm" style:num-format="1" style:print-orientation="portrait" fo:margin-top="0.7cm" fo:margin-bottom="1cm" fo:margin-left="2cm" fo:margin-right="1cm" style:layout-grid-mode="none" style:footnote-max-height="0cm">
 					<style:footnote-sep style:width="0.018cm" style:distance-before-sep="0.101cm" style:distance-after-sep="0.101cm" style:line-style="solid" style:adjustment="left" style:rel-width="25%" style:color="#000000"/>
