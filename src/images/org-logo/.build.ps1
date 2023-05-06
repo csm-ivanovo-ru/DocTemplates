@@ -20,43 +20,16 @@ if ( [System.IO.Path]::GetFileName( $MyInvocation.ScriptName ) -ne 'Invoke-Build
 	return;
 };
 
-. $PSScriptRoot/../../common.build.shared.ps1
+. $PSScriptRoot/../../common.build.shared.ps1;
+. $PSScriptRoot/../../../tools/images/images.tools.build.inc.ps1;
 
-task clean {
+task clean clean-images-tools, {
 };
 
-task distclean clean;
+task distclean clean, distclean-images-tools;
 
-task maintainer-clean distclean, {
+task maintainer-clean distclean, maintainer-clean-images-tools, {
 	Remove-BuildItem $PSScriptRoot/*.png;
-};
-
-[System.String] $ImagesToolsPackagesConfig = Join-Path -Path $ImagesToolsPath -ChildPath 'packages.config';
-[System.String[]] $OutputLibFiles = @(
-	Select-Xml -LiteralPath $ImagesToolsPackagesConfig `
-		-XPath 'packages/package' `
-	| Select-Object -ExpandProperty Node `
-	| ForEach-Object {
-		"$ImagesToolsPath/packages/$( $_.id ).$( $_.version )/lib/$( $_.targetFramework )/$( $_.id ).dll"
-	}
-);
-
-task Images-tools `
-	-Inputs @( $ImagesToolsPackagesConfig ) `
-	-Outputs $OutputLibFiles `
-	-Jobs nuget, {
-
-	. $NuGetPath restore $ImagesToolsPackagesConfig -PackagesDirectory "$ImagesToolsPath/packages";
-
-	foreach ( $packageFile in $Outputs )
-	{
-		if ( -not ( Test-Path -Path $packageFile ) )
-		{
-			Write-Error "Не удалось установить требуемый файл '$packageFile'.";
-		};
-		& $UpdateFileLastWriteTimePath -LiteralPath $packageFile;
-	};
-
 };
 
 foreach ( $FileId in @( 'org-logo' ) )
@@ -71,11 +44,11 @@ foreach ( $FileId in @( 'org-logo' ) )
 		-Outputs @( $DestPNGFileName ) `
 		-Inputs @( $DestSVGFileName ) `
 		-Before emblems `
-		-Job Images-tools, {
+		-Job pre-build-images-tools, {
 		$DestinationPNGFile = $Outputs[0];
 		$SourceSVGFile = $Inputs[0];
 		Write-Verbose "Convert `"$SourceSVGFile`" to `"$DestinationPNGFile`"";
-		& $ConvertToPNGPath -LiteralPath $SourceSVGFile -Destination $DestinationPNGFile -Force `
+		& $PSScriptRoot/../../../tools/images/ConvertTo-MonochromePNG.ps1 -LiteralPath $SourceSVGFile -Destination $DestinationPNGFile -Force `
 			-Verbose:( $PSCmdlet.MyInvocation.BoundParameters['Verbose'] -eq $true ) `
 			-Debug:( $PSCmdlet.MyInvocation.BoundParameters['Debug'] -eq $true );
 	};

@@ -8,7 +8,7 @@
 
 <!--
 
-## [3.2.0] Неопубликованные изменения (не вошедшие в релиз)
+## [Unreleased] Неопубликованные изменения (не вошедшие в релиз)
 
 ### Добавлено
 
@@ -35,6 +35,14 @@
 - устранены уязвимости
 
 -->
+
+## [Unreleased] Неопубликованные изменения (не вошедшие в релиз)
+
+### Изменено
+
+- подготовлены инструменты для работы с изображениями
+  для выделения в отдельные репозитории и для сборки без вложенных build процессов
+  [csm-ivanovo-ru/DocTemplates#101](https://github.com/csm-ivanovo-ru/DocTemplates/issues/101)
 
 ## [3.2.0]
 
@@ -1093,7 +1101,7 @@
 - шаблона переписки, внутренней и внешней (писем,
   служебных, докладных и объяснительных записок)
 
-[3.2.0]: https://github.com/csm-ivanovo-ru/DocTemplates/compare/3.2.0...HEAD
+[Unreleased]: https://github.com/csm-ivanovo-ru/DocTemplates/compare/3.2.0...HEAD
 [3.2.0]: https://github.com/csm-ivanovo-ru/DocTemplates/compare/3.1.3...3.2.0
 [3.1.3]: https://github.com/csm-ivanovo-ru/DocTemplates/compare/3.1.2...3.1.3
 [3.1.2]: https://github.com/csm-ivanovo-ru/DocTemplates/compare/3.1.1...3.1.2

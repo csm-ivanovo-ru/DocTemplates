@@ -60,14 +60,6 @@
 			}
 		},
 		{
-			"label": "Install dependencies",
-			"command": "Invoke-PSDepend -Recurse $true -Force -Verbose",
-			"presentation": {
-				"reveal": "always",
-				"clear": true
-			}
-		},
-		{
 			"label": "Clean",
 			"command": "Invoke-Build -Task clean"
 		},
