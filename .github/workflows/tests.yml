@@ -48,7 +48,7 @@ jobs:
           Invoke-Pester -Configuration $PesterConfig;
 
       - name: Publish Tests Results
-        uses: EnricoMi/publish-unit-test-result-action/composite@v2.7.0
+        uses: EnricoMi/publish-unit-test-result-action/composite@v2.8.0
         if: always()
         with:
           files: tests/results.xml
