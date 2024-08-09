@@ -7,7 +7,9 @@
 		"**/.~lock.*": true
 	},
 	"files.associations": {
-		"**/packages.config": "xml"
+		"**/packages.config": "xml",
+		"LICENSE": "plaintext",
+		"NOTICE": "plaintext"
 	},
 	"shellcheck.exclude": [
 		"1017"
