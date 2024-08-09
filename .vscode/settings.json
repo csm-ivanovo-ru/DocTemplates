@@ -43,6 +43,20 @@
 		"files.trimTrailingWhitespace": true,
 		"files.insertFinalNewline": false
 	},
+	"[markdown]": {
+		"editor.formatOnSave": true,
+		"editor.formatOnPaste": true,
+	},
+	"markdownlint.config": {
+		"default": true,
+		"ol-prefix": {
+			"style": "one"
+		},
+		"line-length": true,
+		"no-duplicate-header": false,
+		"no-bare-urls": false,
+		"no-hard-tabs": true
+	},
 	"editor.autoClosingTags": false,
 	"editor.linkedEditing": true,
 	"xml.autoCloseTags.enabled": true,
