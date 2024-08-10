@@ -2,7 +2,9 @@
 	"name": "doc-templates",
 	"description": "Шаблоны документов Libre Office для ФБУ Ивановский ЦСМ",
 	"version": "3.2.0",
-	"devDependencies": {},
+	"devDependencies": {
+		"absolute-version": "^2.0.0"
+	},
 	"homepage": "https://github.com/csm-ivanovo-ru/DocTemplates",
 	"author": {
 		"name": "Sergei S. Betke",
