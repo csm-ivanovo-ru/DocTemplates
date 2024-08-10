@@ -13,4 +13,9 @@
 		Source = 'PSGalleryModule';
 		Target = 'CurrentUser';
 	};
+
+	InstallNodePackages = @{
+		DependencyType = 'Command';
+		Source = '. npm install';
+	};
 }
