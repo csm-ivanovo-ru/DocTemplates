@@ -6,6 +6,8 @@
 Этот проект придерживается
 [![Semantic Versioning](https://img.shields.io/static/v1?label=Semantic%20Versioning&message=v2.0.0&color=green&logo=semver)](https://semver.org/lang/ru/spec/v2.0.0.html).
 
+<!-- markdownlint-disable no-duplicate-heading -->
+
 <!--
 
 ## [3.2.0] Неопубликованные изменения (не вошедшие в релиз)

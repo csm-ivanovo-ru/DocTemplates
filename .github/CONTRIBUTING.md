@@ -32,8 +32,73 @@
 * слейте Вашу `feature/*` ветку с Вашей веткой `develop` (squash merge)
 * сделайте `pull-request` в `develop` ветку основного репозитория
 
+## О подготовке рабочего места разработчика
+
+Для подготовки рабочего места выполните следующие действия:
+
+* зарегистрируйтесь на [GitHub](https://github.com/)
+
+* [создайте новый SSH ключ и зарегистрируйте его в своей учётной записи на github.com](https://docs.github.com/ru/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account).
+
+* Если у Вас не установлен [WinGet][], [установите его](https://github.com/microsoft/winget-cli/releases/download/v1.8.1911/Microsoft.DesktopAppInstaller_8wekyb3d8bbwe.msixbundle)
+(если у Вас Windows 10 или старше, он уже установлен, вероятнее всего)
+
+* установите [NodeJS][]:
+
+  ```cmd
+  winget install -e --id OpenJS.NodeJS
+  ```
+
+* установите [VSCode][]:
+
+  ```cmd
+  winget install -e --id Microsoft.VisualStudioCode
+  ```
+
+* установите [git][]:
+
+  ```cmd
+  winget install -e --id Git.Git
+  ```
+
+* клонируйте репозиторий проекта:
+
+  ```git
+  cd %userprofile%\documents
+  git clone git@github.com:csm-ivanovo-ru/DocTemplates.git
+  ```
+
+* запустите [VSCode][] в корне проекта:
+
+  ```cmd
+  code %userprofile%\documents\DocTemplates
+  ```
+
+* выполните установку рекомендуемых расширений для [VSCode][]:
+  выполните из VSCode команду `Show Recommended Extensions`
+
+* выполните из VSCode команду инициализации окружения:
+  `Run Task`, `установить инструменты`
+
+Необходимые действия до запуска среды разработки одним сценарием:
+
+```cmd
+winget install -e --id OpenJS.NodeJS
+winget install -e --id Microsoft.VisualStudioCode
+winget install -e --id Git.Git
+
+cd %userprofile%\documents
+git clone git@github.com:csm-ivanovo-ru/DocTemplates.git
+code %userprofile%\documents\DocTemplates
+```
+
 ## CLA - лицензия на коллективное участие
 
 Мы придерживаемся [CLA](https://cla.github.com/agreement),
 что означает Ваш вклад не нарушает никаких наших прав
 и не накладывает на нас никаких ограничений и обязательств.
+
+[WinGet]: https://github.com/microsoft/winget-cli
+[Git]: https://github.com/git-guides/install-git#install-git-on-windows "Install Git on Windows"
+[VSCode]: https://code.visualstudio.com "Visual Studio Code"
+[NodeJS]: https://nodejs.org/
