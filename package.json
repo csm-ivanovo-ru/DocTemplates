@@ -1,0 +1,32 @@
+{
+	"name": "doc-templates",
+	"description": "Шаблоны документов Libre Office для ФБУ Ивановский ЦСМ",
+	"version": "3.2.0",
+	"devDependencies": {},
+	"homepage": "https://github.com/csm-ivanovo-ru/DocTemplates",
+	"author": {
+		"name": "Sergei S. Betke",
+		"email": "Sergey.S.Betke@yandex.ru"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/csm-ivanovo-ru/DocTemplates.git"
+	},
+	"bugs": {
+		"url": "https://github.com/csm-ivanovo-ru/DocTemplates/issues"
+	},
+	"licenses": [
+		{
+			"type": "Apache-2.0",
+			"url": "https://github.com/csm-ivanovo-ru/DocTemplates/blob/master/LICENSE"
+		}
+	],
+	"engines": {
+		"node": ">=16"
+	},
+	"keywords": [
+		"ЦСМ",
+		"Шаблоны",
+		"OpenOffice"
+	]
+}
