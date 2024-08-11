@@ -22,6 +22,8 @@ const sourceLibrariesPath = path.join(sourcePath, 'basic');
 const sourceTemplatesPath = path.join(sourcePath, 'template');
 const sourceDocumentsPath = path.join(sourcePath, 'doc');
 
+const sourceORDTemplatePath = path.join(sourceTemplatesPath, 'ОРД ФБУ Ивановский ЦСМ v3.ott');
+
 const tempPath = path.join(repoRootPath, 'tmp');
 
 const destinationVCardPath = path.join(tempPath, 'vCards');
@@ -57,14 +59,11 @@ if (process.env.version) {
 	const version = versionFromGitTag({ tagGlob: '[0-9]*' });
 };
 
-function getBuildPNGTask(SVGDirname) {
-	return src(path.join(SVGDirname, '*.svg'))
-		.pipe(newer({
-			dest: SVGDirname,
-			map: function (srcPath) {
-				return replaceExt(srcPath, '.png');
-			}
-		}))
+//#region подготовка изображений
+
+function getBuildPNGTask(SVGPath, PNGPath) {
+	return src(SVGPath, { encoding: false })
+		.pipe(newer(PNGPath))
 		.pipe(through2.obj(
 			async function (file, _, cb) {
 				try {
@@ -96,16 +95,25 @@ function getBuildPNGTask(SVGDirname) {
 				}
 			}
 		))
-		.pipe(rename({ extname: '.png' }))
-		.pipe(dest(SVGDirname))
+		.pipe(dest(PNGPath))
 }
+
+const orgLogoPNGPath = path.join(orgLogoPath, 'org-logo.png');
 
 function buildOrgLogoPNG() {
-	return getBuildPNGTask(orgLogoPath);
+	return getBuildPNGTask(
+		path.join(orgLogoPath, '*.svg'),
+		orgLogoPNGPath
+	);
 }
 
+const russianEmblemPNGPath = path.join(russiaEmblemPath, 'russian_emblem.png');
+
 function buildRussianEmblemPNG() {
-	return getBuildPNGTask(russiaEmblemPath);
+	return getBuildPNGTask(
+		path.join(russiaEmblemPath, 'emblem_black_bordered.svg'),
+		russianEmblemPNGPath
+	);
 }
 
 const buildImages = parallel(
@@ -113,6 +121,45 @@ const buildImages = parallel(
 	buildRussianEmblemPNG
 );
 export { buildImages as buildImages };
+
+function copyOrgLogoToTemplateORD() {
+	const picturesDirname = path.join(sourceORDTemplatePath, 'src/Pictures');
+	return src(orgLogoPNGPath, { encoding: false })
+		.pipe(newer(picturesDirname))
+		.pipe(dest(picturesDirname));
+}
+
+function copyRussianEmblemToTemplateORD() {
+	const picturesDirname = path.join(sourceORDTemplatePath, 'src/Pictures');
+	return src(russianEmblemPNGPath, { encoding: false })
+		.pipe(newer(picturesDirname))
+		.pipe(dest(picturesDirname));
+}
+
+//#endregion подготовка изображений
+
+const buildTemplateORD = series(
+	parallel(
+		series(
+			buildOrgLogoPNG,
+			copyOrgLogoToTemplateORD
+		),
+		series(
+			buildRussianEmblemPNG,
+			copyRussianEmblemToTemplateORD
+		)
+	)
+);
+const _buildTemplates = parallel(
+	buildTemplateORD
+);
+export { _buildTemplates as buildTemplates };
+
+const _build = parallel(
+	buildImages,
+	buildTemplateORD
+);
+export { _build as build };
 
 function clean(cb) {
 	cb();
@@ -130,11 +177,6 @@ const _maintainerClean = series(
 	_distclean
 );
 export { _maintainerClean as maintainerClean };
-
-const _build = parallel(
-	buildImages
-);
-export { _build as build };
 
 const _default = series(
 	_clean,
