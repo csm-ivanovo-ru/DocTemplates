@@ -43,7 +43,7 @@ task rustest.spb.ru.png `
 };
 
 task Build-russian_emblem.png {
-	. npx gulp buildImages;
+	. npx gulp build:images;
 };
 
 task russian_emblem.png `
@@ -55,7 +55,7 @@ task russian_emblem.png `
 };
 
 task Build-org-logo.png {
-	. npx gulp buildImages;
+	. npx gulp build:images;
 };
 
 task org_logo.png `

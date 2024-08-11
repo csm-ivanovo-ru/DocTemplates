@@ -123,7 +123,7 @@ task distclean clean, {
 };
 
 task maintainer-clean distclean, {
-	. npx gulp maintainerClean;
+	. npx gulp maintainer-clean;
 };
 
 task pre-build nuget, {
@@ -164,25 +164,25 @@ task BuildQRCodes BuildUriQRCodes, BuildVCardQRCodes;
 
 # Synopsis: Создаёт шаблоны документов Open Office из папки с XML файлами (build)
 task BuildTemplates {
-	. npx gulp buildImages;
+	. npx gulp build;
 	Invoke-Build BuildTemplates -File $SourceTemplatesPath/OpenDocumentTemplates.build.ps1 @parameters;
 };
 
 # Synopsis: Создаёт шаблоны документов Open Office из папки с XML файлами (build) и открывает их
 task BuildAndOpenTemplates {
-	. npx gulp buildImages;
+	. npx gulp build;
 	Invoke-Build BuildAndOpenTemplates -File $SourceTemplatesPath/OpenDocumentTemplates.build.ps1 @parameters;
 };
 
 # Synopsis: Создаёт Open Office файлы документов из папок с XML файлами (build)
 task BuildDocs {
-	. npx gulp buildImages;
+	. npx gulp build;
 	Invoke-Build BuildDocs -File $SourceDocumentsPath/Documents.build.ps1 @parameters;
 }; ;
 
 # Synopsis: Создаёт Open Office файлы документов из папок с XML файлами (build) и открывает их
 task BuildAndOpenDocs {
-	. npx gulp buildImages;
+	. npx gulp build;
 	Invoke-Build BuildAndOpenDocs -File $SourceDocumentsPath/Documents.build.ps1 @parameters;
 };
 

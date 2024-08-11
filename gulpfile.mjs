@@ -1,6 +1,6 @@
 // Copyright 2024 Sergei S. Betke
 
-import { series, parallel, src, dest } from 'gulp';
+import { series, parallel, task, src, dest } from 'gulp';
 import logger from 'gulplog';
 import rename from 'gulp-rename';
 import newer from 'gulp-newer';
@@ -26,6 +26,7 @@ const sourceORDTemplatePath = path.join(sourceTemplatesPath, 'ОРД ФБУ Ив
 
 const tempPath = path.join(repoRootPath, 'tmp');
 
+const destinationImagesPath = path.join(tempPath, 'images');
 const destinationVCardPath = path.join(tempPath, 'vCards');
 const destinationQRCodesPath = path.join(tempPath, 'QRCodes');
 const destinationQRCodesURIPath = path.join(destinationQRCodesPath, 'URIs');
@@ -61,125 +62,126 @@ if (process.env.version) {
 
 //#region подготовка изображений
 
-function getBuildPNGTask(SVGPath, PNGPath) {
-	return src(SVGPath, { encoding: false })
-		.pipe(newer(PNGPath))
-		.pipe(through2.obj(
-			async function (file, _, cb) {
-				try {
-					const imageBuffer = await sharp(
-						file.contents,
-						{
-							density: 600,
-							ignoreIcc: true
+function getBuildPNGTask(SVGPath, PNGBasename) {
+	const taskName = 'convertImage:' + PNGBasename;
+	const PNGPath = path.join(destinationImagesPath, PNGBasename);
+	task(
+		taskName,
+		function () {
+			return src(SVGPath, { encoding: false })
+				.pipe(newer({
+					dest: destinationImagesPath,
+					map: function () { return PNGBasename; }
+				}))
+				.pipe(through2.obj(
+					async function (file, _, cb) {
+						try {
+							const imageBuffer = await sharp(
+								file.contents,
+								{
+									density: 600,
+									ignoreIcc: true
+								}
+							)
+								.resize({ width: 600 })
+								.toColorspace('b-w')
+								.png({
+									compressionLevel: 9,
+									colors: 2
+								})
+								.toBuffer();
+							var newFile = new Vinyl({
+								cwd: file.cwd,
+								path: PNGBasename,
+								contents: imageBuffer
+							});
+							return cb(null, newFile);
+						} catch (err) {
+							console.error(err);
+							return cb(null, file);
 						}
-					)
-						.resize({ width: 600 })
-						.toColorspace('b-w')
-						.png({
-							compressionLevel: 9,
-							colors: 2
-						})
-						.toBuffer();
-					var newFile = new Vinyl({
-						cwd: file.cwd,
-						base: file.base,
-						path: file.path,
-						extname: '.png',
-						contents: imageBuffer
-					});
-					return cb(null, newFile);
-				} catch (err) {
-					console.error(err);
-					return cb(null, file);
-				}
-			}
-		))
-		.pipe(dest(PNGPath))
-}
-
-const orgLogoPNGPath = path.join(orgLogoPath, 'org-logo.png');
-
-function buildOrgLogoPNG() {
-	return getBuildPNGTask(
-		path.join(orgLogoPath, '*.svg'),
-		orgLogoPNGPath
+					}
+				))
+				.pipe(dest(destinationImagesPath))
+		}
 	);
+	return taskName;
 }
 
-const russianEmblemPNGPath = path.join(russiaEmblemPath, 'russian_emblem.png');
-
-function buildRussianEmblemPNG() {
-	return getBuildPNGTask(
-		path.join(russiaEmblemPath, 'emblem_black_bordered.svg'),
-		russianEmblemPNGPath
-	);
-}
-
-const buildImages = parallel(
-	buildOrgLogoPNG,
-	buildRussianEmblemPNG
+task('build:images',
+	parallel(
+		getBuildPNGTask(path.join(orgLogoPath, '*.svg'), 'org-logo.png'),
+		getBuildPNGTask(path.join(russiaEmblemPath, 'emblem_black_bordered.svg'), 'russian_emblem.png')
+	)
 );
-export { buildImages as buildImages };
 
-function copyOrgLogoToTemplateORD() {
-	const picturesDirname = path.join(sourceORDTemplatePath, 'src/Pictures');
-	return src(orgLogoPNGPath, { encoding: false })
-		.pipe(newer(picturesDirname))
-		.pipe(dest(picturesDirname));
-}
+// TODO: в дальнейшем копировать изображения из destinationImagesPath
+// исключительно на основании XML манифеста шаблона
 
-function copyRussianEmblemToTemplateORD() {
-	const picturesDirname = path.join(sourceORDTemplatePath, 'src/Pictures');
-	return src(russianEmblemPNGPath, { encoding: false })
-		.pipe(newer(picturesDirname))
-		.pipe(dest(picturesDirname));
+function getTempImagesCopyToDocumentTask(pictureBasename, docFolderPath) {
+	const taskName = 'copy:imageToDocument:' + pictureBasename;
+	task(
+		taskName,
+		function () {
+			return src(
+				path.join(destinationImagesPath, pictureBasename),
+				{ encoding: false }
+			)
+				.pipe(newer(docFolderPath))
+				.pipe(dest(docFolderPath))
+		}
+	);
+	return taskName;
 }
 
 //#endregion подготовка изображений
 
-const buildTemplateORD = series(
-	parallel(
-		series(
-			buildOrgLogoPNG,
-			copyOrgLogoToTemplateORD
-		),
-		series(
-			buildRussianEmblemPNG,
-			copyRussianEmblemToTemplateORD
+//#region сборка шаблона
+
+const picturesDirname = path.join(sourceORDTemplatePath, 'src/Pictures');
+
+task('build:template:ORD',
+	series(
+		'build:images',
+		parallel(
+			getTempImagesCopyToDocumentTask('org-logo.png', picturesDirname),
+			getTempImagesCopyToDocumentTask('russian_emblem.png', picturesDirname)
 		)
 	)
 );
+
 const _buildTemplates = parallel(
-	buildTemplateORD
+	'build:template:ORD'
 );
 export { _buildTemplates as buildTemplates };
 
-const _build = parallel(
-	buildImages,
-	buildTemplateORD
+//#endregion сборка шаблона
+
+task('build',
+	parallel(
+		'build:template:ORD'
+	)
 );
-export { _build as build };
 
-function clean(cb) {
-	cb();
-}
-
-const _clean = clean;
-export { _clean as clean };
-
-const _distclean = series(
-	_clean
+task('clean',
+	function clean(cb) {
+		cb();
+	}
 );
-export { _distclean as distclean };
 
-const _maintainerClean = series(
-	_distclean
+task('distclean',
+	series(
+		'clean'
+	)
 );
-export { _maintainerClean as maintainerClean };
+
+task('maintainer-clean',
+	series(
+		'clean'
+	)
+);
 
 const _default = series(
-	_clean,
-	_build
+	'build'
 );
 export { _default as default };
