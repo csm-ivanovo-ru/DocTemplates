@@ -28,12 +28,6 @@ runs:
         packages-config-path: tools/QRCode/packages.config
         packages-directory-path: tools/QRCode/packages
 
-    - name: Restore NuGet packages for images processing
-      uses: IT-Service/restore-nuget-packages@v1.0.2
-      with:
-        packages-config-path: tools/Images/packages.config
-        packages-directory-path: tools/Images/packages
-
     - name: Restore PowerShell modules
       uses: potatoqualitee/psmodulecache@v5.2
       with:
