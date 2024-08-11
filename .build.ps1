@@ -108,9 +108,8 @@ task clean {
 	Invoke-Build clean -File $SourceXCardPath/QRCodes.xCards.build.ps1 @parameters;
 	Invoke-Build clean -File $SourceTemplatesPath/OpenDocumentTemplates.build.ps1 @parameters;
 	Invoke-Build clean -File $SourceDocumentsPath/Documents.build.ps1 @parameters;
-	Invoke-Build clean -File $RussiaEmblemPath/.build.ps1 @parameters;
-	Invoke-Build clean -File $OrgLogoPath/.build.ps1 @parameters;
 	Remove-BuildItem $DestinationPath, $TempPath;
+	. npx gulp clean;
 };
 
 task distclean clean, {
@@ -119,14 +118,12 @@ task distclean clean, {
 	Invoke-Build distclean -File $SourceXCardPath/QRCodes.xCards.build.ps1 @parameters;
 	Invoke-Build distclean -File $SourceTemplatesPath/OpenDocumentTemplates.build.ps1 @parameters;
 	Invoke-Build distclean -File $SourceDocumentsPath/Documents.build.ps1 @parameters;
-	Invoke-Build distclean -File $RussiaEmblemPath/.build.ps1 @parameters;
-	Invoke-Build distclean -File $OrgLogoPath/.build.ps1 @parameters;
 	Remove-BuildItem $NuGetPath, "$XSLTToolsPath/packages", "$TestsPath/java/dependency";
+	. npx gulp distclean;
 };
 
 task maintainer-clean distclean, {
-	Invoke-Build maintainer-clean -File $RussiaEmblemPath/.build.ps1 @parameters;
-	Invoke-Build maintainer-clean -File $OrgLogoPath/.build.ps1 @parameters;
+	. npx gulp maintainerClean;
 };
 
 task pre-build nuget, {
@@ -167,21 +164,25 @@ task BuildQRCodes BuildUriQRCodes, BuildVCardQRCodes;
 
 # Synopsis: Создаёт шаблоны документов Open Office из папки с XML файлами (build)
 task BuildTemplates {
+	. npx gulp buildImages;
 	Invoke-Build BuildTemplates -File $SourceTemplatesPath/OpenDocumentTemplates.build.ps1 @parameters;
 };
 
 # Synopsis: Создаёт шаблоны документов Open Office из папки с XML файлами (build) и открывает их
 task BuildAndOpenTemplates {
+	. npx gulp buildImages;
 	Invoke-Build BuildAndOpenTemplates -File $SourceTemplatesPath/OpenDocumentTemplates.build.ps1 @parameters;
 };
 
 # Synopsis: Создаёт Open Office файлы документов из папок с XML файлами (build)
 task BuildDocs {
+	. npx gulp buildImages;
 	Invoke-Build BuildDocs -File $SourceDocumentsPath/Documents.build.ps1 @parameters;
 }; ;
 
 # Synopsis: Создаёт Open Office файлы документов из папок с XML файлами (build) и открывает их
 task BuildAndOpenDocs {
+	. npx gulp buildImages;
 	Invoke-Build BuildAndOpenDocs -File $SourceDocumentsPath/Documents.build.ps1 @parameters;
 };
 

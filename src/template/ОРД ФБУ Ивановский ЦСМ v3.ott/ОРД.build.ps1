@@ -43,7 +43,7 @@ task rustest.spb.ru.png `
 };
 
 task Build-russian_emblem.png {
-	Invoke-Build emblem_black_bordered.png -File $RussiaEmblemPath/.build.ps1 @parameters;
+	. npx gulp buildImages;
 };
 
 task russian_emblem.png `
@@ -55,7 +55,7 @@ task russian_emblem.png `
 };
 
 task Build-org-logo.png {
-	Invoke-Build org-logo.png -File $OrgLogoPath/.build.ps1 @parameters;
+	. npx gulp buildImages;
 };
 
 task org_logo.png `

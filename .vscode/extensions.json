@@ -36,6 +36,8 @@
 		"ms-vscode.powershell",
 		"usernamehw.errorlens",
 		"jock.svg",
-		"serhioromano.vscode-gitflow"
+		"serhioromano.vscode-gitflow",
+		"chrisjsewell.gulp-lattice",
+		"dbaeumer.vscode-eslint"
 	]
 }
