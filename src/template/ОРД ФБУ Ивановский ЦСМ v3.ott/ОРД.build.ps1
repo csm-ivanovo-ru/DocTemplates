@@ -43,11 +43,11 @@ task rustest.spb.ru.png `
 };
 
 task Build-russian_emblem.png {
-	Invoke-Build emblem_black_bordered.png -File $RussiaEmblemPath/.build.ps1 @parameters;
+	. npx gulp build:images;
 };
 
 task russian_emblem.png `
-	-Inputs @( "$RussiaEmblemPath/emblem_black_bordered.png" ) `
+	-Inputs @( "$ImagesPNGPath/russian_emblem.png" ) `
 	-Outputs @( "$SourceTemplatePath/Pictures/russian_emblem.png" ) `
 	-Jobs Build-russian_emblem.png, {
 	Copy-Item -LiteralPath $Inputs[0] -Destination $Outputs[0] -Force `
@@ -55,11 +55,11 @@ task russian_emblem.png `
 };
 
 task Build-org-logo.png {
-	Invoke-Build org-logo.png -File $OrgLogoPath/.build.ps1 @parameters;
+	. npx gulp build:images;
 };
 
 task org_logo.png `
-	-Inputs @( "$OrgLogoPath/org-logo.png" ) `
+	-Inputs @( "$ImagesPNGPath/org-logo.png" ) `
 	-Outputs @( "$SourceTemplatePath/Pictures/org-logo.png" ) `
 	-Jobs Build-org-logo.png, {
 	Copy-Item -LiteralPath $Inputs[0] -Destination $Outputs[0] -Force `

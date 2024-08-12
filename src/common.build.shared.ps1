@@ -29,8 +29,10 @@ if ( -not ( Test-Path variable:RepoRootPath ) -or ( [System.String]::IsNullOrEmp
 [System.String] $PreprocessedDocumentsPath = ( Join-Path -Path $TempPath -ChildPath 'doc' );
 
 [System.String] $ImagesPath = ( Join-Path -Path $SourcePath -ChildPath 'images' -Resolve );
-[System.String] $RussiaEmblemPath = ( Join-Path -Path $ImagesPath -ChildPath 'russian-emblems' -Resolve );
-[System.String] $OrgLogoPath = ( Join-Path -Path $ImagesPath -ChildPath 'org-logo' -Resolve );
+[System.String] $RussiaEmblemPath = ( Join-Path -Path $ImagesPath -ChildPath 'svg/russian-emblems' -Resolve );
+[System.String] $OrgLogoPath = ( Join-Path -Path $ImagesPath -ChildPath 'svg/org-logo' -Resolve );
+
+[System.String] $ImagesPNGPath = ( Join-Path -Path $ImagesPath -ChildPath 'png' -Resolve );
 
 [System.String] $DestinationPath = ( Join-Path -Path $RepoRootPath -ChildPath 'output' );
 [System.String] $DestinationLibrariesPath = ( Join-Path -Path $DestinationPath -ChildPath 'basic' );
@@ -65,8 +67,6 @@ if ( -not ( Test-Path variable:RepoRootPath ) -or ( [System.String]::IsNullOrEmp
 [System.String] $OptimizePlainXMLPath = ( Join-Path -Path $DocsToolsPath -ChildPath 'Optimize-PlainXML.ps1' -Resolve );
 [System.String] $QRCodeToolsPath = ( Join-Path -Path $ToolsPath -ChildPath 'QRCode' -Resolve );
 [System.String] $OutQRCodePath = ( Join-Path -Path $QRCodeToolsPath -ChildPath 'Out-QRCode.ps1' -Resolve );
-[System.String] $ImagesToolsPath = ( Join-Path -Path $ToolsPath -ChildPath 'Images' -Resolve );
-[System.String] $ConvertToPNGPath = ( Join-Path -Path $ImagesToolsPath -ChildPath 'ConvertTo-MonochromePNG.ps1' -Resolve );
 
 [System.String] $vCardToolsPath = ( Join-Path -Path $ToolsPath -ChildPath 'xCard' -Resolve );
 [System.String] $OutVCardPath = ( Join-Path -Path $vCardToolsPath -ChildPath 'Out-vCardFile.ps1' -Resolve );
