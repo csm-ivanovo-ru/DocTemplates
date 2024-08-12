@@ -21,9 +21,7 @@ if ( -not ( Test-Path variable:RepoRootPath ) -or ( [System.String]::IsNullOrEmp
 
 [System.String] $TempPath = ( Join-Path -Path $RepoRootPath -ChildPath 'tmp' );
 [System.String] $DestinationVCardPath = ( Join-Path -Path $TempPath -ChildPath 'vCards' );
-[System.String] $DestinationQRCodesPath = ( Join-Path -Path $TempPath -ChildPath 'QRCodes' );
-[System.String] $DestinationQRCodesURIPath = ( Join-Path -Path $DestinationQRCodesPath -ChildPath 'URIs' );
-[System.String] $DestinationQRCodesVCardPath = ( Join-Path -Path $DestinationQRCodesPath -ChildPath 'vCards' );
+
 [System.String] $DestinationLibContainersPath = ( Join-Path -Path $TempPath -ChildPath 'basic' );
 [System.String] $PreprocessedTemplatesPath = ( Join-Path -Path $TempPath -ChildPath 'template' );
 [System.String] $PreprocessedDocumentsPath = ( Join-Path -Path $TempPath -ChildPath 'doc' );
@@ -33,6 +31,10 @@ if ( -not ( Test-Path variable:RepoRootPath ) -or ( [System.String]::IsNullOrEmp
 [System.String] $OrgLogoPath = ( Join-Path -Path $ImagesPath -ChildPath 'svg/org-logo' -Resolve );
 
 [System.String] $ImagesPNGPath = ( Join-Path -Path $ImagesPath -ChildPath 'png' -Resolve );
+
+[System.String] $DestinationQRCodesPath = $ImagesPNGPath;
+[System.String] $DestinationQRCodesURIPath = $ImagesPNGPath;
+[System.String] $DestinationQRCodesVCardPath = $ImagesPNGPath;
 
 [System.String] $DestinationPath = ( Join-Path -Path $RepoRootPath -ChildPath 'output' );
 [System.String] $DestinationLibrariesPath = ( Join-Path -Path $DestinationPath -ChildPath 'basic' );
