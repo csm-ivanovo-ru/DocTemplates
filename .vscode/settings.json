@@ -162,7 +162,8 @@
 		"deps",
 		"other",
 		"changelog",
-		"readme"
+		"readme",
+		"build"
 	],
 	"conventionalCommits.showEditor": false,
 	"licenser.license": "AL2",

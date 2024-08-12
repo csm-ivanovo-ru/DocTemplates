@@ -8,8 +8,8 @@ import Vinyl from 'vinyl';
 import sharp from 'sharp';
 import through2 from 'through2';
 import path from 'node:path';
-import replaceExt from 'replace-ext';
 import { versionFromGitTag } from 'absolute-version';
+import SaxonJS from 'saxon-js';
 
 //#region вычисление версии
 if (process.env.version) {
@@ -123,7 +123,7 @@ task('build:images',
 // TODO: в дальнейшем копировать изображения из destinationImagesPath
 // исключительно на основании XML манифеста шаблона
 
-function getTempImagesCopyToDocumentTask(pictureBasename, docFolderPath) {
+function getImageCopyToDocumentTask(pictureBasename, docFolderPath) {
 	const taskName = 'copy:imageToDocument:' + pictureBasename;
 	task(
 		taskName,
@@ -143,14 +143,40 @@ function getTempImagesCopyToDocumentTask(pictureBasename, docFolderPath) {
 
 //#region сборка шаблона
 
-const picturesDirname = path.join(sourceORDTemplatePath, 'src/Pictures');
+// получаем список изображений из манифеста шаблона
+
+const sourceORDTemplateSrcPath = path.join(sourceORDTemplatePath, 'src');
+
+const ORDTemplateMetaXML = await SaxonJS.getResource({
+	file: path.join(sourceORDTemplateSrcPath, 'META-INF/manifest.xml'),
+	type: "xml"
+});
+const ORDTemplatePicturesPaths = SaxonJS.XPath.evaluate(
+	`/manifest:manifest/manifest:file-entry[
+		@manifest:media-type='image/png'
+		and starts-with(@manifest:full-path, 'Pictures/')
+	]/@manifest:full-path/string()`,
+	ORDTemplateMetaXML,
+	{
+		namespaceContext: {
+			manifest: 'urn:oasis:names:tc:opendocument:xmlns:manifest:1.0'
+		},
+		resultForm: 'array'
+	}
+);
+logger.debug('Template pictures (from meta information):');
+logger.debug(ORDTemplatePicturesPaths);
 
 task('build:template:ORD',
 	series(
 		'build:images',
 		parallel(
-			getTempImagesCopyToDocumentTask('org-logo.png', picturesDirname),
-			getTempImagesCopyToDocumentTask('russian_emblem.png', picturesDirname)
+			ORDTemplatePicturesPaths.map((picturePath) => {
+				return getImageCopyToDocumentTask(
+					path.basename(picturePath),
+					path.join(sourceORDTemplateSrcPath, 'Pictures')
+				);
+			})
 		)
 	)
 );
