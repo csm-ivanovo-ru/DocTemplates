@@ -11,6 +11,14 @@ import path from 'node:path';
 import replaceExt from 'replace-ext';
 import { versionFromGitTag } from 'absolute-version';
 
+//#region вычисление версии
+if (process.env.version) {
+	const version = process.env.version;
+} else {
+	const version = versionFromGitTag({ tagGlob: '[0-9]*' });
+};
+//#endregion вычисление версии
+
 //#region пути
 const markerFileName = '.dirstate';
 const repoRootPath = path.resolve('./');
@@ -22,11 +30,18 @@ const sourceLibrariesPath = path.join(sourcePath, 'basic');
 const sourceTemplatesPath = path.join(sourcePath, 'template');
 const sourceDocumentsPath = path.join(sourcePath, 'doc');
 
+const imagesPath = path.join(sourcePath, 'images');
+const imagesPNGPath = path.join(imagesPath, 'png');
+
+const russiaEmblemPath = path.join(imagesPath, 'svg/russian-emblems');
+const orgLogoPath = path.join(imagesPath, 'svg/org-logo');
+
+const destinationImagesPath = imagesPNGPath;
+
 const sourceORDTemplatePath = path.join(sourceTemplatesPath, 'ОРД ФБУ Ивановский ЦСМ v3.ott');
 
 const tempPath = path.join(repoRootPath, 'tmp');
 
-const destinationImagesPath = path.join(tempPath, 'images');
 const destinationVCardPath = path.join(tempPath, 'vCards');
 const destinationQRCodesPath = path.join(tempPath, 'QRCodes');
 const destinationQRCodesURIPath = path.join(destinationQRCodesPath, 'URIs');
@@ -35,10 +50,6 @@ const destinationQRCodesVCardPath = path.join(destinationQRCodesPath, 'vCards');
 const destinationLibContainersPath = path.join(tempPath, 'basic');
 const preprocessedTemplatesPath = path.join(tempPath, 'template');
 const preprocessedDocumentsPath = path.join(tempPath, 'doc');
-
-const imagesPath = path.join(sourcePath, 'images');
-const russiaEmblemPath = path.join(imagesPath, 'russian-emblems');
-const orgLogoPath = path.join(imagesPath, 'org-logo');
 
 const destinationPath = path.join(repoRootPath, 'output');
 const destinationLibrariesPath = path.join(destinationPath, 'basic');
@@ -53,12 +64,6 @@ const testsPath = path.join(repoRootPath, 'tests');
 const toolsPath = path.join(repoRootPath, 'tools');
 const XSLTToolsPath = path.join(toolsPath, 'xslt');
 //#endregion пути
-
-if (process.env.version) {
-	const version = process.env.version;
-} else {
-	const version = versionFromGitTag({ tagGlob: '[0-9]*' });
-};
 
 //#region подготовка изображений
 

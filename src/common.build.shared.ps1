@@ -29,8 +29,8 @@ if ( -not ( Test-Path variable:RepoRootPath ) -or ( [System.String]::IsNullOrEmp
 [System.String] $PreprocessedDocumentsPath = ( Join-Path -Path $TempPath -ChildPath 'doc' );
 
 [System.String] $ImagesPath = ( Join-Path -Path $SourcePath -ChildPath 'images' -Resolve );
-[System.String] $RussiaEmblemPath = ( Join-Path -Path $ImagesPath -ChildPath 'russian-emblems' -Resolve );
-[System.String] $OrgLogoPath = ( Join-Path -Path $ImagesPath -ChildPath 'org-logo' -Resolve );
+[System.String] $RussiaEmblemPath = ( Join-Path -Path $ImagesPath -ChildPath 'svg/russian-emblems' -Resolve );
+[System.String] $OrgLogoPath = ( Join-Path -Path $ImagesPath -ChildPath 'svg/org-logo' -Resolve );
 
 [System.String] $DestinationPath = ( Join-Path -Path $RepoRootPath -ChildPath 'output' );
 [System.String] $DestinationLibrariesPath = ( Join-Path -Path $DestinationPath -ChildPath 'basic' );
