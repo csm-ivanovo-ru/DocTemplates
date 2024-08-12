@@ -32,6 +32,8 @@ if ( -not ( Test-Path variable:RepoRootPath ) -or ( [System.String]::IsNullOrEmp
 [System.String] $RussiaEmblemPath = ( Join-Path -Path $ImagesPath -ChildPath 'svg/russian-emblems' -Resolve );
 [System.String] $OrgLogoPath = ( Join-Path -Path $ImagesPath -ChildPath 'svg/org-logo' -Resolve );
 
+[System.String] $ImagesPNGPath = ( Join-Path -Path $ImagesPath -ChildPath 'png' -Resolve );
+
 [System.String] $DestinationPath = ( Join-Path -Path $RepoRootPath -ChildPath 'output' );
 [System.String] $DestinationLibrariesPath = ( Join-Path -Path $DestinationPath -ChildPath 'basic' );
 [System.String] $DestinationTemplatesPath = ( Join-Path -Path $DestinationPath -ChildPath 'template' );

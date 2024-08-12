@@ -162,6 +162,7 @@ export { _buildTemplates as buildTemplates };
 
 //#endregion сборка шаблона
 
+//#region основные задачи
 task('build',
 	parallel(
 		'build:template:ORD'
@@ -190,3 +191,4 @@ const _default = series(
 	'build'
 );
 export { _default as default };
+//#endregion основные задачи
