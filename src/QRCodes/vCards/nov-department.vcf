@@ -1,0 +1,33 @@
+﻿BEGIN:VCARD
+VERSION:4.0
+KIND:individual
+FN;LANGUAGE=ru-RU:Тест-С-Петербург
+ADR;PID=1;PREF=1;TYPE=work;LANGUAGE=ru-RU;GEO=geo:58.545932,31.237971:;;пр-
+	кт Александра Корсунова\, д.32;Великий Новгород;Новгородская область;173024
+	;Россия
+TEL;VALUE=uri;PID=1;PREF=1;TYPE=work,voice:tel:+7-(8162)-60-77-27
+TEL;VALUE=uri;PID=2;PREF=90;TYPE=work,fax:tel:+7-(8162)-60-77-27;ext=9999
+EMAIL;PID=1;PREF=1;TYPE=work:mail@csm.nov.ru
+LANG:ru-RU
+TZ:Europe/Moscow
+GEO:geo:58.545932,31.237971
+LOGO;PID=1:data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIsAAABXAQMAAAAOKy
+	ToAAAABlBMVEX///8AgMj7/gG3AAABh0lEQVQ4y9XTsU7DMBAG4LOM5AXJL1CRV2Bkoq/CI3Tsg
+	JRIvFg2lj4CgzfWsGWwfOT3XZImB1LFhgfb/XI+30ku/TbuLN3/G4qXZfsiS+BLy4NuhY58YR7r
+	tuEei2NQ1q9JgkGlEkuCphLrgVGCQTWJ1wQslJBDyCkhSZScXmlEWqGglCUtI1gJn1uhRgl7XY4
+	zdeSUEPzBtTC/p0RhPZ/vuRYWhRzmA24ZqVkog+K0tEIeJx5QcSHmT6WeDnV1zO+ggIIONcEbc1
+	AiELVTSKm/Ipp71i6yUp4itNfxijp6jKgWVEsk7ukU0JPSIOTR+UI4eEZn3YZOhGaUklLLReiod
+	J52eUsZd8/U40aXKfKwkqsUOG3IM3nuF0KuiRzThlwhKrRPT6+WnhZKEw0guiJ0XIS0R3kLWwqg
+	biW8hRtolLfAeaY4Ee8pWyp7wmSp2xHel6W0If1X6lip7AjXJUs6hpnaK9JxtNRYijeRt+RWqjN
+	soa+FWkuNpWDJW6IfKFpyhv42vgG6VM8/YZIeVQAAAABJRU5ErkJggg==
+ORG;LANGUAGE=ru-RU;SORT-AS=Тест-С.-Петербург,Новгородский филиал:ФБУ "Тест-
+	С.-Петербург";Новгородский филиал
+CATEGORIES:Метрология,СОУТ,Сертификация
+X-GROUP-MEMBERSHIP:PREDEFINED_HUAWEI_GROUP_CCARD
+NOTE;LANGUAGE=ru-RU:Поверка и калибровка СИ\, аттестация испытательного обо
+	рудования\, сертификация\, СОУТ\, оценка профессиональных рисков\, производ
+	ственный контроль
+REV:20210523T014800Z
+UID:urn:uuid:89939fbd-18be-4f8e-9e65-4f020c2027fb
+URL;PID=1;PREF=1;TYPE=work:http://rustest.spb.ru/contacts/nov
+END:VCARD
