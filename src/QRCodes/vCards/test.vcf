@@ -1,0 +1,43 @@
+﻿BEGIN:VCARD
+VERSION:4.0
+KIND:individual
+FN:Simon Perreault
+N:Perreault;Simon;;;ing. jr,M.Sc.
+NICKNAME:nicname1,nicname2
+PHOTO;PREF=10;TYPE=work:http://www.example.com/pub/photos/jqpublic.gif
+PHOTO;PREF=90;TYPE=home:http://www.example.com/pub/photos/jqpublic2.gif
+BDAY;VALUE=date:--0203
+ANNIVERSARY;VALUE=date-time:20090808T1430-0500
+GENDER:M
+ADR;TYPE=work;LABEL=Simon Perreault 2875 boul. Laurier\, suite D2-630 Quebe
+	c\, QC\, Canada G1V 2M2:;;2875 boul. Laurier\, suite D2-630;Quebec;QC;G1V 2
+	M2;Canada
+TEL;VALUE=uri;PID=1.1,3;TYPE=work,voice:tel:+1-418-656-9254;ext=102
+TEL;VALUE=uri;PID=2;TYPE=work,text,voice,cell,video:tel:+1-418-262-6501
+EMAIL;PID=1;TYPE=work:simon.perreault@viagenie.ca
+IMPP;PID=1;PREF=1;TYPE=work:xmpp:alice@example.com
+LANG;PREF=1;TYPE=work,home:fr
+LANG;PREF=2;TYPE=work:en
+TZ:America/Montreal
+GEO;TYPE=work:geo:46.766336,-71.28955
+TITLE;TYPE=work;LANGUAGE=en:Research Scientist
+TITLE;TYPE=work;LANGUAGE=ru:Учёный исследователь
+ROLE;LANGUAGE=en:Project\, Leader
+ROLE;LANGUAGE=ru:Рук. проекта
+LOGO:http://www.example.com/pub/logos/abccorp.jpg
+ORG;LANGUAGE=ru:Тест-С.-Петербург\, ФБУ;Новгородский филиала;Метрологически
+	й отдел
+RELATED;VALUE=text;TYPE=emergency:My emergency contact
+CATEGORIES:СОУТ
+NOTE;LANGUAGE=en:This fax number is operational 0800 to 1715 EST\, Mon-Fri.
+REV:19951031T222710Z
+UID:urn:uuid:f81d4fae-7dec-11d0-a765-00a0c91e6bf6
+CLIENTPIDMAP:1;urn:uuid:3df403f4-5924-4bb7-b077-3c711d9eb34b
+URL;TYPE=home:http://nomis80.org
+KEY;TYPE=work:http://www.viagenie.ca/simon.perreault/simon.asc
+FBURL;PREF=1;MEDIATYPE=text/calendar:ftp://example.com/busy/project-a.ifb
+CALADRURI;PREF=1:http://example.com/calendar/jdoe
+CALADRURI;PREF=2:mailto:janedoe@example.com
+CALURI;PREF=1:http://cal.example.com/calA
+CALURI;PREF=2;MEDIATYPE=text/calendar:ftp://ftp.example.com/calA.ics
+END:VCARD

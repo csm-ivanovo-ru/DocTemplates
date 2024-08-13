@@ -1,0 +1,31 @@
+﻿BEGIN:VCARD
+VERSION:4.0
+KIND:individual
+FN;LANGUAGE=ru-RU:СОУТ
+ADR;PID=1;PREF=1;TYPE=work;LANGUAGE=ru-RU;GEO=geo:58.545932,31.237971:;;пр-
+	кт Александра Корсунова\, д.32;Великий Новгород;Новгородская область;173024
+	;Россия
+TEL;VALUE=uri;PID=1;PREF=1;TYPE=work,voice:tel:+7-(8162)-60-77-47
+TEL;VALUE=uri;PID=2;PREF=90;TYPE=work,fax:tel:+7-(8162)-60-77-27;ext=9999
+EMAIL;PID=1;PREF=1;TYPE=work:sout@csm.nov.ru
+LANG:ru-RU
+TZ:Europe/Moscow
+GEO:geo:58.545932,31.237971
+LOGO;PID=1:data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIsAAABXAQMAAAAOKy
+	ToAAAABlBMVEX///8AgMj7/gG3AAABh0lEQVQ4y9XTsU7DMBAG4LOM5AXJL1CRV2Bkoq/CI3Tsg
+	JRIvFg2lj4CgzfWsGWwfOT3XZImB1LFhgfb/XI+30ku/TbuLN3/G4qXZfsiS+BLy4NuhY58YR7r
+	tuEei2NQ1q9JgkGlEkuCphLrgVGCQTWJ1wQslJBDyCkhSZScXmlEWqGglCUtI1gJn1uhRgl7XY4
+	zdeSUEPzBtTC/p0RhPZ/vuRYWhRzmA24ZqVkog+K0tEIeJx5QcSHmT6WeDnV1zO+ggIIONcEbc1
+	AiELVTSKm/Ipp71i6yUp4itNfxijp6jKgWVEsk7ukU0JPSIOTR+UI4eEZn3YZOhGaUklLLReiod
+	J52eUsZd8/U40aXKfKwkqsUOG3IM3nuF0KuiRzThlwhKrRPT6+WnhZKEw0guiJ0XIS0R3kLWwqg
+	biW8hRtolLfAeaY4Ee8pWyp7wmSp2xHel6W0If1X6lip7AjXJUs6hpnaK9JxtNRYijeRt+RWqjN
+	soa+FWkuNpWDJW6IfKFpyhv42vgG6VM8/YZIeVQAAAABJRU5ErkJggg==
+ORG;LANGUAGE=ru-RU;SORT-AS=Тест-С.-Петербург,Новгородский филиал:ФБУ "Тест-
+	С.-Петербург";Новгородский филиал;Сектор СОУТ
+CATEGORIES:СОУТ
+NOTE;LANGUAGE=ru-RU:Специальная оценка условий труда\, оценка профессиональ
+	ных рисков\, производственный контроль
+REV:20210530T004800Z
+UID:urn:uuid:de538d9b-ca10-4ae6-928c-e379d76147ee
+URL;PID=1;PREF=1;TYPE=work:http://rustest.spb.ru/do/sout
+END:VCARD

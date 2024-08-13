@@ -1,5 +1,8 @@
 // Copyright 2024 Sergei S. Betke
 
+import path from 'node:path';
+import url from 'node:url';
+import streamBuffers from 'stream-buffers';
 import { series, parallel, task, src, dest } from 'gulp';
 import logger from 'gulplog';
 import rename from 'gulp-rename';
@@ -7,9 +10,10 @@ import newer from 'gulp-newer';
 import Vinyl from 'vinyl';
 import sharp from 'sharp';
 import through2 from 'through2';
-import path from 'node:path';
 import { versionFromGitTag } from 'absolute-version';
 import SaxonJS from 'saxon-js';
+import ini from 'ini';
+import QRCode from 'qrcode';
 
 //#region вычисление версии
 if (process.env.version) {
@@ -79,32 +83,30 @@ function getBuildPNGTask(SVGPath, PNGBasename) {
 					map: function () { return PNGBasename; }
 				}))
 				.pipe(through2.obj(
-					async function (file, _, cb) {
-						try {
-							const imageBuffer = await sharp(
-								file.contents,
-								{
-									density: 600,
-									ignoreIcc: true
-								}
-							)
-								.resize({ width: 600 })
-								.toColorspace('b-w')
-								.png({
-									compressionLevel: 9,
-									colors: 2
-								})
-								.toBuffer();
-							var newFile = new Vinyl({
-								cwd: file.cwd,
-								path: PNGBasename,
-								contents: imageBuffer
-							});
-							return cb(null, newFile);
-						} catch (err) {
-							console.error(err);
-							return cb(null, file);
-						}
+					function (file, encoding, cb) {
+						sharp(
+							file.contents,
+							{
+								density: 600,
+								ignoreIcc: true
+							}
+						)
+							.resize({ width: 600 })
+							.toColorspace('b-w')
+							.png({
+								compressionLevel: 9,
+								colors: 2
+							})
+							.toBuffer()
+							.then((imageBuffer) => {
+								var newFile = new Vinyl({
+									cwd: file.cwd,
+									path: PNGBasename,
+									contents: imageBuffer
+								});
+								this.push(newFile);
+								cb();
+							})
 					}
 				))
 				.pipe(dest(destinationImagesPath))
@@ -141,6 +143,35 @@ function getImageCopyToDocumentTask(pictureBasename, docFolderPath) {
 
 //#endregion подготовка изображений
 
+//#region подготовка QR-кодов для URL
+
+task('build:URL-QRCodes', function () {
+	return src(path.join(sourceURIsPath, '*.url'), { encoding: false })
+		.pipe(newer({
+			dest: destinationImagesPath,
+			ext: '.png'
+		}))
+		.pipe(through2.obj(function (file, encoding, callback) {
+			const urlFileContent = ini.parse(file.contents.toString());
+			const urlForQRCode = new URL(
+				ini.parse(file.contents.toString())
+					.InternetShortcut.URL
+			);
+			var PNGStream = new streamBuffers.WritableStreamBuffer();
+			PNGStream.on('close', () => {
+				var newFile = file.clone();
+				newFile.extname = '.png';
+				newFile.contents = PNGStream.getContents();
+				this.push(newFile);
+				callback();
+			});
+			QRCode.toFileStream(PNGStream, urlForQRCode.toString(), { type: 'png', scale: 1, });
+		}))
+		.pipe(dest(destinationImagesPath));
+});
+
+//#endregion подготовка QR-кодов для URL
+
 //#region сборка шаблона
 
 // получаем список изображений из манифеста шаблона
@@ -169,7 +200,10 @@ logger.debug(ORDTemplatePicturesPaths);
 
 task('build:template:ORD',
 	series(
-		'build:images',
+		parallel(
+			'build:images',
+			'build:URL-QRCodes'
+		),
 		parallel(
 			ORDTemplatePicturesPaths.map((picturePath) => {
 				return getImageCopyToDocumentTask(

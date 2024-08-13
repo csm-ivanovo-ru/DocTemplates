@@ -30,14 +30,14 @@ task BuildLib-DocTemplatesLib {
 	Invoke-Build BuildLib -File $SourceLibrariesPath/DocTemplatesLib/DocTemplatesLib.build.ps1 @parameters;
 };
 
-task Build-rustest.spb.ru.png {
-	Invoke-Build Build-rustest.spb.ru.png -File $SourceURIsPath/QRCodes.URI.build.ps1 @parameters;
+task Build-org-site.png {
+	. npx gulp build:URL-QRCodes;
 };
 
-task rustest.spb.ru.png `
-	-Inputs @( "$DestinationQRCodesURIPath/rustest.spb.ru.png" ) `
-	-Outputs @( "$SourceTemplatePath/Pictures/org-qr.png" ) `
-	-Jobs Build-rustest.spb.ru.png, {
+task org-site.png `
+	-Inputs @( "$DestinationQRCodesURIPath/org-site.png" ) `
+	-Outputs @( "$SourceTemplatePath/Pictures/org-site.png" ) `
+	-Jobs Build-org-site.png, {
 	Copy-Item -LiteralPath $Inputs[0] -Destination $Outputs[0] -Force `
 		-Verbose:( $PSCmdlet.MyInvocation.BoundParameters['Verbose'] -eq $true );
 };
@@ -73,7 +73,7 @@ openDocumentTemplate BuildTemplate `
 	-Version $Version `
 	-Inputs $sources `
 	-Outputs @( $DestinationTemplatePath, $marker ) `
-	-Jobs BuildLib-DocTemplatesLib, rustest.spb.ru.png, russian_emblem.png, org_logo.png;
+	-Jobs BuildLib-DocTemplatesLib, org-site.png, russian_emblem.png, org_logo.png;
 
 openDocumentTemplate BuildAndOpenTemplate `
 	-OpenAfterBuild `
@@ -83,6 +83,6 @@ openDocumentTemplate BuildAndOpenTemplate `
 	-Version $Version `
 	-Inputs $sources `
 	-Outputs @( $DestinationTemplatePath, $marker ) `
-	-Jobs BuildLib-DocTemplatesLib, rustest.spb.ru.png, russian_emblem.png, org_logo.png;
+	-Jobs BuildLib-DocTemplatesLib, org-site.png, russian_emblem.png, org_logo.png;
 
 task . BuildTemplate;
