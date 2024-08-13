@@ -104,7 +104,6 @@ task UnpackAndOptimizeModified $OOUnpackAndOptimizeTasks;
 # Synopsis: Удаляет каталоги с временными файлами, собранными файлами документов и их шаблонов
 task clean {
 	Invoke-Build clean -File $SourceLibrariesPath/MacroLibs.build.ps1 @parameters;
-	Invoke-Build clean -File $SourceXCardPath/QRCodes.xCards.build.ps1 @parameters;
 	Invoke-Build clean -File $SourceTemplatesPath/OpenDocumentTemplates.build.ps1 @parameters;
 	Invoke-Build clean -File $SourceDocumentsPath/Documents.build.ps1 @parameters;
 	Remove-BuildItem $DestinationPath, $TempPath;
@@ -113,7 +112,6 @@ task clean {
 
 task distclean clean, {
 	Invoke-Build distclean -File $SourceLibrariesPath/MacroLibs.build.ps1 @parameters;
-	Invoke-Build distclean -File $SourceXCardPath/QRCodes.xCards.build.ps1 @parameters;
 	Invoke-Build distclean -File $SourceTemplatesPath/OpenDocumentTemplates.build.ps1 @parameters;
 	Invoke-Build distclean -File $SourceDocumentsPath/Documents.build.ps1 @parameters;
 	Remove-BuildItem $NuGetPath, "$XSLTToolsPath/packages", "$TestsPath/java/dependency";
@@ -126,7 +124,6 @@ task maintainer-clean distclean, {
 
 task pre-build nuget, {
 	Invoke-Build pre-build -File $SourceLibrariesPath/MacroLibs.build.ps1 @parameters;
-	Invoke-Build pre-build -File $SourceXCardPath/QRCodes.xCards.build.ps1 @parameters;
 	Invoke-Build pre-build -File $SourceTemplatesPath/OpenDocumentTemplates.build.ps1 @parameters;
 	Invoke-Build pre-build -File $SourceDocumentsPath/Documents.build.ps1 @parameters;
 };
@@ -148,12 +145,12 @@ task BuildUriQRCodes {
 
 # Synopsis: Создаёт vCard из xCard
 task BuildVCards {
-	Invoke-Build BuildVCards -File $SourceXCardPath/QRCodes.xCards.build.ps1 @parameters;
+	# Invoke-Build BuildVCards -File $SourceXCardPath/QRCodes.xCards.build.ps1 @parameters;
 };
 
 # Synopsis: Создаёт файлы с изображениями QR кодов (с vCard)
 task BuildVCardQRCodes {
-	Invoke-Build BuildVCardQRCodes -File $SourceXCardPath/QRCodes.xCards.build.ps1 @parameters;
+	# Invoke-Build BuildVCardQRCodes -File $SourceXCardPath/QRCodes.xCards.build.ps1 @parameters;
 };
 
 # Synopsis: Создаёт файлы с изображениями QR кодов
