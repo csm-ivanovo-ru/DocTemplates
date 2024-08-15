@@ -55,6 +55,9 @@ const destinationLibContainersPath = path.join(tempPath, 'basic');
 const preprocessedTemplatesPath = path.join(tempPath, 'template');
 const preprocessedDocumentsPath = path.join(tempPath, 'doc');
 
+const tempDocsToolsPath = path.join(tempPath, 'docs');
+const tempDocsXSLTToolsPath = path.join(tempDocsToolsPath, 'xslt');
+
 const destinationPath = path.join(repoRootPath, 'output');
 const destinationLibrariesPath = path.join(destinationPath, 'basic');
 const destinationTemplatesPath = path.join(destinationPath, 'template');
@@ -67,6 +70,8 @@ const testsPath = path.join(repoRootPath, 'tests');
 
 const toolsPath = path.join(repoRootPath, 'tools');
 const XSLTToolsPath = path.join(toolsPath, 'xslt');
+const DocsToolsPath = path.join(toolsPath, 'docs');
+const DocsXSLTToolsPath = path.join(DocsToolsPath, 'xslt');
 //#endregion пути
 
 //#region подготовка изображений
@@ -122,9 +127,6 @@ task('build:images',
 	)
 );
 
-// TODO: в дальнейшем копировать изображения из destinationImagesPath
-// исключительно на основании XML манифеста шаблона
-
 function getImageCopyToDocumentTask(pictureBasename, docFolderPath) {
 	const taskName = 'copy:imageToDocument:' + pictureBasename;
 	task(
@@ -157,20 +159,25 @@ task('build:URL-QRCodes', function () {
 				ini.parse(file.contents.toString())
 					.InternetShortcut.URL
 			);
-			var PNGStream = new streamBuffers.WritableStreamBuffer();
-			PNGStream.on('close', () => {
-				var newFile = file.clone();
-				newFile.extname = '.png';
-				newFile.contents = PNGStream.getContents();
-				this.push(newFile);
-				callback();
-			});
+			var PNGStream = new streamBuffers.WritableStreamBuffer()
+				.on('close', () => {
+					var newFile = file.clone();
+					newFile.extname = '.png';
+					newFile.contents = PNGStream.getContents();
+					this.push(newFile);
+					callback();
+				});
 			QRCode.toFileStream(PNGStream, urlForQRCode.toString(), { type: 'png', scale: 1, });
 		}))
 		.pipe(dest(destinationImagesPath));
 });
 
 //#endregion подготовка QR-кодов для URL
+
+//#region компиляция XSLT
+
+
+//#endregion компиляция XSLT
 
 //#region сборка шаблона
 

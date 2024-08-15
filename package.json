@@ -17,7 +17,8 @@
 		"sharp": "^0.33.4",
 		"stream-buffers": "^3.0.3",
 		"through2": "^4.0.2",
-		"vinyl": "^3.0.0"
+		"vinyl": "^3.0.0",
+		"xslt3": "^2.6.0"
 	},
 	"homepage": "https://github.com/csm-ivanovo-ru/DocTemplates",
 	"author": {
@@ -44,5 +45,12 @@
 		"ЦСМ",
 		"Шаблоны",
 		"OpenOffice"
-	]
+	],
+	"scripts": {
+		"build": "gulp build",
+		"clean": "gulp clean",
+		"distclean": "gulp distclean",
+		"maintainer-clean": "gulp maintainer-clean"
+	},
+	"main": "gulpfile.mjs"
 }
