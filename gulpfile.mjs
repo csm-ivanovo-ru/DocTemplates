@@ -88,7 +88,7 @@ function getBuildPNGTask(SVGPath, PNGBasename) {
 					dest: destinationImagesPath,
 					map: () => PNGBasename
 				}))
-				.pipe(transform({}, (content, file) => {
+				.pipe(transform((content, file) => {
 					return sharp(
 						file.contents,
 						{
