@@ -9,7 +9,7 @@ import rename from 'gulp-rename';
 import newer from 'gulp-newer';
 import Vinyl from 'vinyl';
 import sharp from 'sharp';
-import through2 from 'through2';
+import through from 'through2';
 import { versionFromGitTag } from 'absolute-version';
 import SaxonJS from 'saxon-js';
 import ini from 'ini';
@@ -87,7 +87,7 @@ function getBuildPNGTask(SVGPath, PNGBasename) {
 					dest: destinationImagesPath,
 					map: function () { return PNGBasename; }
 				}))
-				.pipe(through2.obj(
+				.pipe(through.obj(
 					function (file, encoding, cb) {
 						sharp(
 							file.contents,
@@ -127,22 +127,6 @@ task('build:images',
 	)
 );
 
-function getImageCopyToDocumentTask(pictureBasename, docFolderPath) {
-	const taskName = 'copy:imageToDocument:' + pictureBasename;
-	task(
-		taskName,
-		function () {
-			return src(
-				path.join(destinationImagesPath, pictureBasename),
-				{ encoding: false }
-			)
-				.pipe(newer(docFolderPath))
-				.pipe(dest(docFolderPath))
-		}
-	);
-	return taskName;
-}
-
 //#endregion подготовка изображений
 
 //#region подготовка QR-кодов для URL
@@ -153,7 +137,7 @@ task('build:URL-QRCodes', function () {
 			dest: destinationImagesPath,
 			ext: '.png'
 		}))
-		.pipe(through2.obj(function (file, encoding, callback) {
+		.pipe(through.obj(function (file, encoding, callback) {
 			const urlFileContent = ini.parse(file.contents.toString());
 			const urlForQRCode = new URL(
 				ini.parse(file.contents.toString())
@@ -185,25 +169,55 @@ task('build:URL-QRCodes', function () {
 
 const sourceORDTemplateSrcPath = path.join(sourceORDTemplatePath, 'src');
 
-const ORDTemplateMetaXML = await SaxonJS.getResource({
-	file: path.join(sourceORDTemplateSrcPath, 'META-INF/manifest.xml'),
-	type: "xml"
-});
-const ORDTemplatePicturesPaths = SaxonJS.XPath.evaluate(
-	`/manifest:manifest/manifest:file-entry[
-		@manifest:media-type='image/png'
-		and starts-with(@manifest:full-path, 'Pictures/')
-	]/@manifest:full-path/string()`,
-	ORDTemplateMetaXML,
-	{
-		namespaceContext: {
-			manifest: 'urn:oasis:names:tc:opendocument:xmlns:manifest:1.0'
-		},
-		resultForm: 'array'
+task(
+	'build:template:ORD:Pictures',
+	() => {
+		const picturesPath = path.join(sourceORDTemplateSrcPath, 'Pictures');
+		return src(path.join(sourceORDTemplateSrcPath, 'META-INF/manifest.xml'), { encoding: false })
+			.pipe(through.obj(function (file, _, cb) {
+
+				var self = this;
+
+				SaxonJS.getResource({ file: file.path, type: 'xml' })
+					.then((manifest) => {
+						return SaxonJS.XPath.evaluate(
+							`/manifest:manifest/manifest:file-entry[
+										@manifest:media-type='image/png'
+										and starts-with(@manifest:full-path, 'Pictures/')
+									]/@manifest:full-path/string()`,
+							manifest,
+							{
+								namespaceContext: {
+									manifest: 'urn:oasis:names:tc:opendocument:xmlns:manifest:1.0'
+								},
+								resultForm: 'array'
+							}
+						)
+							.map((docPicturePath) => {
+								return path.join(destinationImagesPath, path.basename(docPicturePath));
+							});
+					})
+					.then((docPictures) => {
+						logger.debug('images from manifest.xml:');
+						logger.debug(docPictures);
+
+						const PNGImagesGlob = docPictures.map((docPicturePath) => {
+							return path.join(destinationImagesPath, path.basename(docPicturePath));
+						});
+						logger.debug('PNG source images paths:');
+						logger.debug(PNGImagesGlob);
+
+						src(PNGImagesGlob, { encoding: false })
+							.on('end', cb)
+							.on('error', cb)
+							.on('data', (file) => { self.push(file); });
+					});
+
+			}))
+			.pipe(newer(picturesPath))
+			.pipe(dest(picturesPath))
 	}
 );
-logger.debug('Template pictures (from meta information):');
-logger.debug(ORDTemplatePicturesPaths);
 
 task('build:template:ORD',
 	series(
@@ -211,14 +225,7 @@ task('build:template:ORD',
 			'build:images',
 			'build:URL-QRCodes'
 		),
-		parallel(
-			ORDTemplatePicturesPaths.map((picturePath) => {
-				return getImageCopyToDocumentTask(
-					path.basename(picturePath),
-					path.join(sourceORDTemplateSrcPath, 'Pictures')
-				);
-			})
-		)
+		'build:template:ORD:Pictures'
 	)
 );
 
