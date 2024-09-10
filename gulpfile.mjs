@@ -5,8 +5,9 @@ import url from 'node:url';
 import streamBuffers from 'stream-buffers';
 import { series, parallel, task, src, dest } from 'gulp';
 import logger from 'gulplog';
-import rename from 'gulp-rename';
 import newer from 'gulp-newer';
+import rename from 'gulp-rename';
+import transform from '@lumjs/gulp-transform';
 import Vinyl from 'vinyl';
 import sharp from 'sharp';
 import through from 'through2';
@@ -85,35 +86,25 @@ function getBuildPNGTask(SVGPath, PNGBasename) {
 			return src(SVGPath, { encoding: false })
 				.pipe(newer({
 					dest: destinationImagesPath,
-					map: function () { return PNGBasename; }
+					map: () => PNGBasename
 				}))
-				.pipe(through.obj(
-					function (file, encoding, cb) {
-						sharp(
-							file.contents,
-							{
-								density: 600,
-								ignoreIcc: true
-							}
-						)
-							.resize({ width: 600 })
-							.toColorspace('b-w')
-							.png({
-								compressionLevel: 9,
-								colors: 2
-							})
-							.toBuffer()
-							.then((imageBuffer) => {
-								var newFile = new Vinyl({
-									cwd: file.cwd,
-									path: PNGBasename,
-									contents: imageBuffer
-								});
-								this.push(newFile);
-								cb();
-							})
-					}
-				))
+				.pipe(transform({}, (content, file) => {
+					return sharp(
+						file.contents,
+						{
+							density: 600,
+							ignoreIcc: true
+						}
+					)
+						.resize({ width: 600 })
+						.toColorspace('b-w')
+						.png({
+							compressionLevel: 9,
+							colors: 2
+						})
+						.toBuffer();
+				}))
+				.pipe(rename(PNGBasename))
 				.pipe(dest(destinationImagesPath))
 		}
 	);
