@@ -38,9 +38,6 @@ const sourceDocumentsPath = path.join(sourcePath, 'doc');
 const imagesPath = path.join(sourcePath, 'images');
 const imagesPNGPath = path.join(imagesPath, 'png');
 
-const russiaEmblemPath = path.join(imagesPath, 'svg/russian-emblems');
-const orgLogoPath = path.join(imagesPath, 'svg/org-logo');
-
 const destinationImagesPath = imagesPNGPath;
 
 const sourceORDTemplatePath = path.join(sourceTemplatesPath, 'ОРД ФБУ Ивановский ЦСМ v3.ott');
@@ -77,10 +74,14 @@ const DocsXSLTToolsPath = path.join(DocsToolsPath, 'xslt');
 
 //#region подготовка изображений
 
-const SVGToPNGImagesConfig = [
-	{ path: orgLogoPath, glob: '*.svg', destFilename: 'org-logo.png' },
-	{ path: russiaEmblemPath, glob: 'emblem_black_bordered.svg', destFilename: 'russian_emblem.png' }
-];
+const SVGToPNGImagesConfig = {
+	SVGPath: path.join(imagesPath, 'svg'),
+	PNGPath: imagesPNGPath,
+	images: [
+		{ src: 'org-logo/*.svg', destFilename: 'org-logo.png' },
+		{ src: 'russian-emblems/emblem_black_bordered.svg', destFilename: 'russian_emblem.png' }
+	]
+};
 
 function SVG2PNG(SVGPath, PNGPath, PNGBasename) {
 	return function () {
@@ -110,14 +111,14 @@ function SVG2PNG(SVGPath, PNGPath, PNGBasename) {
 	};
 }
 
-const SVGToPNGImagesTasks = SVGToPNGImagesConfig.map(
+const SVGToPNGImagesTasks = SVGToPNGImagesConfig.images.map(
 	(SVGToPNGMap) => {
 		const taskName = 'build:images:SVG2PNG:' + SVGToPNGMap.destFilename;
 		task(
 			taskName,
 			SVG2PNG(
-				path.join(SVGToPNGMap.path, SVGToPNGMap.glob),
-				destinationImagesPath,
+				path.join(SVGToPNGImagesConfig.SVGPath, SVGToPNGMap.src),
+				SVGToPNGImagesConfig.PNGPath,
 				SVGToPNGMap.destFilename
 			)
 		);
