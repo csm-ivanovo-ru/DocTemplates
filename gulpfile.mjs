@@ -77,45 +77,56 @@ const DocsXSLTToolsPath = path.join(DocsToolsPath, 'xslt');
 
 //#region подготовка изображений
 
-function getBuildPNGTask(SVGPath, PNGBasename) {
-	const taskName = 'convertImage:' + PNGBasename;
-	const PNGPath = path.join(destinationImagesPath, PNGBasename);
-	task(
-		taskName,
-		function () {
-			return src(SVGPath, { encoding: false })
-				.pipe(newer({
-					dest: destinationImagesPath,
-					map: () => PNGBasename
-				}))
-				.pipe(transform((content, file) => {
-					return sharp(
-						file.contents,
-						{
-							density: 600,
-							ignoreIcc: true
-						}
-					)
-						.resize({ width: 600 })
-						.toColorspace('b-w')
-						.png({
-							compressionLevel: 9,
-							colors: 2
-						})
-						.toBuffer();
-				}))
-				.pipe(rename(PNGBasename))
-				.pipe(dest(destinationImagesPath))
-		}
-	);
-	return taskName;
+const SVGToPNGImagesConfig = [
+	{ path: orgLogoPath, glob: '*.svg', destFilename: 'org-logo.png' },
+	{ path: russiaEmblemPath, glob: 'emblem_black_bordered.svg', destFilename: 'russian_emblem.png' }
+];
+
+function SVG2PNG(SVGPath, PNGPath, PNGBasename) {
+	return function () {
+		return src(SVGPath, { encoding: false })
+			.pipe(newer({
+				dest: PNGPath,
+				map: () => PNGBasename
+			}))
+			.pipe(transform((content, file) => {
+				return sharp(
+					file.contents,
+					{
+						density: 600,
+						ignoreIcc: true
+					}
+				)
+					.resize({ width: 600 })
+					.toColorspace('b-w')
+					.png({
+						compressionLevel: 9,
+						colors: 2
+					})
+					.toBuffer();
+			}))
+			.pipe(rename(PNGBasename))
+			.pipe(dest(PNGPath))
+	};
 }
 
+const SVGToPNGImagesTasks = SVGToPNGImagesConfig.map(
+	(SVGToPNGMap) => {
+		const taskName = 'build:images:SVG2PNG:' + SVGToPNGMap.destFilename;
+		task(
+			taskName,
+			SVG2PNG(
+				path.join(SVGToPNGMap.path, SVGToPNGMap.glob),
+				destinationImagesPath,
+				SVGToPNGMap.destFilename
+			)
+		);
+		return taskName;
+	}
+);
+
 task('build:images',
-	parallel(
-		getBuildPNGTask(path.join(orgLogoPath, '*.svg'), 'org-logo.png'),
-		getBuildPNGTask(path.join(russiaEmblemPath, 'emblem_black_bordered.svg'), 'russian_emblem.png')
-	)
+	parallel(SVGToPNGImagesTasks)
 );
 
 //#endregion подготовка изображений
