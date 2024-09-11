@@ -8,7 +8,6 @@ import logger from 'gulplog';
 import newer from 'gulp-newer';
 import rename from 'gulp-rename';
 import transform from '@lumjs/gulp-transform';
-import Vinyl from 'vinyl';
 import sharp from 'sharp';
 import through from 'through2';
 import { versionFromGitTag } from 'absolute-version';
@@ -134,29 +133,29 @@ task('build:images',
 
 //#region подготовка QR-кодов для URL
 
+const URI_QRCodesConfig = {
+	imageConfig: {
+		type: 'png',
+		scale: 1
+	}
+};
+
 task('build:URL-QRCodes', function () {
-	return src(path.join(sourceURIsPath, '*.url'), { encoding: false })
+	return src(path.join(sourceURIsPath, '*.url'), { encoding: 'utf8' })
 		.pipe(newer({
 			dest: destinationImagesPath,
 			ext: '.png'
 		}))
-		.pipe(through.obj(function (file, encoding, callback) {
-			const urlFileContent = ini.parse(file.contents.toString());
-			const urlForQRCode = new URL(
-				ini.parse(file.contents.toString())
-					.InternetShortcut.URL
-			);
-			var PNGStream = new streamBuffers.WritableStreamBuffer()
-				.on('close', () => {
-					var newFile = file.clone();
-					newFile.extname = '.png';
-					newFile.contents = PNGStream.getContents();
-					this.push(newFile);
-					callback();
-				});
-			QRCode.toFileStream(PNGStream, urlForQRCode.toString(), { type: 'png', scale: 1, });
+		.pipe(transform((content, _) => {
+			return new Promise((resolve, reject) => {
+				const urlForQRCode = new URL(ini.parse(content.toString()).InternetShortcut.URL);
+				let PNGStream = new streamBuffers.WritableStreamBuffer()
+					.on('finish', () => { resolve(PNGStream.getContents()) });
+				QRCode.toFileStream(PNGStream, urlForQRCode.toString(), URI_QRCodesConfig.imageConfig);
+			})
 		}))
-		.pipe(dest(destinationImagesPath));
+		.pipe(rename({ extname: '.png' }))
+		.pipe(dest(destinationImagesPath))
 });
 
 //#endregion подготовка QR-кодов для URL
