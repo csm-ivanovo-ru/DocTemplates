@@ -8,6 +8,8 @@ import logger from 'gulplog';
 import newer from 'gulp-newer';
 import rename from 'gulp-rename';
 import transform from '@lumjs/gulp-transform';
+import clean from 'gulp-clean';
+import vinylPaths from 'vinyl-paths';
 import sharp from 'sharp';
 import through from 'through2';
 import { versionFromGitTag } from 'absolute-version';
@@ -25,7 +27,8 @@ if (process.env.version) {
 
 //#region пути
 const markerFileName = '.dirstate';
-const repoRootPath = path.resolve('./');
+// const repoRootPath = path.resolve('./');
+const repoRootPath = '.';
 
 const sourcePath = path.join(repoRootPath, 'src');
 const sourceURIsPath = path.join(sourcePath, 'QRCodes/URIs');
@@ -129,11 +132,25 @@ task('build:images',
 	parallel(SVGToPNGImagesTasks)
 );
 
+task('maintainer-clean:SVG2PNG',
+	function () {
+		const PNGImages = SVGToPNGImagesConfig.images.map(
+			SVGToPNGMap => path.join(SVGToPNGImagesConfig.PNGPath, SVGToPNGMap.destFilename)
+		);
+		return src(PNGImages, { read: false, allowEmpty: true, base: process.cwd() })
+			.pipe(clean());
+	}
+);
+
 //#endregion подготовка изображений
 
 //#region подготовка QR-кодов для URL
 
 const URI_QRCodesConfig = {
+	URLPath: sourceURIsPath,
+	URLSrc: path.join(sourceURIsPath, '*.url'),
+	QRCodesPath: destinationImagesPath,
+	extname: '.png',
 	imageConfig: {
 		type: 'png',
 		scale: 1
@@ -141,22 +158,33 @@ const URI_QRCodesConfig = {
 };
 
 task('build:URL-QRCodes', function () {
-	return src(path.join(sourceURIsPath, '*.url'), { encoding: 'utf8' })
+	return src(URI_QRCodesConfig.URLSrc, { encoding: 'utf8' })
 		.pipe(newer({
-			dest: destinationImagesPath,
-			ext: '.png'
+			dest: URI_QRCodesConfig.QRCodesPath,
+			ext: URI_QRCodesConfig.extname
 		}))
 		.pipe(transform((content, _) => {
 			return new Promise((resolve, reject) => {
-				const urlForQRCode = new URL(ini.parse(content.toString()).InternetShortcut.URL);
+				const urlForQRCode = new URL(ini.parse(content.toString('utf8')).InternetShortcut.URL);
 				let PNGStream = new streamBuffers.WritableStreamBuffer()
 					.on('finish', () => { resolve(PNGStream.getContents()) });
 				QRCode.toFileStream(PNGStream, urlForQRCode.toString(), URI_QRCodesConfig.imageConfig);
 			})
 		}))
-		.pipe(rename({ extname: '.png' }))
-		.pipe(dest(destinationImagesPath))
+		.pipe(rename({ extname: URI_QRCodesConfig.extname }))
+		.pipe(dest(URI_QRCodesConfig.QRCodesPath))
 });
+
+task('maintainer-clean:URL-QRCodes',
+	function () {
+		return src(URI_QRCodesConfig.URLSrc, { read: false, allowEmpty: true, base: process.cwd() })
+			.pipe(rename({
+				dirname: URI_QRCodesConfig.QRCodesPath,
+				extname: URI_QRCodesConfig.extname
+			}))
+			.pipe(clean())
+	}
+);
 
 //#endregion подготовка QR-кодов для URL
 
@@ -259,7 +287,11 @@ task('distclean',
 
 task('maintainer-clean',
 	series(
-		'clean'
+		'clean',
+		parallel(
+			'maintainer-clean:SVG2PNG',
+			'maintainer-clean:URL-QRCodes'
+		)
 	)
 );
 
