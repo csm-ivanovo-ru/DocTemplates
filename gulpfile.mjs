@@ -78,20 +78,16 @@ const DocsXSLTToolsPath = path.join(DocsToolsPath, 'xslt');
 
 const SVGToPNGImagesConfig = {
 	SVGPath: path.join(imagesPath, 'svg'),
-	PNGPath: imagesPNGPath,
-	images: [
-		{ src: 'org-logo/*.svg', destFilename: 'org-logo.png' },
-		{ src: 'russian-emblems/emblem_black_bordered.svg', destFilename: 'russian_emblem.png' }
-	]
+	PNGPath: imagesPNGPath
 };
 
-function SVG2PNG(SVGPath, PNGPath, PNGBasename) {
-	return function () {
-		return src(SVGPath, { encoding: false })
-			.pipe(newer({
-				dest: PNGPath,
-				map: () => PNGBasename
-			}))
+task('build:images:SVG2PNG',
+	function () {
+		return src(
+			path.join(SVGToPNGImagesConfig.SVGPath, '*.svg'),
+			{ encoding: false, cwd: process.cwd() }
+		)
+			.pipe(newer({ dest: SVGToPNGImagesConfig.PNGPath }))
 			.pipe(transform((content, file) => {
 				return sharp(
 					file.contents,
@@ -108,38 +104,28 @@ function SVG2PNG(SVGPath, PNGPath, PNGBasename) {
 					})
 					.toBuffer();
 			}))
-			.pipe(rename(PNGBasename))
-			.pipe(dest(PNGPath))
-	};
-}
+			.pipe(rename({ extname: '.png' }))
+			.pipe(dest(SVGToPNGImagesConfig.PNGPath))
+	}
+);
 
-const SVGToPNGImagesTasks = SVGToPNGImagesConfig.images.map(
-	(SVGToPNGMap) => {
-		const taskName = 'build:images:SVG2PNG:' + SVGToPNGMap.destFilename;
-		task(
-			taskName,
-			SVG2PNG(
-				path.join(SVGToPNGImagesConfig.SVGPath, SVGToPNGMap.src),
-				SVGToPNGImagesConfig.PNGPath,
-				SVGToPNGMap.destFilename
-			)
-		);
-		return taskName;
+task('build:images:russian_emblem.svg',
+	function () {
+		return src(path.join(imagesPath, 'russian-emblems/emblem_black_bordered.svg'), { encoding: false })
+			.pipe(newer({
+				dest: SVGToPNGImagesConfig.SVGPath,
+				map: () => 'russian_emblem.svg'
+			}))
+			.pipe(rename({ basename: 'russian_emblem' }))
+			.pipe(dest(SVGToPNGImagesConfig.SVGPath))
 	}
 );
 
 task('build:images',
-	parallel(SVGToPNGImagesTasks)
-);
-
-task('maintainer-clean:SVG2PNG',
-	function () {
-		const PNGImages = SVGToPNGImagesConfig.images.map(
-			SVGToPNGMap => path.join(SVGToPNGImagesConfig.PNGPath, SVGToPNGMap.destFilename)
-		);
-		return src(PNGImages, { read: false, allowEmpty: true, base: process.cwd() })
-			.pipe(clean());
-	}
+	series(
+		'build:images:russian_emblem.svg',
+		'build:images:SVG2PNG'
+	)
 );
 
 //#endregion подготовка изображений
@@ -289,7 +275,6 @@ task('maintainer-clean',
 	series(
 		'clean',
 		parallel(
-			'maintainer-clean:SVG2PNG',
 			'maintainer-clean:URL-QRCodes'
 		)
 	)
