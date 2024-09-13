@@ -42,6 +42,7 @@
 		"Committish",
 		"compat",
 		"concat",
+		"cwdbase",
 		"datastyle",
 		"delims",
 		"dependabot",

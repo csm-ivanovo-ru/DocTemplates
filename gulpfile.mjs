@@ -9,6 +9,7 @@ import newer from 'gulp-newer';
 import rename from 'gulp-rename';
 import transform from '@lumjs/gulp-transform';
 import clean from 'gulp-clean';
+import filter from 'gulp-filter';
 import vinylPaths from 'vinyl-paths';
 import sharp from 'sharp';
 import through from 'through2';
@@ -76,7 +77,7 @@ const DocsXSLTToolsPath = path.join(DocsToolsPath, 'xslt');
 
 //#region подготовка изображений
 
-const SVGToPNGImagesConfig = {
+const imagesConfig = {
 	SVGPath: path.join(imagesPath, 'svg'),
 	PNGPath: imagesPNGPath
 };
@@ -84,10 +85,10 @@ const SVGToPNGImagesConfig = {
 task('build:images:SVG2PNG',
 	function () {
 		return src(
-			path.join(SVGToPNGImagesConfig.SVGPath, '*.svg'),
-			{ encoding: false, cwd: process.cwd() }
+			path.join(imagesConfig.SVGPath, '*.svg'),
+			{ encoding: false }
 		)
-			.pipe(newer({ dest: SVGToPNGImagesConfig.PNGPath }))
+			.pipe(newer({ dest: imagesConfig.PNGPath }))
 			.pipe(transform((content, file) => {
 				return sharp(
 					file.contents,
@@ -105,7 +106,7 @@ task('build:images:SVG2PNG',
 					.toBuffer();
 			}))
 			.pipe(rename({ extname: '.png' }))
-			.pipe(dest(SVGToPNGImagesConfig.PNGPath))
+			.pipe(dest(imagesConfig.PNGPath))
 	}
 );
 
@@ -113,11 +114,11 @@ task('build:images:russian_emblem.svg',
 	function () {
 		return src(path.join(imagesPath, 'russian-emblems/emblem_black_bordered.svg'), { encoding: false })
 			.pipe(newer({
-				dest: SVGToPNGImagesConfig.SVGPath,
+				dest: imagesConfig.SVGPath,
 				map: () => 'russian_emblem.svg'
 			}))
 			.pipe(rename({ basename: 'russian_emblem' }))
-			.pipe(dest(SVGToPNGImagesConfig.SVGPath))
+			.pipe(dest(imagesConfig.SVGPath))
 	}
 );
 
@@ -198,7 +199,7 @@ task(
 					.then((manifest) => {
 						return SaxonJS.XPath.evaluate(
 							`/manifest:manifest/manifest:file-entry[
-										@manifest:media-type='image/png'
+										( @manifest:media-type='image/png' or @manifest:media-type='image/svg+xml' )
 										and starts-with(@manifest:full-path, 'Pictures/')
 									]/@manifest:full-path/string()`,
 							manifest,
@@ -209,21 +210,17 @@ task(
 								resultForm: 'array'
 							}
 						)
-							.map((docPicturePath) => {
-								return path.join(destinationImagesPath, path.basename(docPicturePath));
-							});
+							.map((docPicturePath) => '**/' + path.basename(docPicturePath));
 					})
 					.then((docPictures) => {
-						logger.debug('images from manifest.xml:');
-						logger.debug(docPictures);
-
-						const PNGImagesGlob = docPictures.map((docPicturePath) => {
-							return path.join(destinationImagesPath, path.basename(docPicturePath));
-						});
-						logger.debug('PNG source images paths:');
-						logger.debug(PNGImagesGlob);
-
-						src(PNGImagesGlob, { encoding: false })
+						// src(PNGImagesGlob, { encoding: false })
+						src([
+							path.join(imagesConfig.SVGPath, '*.svg'),
+							path.join(imagesConfig.PNGPath, '*.png')
+						], {
+							encoding: false
+						})
+							.pipe(filter(docPictures))
 							.on('end', cb)
 							.on('error', cb)
 							.on('data', (file) => { self.push(file); });
