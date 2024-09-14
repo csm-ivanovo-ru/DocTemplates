@@ -12,6 +12,7 @@ import clean from 'gulp-clean';
 import filter from 'gulp-filter';
 import vinylPaths from 'vinyl-paths';
 import sharp from 'sharp';
+import svgMin from 'gulp-svgmin';
 import through from 'through2';
 import { versionFromGitTag } from 'absolute-version';
 import SaxonJS from 'saxon-js';
@@ -75,11 +76,56 @@ const DocsToolsPath = path.join(toolsPath, 'docs');
 const DocsXSLTToolsPath = path.join(DocsToolsPath, 'xslt');
 //#endregion пути
 
+//#region подготовка QR-кодов для URL
+
+const URI_QRCodesConfig = {
+	URLPath: sourceURIsPath,
+	URLSrc: path.join(sourceURIsPath, '*.url'),
+	QRCodesPath: destinationImagesPath,
+	extname: '.png',
+	imageConfig: {
+		type: 'png',
+		scale: 1
+	}
+};
+
+task('build:images:URL-QRCodes', function () {
+	return src(URI_QRCodesConfig.URLSrc, { encoding: 'utf8' })
+		.pipe(newer({
+			dest: URI_QRCodesConfig.QRCodesPath,
+			ext: URI_QRCodesConfig.extname
+		}))
+		.pipe(transform((content, _) => {
+			return new Promise((resolve, reject) => {
+				const urlForQRCode = new URL(ini.parse(content.toString('utf8')).InternetShortcut.URL);
+				let PNGStream = new streamBuffers.WritableStreamBuffer()
+					.on('finish', () => { resolve(PNGStream.getContents()) });
+				QRCode.toFileStream(PNGStream, urlForQRCode.toString(), URI_QRCodesConfig.imageConfig);
+			})
+		}))
+		.pipe(rename({ extname: URI_QRCodesConfig.extname }))
+		.pipe(dest(URI_QRCodesConfig.QRCodesPath))
+});
+
+task('maintainer-clean:URL-QRCodes',
+	function () {
+		return src(URI_QRCodesConfig.URLSrc, { read: false, allowEmpty: true, base: process.cwd() })
+			.pipe(rename({
+				dirname: URI_QRCodesConfig.QRCodesPath,
+				extname: URI_QRCodesConfig.extname
+			}))
+			.pipe(clean())
+	}
+);
+
+//#endregion подготовка QR-кодов для URL
+
 //#region подготовка изображений
 
 const imagesConfig = {
 	SVGPath: path.join(imagesPath, 'svg'),
-	PNGPath: imagesPNGPath
+	PNGPath: imagesPNGPath,
+	preprocessedPath: path.join(tempPath, 'images')
 };
 
 task('build:images:SVG2PNG',
@@ -122,58 +168,55 @@ task('build:images:russian_emblem.svg',
 	}
 );
 
+task('build:images:preprocessing:PNG',
+	function () {
+		return src(path.join(imagesConfig.PNGPath, '*.png'), { encoding: false })
+			.pipe(newer({ dest: imagesConfig.preprocessedPath }))
+			.pipe(dest(imagesConfig.preprocessedPath))
+	}
+);
+
+task('build:images:preprocessing:SVG',
+	function () {
+		return src(path.join(imagesConfig.SVGPath, '*.svg'), { encoding: false })
+			.pipe(newer({ dest: imagesConfig.preprocessedPath }))
+			.pipe(svgMin((file) => {
+				if (path.matchesGlob(file.basename, 'russian_emblem.svg')) {
+					return {};
+				} else {
+					return {
+						floatPrecision: 0
+					}
+				}
+			}))
+			.pipe(dest(imagesConfig.preprocessedPath))
+	}
+);
+
 task('build:images',
 	series(
 		'build:images:russian_emblem.svg',
-		'build:images:SVG2PNG'
+		parallel(
+			series(
+				parallel(
+					'build:images:SVG2PNG',
+					'build:images:URL-QRCodes'
+				),
+				'build:images:preprocessing:PNG'
+			),
+			'build:images:preprocessing:SVG'
+		)
 	)
 );
 
-//#endregion подготовка изображений
-
-//#region подготовка QR-кодов для URL
-
-const URI_QRCodesConfig = {
-	URLPath: sourceURIsPath,
-	URLSrc: path.join(sourceURIsPath, '*.url'),
-	QRCodesPath: destinationImagesPath,
-	extname: '.png',
-	imageConfig: {
-		type: 'png',
-		scale: 1
-	}
-};
-
-task('build:URL-QRCodes', function () {
-	return src(URI_QRCodesConfig.URLSrc, { encoding: 'utf8' })
-		.pipe(newer({
-			dest: URI_QRCodesConfig.QRCodesPath,
-			ext: URI_QRCodesConfig.extname
-		}))
-		.pipe(transform((content, _) => {
-			return new Promise((resolve, reject) => {
-				const urlForQRCode = new URL(ini.parse(content.toString('utf8')).InternetShortcut.URL);
-				let PNGStream = new streamBuffers.WritableStreamBuffer()
-					.on('finish', () => { resolve(PNGStream.getContents()) });
-				QRCode.toFileStream(PNGStream, urlForQRCode.toString(), URI_QRCodesConfig.imageConfig);
-			})
-		}))
-		.pipe(rename({ extname: URI_QRCodesConfig.extname }))
-		.pipe(dest(URI_QRCodesConfig.QRCodesPath))
-});
-
-task('maintainer-clean:URL-QRCodes',
+task('clean:images',
 	function () {
-		return src(URI_QRCodesConfig.URLSrc, { read: false, allowEmpty: true, base: process.cwd() })
-			.pipe(rename({
-				dirname: URI_QRCodesConfig.QRCodesPath,
-				extname: URI_QRCodesConfig.extname
-			}))
+		return src(path.join(imagesConfig.preprocessedPath, '*.*'), { read: false, allowEmpty: true })
 			.pipe(clean())
 	}
 );
 
-//#endregion подготовка QR-кодов для URL
+//#endregion подготовка изображений
 
 //#region компиляция XSLT
 
@@ -213,13 +256,7 @@ task(
 							.map((docPicturePath) => '**/' + path.basename(docPicturePath));
 					})
 					.then((docPictures) => {
-						// src(PNGImagesGlob, { encoding: false })
-						src([
-							path.join(imagesConfig.SVGPath, '*.svg'),
-							path.join(imagesConfig.PNGPath, '*.png')
-						], {
-							encoding: false
-						})
+						src([path.join(imagesConfig.preprocessedPath, '*.*')], { encoding: false })
 							.pipe(filter(docPictures))
 							.on('end', cb)
 							.on('error', cb)
@@ -234,10 +271,7 @@ task(
 
 task('build:template:ORD',
 	series(
-		parallel(
-			'build:images',
-			'build:URL-QRCodes'
-		),
+		'build:images',
 		'build:template:ORD:Pictures'
 	)
 );
@@ -257,9 +291,9 @@ task('build',
 );
 
 task('clean',
-	function clean(cb) {
-		cb();
-	}
+	parallel(
+		'clean:images'
+	)
 );
 
 task('distclean',
