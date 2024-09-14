@@ -3,6 +3,9 @@
 *.xml  text  merge=text diff=text eol=lf
 *.xsd  text  merge=text diff=text eol=lf
 *.xsl  text  merge=text diff=text eol=lf
+
+*.svg  text  merge=text diff=text eol=lf
+
 *.md   text  merge=text diff=text eol=crlf
 
 *.ps1  text  merge=text diff=text eol=crlf
