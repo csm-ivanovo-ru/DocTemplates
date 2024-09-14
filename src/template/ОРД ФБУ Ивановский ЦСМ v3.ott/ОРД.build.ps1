@@ -61,7 +61,7 @@ openDocumentTemplate BuildTemplate `
 	-Version $Version `
 	-Inputs $sources `
 	-Outputs @( $DestinationTemplatePath, $marker ) `
-	-Jobs BuildLib-DocTemplatesLib, org-site.png, russian_emblem.png, org_logo.png;
+	-Jobs BuildLib-DocTemplatesLib;
 
 openDocumentTemplate BuildAndOpenTemplate `
 	-OpenAfterBuild `
@@ -71,6 +71,6 @@ openDocumentTemplate BuildAndOpenTemplate `
 	-Version $Version `
 	-Inputs $sources `
 	-Outputs @( $DestinationTemplatePath, $marker ) `
-	-Jobs BuildLib-DocTemplatesLib, org-site.png, russian_emblem.png, org_logo.png;
+	-Jobs BuildLib-DocTemplatesLib;
 
 task . BuildTemplate;
