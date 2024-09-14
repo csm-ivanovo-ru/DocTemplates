@@ -31,7 +31,7 @@ task BuildLib-DocTemplatesLib {
 };
 
 task Build-org-site.png {
-	. npx gulp build:URL-QRCodes;
+	. npx gulp build:images:URL-QRCodes;
 };
 
 task org-site.png `

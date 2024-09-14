@@ -140,7 +140,7 @@ task BuildLibContainers {
 
 # Synopsis: Создаёт файлы с изображениями QR кодов (с URL)
 task BuildUriQRCodes {
-	. npx gulp build:URL-QRCodes;
+	. npx gulp build:images:URL-QRCodes;
 };
 
 # Synopsis: Создаёт vCard из xCard

@@ -64,7 +64,7 @@
 	"xml.autoCloseTags.enabled": true,
 	"xml.validation.enabled": true,
 	"xml.validation.schema.enabled": "always",
-	"xml.validation.disallowDocTypeDecl": true,
+	"xml.validation.disallowDocTypeDecl": false,
 	"xml.validation.noGrammar": "ignore",
 	"XSLT.resources.xsltPackages": [
 		{
