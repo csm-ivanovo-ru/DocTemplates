@@ -9,8 +9,10 @@ import newer from 'gulp-newer';
 import rename from 'gulp-rename';
 import transform from '@lumjs/gulp-transform';
 import clean from 'gulp-clean';
+import filter from 'gulp-filter';
 import vinylPaths from 'vinyl-paths';
 import sharp from 'sharp';
+import svgMin from 'gulp-svgmin';
 import through from 'through2';
 import { versionFromGitTag } from 'absolute-version';
 import SaxonJS from 'saxon-js';
@@ -74,76 +76,6 @@ const DocsToolsPath = path.join(toolsPath, 'docs');
 const DocsXSLTToolsPath = path.join(DocsToolsPath, 'xslt');
 //#endregion пути
 
-//#region подготовка изображений
-
-const SVGToPNGImagesConfig = {
-	SVGPath: path.join(imagesPath, 'svg'),
-	PNGPath: imagesPNGPath,
-	images: [
-		{ src: 'org-logo/*.svg', destFilename: 'org-logo.png' },
-		{ src: 'russian-emblems/emblem_black_bordered.svg', destFilename: 'russian_emblem.png' }
-	]
-};
-
-function SVG2PNG(SVGPath, PNGPath, PNGBasename) {
-	return function () {
-		return src(SVGPath, { encoding: false })
-			.pipe(newer({
-				dest: PNGPath,
-				map: () => PNGBasename
-			}))
-			.pipe(transform((content, file) => {
-				return sharp(
-					file.contents,
-					{
-						density: 600,
-						ignoreIcc: true
-					}
-				)
-					.resize({ width: 600 })
-					.toColorspace('b-w')
-					.png({
-						compressionLevel: 9,
-						colors: 2
-					})
-					.toBuffer();
-			}))
-			.pipe(rename(PNGBasename))
-			.pipe(dest(PNGPath))
-	};
-}
-
-const SVGToPNGImagesTasks = SVGToPNGImagesConfig.images.map(
-	(SVGToPNGMap) => {
-		const taskName = 'build:images:SVG2PNG:' + SVGToPNGMap.destFilename;
-		task(
-			taskName,
-			SVG2PNG(
-				path.join(SVGToPNGImagesConfig.SVGPath, SVGToPNGMap.src),
-				SVGToPNGImagesConfig.PNGPath,
-				SVGToPNGMap.destFilename
-			)
-		);
-		return taskName;
-	}
-);
-
-task('build:images',
-	parallel(SVGToPNGImagesTasks)
-);
-
-task('maintainer-clean:SVG2PNG',
-	function () {
-		const PNGImages = SVGToPNGImagesConfig.images.map(
-			SVGToPNGMap => path.join(SVGToPNGImagesConfig.PNGPath, SVGToPNGMap.destFilename)
-		);
-		return src(PNGImages, { read: false, allowEmpty: true, base: process.cwd() })
-			.pipe(clean());
-	}
-);
-
-//#endregion подготовка изображений
-
 //#region подготовка QR-кодов для URL
 
 const URI_QRCodesConfig = {
@@ -157,7 +89,7 @@ const URI_QRCodesConfig = {
 	}
 };
 
-task('build:URL-QRCodes', function () {
+task('build:images:URL-QRCodes', function () {
 	return src(URI_QRCodesConfig.URLSrc, { encoding: 'utf8' })
 		.pipe(newer({
 			dest: URI_QRCodesConfig.QRCodesPath,
@@ -188,6 +120,104 @@ task('maintainer-clean:URL-QRCodes',
 
 //#endregion подготовка QR-кодов для URL
 
+//#region подготовка изображений
+
+const imagesConfig = {
+	SVGPath: path.join(imagesPath, 'svg'),
+	PNGPath: imagesPNGPath,
+	preprocessedPath: path.join(tempPath, 'images')
+};
+
+task('build:images:SVG2PNG',
+	function () {
+		return src(
+			path.join(imagesConfig.SVGPath, '*.svg'),
+			{ encoding: false }
+		)
+			.pipe(newer({ dest: imagesConfig.PNGPath }))
+			.pipe(transform((content, file) => {
+				return sharp(
+					file.contents,
+					{
+						density: 600,
+						ignoreIcc: true
+					}
+				)
+					.resize({ width: 600 })
+					.toColorspace('b-w')
+					.png({
+						compressionLevel: 9,
+						colors: 2
+					})
+					.toBuffer();
+			}))
+			.pipe(rename({ extname: '.png' }))
+			.pipe(dest(imagesConfig.PNGPath))
+	}
+);
+
+task('build:images:russian_emblem.svg',
+	function () {
+		return src(path.join(imagesPath, 'russian-emblems/emblem_black_bordered.svg'), { encoding: false })
+			.pipe(newer({
+				dest: imagesConfig.SVGPath,
+				map: () => 'russian_emblem.svg'
+			}))
+			.pipe(rename({ basename: 'russian_emblem' }))
+			.pipe(dest(imagesConfig.SVGPath))
+	}
+);
+
+task('build:images:preprocessing:PNG',
+	function () {
+		return src(path.join(imagesConfig.PNGPath, '*.png'), { encoding: false })
+			.pipe(newer({ dest: imagesConfig.preprocessedPath }))
+			.pipe(dest(imagesConfig.preprocessedPath))
+	}
+);
+
+task('build:images:preprocessing:SVG',
+	function () {
+		return src(path.join(imagesConfig.SVGPath, '*.svg'), { encoding: false })
+			.pipe(newer({ dest: imagesConfig.preprocessedPath }))
+			.pipe(svgMin((file) => {
+				if (path.matchesGlob(file.basename, 'russian_emblem.svg')) {
+					return {};
+				} else {
+					return {
+						floatPrecision: 0
+					}
+				}
+			}))
+			.pipe(dest(imagesConfig.preprocessedPath))
+	}
+);
+
+task('build:images',
+	series(
+		'build:images:russian_emblem.svg',
+		parallel(
+			series(
+				parallel(
+					'build:images:SVG2PNG',
+					'build:images:URL-QRCodes'
+				),
+				'build:images:preprocessing:PNG'
+			),
+			'build:images:preprocessing:SVG'
+		)
+	)
+);
+
+task('clean:images',
+	function () {
+		return src(path.join(imagesConfig.preprocessedPath, '*.*'), { read: false, allowEmpty: true })
+			.pipe(clean())
+	}
+);
+
+//#endregion подготовка изображений
+
 //#region компиляция XSLT
 
 
@@ -212,7 +242,7 @@ task(
 					.then((manifest) => {
 						return SaxonJS.XPath.evaluate(
 							`/manifest:manifest/manifest:file-entry[
-										@manifest:media-type='image/png'
+										( @manifest:media-type='image/png' or @manifest:media-type='image/svg+xml' )
 										and starts-with(@manifest:full-path, 'Pictures/')
 									]/@manifest:full-path/string()`,
 							manifest,
@@ -223,21 +253,11 @@ task(
 								resultForm: 'array'
 							}
 						)
-							.map((docPicturePath) => {
-								return path.join(destinationImagesPath, path.basename(docPicturePath));
-							});
+							.map((docPicturePath) => '**/' + path.basename(docPicturePath));
 					})
 					.then((docPictures) => {
-						logger.debug('images from manifest.xml:');
-						logger.debug(docPictures);
-
-						const PNGImagesGlob = docPictures.map((docPicturePath) => {
-							return path.join(destinationImagesPath, path.basename(docPicturePath));
-						});
-						logger.debug('PNG source images paths:');
-						logger.debug(PNGImagesGlob);
-
-						src(PNGImagesGlob, { encoding: false })
+						src([path.join(imagesConfig.preprocessedPath, '*.*')], { encoding: false })
+							.pipe(filter(docPictures))
 							.on('end', cb)
 							.on('error', cb)
 							.on('data', (file) => { self.push(file); });
@@ -251,10 +271,7 @@ task(
 
 task('build:template:ORD',
 	series(
-		parallel(
-			'build:images',
-			'build:URL-QRCodes'
-		),
+		'build:images',
 		'build:template:ORD:Pictures'
 	)
 );
@@ -274,9 +291,9 @@ task('build',
 );
 
 task('clean',
-	function clean(cb) {
-		cb();
-	}
+	parallel(
+		'clean:images'
+	)
 );
 
 task('distclean',
@@ -289,7 +306,6 @@ task('maintainer-clean',
 	series(
 		'clean',
 		parallel(
-			'maintainer-clean:SVG2PNG',
 			'maintainer-clean:URL-QRCodes'
 		)
 	)

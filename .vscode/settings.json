@@ -64,7 +64,7 @@
 	"xml.autoCloseTags.enabled": true,
 	"xml.validation.enabled": true,
 	"xml.validation.schema.enabled": "always",
-	"xml.validation.disallowDocTypeDecl": true,
+	"xml.validation.disallowDocTypeDecl": false,
 	"xml.validation.noGrammar": "ignore",
 	"XSLT.resources.xsltPackages": [
 		{
@@ -169,5 +169,6 @@
 	"licenser.license": "AL2",
 	"licenser.author": "Sergei S. Betke",
 	"licenser.projectName": "Шаблоны документов ФБУ \"Ивановский ЦСМ\"",
-	"licenser.useSingleLineStyle": true
+	"licenser.useSingleLineStyle": true,
+	"svg.preview.background": "transparent"
 }
