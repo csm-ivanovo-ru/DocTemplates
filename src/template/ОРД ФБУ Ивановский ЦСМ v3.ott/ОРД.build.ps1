@@ -54,18 +54,6 @@ task russian_emblem.png `
 		-Verbose:( $PSCmdlet.MyInvocation.BoundParameters['Verbose'] -eq $true );
 };
 
-task Build-org-logo.png {
-	. npx gulp build:images;
-};
-
-task org_logo.png `
-	-Inputs @( "$ImagesPNGPath/org-logo.png" ) `
-	-Outputs @( "$SourceTemplatePath/Pictures/org-logo.png" ) `
-	-Jobs Build-org-logo.png, {
-	Copy-Item -LiteralPath $Inputs[0] -Destination $Outputs[0] -Force `
-		-Verbose:( $PSCmdlet.MyInvocation.BoundParameters['Verbose'] -eq $true );
-};
-
 openDocumentTemplate BuildTemplate `
 	-LiteralPath $SourceTemplatePath `
 	-PreprocessedPath $PreprocessedTemplatePath `
