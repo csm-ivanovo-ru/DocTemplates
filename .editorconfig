@@ -77,3 +77,10 @@ indent_size = 1
 end_of_line = crlf
 insert_final_newline = true
 charset = utf-8
+
+[.nvmrc]
+indent_style = space
+indent_size = 1
+end_of_line = crlf
+insert_final_newline = false
+charset = utf-8
