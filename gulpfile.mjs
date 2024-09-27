@@ -9,6 +9,7 @@ import newer from 'gulp-newer';
 import rename from 'gulp-rename';
 import transform from '@lumjs/gulp-transform';
 import clean from 'gulp-clean';
+import exec from 'gulp-exec';
 import filter from 'gulp-filter';
 import vinylPaths from 'vinyl-paths';
 import sharp from 'sharp';
@@ -220,6 +221,32 @@ task('clean:images',
 
 //#region компиляция XSLT
 
+const XSLTConfig = {
+	XSLTPath: path.join(toolsPath, 'docs/xslt-js/xslt'),
+	SEFPath: path.join(toolsPath, 'docs/xslt-js/sef'),
+	SEFExtName: '.sef.json'
+};
+
+task('build:tools:XSLT:SEF',
+	function () {
+		return src(path.join(XSLTConfig.XSLTPath, '*.xslt'), { encoding: false })
+			.pipe(newer({
+				dest: XSLTConfig.SEFPath,
+				ext: XSLTConfig.SEFExtName
+			}))
+			.pipe(exec(file => `xslt3 -xsl:${file.path} -nogo -relocate:on`))
+			.pipe(rename({ extname: XSLTConfig.SEFExtName }))
+			.pipe(exec.reporter())
+			.pipe(dest(XSLTConfig.SEFPath))
+	}
+);
+
+task('distclean:tools:XSLT:SEF',
+	function () {
+		return src(path.join(XSLTConfig.SEFPath), { read: false, allowEmpty: true })
+			.pipe(clean())
+	}
+);
 
 //#endregion компиляция XSLT
 
@@ -298,13 +325,16 @@ task('clean',
 
 task('distclean',
 	series(
-		'clean'
+		'clean',
+		parallel(
+			'distclean:tools:XSLT:SEF'
+		)
 	)
 );
 
 task('maintainer-clean',
 	series(
-		'clean',
+		'distclean',
 		parallel(
 			'maintainer-clean:URL-QRCodes'
 		)
