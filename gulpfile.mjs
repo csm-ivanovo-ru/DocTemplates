@@ -2,6 +2,7 @@
 
 import path from 'node:path';
 import url from 'node:url';
+import { spawn } from 'node:child_process';
 import streamBuffers from 'stream-buffers';
 import { series, parallel, task, src, dest } from 'gulp';
 import logger from 'gulplog';
@@ -9,9 +10,8 @@ import newer from 'gulp-newer';
 import rename from 'gulp-rename';
 import transform from '@lumjs/gulp-transform';
 import clean from 'gulp-clean';
-import exec from 'gulp-exec';
 import filter from 'gulp-filter';
-import vinylPaths from 'vinyl-paths';
+import tmp from 'tmp-promise'
 import sharp from 'sharp';
 import svgMin from 'gulp-svgmin';
 import through from 'through2';
@@ -229,17 +229,62 @@ const XSLTConfig = {
 
 task('build:tools:XSLT:SEF',
 	function () {
-		return src(path.join(XSLTConfig.XSLTPath, '*.xslt'), { encoding: false })
+		return src(path.join(XSLTConfig.XSLTPath, '*.xslt'), { read: false })
 			.pipe(newer({
 				dest: XSLTConfig.SEFPath,
 				ext: XSLTConfig.SEFExtName
 			}))
-			.pipe(exec(file => `xslt3 -xsl:${file.path} -nogo -relocate:on`))
-			.pipe(rename({ extname: XSLTConfig.SEFExtName }))
-			.pipe(exec.reporter())
+			.pipe(through.obj(function (file, _, cb) {
+				var self = this;
+
+				tmp.withDir(
+					(SEFTempDir) => {
+						return new Promise((resolve, reject) => {
+							let SEFTempFilePath = path.join(SEFTempDir.path, path.basename(file.path));
+							logger.debug(`SEF temp file path: ${SEFTempFilePath}`);
+							// https://www.saxonica.com/saxon-js/documentation2/index.html#!starting/export/compiling-using-XX
+							spawn(
+								'xslt3',
+								[
+									`-xsl:"${file.path}"`,
+									`-export:"${SEFTempFilePath}"`,
+									'-nogo',
+									'-relocate:on'
+								],
+								{
+									shell: true,
+									stdio: 'inherit',
+									windowsHide: true,
+									timeout: 60000,
+									windowsVerbatimArguments: true
+								}
+							)
+								.on('error', reject)
+								.on('error', cb)
+								.on('close', (exitCode, _) => {
+									if (exitCode !== 0) {
+										reject(new Error(`XSLT3 failed: ${exitCode}`));
+									} else {
+										src(SEFTempFilePath, { encoding: false })
+											.pipe(rename({
+												basename: path.parse(file.basename).name,
+												extname: XSLTConfig.SEFExtName
+											}))
+											.on('end', resolve)
+											.on('error', reject)
+											.on('data', file => self.push(file));
+									};
+								});
+						});
+					},
+					{ unsafeCleanup: true }
+				)
+					.then(_ => cb(null, _))
+					.catch(cb)
+			}))
+			// .pipe(rename({ extname: XSLTConfig.SEFExtName }))
 			.pipe(dest(XSLTConfig.SEFPath))
-	}
-);
+	});
 
 task('distclean:tools:XSLT:SEF',
 	function () {
@@ -260,9 +305,8 @@ task(
 	'build:template:ORD:Pictures',
 	() => {
 		const picturesPath = path.join(sourceORDTemplateSrcPath, 'Pictures');
-		return src(path.join(sourceORDTemplateSrcPath, 'META-INF/manifest.xml'), { encoding: false })
+		return src(path.join(sourceORDTemplateSrcPath, 'META-INF/manifest.xml'), { read: false })
 			.pipe(through.obj(function (file, _, cb) {
-
 				var self = this;
 
 				SaxonJS.getResource({ file: file.path, type: 'xml' })
@@ -289,7 +333,6 @@ task(
 							.on('error', cb)
 							.on('data', (file) => { self.push(file); });
 					});
-
 			}))
 			.pipe(newer(picturesPath))
 			.pipe(dest(picturesPath))
