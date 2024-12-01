@@ -1,9 +1,7 @@
 // Copyright 2024 Sergei S. Betke
 
 import path from 'node:path';
-import url from 'node:url';
 import { spawn } from 'node:child_process';
-import streamBuffers from 'stream-buffers';
 import { series, parallel, task, src, dest } from 'gulp';
 import logger from 'gulplog';
 import newer from 'gulp-newer';
@@ -17,8 +15,7 @@ import svgMin from 'gulp-svgmin';
 import through from 'through2';
 import { versionFromGitTag } from 'absolute-version';
 import SaxonJS from 'saxon-js';
-import ini from 'ini';
-import QRCode from 'qrcode';
+import { url2qr } from 'gulp-file2qr';
 
 //#region вычисление версии
 if (process.env.version) {
@@ -85,7 +82,6 @@ const URI_QRCodesConfig = {
 	QRCodesPath: destinationImagesPath,
 	extname: '.png',
 	imageConfig: {
-		type: 'png',
 		scale: 1
 	}
 };
@@ -96,16 +92,8 @@ task('build:images:URL-QRCodes', function () {
 			dest: URI_QRCodesConfig.QRCodesPath,
 			ext: URI_QRCodesConfig.extname
 		}))
-		.pipe(transform((content, _) => {
-			return new Promise((resolve, reject) => {
-				const urlForQRCode = new URL(ini.parse(content.toString('utf8')).InternetShortcut.URL);
-				let PNGStream = new streamBuffers.WritableStreamBuffer()
-					.on('finish', () => { resolve(PNGStream.getContents()) });
-				QRCode.toFileStream(PNGStream, urlForQRCode.toString(), URI_QRCodesConfig.imageConfig);
-			})
-		}))
-		.pipe(rename({ extname: URI_QRCodesConfig.extname }))
-		.pipe(dest(URI_QRCodesConfig.QRCodesPath))
+		.pipe(url2qr({ qrOptions: URI_QRCodesConfig.imageConfig }))
+		.pipe(dest(URI_QRCodesConfig.QRCodesPath, { encoding: false }))
 });
 
 task('maintainer-clean:URL-QRCodes',
