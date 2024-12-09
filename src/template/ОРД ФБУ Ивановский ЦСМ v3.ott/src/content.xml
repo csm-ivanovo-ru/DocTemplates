@@ -43,6 +43,7 @@
 				<text:variable-decl office:value-type="string" text:name="ОрганизацияОКВЭД"/>
 				<text:variable-decl office:value-type="string" text:name="ОрганизацияОКПО"/>
 				<text:variable-decl office:value-type="string" text:name="ОрганизацияОКТМО"/>
+				<text:variable-decl office:value-type="string" text:name="ОрганизацияНомерЗаписиВ_РАЛ"/>
 				<text:variable-decl office:value-type="string" text:name="ОрганизацияТелефон"/>
 				<text:variable-decl office:value-type="string" text:name="ОрганизацияФакс"/>
 				<text:variable-decl office:value-type="string" text:name="ОрганизацияФактАдрес"/>
@@ -151,11 +152,11 @@
 				
 				<text:p text:style-name="ПустойАбзац"/>
 			</text:section>
-			<text:section text:name="БланкОРДПервыйЛистМетодикиПоверки" text:protected="true">
+			<text:section text:name="БланкПервыйЛистМетодикиПоверки" text:protected="true">
 				<style:style style:family="section">
 					<style:section-properties style:editable="false"/>
 				</style:style>
-				<text:p text:style-name="БланкОРДПервыйЛистМетодикиПоверки"/>
+				<text:p text:style-name="БланкПервыйЛистМетодикиПоверки"/>
 			</text:section>
 			<text:section text:name="Содержание">
 				<style:style style:family="section">
@@ -283,6 +284,174 @@
 				<text:section-source text:section-name="Шаблон: подпись во внутреннем документе" xlink:type="simple" xlink:actuate="other" xlink:show="embed"/>
 			</text:section>
 			<!-- #endregion Пример методики поверки -->
+			<!-- #region(collapsed) Пример протокола испытаний в целях утверждения типа СИ -->
+			<text:section text:name="Служебный">
+				<text:p text:style-name="НачалоСлужебнойСтраницы"/>
+
+				<text:p text:style-name="ПоясненияКЗначениюПеременнойДокумента">Вид документа:</text:p>
+				<text:p text:style-name="ЗначениеПеременнойДокумента"><text:variable-set text:name="ВидДокумента" office:value-type="string">Протокол испытаний</text:variable-set></text:p>
+
+				<text:p text:style-name="ПоясненияКЗначениюПеременнойДокумента">Предмет испытаний (подзаголовок протокола испытаний)</text:p>
+				<text:p text:style-name="ЗначениеПеременнойДокумента"><text:variable-set text:name="Тема" office:value-type="string">Оценка полноты и правильности выражения метрологических и технических характеристик</text:variable-set></text:p>
+
+				<text:p text:style-name="ПоясненияКЗначениюПеременнойДокумента">Тип СИ в именительном падеже с заглавной буквы:</text:p>
+				<text:p text:style-name="ЗначениеПеременнойДокумента"><text:variable-set text:name="ТипСИ" office:value-type="string">Спирометры такие-то</text:variable-set></text:p>
+				
+				<text:p text:style-name="ПоясненияКЗначениюПеременнойДокумента">Тип СИ в родительном падеже со строчной буквы:</text:p>
+				<text:p text:style-name="ЗначениеПеременнойДокумента"><text:variable-set text:name="ТипСИ_РП" office:value-type="string">спирометров таких-то</text:variable-set></text:p>
+				
+				<text:p text:style-name="ПоясненияКЗначениюПеременнойДокумента">Дата регистрации протокола:</text:p>
+				<text:p text:style-name="ЗначениеПеременнойДокумента"><text:variable-set text:name="ДатаРегистрации" office:value-type="string">09.12.2024</text:variable-set></text:p>
+
+				<text:p text:style-name="ПоясненияКЗначениюПеременнойДокумента">Номер протокола:</text:p>
+				<text:p text:style-name="ЗначениеПеременнойДокумента"><text:variable-set text:name="РегистрационныйНомер" office:value-type="string">555</text:variable-set></text:p>
+				
+				<text:p text:style-name="ПоясненияКЗначениюПеременнойДокумента">Краткое наименование ЦСМ:</text:p>
+				<text:p text:style-name="ЗначениеПеременнойДокумента"><text:variable-set text:name="ОрганизацияНаименование" office:value-type="string">ФБУ «Ивановский ЦСМ»</text:variable-set></text:p>
+				
+				<text:p text:style-name="ПоясненияКЗначениюПеременнойДокумента">Полное наименование ЦСМ:</text:p>
+				<text:p text:style-name="ЗначениеПеременнойДокумента"><text:variable-set text:name="ОрганизацияНаименованиеПолное" office:value-type="string">Федеральное бюджетное учреждение «Государственный региональный центр стандартизации, метрологии и испытаний в г. Санкт-Петербурге и Ленинградской области»</text:variable-set></text:p>
+				
+				<text:p text:style-name="ПоясненияКЗначениюПеременнойДокумента">Адрес места осуществления деятельности ЦСМ (в соответствии с областью аккредитации!):</text:p>
+				<text:p text:style-name="ЗначениеПеременнойДокумента"><text:variable-set text:name="ОрганизацияАдрес" office:value-type="string">153000, г. Иваново, ул. Почтовая, д. 31/42</text:variable-set></text:p>
+				
+				<text:p text:style-name="ПоясненияКЗначениюПеременнойДокумента">Номер телефона ЦСМ:</text:p>
+				<text:p text:style-name="ЗначениеПеременнойДокумента"><text:variable-set text:name="ОрганизацияТелефон" office:value-type="string">+7 (4932) 32‑84‑85</text:variable-set></text:p>
+				
+				<text:p text:style-name="ПоясненияКЗначениюПеременнойДокумента">Полное факса ЦСМ:</text:p>
+				<text:p text:style-name="ЗначениеПеременнойДокумента"><text:variable-set text:name="ОрганизацияФакс" office:value-type="string">+7 (4932) 41‑60‑79</text:variable-set></text:p>
+				
+				<text:p text:style-name="ПоясненияКЗначениюПеременнойДокумента">Адрес электронной почты ЦСМ:</text:p>
+				<text:p text:style-name="ЗначениеПеременнойДокумента"><text:variable-set text:name="ОрганизацияEmail" office:value-type="string">post@ivcsm.ru </text:variable-set></text:p>
+				
+				<text:p text:style-name="ПоясненияКЗначениюПеременнойДокумента">Адрес сайта ЦСМ:</text:p>
+				<text:p text:style-name="ЗначениеПеременнойДокумента"><text:variable-set text:name="ОрганизацияWebСайт" office:value-type="string">https://www.ivcsm.ru</text:variable-set></text:p>
+				
+				<text:p text:style-name="ПоясненияКЗначениюПеременнойДокумента">ОГРН ЦСМ:</text:p>
+				<text:p text:style-name="ЗначениеПеременнойДокумента"><text:variable-set text:name="ОрганизацияОГРН" office:value-type="string">1023700556990</text:variable-set></text:p>
+				
+				<text:p text:style-name="ПоясненияКЗначениюПеременнойДокумента">ИНН ЦСМ:</text:p>
+				<text:p text:style-name="ЗначениеПеременнойДокумента"><text:variable-set text:name="ОрганизацияИНН" office:value-type="string">3731001541</text:variable-set></text:p>
+				
+				<text:p text:style-name="ПоясненияКЗначениюПеременнойДокумента">КПП ЦСМ:</text:p>
+				<text:p text:style-name="ЗначениеПеременнойДокумента"><text:variable-set text:name="ОрганизацияКПП" office:value-type="string">370201001</text:variable-set></text:p>
+				
+				<text:p text:style-name="ПоясненияКЗначениюПеременнойДокумента">ОКПО ЦСМ:</text:p>
+				<text:p text:style-name="ЗначениеПеременнойДокумента"><text:variable-set text:name="ОрганизацияОКПО" office:value-type="string">02567308</text:variable-set></text:p>
+
+				<text:p text:style-name="ПоясненияКЗначениюПеременнойДокумента">Уникального номера записи об аккредитации ЦСМ в реестре аккредитованных лиц:</text:p>
+				<text:p text:style-name="ЗначениеПеременнойДокумента"><text:variable-set text:name="ОрганизацияНомерЗаписиВ_РАЛ" office:value-type="string">RA.RU.311781</text:variable-set></text:p>
+				
+				<text:p text:style-name="ПоясненияКЗначениюПеременнойДокумента">Отдел ЦСМ (если используется при оформлении документов):</text:p>
+				<text:p text:style-name="ЗначениеПеременнойДокумента"><text:variable-set text:name="ПодразделениеДляБланка" office:value-type="string">ФБУ «Ивановский ЦСМ»</text:variable-set></text:p>
+				
+				<text:p text:style-name="ПоясненияКЗначениюПеременнойДокумента">Должность согласующего от ЦСМ:</text:p>
+				<text:p text:style-name="ЗначениеПеременнойДокумента"><text:variable-set text:name="СогласовалДолжностьИП" office:value-type="string">Директор</text:variable-set></text:p>
+				
+				<text:p text:style-name="ПоясненияКЗначениюПеременнойДокумента">Инициалы и фамилия согласующего от ЦСМ:</text:p>
+				<text:p text:style-name="ЗначениеПеременнойДокумента"><text:variable-set text:name="СогласовалПредставлениеВПодписиИП" office:value-type="string">Д. И. Кудрявцев</text:variable-set></text:p>
+				
+				<text:p text:style-name="ПоясненияКЗначениюПеременнойДокумента">Краткое наименование организации - заказчика:</text:p>
+				<text:p text:style-name="ЗначениеПеременнойДокумента"><text:variable-set text:name="ОрганизацияЗаказчикаНаименование" office:value-type="string">ООО «Заказчик»</text:variable-set></text:p>
+				
+				<text:p text:style-name="ПоясненияКЗначениюПеременнойДокумента">Должность разработчика:</text:p>
+				<text:p text:style-name="ЗначениеПеременнойДокумента"><text:variable-set text:name="ПодписалДолжностьИП" office:value-type="string">Инженер по метрологии</text:variable-set></text:p>
+				
+				<text:p text:style-name="ПоясненияКЗначениюПеременнойДокумента">Инициалы и фамилия разработчика:</text:p>
+				<text:p text:style-name="ЗначениеПеременнойДокумента"><text:variable-set text:name="ПодписалПредставлениеВПодписиИП" office:value-type="string">И. И. Иванов</text:variable-set></text:p>
+				
+				<text:p text:style-name="ПоясненияКЗначениюПеременнойДокумента">Должность руководителя разработчика:</text:p>
+				<text:p text:style-name="ЗначениеПеременнойДокумента"><text:variable-set text:name="ПодписалРуководительДолжностьИП" office:value-type="string">Начальник отдела</text:variable-set></text:p>
+				
+				<text:p text:style-name="ПоясненияКЗначениюПеременнойДокумента">Инициалы и фамилия руководителя разработчика:</text:p>
+				<text:p text:style-name="ЗначениеПеременнойДокумента"><text:variable-set text:name="ПодписалРуководительПредставлениеВПодписиИП" office:value-type="string">И. И. Иванова</text:variable-set></text:p>
+				
+				<text:p text:style-name="ПоясненияКЗначениюПеременнойДокумента">Место составление (город):</text:p>
+				<text:p text:style-name="ЗначениеПеременнойДокумента"><text:variable-set text:name="МестоСоставления" office:value-type="string">г. Иваново</text:variable-set></text:p>
+				
+				<text:p text:style-name="ПоясненияКЗначениюПеременнойДокумента">Год составления:</text:p>
+				<text:p text:style-name="ЗначениеПеременнойДокумента"><text:variable-set text:name="ГодИздания" office:value-type="string">2024</text:variable-set></text:p>
+				
+				<text:p text:style-name="ПустойАбзац"/>
+			</text:section>
+			<text:section text:name="БланкПервыйЛистПротоколаИспытанийПриУтвержденииТипа" text:protected="true">
+				<style:style style:family="section">
+					<style:section-properties style:editable="false"/>
+				</style:style>
+				<text:p text:style-name="БланкПервыйЛистПротоколаИспытанийПриУтвержденииТипа"/>
+			</text:section>
+			<text:section text:name="Содержание">
+				<style:style style:family="section">
+					<style:section-properties style:editable="false"/>
+				</style:style>
+
+				<text:p text:style-name="Основной"><text:variable-get text:name="ОрганизацияНаименование">ФБУ «Ивановский ЦСМ»</text:variable-get>
+					провело испытания средства измерений "<text:variable-get text:name="ТипСИ">Спирометры такие-то</text:variable-get>",
+					изготавливаемых <text:variable-get text:name="ОрганизацияЗаказчикаНаименование">ООО «Заказчик»</text:variable-get>.</text:p>
+				<text:p text:style-name="Основной">Испытания проводились по адресу места осуществления деятельности
+					<text:variable-get text:name="ОрганизацияНаименование">ФБУ «Ивановский ЦСМ»</text:variable-get>.</text:p>
+
+				<text:list xml:id="list145315194545245" text:continue-numbering="true" text:style-name="Numbering_20_123">
+					<text:list-item>
+						<text:h text:style-name="Heading_20_1" text:outline-level="1">Цель испытаний</text:h>
+					</text:list-item>
+					<text:list-item>
+						<text:list>
+							<text:list-item>
+								<text:p text:style-name="Основной">Пункт протокола.</text:p>
+							</text:list-item>
+						</text:list>
+					</text:list-item>
+					<text:list-item>
+						<text:h text:style-name="Heading_20_1" text:outline-level="1">Дата проведения испытаний</text:h>
+					</text:list-item>
+					<text:list-item>
+						<text:list>
+							<text:list-item>
+								<text:p text:style-name="Основной">Пункт протокола.</text:p>
+							</text:list-item>
+						</text:list>
+					</text:list-item>
+					<text:list-item>
+						<text:h text:style-name="Heading_20_1" text:outline-level="1">Методика испытаний</text:h>
+					</text:list-item>
+					<text:list-item>
+						<text:list>
+							<text:list-item>
+								<text:p text:style-name="Основной">Пункт протокола.</text:p>
+							</text:list-item>
+						</text:list>
+					</text:list-item>
+					<text:list-item>
+						<text:h text:style-name="Heading_20_1" text:outline-level="1">Применяемые средства измерений и вспомогательное оборудование</text:h>
+					</text:list-item>
+					<text:list-item>
+						<text:list>
+							<text:list-item>
+								<text:p text:style-name="Основной">Пункт протокола.</text:p>
+							</text:list-item>
+						</text:list>
+					</text:list-item>
+					<text:list-item>
+						<text:h text:style-name="Heading_20_1" text:outline-level="1">Результаты испытаний</text:h>
+					</text:list-item>
+					<text:list-item>
+						<text:list>
+							<text:list-item>
+								<text:p text:style-name="Основной">Пункт протокола.</text:p>
+							</text:list-item>
+						</text:list>
+					</text:list-item>
+				</text:list>
+			</text:section>
+			<!-- <text:section text:name="Подпись">
+				<text:section-source text:section-name="Шаблон: подпись руководителя во внутреннем документе" xlink:type="simple" xlink:actuate="other" xlink:show="embed"/>
+			</text:section>
+			<text:section text:name="Подпись">
+				<text:section-source text:section-name="Шаблон: подпись во внутреннем документе" xlink:type="simple" xlink:actuate="other" xlink:show="embed"/>
+			</text:section> -->
+
+			<!-- #endregion Пример протокола испытаний в целях утверждения типа СИ -->
 			<!-- #region(collapsed) Пример приказа -->
 			<text:section text:name="Служебный" text:display="none">
 				<style:style style:family="section">

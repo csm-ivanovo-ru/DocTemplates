@@ -44,6 +44,9 @@
 
 - добавлен стиль титульного листа и пример методики поверки
   [csm-ivanovo-ru/DocTemplates#139](https://github.com/csm-ivanovo-ru/DocTemplates/issues/139)
+- добавлен стиль первого листа и пример протокола испытаний
+  в целях утверждения типа СИ
+  [csm-ivanovo-ru/DocTemplates#139](https://github.com/csm-ivanovo-ru/DocTemplates/issues/139)
 
 ### Изменено
 

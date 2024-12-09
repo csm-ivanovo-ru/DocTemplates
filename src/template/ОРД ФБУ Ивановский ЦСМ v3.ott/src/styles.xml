@@ -68,7 +68,7 @@
 			<style:text-properties fo:font-style="italic"/>
 		</style:style>
 		<style:style style:name="Signature" style:family="paragraph" loext:hidden="true" style:parent-style-name="ПодписьБазовыйБезОтступа" style:class="text">
-			<style:paragraph-properties fo:margin-left="0" fo:margin-right="10cm">
+			<style:paragraph-properties fo:margin-left="0" fo:margin-right="10cm" fo:margin-top="1cm" fo:margin-bottom="0cm">
 				<style:tab-stops>
 					<style:tab-stop style:position="12cm"/>
 				</style:tab-stops>
@@ -215,7 +215,9 @@
 		<style:style style:name="БланкОРДПервыйЛистИнструкцииПоОТ" style:family="paragraph" style:parent-style-name="БланкОРДТитульныйЛист" style:class="extra"/>
 		<style:style style:name="БланкОРДЛистСогласования" style:family="paragraph" style:parent-style-name="ПустойАбзац" style:next-style-name="Основной" style:class="extra"/>
 		<style:style style:name="БланкОРДЛНАЛистСогласования" style:family="paragraph" style:parent-style-name="ПустойАбзац" style:next-style-name="Основной" style:class="extra" style:master-page-name="БланкОРДЛистыСогласования"/>
-		<style:style style:name="БланкОРДПервыйЛистМетодикиПоверки" style:family="paragraph" style:parent-style-name="ПервыйЛистБазовый" style:next-style-name="Основной" style:class="extra" style:master-page-name="БланкОРДПервыйЛистМетодикиПоверки"/>
+		<style:style style:name="БланкПервыйЛистМетодикиПоверки" style:family="paragraph" style:parent-style-name="ПервыйЛистБазовый" style:next-style-name="Основной" style:class="extra" style:master-page-name="БланкПервыйЛистМетодикиПоверки"/>
+		<style:style style:name="БланкОРДПервыйЛистМетодикиПоверки" style:family="paragraph" style:parent-style-name="БланкПервыйЛистМетодикиПоверки" style:next-style-name="Основной" style:class="extra"/>
+		<style:style style:name="БланкПервыйЛистПротоколаИспытанийПриУтвержденииТипа" style:family="paragraph" style:parent-style-name="ПервыйЛистБазовый" style:next-style-name="Основной" style:class="extra" style:master-page-name="БланкМатериалыПоИспытаниямТипаСИПервыйЛист"/>
 		<style:style style:name="Heading" style:family="paragraph" loext:hidden="true" style:parent-style-name="First_20_line_20_indent" style:next-style-name="Основной" style:class="text">
 			<style:paragraph-properties fo:keep-with-next="always"/>
 			<style:text-properties fo:hyphenate="false"/>
@@ -1333,7 +1335,7 @@
 								<style:style style:family="section">
 									<style:section-properties style:editable="false"/>
 								</style:style>
-								<text:p text:style-name="БланкСправочныеДанныеОбОрганизации"><text:a xlink:type="simple" xlink:href="https://yandex.ru/maps/-/CCUBuGWxGC" text:style-name="СсылкаВКонтактнойИнформации" text:visited-style-name="СсылкаВКонтактнойИнформации"><text:variable-get text:name="ОрганизацияТелефон"></text:variable-get><text:variable-get text:name="ОрганизацияАдрес">153000, г. Иваново, ул. Почтовая, д. 31/42</text:variable-get></text:a><text:line-break/>тел. <text:a xlink:type="simple" xlink:href="tel:+7-4932-32-84-85" text:style-name="СсылкаВКонтактнойИнформации" text:visited-style-name="СсылкаВКонтактнойИнформации"><text:variable-get text:name="ОрганизацияТелефон">+7 (4932) 32‑84‑85</text:variable-get></text:a>,
+								<text:p text:style-name="БланкСправочныеДанныеОбОрганизации"><text:a xlink:type="simple" xlink:href="https://yandex.ru/maps/-/CCUBuGWxGC" text:style-name="СсылкаВКонтактнойИнформации" text:visited-style-name="СсылкаВКонтактнойИнформации"><text:variable-get text:name="ОрганизацияАдрес">153000, г. Иваново, ул. Почтовая, д. 31/42</text:variable-get></text:a><text:line-break/>тел. <text:a xlink:type="simple" xlink:href="tel:+7-4932-32-84-85" text:style-name="СсылкаВКонтактнойИнформации" text:visited-style-name="СсылкаВКонтактнойИнформации"><text:variable-get text:name="ОрганизацияТелефон">+7 (4932) 32‑84‑85</text:variable-get></text:a>,
 									факс <text:variable-get text:name="ОрганизацияФакс">+7 (4932) 41‑60‑79</text:variable-get>,
 									e-mail:<text:a xlink:type="simple" xlink:href="mailto:post@ivcsm.ru" text:style-name="СсылкаВКонтактнойИнформации" text:visited-style-name="СсылкаВКонтактнойИнформации"><text:variable-get text:name="ОрганизацияEmail">post@ivcsm.ru</text:variable-get></text:a>,
 									<text:a xlink:type="simple" xlink:href="https://www.ivcsm.ru" text:style-name="СсылкаВКонтактнойИнформации" text:visited-style-name="СсылкаВКонтактнойИнформации"><text:variable-get text:name="ОрганизацияWebСайт">https://www.ivcsm.ru</text:variable-get></text:a><text:line-break/>ОКПО <text:variable-get text:name="ОрганизацияОКПО">02567308</text:variable-get>,
@@ -1971,7 +1973,7 @@
 				<text:p text:style-name="Footer"/>
 			</style:footer>
 		</style:master-page>
-		<style:master-page style:name="БланкОРДПервыйЛистМетодикиПоверки" style:next-style-name="БланкМатериалыПоИспытаниямТипаСИПоследующиеЛисты">
+		<style:master-page style:name="БланкПервыйЛистМетодикиПоверки" style:next-style-name="БланкМетодикаПоверкиПоследующиеЛисты">
 			<style:page-layout style:page-usage="right">
 				<style:page-layout-properties fo:page-width="21.001cm" fo:page-height="29.7cm" style:num-format="1" style:print-orientation="portrait" fo:margin-top="0.7cm" fo:margin-bottom="1cm" fo:margin-left="2.5cm" fo:margin-right="1cm" style:layout-grid-mode="none" style:footnote-max-height="0cm"/>
 				<style:header-style>
@@ -2122,8 +2124,8 @@
 				<text:p text:style-name="БланкТитульныйЛистМестоИГодИздания"><text:span text:style-name="БланкТитульныйЛистМестоСоставления"><text:variable-get text:name="МестоСоставления">г. Иваново</text:variable-get></text:span><text:s/>— <text:span text:style-name="БланкТитульныйЛистГодИздания"><text:variable-get text:name="ГодИздания">2020</text:variable-get></text:span></text:p>
 			</loext:footer-first>
 		</style:master-page>
-		<style:master-page style:name="БланкМатериалыПоИспытаниямТипаСИПоследующиеЛисты">
-			<style:page-layout style:page-usage="right">
+		<style:master-page style:name="БланкМетодикаПоверкиПоследующиеЛисты">
+			<style:page-layout style:page-usage="all">
 				<style:page-layout-properties fo:page-width="21cm" fo:page-height="29.7cm" style:num-format="1" style:print-orientation="portrait" fo:margin-top="1cm" fo:margin-bottom="2cm" fo:margin-left="2.5cm" fo:margin-right="1cm" style:layout-grid-mode="none" style:footnote-max-height="0cm">
 					<style:footnote-sep style:width="0.018cm" style:distance-before-sep="0.101cm" style:distance-after-sep="0.101cm" style:line-style="solid" style:adjustment="left" style:rel-width="25%" style:color="#000000"/>
 				</style:page-layout-properties>
@@ -2135,6 +2137,110 @@
 			<style:header>
 				<text:p text:style-name="Header"><text:page-number text:select-page="current">0</text:page-number></text:p>
 			</style:header>
+		</style:master-page>
+		<style:master-page style:name="БланкМатериалыПоИспытаниямТипаСИПервыйЛист" style:next-style-name="БланкМатериалыПоИспытаниямТипаСИПоследующиеЛисты">
+			<style:page-layout style:page-usage="right">
+				<style:page-layout-properties fo:page-width="21cm" fo:page-height="29.7cm" style:num-format="1" style:print-orientation="portrait" fo:margin-top="0.7cm" fo:margin-bottom="2cm" fo:margin-left="2.5cm" fo:margin-right="1cm" style:layout-grid-mode="none" style:footnote-max-height="0cm">
+					<style:footnote-sep style:width="0.018cm" style:distance-before-sep="0.101cm" style:distance-after-sep="0.101cm" style:line-style="solid" style:adjustment="left" style:rel-width="25%" style:color="#000000"/>
+				</style:page-layout-properties>
+				<style:header-style>
+					<style:header-footer-properties fo:min-height="1cm" fo:margin-left="0cm" fo:margin-right="0cm" fo:margin-bottom="0cm" style:dynamic-spacing="false"/>
+				</style:header-style>
+				<style:footer-style>
+					<style:header-footer-properties fo:margin-left="0cm" fo:margin-right="0cm" fo:margin-top="0.5cm" style:dynamic-spacing="false"/>
+				</style:footer-style>
+			</style:page-layout>
+			<style:header>
+				<text:p text:style-name="Header"/>
+			</style:header>
+			<loext:header-first>
+				<text:section text:name="Шапка (ПЛМИУТ)" text:protected="true">
+					<style:style style:family="section">
+						<style:section-properties style:editable="false"/>
+					</style:style>
+					<text:p text:style-name="БланкШапкаКонтейнер"><draw:frame draw:name="Шапка: Гриф, штрихкод и код формы (ПЛМИУТ)" text:anchor-type="paragraph" fo:min-width="7cm">
+						<style:style style:family="graphic" style:parent-style-name="БланкШтрихкодГрифКодФормы">
+							<style:graphic-properties style:print-content="true" style:protect="content size position" style:vertical-pos="top" style:vertical-rel="paragraph" style:horizontal-pos="right" style:horizontal-rel="paragraph"/>
+						</style:style>
+						<draw:text-box fo:min-height="1.7cm">
+							<text:section text:name="Шапка: Гриф, штрихкод и код формы (ПЛМИУТ)" text:protected="true">
+								<text:section-source text:section-name="Шапка: Гриф, штрихкод и код формы" xlink:type="simple" xlink:actuate="other" xlink:title="ПЛМИУТ" xlink:show="replace"/>
+							</text:section>
+						</draw:text-box>
+					</draw:frame><draw:frame draw:name="Бланк: Шапка (ПЛМИУТ)" text:anchor-type="as-char" style:rel-width="100%" draw:z-index="17">
+						<style:style style:family="graphic" style:parent-style-name="БланкШапкаВБланке">
+							<style:graphic-properties style:print-content="true" style:protect="content size position" style:vertical-pos="top" style:vertical-rel="baseline" loext:rel-width-rel="paragraph"/>
+						</style:style>
+						<draw:text-box fo:min-height="1.7cm">
+							<text:section text:name="Бланк: Шапка: Логоблок, наименование организации и подразделения (ПЛМИУТ)" text:protected="true">
+								<text:section-source text:section-name="Бланк: Шапка: Логоблок, наименование организации и подразделения" xlink:type="simple" xlink:actuate="other" xlink:title="ПГ" xlink:show="replace"/>
+							</text:section>
+							<text:section text:name="Справочные данные об организации (ПЛМИУТ)" text:protected="true">
+								<style:style style:family="section">
+									<style:section-properties style:editable="false"/>
+								</style:style>
+								<text:p text:style-name="БланкСправочныеДанныеОбОрганизации"><text:a xlink:type="simple" xlink:href="https://yandex.ru/maps/-/CCUBuGWxGC" text:style-name="СсылкаВКонтактнойИнформации" text:visited-style-name="СсылкаВКонтактнойИнформации"><text:variable-get text:name="ОрганизацияАдрес">153000, г. Иваново, ул. Почтовая, д. 31/42</text:variable-get></text:a><text:line-break/>тел. <text:a xlink:type="simple" xlink:href="tel:+7-4932-32-84-85" text:style-name="СсылкаВКонтактнойИнформации" text:visited-style-name="СсылкаВКонтактнойИнформации"><text:variable-get text:name="ОрганизацияТелефон">+7 (4932) 32‑84‑85</text:variable-get></text:a>,
+									факс <text:variable-get text:name="ОрганизацияФакс">+7 (4932) 41‑60‑79</text:variable-get>,
+									e-mail:<text:a xlink:type="simple" xlink:href="mailto:post@ivcsm.ru" text:style-name="СсылкаВКонтактнойИнформации" text:visited-style-name="СсылкаВКонтактнойИнформации"><text:variable-get text:name="ОрганизацияEmail">post@ivcsm.ru</text:variable-get></text:a>,
+									<text:a xlink:type="simple" xlink:href="https://www.ivcsm.ru" text:style-name="СсылкаВКонтактнойИнформации" text:visited-style-name="СсылкаВКонтактнойИнформации"><text:variable-get text:name="ОрганизацияWebСайт">https://www.ivcsm.ru</text:variable-get></text:a><text:line-break/>ОКПО <text:variable-get text:name="ОрганизацияОКПО">02567308</text:variable-get>,
+									ОГРН <text:variable-get text:name="ОрганизацияОГРН">1023700556990</text:variable-get>,
+									ИНН/КПП <text:variable-get text:name="ОрганизацияИНН">3731001541</text:variable-get>/<text:variable-get text:name="ОрганизацияКПП">370201001</text:variable-get>,
+									<text:variable-get text:name="ОрганизацияНомерЗаписиВ_РАЛ">RA.RU.311781</text:variable-get></text:p>
+							</text:section>
+							<text:p text:style-name="БланкОкончаниеШапки"/>
+						</draw:text-box>
+					</draw:frame></text:p>
+					<text:p text:style-name="БланкПослеШапки"/>
+				</text:section>
+				<text:section text:name="Вид документа (ПЛМИУТ)" text:protected="true">
+					<text:section-source text:section-name="Вид документа" xlink:type="simple" xlink:actuate="other" xlink:title="ПЛМИУТ" xlink:show="embed"/>
+				</text:section>
+				<text:section text:name="Регистрационные данные документа (ПЛМИУТ)" text:protected="true">
+					<text:section-source text:section-name="Регистрационные данные документа" xlink:type="simple" xlink:actuate="other" xlink:title="ПЛМИУТ" xlink:show="embed"/>
+				</text:section>
+				<text:section text:name="Заголовок документа (ПЛМИУТ)" text:protected="true">
+					<text:section-source text:section-name="Заголовок документа" xlink:type="simple" xlink:actuate="other" xlink:title="ПЛМИУТ" xlink:show="embed"/>
+				</text:section>
+			</loext:header-first>
+			<style:footer>
+				<text:p text:style-name="Footer"/>
+			</style:footer>
+			<loext:footer-first>
+				<text:section text:name="ПодписьВМатериалахИспытаниямТипаСИ">
+					<text:p text:style-name="ПустойАбзац"/>
+					<text:p text:style-name="Signature"><text:span text:style-name="ПодписьДолжность"><text:variable-get text:name="ПодписалДолжностьИП">Инженер по метрологии</text:variable-get></text:span><text:span text:style-name="ПодписьМестоДляПодписи"><text:tab/></text:span><text:span text:style-name="ПодписьФИО"><text:variable-get text:name="ПодписалПредставлениеВПодписиИП">И.И. Иванов</text:variable-get></text:span></text:p>
+					<text:p text:style-name="ПустойАбзац"/>
+				</text:section>
+				<text:section text:name="ПодписьРуководителяВМатериалахИспытаниямТипаСИ">
+					<text:p text:style-name="ПустойАбзац"/>
+					<text:p text:style-name="Signature"><text:span text:style-name="ПодписьДолжность"><text:variable-get text:name="ПодписалРуководительДолжностьИП">Начальник отдела</text:variable-get></text:span><text:span text:style-name="ПодписьМестоДляПодписи"><text:tab/></text:span><text:span text:style-name="ПодписьФИО"><text:variable-get text:name="ПодписалРуководительПредставлениеВПодписиИП">И.И. Иванова</text:variable-get></text:span></text:p>
+					<text:p text:style-name="ПустойАбзац"/>
+				</text:section>
+			</loext:footer-first>
+		</style:master-page>
+		<style:master-page style:name="БланкМатериалыПоИспытаниямТипаСИПоследующиеЛисты">
+			<style:page-layout style:page-usage="all">
+				<style:page-layout-properties fo:page-width="21cm" fo:page-height="29.7cm" style:num-format="1" style:print-orientation="portrait" fo:margin-top="1cm" fo:margin-bottom="2cm" fo:margin-left="2.5cm" fo:margin-right="1cm" style:layout-grid-mode="none" style:footnote-max-height="0cm">
+					<style:footnote-sep style:width="0.018cm" style:distance-before-sep="0.101cm" style:distance-after-sep="0.101cm" style:line-style="solid" style:adjustment="left" style:rel-width="25%" style:color="#000000"/>
+				</style:page-layout-properties>
+				<style:header-style>
+					<style:header-footer-properties fo:min-height="1cm" fo:margin-left="0cm" fo:margin-right="0cm" fo:margin-bottom="0.5cm" style:dynamic-spacing="false"/>
+				</style:header-style>
+				<style:footer-style>
+					<style:header-footer-properties fo:margin-left="0cm" fo:margin-right="0cm" fo:margin-top="0.5cm" style:dynamic-spacing="false"/>
+				</style:footer-style>
+			</style:page-layout>
+			<style:header>
+				<text:p text:style-name="Header"><text:page-number text:select-page="current">0</text:page-number></text:p>
+			</style:header>
+			<style:footer>
+				<text:section text:name="ПодписьВМатериалахИспытаниямТипаСИ (ПЛ)">
+					<text:section-source text:section-name="ПодписьВМатериалахИспытаниямТипаСИ" xlink:type="simple" xlink:actuate="other" xlink:title="ПЛ" xlink:show="embed"/>
+				</text:section>
+				<text:section text:name="ПодписьРуководителяВМатериалахИспытаниямТипаСИ (ПЛ)">
+					<text:section-source text:section-name="ПодписьРуководителяВМатериалахИспытаниямТипаСИ" xlink:type="simple" xlink:actuate="other" xlink:title="ПЛ" xlink:show="embed"/>
+				</text:section>
+			</style:footer>
 		</style:master-page>
 
 	</office:master-styles>
