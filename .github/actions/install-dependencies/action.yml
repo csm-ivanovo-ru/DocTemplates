@@ -41,7 +41,7 @@ runs:
         packages-directory-path: tools/GitVersion/packages
 
     - name: Restore PowerShell modules
-      uses: potatoqualitee/psmodulecache@v5.2
+      uses: potatoqualitee/psmodulecache@v6.2
       with:
         modules-to-cache: InvokeBuild:5.5.1, PowerShellForGitHub:0.16.0, 7Zip4Powershell:2.0.0, Pester:5.3.0
         shell: powershell
