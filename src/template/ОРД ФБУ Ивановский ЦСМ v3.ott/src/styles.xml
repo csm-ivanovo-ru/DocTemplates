@@ -215,7 +215,7 @@
 		<style:style style:name="БланкОРДПервыйЛистИнструкцииПоОТ" style:family="paragraph" style:parent-style-name="БланкОРДТитульныйЛист" style:class="extra"/>
 		<style:style style:name="БланкОРДЛистСогласования" style:family="paragraph" style:parent-style-name="ПустойАбзац" style:next-style-name="Основной" style:class="extra"/>
 		<style:style style:name="БланкОРДЛНАЛистСогласования" style:family="paragraph" style:parent-style-name="ПустойАбзац" style:next-style-name="Основной" style:class="extra" style:master-page-name="БланкОРДЛистыСогласования"/>
-		<style:style style:name="БланкОРДПервыйЛистМетодикиПоверки" style:family="paragraph" style:parent-style-name="ПервыйЛистБазовый" style:next-style-name="Основной" style:class="extra" style:master-page-name="БланкОРДТитульныйЛистСГрифомУтвержденияЗаказчика"/>
+		<style:style style:name="БланкОРДПервыйЛистМетодикиПоверки" style:family="paragraph" style:parent-style-name="ПервыйЛистБазовый" style:next-style-name="Основной" style:class="extra" style:master-page-name="БланкОРДПервыйЛистМетодикиПоверки"/>
 		<style:style style:name="Heading" style:family="paragraph" loext:hidden="true" style:parent-style-name="First_20_line_20_indent" style:next-style-name="Основной" style:class="text">
 			<style:paragraph-properties fo:keep-with-next="always"/>
 			<style:text-properties fo:hyphenate="false"/>
@@ -845,7 +845,7 @@
 	<office:master-styles>
 		<style:master-page style:name="Standard" loext:hidden="true">
 			<style:page-layout style:page-usage="mirrored">
-				<style:page-layout-properties fo:page-width="21.001cm" fo:page-height="29.7cm" style:num-format="1" style:print-orientation="portrait" fo:margin-top="1cm" fo:margin-bottom="0.3cm" fo:margin-left="2.499cm" fo:margin-right="1cm" style:layout-grid-mode="none" style:footnote-max-height="0cm">
+				<style:page-layout-properties fo:page-width="21cm" fo:page-height="29.7cm" style:num-format="1" style:print-orientation="portrait" fo:margin-top="1cm" fo:margin-bottom="0.3cm" fo:margin-left="2.5cm" fo:margin-right="1cm" style:layout-grid-mode="none" style:footnote-max-height="0cm">
 					<style:footnote-sep style:width="0.018cm" style:distance-before-sep="0.101cm" style:distance-after-sep="0.101cm" style:line-style="solid" style:adjustment="left" style:rel-width="25%" style:color="#000000"/>
 				</style:page-layout-properties>
 				<style:header-style/>
@@ -854,23 +854,19 @@
 		</style:master-page>
 		<style:master-page style:name="Служебная" loext:hidden="true">
 			<style:page-layout style:page-usage="mirrored">
-				<style:page-layout-properties fo:page-width="21.001cm" fo:page-height="29.7cm" style:num-format="1" style:print-orientation="portrait" fo:margin-top="1cm" fo:margin-bottom="0.3cm" fo:margin-left="2.499cm" fo:margin-right="1cm" style:layout-grid-mode="none" style:footnote-max-height="0cm">
-					<style:footnote-sep style:width="0.018cm" style:distance-before-sep="0.101cm" style:distance-after-sep="0.101cm" style:line-style="solid" style:adjustment="left" style:rel-width="25%" style:color="#000000"/>
-				</style:page-layout-properties>
+				<style:page-layout-properties fo:page-width="21cm" fo:page-height="29.7cm" style:num-format="1" style:print-orientation="portrait" fo:margin-top="1cm" fo:margin-bottom="1cm" fo:margin-left="2cm" fo:margin-right="1cm" style:layout-grid-mode="none" style:footnote-max-height="0cm"/>
 				<style:header-style/>
 				<style:footer-style/>
 			</style:page-layout>
 		</style:master-page>
 		<style:master-page style:name="БланкОРДТитульныйЛист" style:next-style-name="БланкОРДПоследующиеЛисты">
 			<style:page-layout style:page-usage="right">
-				<style:page-layout-properties fo:page-width="21.001cm" fo:page-height="29.7cm" style:num-format="1" style:print-orientation="portrait" fo:margin-top="0.7cm" fo:margin-bottom="1cm" fo:margin-left="2cm" fo:margin-right="1cm" style:layout-grid-mode="none" style:footnote-max-height="0cm">
-					<style:footnote-sep style:width="0.018cm" style:distance-before-sep="0.101cm" style:distance-after-sep="0.101cm" style:line-style="solid" style:adjustment="left" style:rel-width="25%" style:color="#000000"/>
-				</style:page-layout-properties>
+				<style:page-layout-properties fo:page-width="21" fo:page-height="29.7cm" style:num-format="1" style:print-orientation="portrait" fo:margin-top="0.7cm" fo:margin-bottom="1cm" fo:margin-left="2cm" fo:margin-right="1cm" style:layout-grid-mode="none" style:footnote-max-height="0cm"/>
 				<style:header-style>
-					<style:header-footer-properties fo:min-height="0.998cm" fo:margin-left="0cm" fo:margin-right="0cm" fo:margin-bottom="0cm" style:dynamic-spacing="false"/>
+					<style:header-footer-properties fo:min-height="1cm" fo:margin-left="0cm" fo:margin-right="0cm" fo:margin-bottom="0cm" style:dynamic-spacing="false"/>
 				</style:header-style>
 				<style:footer-style>
-					<style:header-footer-properties fo:min-height="0.499cm" fo:margin-left="0cm" fo:margin-right="0cm" fo:margin-top="0.499cm" style:dynamic-spacing="false"/>
+					<style:header-footer-properties fo:min-height="0.5cm" fo:margin-left="0cm" fo:margin-right="0cm" fo:margin-top="0.5cm" style:dynamic-spacing="false"/>
 				</style:footer-style>
 			</style:page-layout>
 			<style:header>
@@ -909,11 +905,11 @@
 		</style:master-page>
 		<style:master-page style:name="БланкОРДПервыйЛист" style:next-style-name="БланкОРДПоследующиеЛисты">
 			<style:page-layout style:page-usage="right">
-				<style:page-layout-properties fo:page-width="21.001cm" fo:page-height="29.7cm" style:num-format="1" style:print-orientation="portrait" fo:margin-top="0.7cm" fo:margin-bottom="2cm" fo:margin-left="2cm" fo:margin-right="1cm" style:layout-grid-mode="none" style:footnote-max-height="0cm">
+				<style:page-layout-properties fo:page-width="21cm" fo:page-height="29.7cm" style:num-format="1" style:print-orientation="portrait" fo:margin-top="0.7cm" fo:margin-bottom="2cm" fo:margin-left="2cm" fo:margin-right="1cm" style:layout-grid-mode="none" style:footnote-max-height="0cm">
 					<style:footnote-sep style:width="0.018cm" style:distance-before-sep="0.101cm" style:distance-after-sep="0.101cm" style:line-style="solid" style:adjustment="left" style:rel-width="25%" style:color="#000000"/>
 				</style:page-layout-properties>
 				<style:header-style>
-					<style:header-footer-properties fo:min-height="0.998cm" fo:margin-left="0cm" fo:margin-right="0cm" fo:margin-bottom="0cm" style:dynamic-spacing="false"/>
+					<style:header-footer-properties fo:min-height="1cm" fo:margin-left="0cm" fo:margin-right="0cm" fo:margin-bottom="0cm" style:dynamic-spacing="false"/>
 				</style:header-style>
 				<style:footer-style/>
 			</style:page-layout>
@@ -1094,11 +1090,11 @@
 		</style:master-page>
 		<style:master-page style:name="БланкОРДПервыйЛистСГрифомУтверждения" style:next-style-name="БланкОРДПоследующиеЛисты">
 			<style:page-layout style:page-usage="right">
-				<style:page-layout-properties fo:page-width="21.001cm" fo:page-height="29.7cm" style:num-format="1" style:print-orientation="portrait" fo:margin-top="0.7cm" fo:margin-bottom="2cm" fo:margin-left="2cm" fo:margin-right="1cm" style:layout-grid-mode="none" style:footnote-max-height="0cm">
+				<style:page-layout-properties fo:page-width="21cm" fo:page-height="29.7cm" style:num-format="1" style:print-orientation="portrait" fo:margin-top="0.7cm" fo:margin-bottom="2cm" fo:margin-left="2cm" fo:margin-right="1cm" style:layout-grid-mode="none" style:footnote-max-height="0cm">
 					<style:footnote-sep style:width="0.018cm" style:distance-before-sep="0.101cm" style:distance-after-sep="0.101cm" style:line-style="solid" style:adjustment="left" style:rel-width="25%" style:color="#000000"/>
 				</style:page-layout-properties>
 				<style:header-style>
-					<style:header-footer-properties fo:min-height="0.998cm" fo:margin-left="0cm" fo:margin-right="0cm" fo:margin-bottom="0cm" style:dynamic-spacing="false"/>
+					<style:header-footer-properties fo:min-height="1cm" fo:margin-left="0cm" fo:margin-right="0cm" fo:margin-bottom="0cm" style:dynamic-spacing="false"/>
 				</style:header-style>
 				<style:footer-style/>
 			</style:page-layout>
@@ -1181,14 +1177,14 @@
 		</style:master-page>
 		<style:master-page style:name="БланкОРДПервыйЛистЗаписки" style:next-style-name="БланкОРДПоследующиеЛисты">
 			<style:page-layout style:page-usage="right">
-				<style:page-layout-properties fo:page-width="21.001cm" fo:page-height="29.7cm" style:num-format="1" style:print-orientation="portrait" fo:margin-top="0.7cm" fo:margin-bottom="0.3cm" fo:margin-left="2cm" fo:margin-right="1cm" style:layout-grid-mode="none" style:footnote-max-height="0cm">
+				<style:page-layout-properties fo:page-width="21cm" fo:page-height="29.7cm" style:num-format="1" style:print-orientation="portrait" fo:margin-top="0.7cm" fo:margin-bottom="0.3cm" fo:margin-left="2cm" fo:margin-right="1cm" style:layout-grid-mode="none" style:footnote-max-height="0cm">
 					<style:footnote-sep style:width="0.018cm" style:distance-before-sep="0.101cm" style:distance-after-sep="0.101cm" style:line-style="solid" style:adjustment="left" style:rel-width="25%" style:color="#000000"/>
 				</style:page-layout-properties>
 				<style:header-style>
-					<style:header-footer-properties fo:min-height="0.998cm" fo:margin-left="0cm" fo:margin-right="0cm" fo:margin-bottom="0cm" style:dynamic-spacing="false"/>
+					<style:header-footer-properties fo:min-height="1cm" fo:margin-left="0cm" fo:margin-right="0cm" fo:margin-bottom="0cm" style:dynamic-spacing="false"/>
 				</style:header-style>
 				<style:footer-style>
-					<style:header-footer-properties fo:min-height="1.499cm" fo:margin-left="0cm" fo:margin-right="0cm" fo:margin-top="0.499cm" style:dynamic-spacing="false"/>
+					<style:header-footer-properties fo:min-height="1.5cm" fo:margin-left="0cm" fo:margin-right="0cm" fo:margin-top="0.5cm" style:dynamic-spacing="false"/>
 				</style:footer-style>
 			</style:page-layout>
 			<style:header>
@@ -1219,14 +1215,14 @@
 		</style:master-page>
 		<style:master-page style:name="БланкОРДПервыйЛистСИсполнителем" style:next-style-name="БланкОРДПоследующиеЛисты">
 			<style:page-layout style:page-usage="right">
-				<style:page-layout-properties fo:page-width="21.001cm" fo:page-height="29.7cm" style:num-format="1" style:print-orientation="portrait" fo:margin-top="0.7cm" fo:margin-bottom="0.3cm" fo:margin-left="2cm" fo:margin-right="1cm" style:layout-grid-mode="none" style:footnote-max-height="0cm">
+				<style:page-layout-properties fo:page-width="21cm" fo:page-height="29.7cm" style:num-format="1" style:print-orientation="portrait" fo:margin-top="0.7cm" fo:margin-bottom="0.3cm" fo:margin-left="2cm" fo:margin-right="1cm" style:layout-grid-mode="none" style:footnote-max-height="0cm">
 					<style:footnote-sep style:width="0.018cm" style:distance-before-sep="0.101cm" style:distance-after-sep="0.101cm" style:line-style="solid" style:adjustment="left" style:rel-width="25%" style:color="#000000"/>
 				</style:page-layout-properties>
 				<style:header-style>
-					<style:header-footer-properties fo:min-height="0.998cm" fo:margin-left="0cm" fo:margin-right="0cm" fo:margin-bottom="0cm" style:dynamic-spacing="false"/>
+					<style:header-footer-properties fo:min-height="1cm" fo:margin-left="0cm" fo:margin-right="0cm" fo:margin-bottom="0cm" style:dynamic-spacing="false"/>
 				</style:header-style>
 				<style:footer-style>
-					<style:header-footer-properties fo:min-height="1.499cm" fo:margin-left="0cm" fo:margin-right="0cm" fo:margin-top="0.499cm" style:dynamic-spacing="false"/>
+					<style:header-footer-properties fo:min-height="1.5cm" fo:margin-left="0cm" fo:margin-right="0cm" fo:margin-top="0.5cm" style:dynamic-spacing="false"/>
 				</style:footer-style>
 			</style:page-layout>
 			<style:header>
@@ -1257,11 +1253,11 @@
 		</style:master-page>
 		<style:master-page style:name="БланкОРДПоследующиеЛисты">
 			<style:page-layout style:page-usage="mirrored">
-				<style:page-layout-properties fo:page-width="21.001cm" fo:page-height="29.7cm" style:num-format="1" style:print-orientation="portrait" fo:margin-top="1cm" fo:margin-bottom="2cm" fo:margin-left="2cm" fo:margin-right="1cm" style:layout-grid-mode="none" style:footnote-max-height="0cm">
+				<style:page-layout-properties fo:page-width="21cm" fo:page-height="29.7cm" style:num-format="1" style:print-orientation="portrait" fo:margin-top="1cm" fo:margin-bottom="2cm" fo:margin-left="2cm" fo:margin-right="1cm" style:layout-grid-mode="none" style:footnote-max-height="0cm">
 					<style:footnote-sep style:width="0.018cm" style:distance-before-sep="0.101cm" style:distance-after-sep="0.101cm" style:line-style="solid" style:adjustment="left" style:rel-width="25%" style:color="#000000"/>
 				</style:page-layout-properties>
 				<style:header-style>
-					<style:header-footer-properties fo:min-height="0.998cm" fo:margin-left="0cm" fo:margin-right="0cm" fo:margin-bottom="0.499cm" style:dynamic-spacing="false"/>
+					<style:header-footer-properties fo:min-height="1cm" fo:margin-left="0cm" fo:margin-right="0cm" fo:margin-bottom="0.5cm" style:dynamic-spacing="false"/>
 				</style:header-style>
 				<style:footer-style/>
 			</style:page-layout>
@@ -1271,14 +1267,14 @@
 		</style:master-page>
 		<style:master-page style:name="БланкОРДЛистыСогласования">
 			<style:page-layout style:page-usage="mirrored">
-				<style:page-layout-properties fo:page-width="21.001cm" fo:page-height="29.7cm" style:num-format="1" style:print-orientation="portrait" fo:margin-top="1cm" fo:margin-bottom="0.3cm" fo:margin-left="2cm" fo:margin-right="1cm" style:layout-grid-mode="none" style:footnote-max-height="0cm">
+				<style:page-layout-properties fo:page-width="21cm" fo:page-height="29.7cm" style:num-format="1" style:print-orientation="portrait" fo:margin-top="1cm" fo:margin-bottom="0.3cm" fo:margin-left="2cm" fo:margin-right="1cm" style:layout-grid-mode="none" style:footnote-max-height="0cm">
 					<style:footnote-sep style:width="0.018cm" style:distance-before-sep="0.101cm" style:distance-after-sep="0.101cm" style:line-style="solid" style:adjustment="left" style:rel-width="25%" style:color="#000000"/>
 				</style:page-layout-properties>
 				<style:header-style>
-					<style:header-footer-properties fo:min-height="0.998cm" fo:margin-left="0cm" fo:margin-right="0cm" fo:margin-bottom="0.499cm" style:dynamic-spacing="false"/>
+					<style:header-footer-properties fo:min-height="1cm" fo:margin-left="0cm" fo:margin-right="0cm" fo:margin-bottom="0.5cm" style:dynamic-spacing="false"/>
 				</style:header-style>
 				<style:footer-style>
-					<style:header-footer-properties fo:min-height="1.499cm" fo:margin-left="0cm" fo:margin-right="0cm" fo:margin-top="0.499cm" style:dynamic-spacing="false"/>
+					<style:header-footer-properties fo:min-height="1.5cm" fo:margin-left="0cm" fo:margin-right="0cm" fo:margin-top="0.5cm" style:dynamic-spacing="false"/>
 				</style:footer-style>
 			</style:page-layout>
 			<style:header>
@@ -1298,14 +1294,14 @@
 		</style:master-page>
 		<style:master-page style:name="БланкОРДПервыйЛистПисьмаГОСТПродольный" style:next-style-name="БланкОРДПоследующиеЛисты">
 			<style:page-layout style:page-usage="right">
-				<style:page-layout-properties fo:page-width="21.001cm" fo:page-height="29.7cm" style:num-format="1" style:print-orientation="portrait" fo:margin-top="0.7cm" fo:margin-bottom="0.3cm" fo:margin-left="2cm" fo:margin-right="1cm" style:layout-grid-mode="none" style:footnote-max-height="0cm">
+				<style:page-layout-properties fo:page-width="21cm" fo:page-height="29.7cm" style:num-format="1" style:print-orientation="portrait" fo:margin-top="0.7cm" fo:margin-bottom="0.3cm" fo:margin-left="2cm" fo:margin-right="1cm" style:layout-grid-mode="none" style:footnote-max-height="0cm">
 					<style:footnote-sep style:width="0.018cm" style:distance-before-sep="0.101cm" style:distance-after-sep="0.101cm" style:line-style="solid" style:adjustment="left" style:rel-width="25%" style:color="#000000"/>
 				</style:page-layout-properties>
 				<style:header-style>
-					<style:header-footer-properties fo:min-height="0.998cm" fo:margin-left="0cm" fo:margin-right="0cm" fo:margin-bottom="0cm" style:dynamic-spacing="false"/>
+					<style:header-footer-properties fo:min-height="1cm" fo:margin-left="0cm" fo:margin-right="0cm" fo:margin-bottom="0cm" style:dynamic-spacing="false"/>
 				</style:header-style>
 				<style:footer-style>
-					<style:header-footer-properties fo:min-height="1.499cm" fo:margin-left="0cm" fo:margin-right="0cm" fo:margin-top="0.499cm" style:dynamic-spacing="false"/>
+					<style:header-footer-properties fo:min-height="1.5cm" fo:margin-left="0cm" fo:margin-right="0cm" fo:margin-top="0.5cm" style:dynamic-spacing="false"/>
 				</style:footer-style>
 			</style:page-layout>
 			<style:header>
@@ -1637,14 +1633,14 @@
 		</style:master-page>
 		<style:master-page style:name="БланкОРДПервыйЛистПисьмаГОСТУгловой" style:next-style-name="БланкОРДПоследующиеЛисты">
 			<style:page-layout style:page-usage="right">
-				<style:page-layout-properties fo:page-width="21.001cm" fo:page-height="29.7cm" style:num-format="1" style:print-orientation="portrait" fo:margin-top="0.7cm" fo:margin-bottom="0.3cm" fo:margin-left="2cm" fo:margin-right="1cm" style:layout-grid-mode="none" style:footnote-max-height="0cm">
+				<style:page-layout-properties fo:page-width="21cm" fo:page-height="29.7cm" style:num-format="1" style:print-orientation="portrait" fo:margin-top="0.7cm" fo:margin-bottom="0.3cm" fo:margin-left="2cm" fo:margin-right="1cm" style:layout-grid-mode="none" style:footnote-max-height="0cm">
 					<style:footnote-sep style:width="0.018cm" style:distance-before-sep="0.101cm" style:distance-after-sep="0.101cm" style:line-style="solid" style:adjustment="left" style:rel-width="25%" style:color="#000000"/>
 				</style:page-layout-properties>
 				<style:header-style>
-					<style:header-footer-properties fo:min-height="0.998cm" fo:margin-left="0cm" fo:margin-right="0cm" fo:margin-bottom="0cm" style:dynamic-spacing="false"/>
+					<style:header-footer-properties fo:min-height="1cm" fo:margin-left="0cm" fo:margin-right="0cm" fo:margin-bottom="0cm" style:dynamic-spacing="false"/>
 				</style:header-style>
 				<style:footer-style>
-					<style:header-footer-properties fo:min-height="1.499cm" fo:margin-left="0cm" fo:margin-right="0cm" fo:margin-top="0.499cm" style:dynamic-spacing="false"/>
+					<style:header-footer-properties fo:min-height="1.5cm" fo:margin-left="0cm" fo:margin-right="0cm" fo:margin-top="0.5cm" style:dynamic-spacing="false"/>
 				</style:footer-style>
 			</style:page-layout>
 			<style:header>
@@ -1958,14 +1954,14 @@
 		</style:master-page>
 		<style:master-page style:name="БланкОРДПоследующиеЛистыПисьма">
 			<style:page-layout style:page-usage="mirrored">
-				<style:page-layout-properties fo:page-width="21.001cm" fo:page-height="29.7cm" style:num-format="1" style:print-orientation="portrait" fo:margin-top="1cm" fo:margin-bottom="0.3cm" fo:margin-left="2.499cm" fo:margin-right="1cm" style:layout-grid-mode="none" style:footnote-max-height="0cm">
+				<style:page-layout-properties fo:page-width="21cm" fo:page-height="29.7cm" style:num-format="1" style:print-orientation="portrait" fo:margin-top="1cm" fo:margin-bottom="0.3cm" fo:margin-left="2.5cm" fo:margin-right="1cm" style:layout-grid-mode="none" style:footnote-max-height="0cm">
 					<style:footnote-sep style:width="0.018cm" style:distance-before-sep="0.101cm" style:distance-after-sep="0.101cm" style:line-style="solid" style:adjustment="left" style:rel-width="25%" style:color="#000000"/>
 				</style:page-layout-properties>
 				<style:header-style>
-					<style:header-footer-properties fo:min-height="0.998cm" fo:margin-left="0cm" fo:margin-right="0cm" fo:margin-bottom="0.499cm" style:dynamic-spacing="false"/>
+					<style:header-footer-properties fo:min-height="1cm" fo:margin-left="0cm" fo:margin-right="0cm" fo:margin-bottom="0.5cm" style:dynamic-spacing="false"/>
 				</style:header-style>
 				<style:footer-style>
-					<style:header-footer-properties fo:min-height="1.499cm" fo:margin-left="0cm" fo:margin-right="0cm" fo:margin-top="0.499cm" style:dynamic-spacing="false"/>
+					<style:header-footer-properties fo:min-height="1.5cm" fo:margin-left="0cm" fo:margin-right="0cm" fo:margin-top="0.5cm" style:dynamic-spacing="false"/>
 				</style:footer-style>
 			</style:page-layout>
 			<style:header>
@@ -1975,16 +1971,14 @@
 				<text:p text:style-name="Footer"/>
 			</style:footer>
 		</style:master-page>
-		<style:master-page style:name="БланкОРДТитульныйЛистСГрифомУтвержденияЗаказчика" style:next-style-name="БланкОРДПоследующиеЛисты">
+		<style:master-page style:name="БланкОРДПервыйЛистМетодикиПоверки" style:next-style-name="БланкМатериалыПоИспытаниямТипаСИПоследующиеЛисты">
 			<style:page-layout style:page-usage="right">
-				<style:page-layout-properties fo:page-width="21.001cm" fo:page-height="29.7cm" style:num-format="1" style:print-orientation="portrait" fo:margin-top="0.7cm" fo:margin-bottom="1cm" fo:margin-left="2cm" fo:margin-right="1cm" style:layout-grid-mode="none" style:footnote-max-height="0cm">
-					<style:footnote-sep style:width="0.018cm" style:distance-before-sep="0.101cm" style:distance-after-sep="0.101cm" style:line-style="solid" style:adjustment="left" style:rel-width="25%" style:color="#000000"/>
-				</style:page-layout-properties>
+				<style:page-layout-properties fo:page-width="21.001cm" fo:page-height="29.7cm" style:num-format="1" style:print-orientation="portrait" fo:margin-top="0.7cm" fo:margin-bottom="1cm" fo:margin-left="2.5cm" fo:margin-right="1cm" style:layout-grid-mode="none" style:footnote-max-height="0cm"/>
 				<style:header-style>
-					<style:header-footer-properties fo:min-height="0.998cm" fo:margin-left="0cm" fo:margin-right="0cm" fo:margin-bottom="0cm" style:dynamic-spacing="false"/>
+					<style:header-footer-properties fo:min-height="1cm" fo:margin-left="0cm" fo:margin-right="0cm" fo:margin-bottom="0cm" style:dynamic-spacing="false"/>
 				</style:header-style>
 				<style:footer-style>
-					<style:header-footer-properties fo:min-height="0.499cm" fo:margin-left="0cm" fo:margin-right="0cm" fo:margin-top="0.499cm" style:dynamic-spacing="false"/>
+					<style:header-footer-properties fo:min-height="0.5cm" fo:margin-left="0cm" fo:margin-right="0cm" fo:margin-top="0.5cm" style:dynamic-spacing="false"/>
 				</style:footer-style>
 			</style:page-layout>
 			<style:header>
@@ -2128,5 +2122,20 @@
 				<text:p text:style-name="БланкТитульныйЛистМестоИГодИздания"><text:span text:style-name="БланкТитульныйЛистМестоСоставления"><text:variable-get text:name="МестоСоставления">г. Иваново</text:variable-get></text:span><text:s/>— <text:span text:style-name="БланкТитульныйЛистГодИздания"><text:variable-get text:name="ГодИздания">2020</text:variable-get></text:span></text:p>
 			</loext:footer-first>
 		</style:master-page>
+		<style:master-page style:name="БланкМатериалыПоИспытаниямТипаСИПоследующиеЛисты">
+			<style:page-layout style:page-usage="right">
+				<style:page-layout-properties fo:page-width="21cm" fo:page-height="29.7cm" style:num-format="1" style:print-orientation="portrait" fo:margin-top="1cm" fo:margin-bottom="2cm" fo:margin-left="2.5cm" fo:margin-right="1cm" style:layout-grid-mode="none" style:footnote-max-height="0cm">
+					<style:footnote-sep style:width="0.018cm" style:distance-before-sep="0.101cm" style:distance-after-sep="0.101cm" style:line-style="solid" style:adjustment="left" style:rel-width="25%" style:color="#000000"/>
+				</style:page-layout-properties>
+				<style:header-style>
+					<style:header-footer-properties fo:min-height="1cm" fo:margin-left="0cm" fo:margin-right="0cm" fo:margin-bottom="0.5cm" style:dynamic-spacing="false"/>
+				</style:header-style>
+				<style:footer-style/>
+			</style:page-layout>
+			<style:header>
+				<text:p text:style-name="Header"><text:page-number text:select-page="current">0</text:page-number></text:p>
+			</style:header>
+		</style:master-page>
+
 	</office:master-styles>
 </office:document-styles>
