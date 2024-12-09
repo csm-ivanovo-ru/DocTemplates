@@ -40,6 +40,11 @@
 
 ## [3.2.1] Неопубликованные изменения (не вошедшие в релиз)
 
+### Добавлено
+
+- добавлен стиль титульного листа и пример методики поверки
+  [csm-ivanovo-ru/DocTemplates#139](https://github.com/csm-ivanovo-ru/DocTemplates/issues/139)
+
 ### Изменено
 
 - GitVersion заменён на NPM пакет `absolute-version`

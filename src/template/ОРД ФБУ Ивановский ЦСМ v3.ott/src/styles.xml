@@ -116,6 +116,12 @@
 			<style:paragraph-properties fo:margin-top="0cm" fo:margin-bottom="0cm" loext:contextual-spacing="false" text:number-lines="false"/>
 			<style:text-properties style:font-name="Liberation Mono" fo:font-family="'Liberation Mono'" style:font-family-generic="modern" style:font-pitch="fixed" fo:font-size="10pt"/>
 		</style:style>
+		<style:style style:name="ЗначениеПеременнойДокумента" style:family="paragraph" style:parent-style-name="Preformatted_20_Text" style:next-style-name="ПоясненияКЗначениюПеременнойДокумента" style:class="text">
+			<style:paragraph-properties fo:margin-left="5cm" fo:text-align="right" text:number-lines="false"/>
+		</style:style>
+		<style:style style:name="ПоясненияКЗначениюПеременнойДокумента" style:family="paragraph" style:parent-style-name="Основной" style:next-style-name="ЗначениеПеременнойДокумента" style:class="text">
+			<style:paragraph-properties fo:keep-with-next="always" text:number-lines="false" fo:margin-top="0.5cm"/>
+		</style:style>
 		<style:style style:name="List" style:family="paragraph" loext:hidden="true" style:parent-style-name="Основной_20_текст_20_документа" style:class="list"/>
 		<style:style style:name="List_20_Contents" style:display-name="List Contents" style:family="paragraph" loext:hidden="true" style:parent-style-name="List" style:class="html"/>
 		<style:style style:name="List_20_Indent" style:display-name="List Indent" style:family="paragraph" loext:hidden="true" style:parent-style-name="Text_20_body_20_indent" style:class="text"/>
@@ -209,6 +215,7 @@
 		<style:style style:name="БланкОРДПервыйЛистИнструкцииПоОТ" style:family="paragraph" style:parent-style-name="БланкОРДТитульныйЛист" style:class="extra"/>
 		<style:style style:name="БланкОРДЛистСогласования" style:family="paragraph" style:parent-style-name="ПустойАбзац" style:next-style-name="Основной" style:class="extra"/>
 		<style:style style:name="БланкОРДЛНАЛистСогласования" style:family="paragraph" style:parent-style-name="ПустойАбзац" style:next-style-name="Основной" style:class="extra" style:master-page-name="БланкОРДЛистыСогласования"/>
+		<style:style style:name="БланкОРДПервыйЛистМетодикиПоверки" style:family="paragraph" style:parent-style-name="ПервыйЛистБазовый" style:next-style-name="Основной" style:class="extra" style:master-page-name="БланкОРДТитульныйЛистСГрифомУтвержденияЗаказчика"/>
 		<style:style style:name="Heading" style:family="paragraph" loext:hidden="true" style:parent-style-name="First_20_line_20_indent" style:next-style-name="Основной" style:class="text">
 			<style:paragraph-properties fo:keep-with-next="always"/>
 			<style:text-properties fo:hyphenate="false"/>
@@ -415,7 +422,7 @@
 			<style:text-properties fo:font-size="110%" fo:font-weight="bold" fo:hyphenate="false"/>
 		</style:style>
 		<style:style style:name="БланкТЛЗаголовокДокумента" style:family="paragraph" style:parent-style-name="БланкЗаголовокДокумента" style:next-style-name="Основной" style:class="text">
-			<style:paragraph-properties fo:margin-top="0.499cm" fo:margin-bottom="0.3cm" loext:contextual-spacing="false"/>
+			<style:paragraph-properties fo:margin-top="0.499cm" fo:margin-bottom="0.3cm" loext:contextual-spacing="true"/>
 		</style:style>
 		<style:style style:name="БланкЗаголовокДокументаВПереписке" style:family="paragraph" loext:hidden="true" style:parent-style-name="Standard" style:class="extra">
 			<style:paragraph-properties fo:text-align="center" fo:keep-together="always" text:number-lines="false"/>
@@ -489,6 +496,7 @@
 			<style:paragraph-properties fo:margin-top="0cm" fo:margin-bottom="0cm" loext:contextual-spacing="false" fo:text-align="center" fo:keep-together="always" fo:keep-with-next="always"/>
 		</style:style>
 		<style:style style:name="ПодписьВГрифеДолжность" style:family="paragraph" loext:hidden="true" style:parent-style-name="ПодписьВГрифеБазовый" style:next-style-name="ПодписьВГрифеПодписьИФИО" style:class="text"/>
+		<style:style style:name="ПодписьВГрифеОрганизация" style:family="paragraph" loext:hidden="true" style:parent-style-name="ПодписьВГрифеБазовый" style:next-style-name="ПодписьВГрифеПодписьИФИО" style:class="text"/>
 		<style:style style:name="ПодписьВГрифеПодписьИФИО" style:family="paragraph" loext:hidden="true" style:parent-style-name="ПодписьБазовыйБезОтступа" style:next-style-name="ПодписьДатаМесяц" style:class="text">
 			<style:paragraph-properties fo:text-align="center">
 				<style:tab-stops>
@@ -1966,6 +1974,159 @@
 			<style:footer>
 				<text:p text:style-name="Footer"/>
 			</style:footer>
+		</style:master-page>
+		<style:master-page style:name="БланкОРДТитульныйЛистСГрифомУтвержденияЗаказчика" style:next-style-name="БланкОРДПоследующиеЛисты">
+			<style:page-layout style:page-usage="right">
+				<style:page-layout-properties fo:page-width="21.001cm" fo:page-height="29.7cm" style:num-format="1" style:print-orientation="portrait" fo:margin-top="0.7cm" fo:margin-bottom="1cm" fo:margin-left="2cm" fo:margin-right="1cm" style:layout-grid-mode="none" style:footnote-max-height="0cm">
+					<style:footnote-sep style:width="0.018cm" style:distance-before-sep="0.101cm" style:distance-after-sep="0.101cm" style:line-style="solid" style:adjustment="left" style:rel-width="25%" style:color="#000000"/>
+				</style:page-layout-properties>
+				<style:header-style>
+					<style:header-footer-properties fo:min-height="0.998cm" fo:margin-left="0cm" fo:margin-right="0cm" fo:margin-bottom="0cm" style:dynamic-spacing="false"/>
+				</style:header-style>
+				<style:footer-style>
+					<style:header-footer-properties fo:min-height="0.499cm" fo:margin-left="0cm" fo:margin-right="0cm" fo:margin-top="0.499cm" style:dynamic-spacing="false"/>
+				</style:footer-style>
+			</style:page-layout>
+			<style:header>
+				<text:p text:style-name="Header"/>
+			</style:header>
+			<loext:header-first>
+				<text:section text:name="Шапка (ТЛ)" text:protected="true">
+					<text:section-source text:section-name="Шапка" xlink:type="simple" xlink:actuate="other" xlink:title="ТЛ" xlink:show="replace"/>
+				</text:section>
+				<text:section text:name="Гриф утверждения заказчика и согласования организации">
+					<style:style style:family="section">
+						<style:section-properties text:dont-balance-text-columns="true" style:editable="false">
+							<style:columns fo:column-count="2">
+								<style:column style:rel-width="4961*" fo:start-indent="0cm" fo:end-indent="1.499cm"/>
+								<style:column style:rel-width="4962*" fo:start-indent="1.499cm" fo:end-indent="0cm"/>
+							</style:columns>
+						</style:section-properties>
+					</style:style>
+					<text:p text:style-name="ПустойАбзац"/>
+					<text:p text:style-name="ГрифСогласовано">Согласовано</text:p>
+					<text:p text:style-name="ПодписьВГрифеДолжность"><text:variable-get text:name="СогласовалДолжностьИП">Директор</text:variable-get></text:p>
+					<text:p text:style-name="ПодписьВГрифеОрганизация"><text:variable-get text:name="ОрганизацияНаименование">ФБУ «Ивановский ЦСМ»</text:variable-get></text:p>
+					<text:p text:style-name="ПодписьВГрифеПодписьИФИО"><text:tab/><text:variable-get text:name="СогласовалПредставлениеВПодписиИП">Д.И. Кудрявцев</text:variable-get></text:p>
+					<text:p text:style-name="ПодписьВГрифеДата">«<draw:frame draw:name="ДатаЧислоВГрифеУтверждения" text:anchor-type="as-char" draw:z-index="0">
+						<style:style style:family="graphic" style:parent-style-name="ДатаПодписиЧисло">
+							<style:graphic-properties style:vertical-pos="top" style:vertical-rel="baseline" style:horizontal-pos="from-left" style:horizontal-rel="paragraph-content"/>
+						</style:style>
+						<draw:text-box fo:min-height="0.041cm" fo:min-width="0.6cm">
+							<text:p text:style-name="ПодписьДатаЧисло"><draw:frame draw:name="ДатаЧислоВГрифеУтвержденияПодстрочник" text:anchor-type="char" svg:x="0cm" svg:y="0cm" style:rel-width="100%" draw:z-index="0">
+								<style:style style:family="graphic" style:parent-style-name="БланкПодстрочникПоляВТексте">
+									<style:graphic-properties style:vertical-pos="from-top" style:vertical-rel="char" style:horizontal-pos="from-left" style:horizontal-rel="paragraph" loext:rel-width-rel="paragraph"/>
+								</style:style>
+								<draw:text-box fo:min-height="0.041cm">
+									<text:p text:style-name="Подстрочник"><text:s/></text:p>
+								</draw:text-box>
+							</draw:frame></text:p>
+						</draw:text-box>
+					</draw:frame>» <draw:frame draw:name="ДатаМесяцВГрифеУтверждения" text:anchor-type="as-char" draw:z-index="0">
+						<style:style style:family="graphic" style:parent-style-name="ДатаПодписиМесяц">
+							<style:graphic-properties style:vertical-pos="top" style:vertical-rel="baseline" style:horizontal-pos="from-left" style:horizontal-rel="paragraph-content"/>
+						</style:style>
+						<draw:text-box fo:min-height="0.041cm" fo:min-width="3cm">
+							<text:p text:style-name="ПодписьДатаМесяц"><draw:frame draw:name="ДатаМесяцВГрифеУтвержденияПодстрочник" text:anchor-type="char" svg:x="0cm" svg:y="0cm" style:rel-width="100%" draw:z-index="0">
+								<style:style style:family="graphic" style:parent-style-name="БланкПодстрочникПоляВТексте">
+									<style:graphic-properties style:vertical-pos="from-top" style:vertical-rel="char" style:horizontal-pos="from-left" style:horizontal-rel="paragraph" loext:rel-width-rel="paragraph"/>
+								</style:style>
+								<draw:text-box fo:min-height="0.041cm">
+									<text:p text:style-name="Подстрочник"><text:s/></text:p>
+								</draw:text-box>
+							</draw:frame></text:p>
+						</draw:text-box>
+					</draw:frame> <draw:frame draw:name="ДатаГодВГрифеУтверждения" text:anchor-type="as-char" draw:z-index="0">
+						<style:style style:family="graphic" style:parent-style-name="ДатаПодписиГод">
+							<style:graphic-properties style:vertical-pos="top" style:vertical-rel="baseline" style:horizontal-pos="from-left" style:horizontal-rel="paragraph-content"/>
+						</style:style>
+						<draw:text-box fo:min-height="0.041cm" fo:min-width="0.4cm">
+							<text:p text:style-name="ПодписьДатаГод"><draw:frame draw:name="ДатаГодВГрифеУтвержденияПодстрочник" text:anchor-type="char" svg:x="0cm" svg:y="0cm" style:rel-width="99%" draw:z-index="0">
+								<style:style style:family="graphic" style:parent-style-name="БланкПодстрочникПоляВТексте">
+									<style:graphic-properties style:vertical-pos="from-top" style:vertical-rel="char" style:horizontal-pos="from-left" style:horizontal-rel="paragraph-content" loext:rel-width-rel="paragraph"/>
+								</style:style>
+								<draw:text-box fo:min-height="0.041cm">
+									<text:p text:style-name="Подстрочник"><text:s/></text:p>
+								</draw:text-box>
+							</draw:frame>20 <text:s text:c="4"/></text:p>
+						</draw:text-box>
+					</draw:frame> г.</text:p>
+					<text:p text:style-name="КонецКолонки"/>
+					<!--
+					<text:p text:style-name="ПустойАбзац"/>
+					<text:p text:style-name="ГрифУтверждаю">Утверждаю</text:p>
+					<text:p text:style-name="ПодписьВГрифеДолжность"><text:variable-get text:name="УтвердилДолжностьИП">Директор</text:variable-get></text:p>
+					<text:p text:style-name="ПодписьВГрифеОрганизация"><text:variable-get text:name="ОрганизацияЗаказчикаНаименование">ООО «Заказчик»</text:variable-get></text:p>
+					<text:p text:style-name="ПодписьВГрифеПодписьИФИО"><text:tab/><text:variable-get text:name="УтвердилПредставлениеВПодписиИП">С. С. Семёнов</text:variable-get></text:p>
+					<text:p text:style-name="ПодписьВГрифеДата">«<draw:frame draw:name="ДатаЧислоВГрифеУтверждения" text:anchor-type="as-char" draw:z-index="0">
+						<style:style style:family="graphic" style:parent-style-name="ДатаПодписиЧисло">
+							<style:graphic-properties style:vertical-pos="top" style:vertical-rel="baseline" style:horizontal-pos="from-left" style:horizontal-rel="paragraph-content"/>
+						</style:style>
+						<draw:text-box fo:min-height="0.041cm" fo:min-width="0.6cm">
+							<text:p text:style-name="ПодписьДатаЧисло"><draw:frame draw:name="ДатаЧислоВГрифеУтвержденияПодстрочник" text:anchor-type="char" svg:x="0cm" svg:y="0cm" style:rel-width="100%" draw:z-index="0">
+								<style:style style:family="graphic" style:parent-style-name="БланкПодстрочникПоляВТексте">
+									<style:graphic-properties style:vertical-pos="from-top" style:vertical-rel="char" style:horizontal-pos="from-left" style:horizontal-rel="paragraph" loext:rel-width-rel="paragraph"/>
+								</style:style>
+								<draw:text-box fo:min-height="0.041cm">
+									<text:p text:style-name="Подстрочник"><text:s/></text:p>
+								</draw:text-box>
+							</draw:frame></text:p>
+						</draw:text-box>
+					</draw:frame>» <draw:frame draw:name="ДатаМесяцВГрифеУтверждения" text:anchor-type="as-char" draw:z-index="0">
+						<style:style style:family="graphic" style:parent-style-name="ДатаПодписиМесяц">
+							<style:graphic-properties style:vertical-pos="top" style:vertical-rel="baseline" style:horizontal-pos="from-left" style:horizontal-rel="paragraph-content"/>
+						</style:style>
+						<draw:text-box fo:min-height="0.041cm" fo:min-width="3cm">
+							<text:p text:style-name="ПодписьДатаМесяц"><draw:frame draw:name="ДатаМесяцВГрифеУтвержденияПодстрочник" text:anchor-type="char" svg:x="0cm" svg:y="0cm" style:rel-width="100%" draw:z-index="0">
+								<style:style style:family="graphic" style:parent-style-name="БланкПодстрочникПоляВТексте">
+									<style:graphic-properties style:vertical-pos="from-top" style:vertical-rel="char" style:horizontal-pos="from-left" style:horizontal-rel="paragraph" loext:rel-width-rel="paragraph"/>
+								</style:style>
+								<draw:text-box fo:min-height="0.041cm">
+									<text:p text:style-name="Подстрочник"><text:s/></text:p>
+								</draw:text-box>
+							</draw:frame></text:p>
+						</draw:text-box>
+					</draw:frame> <draw:frame draw:name="ДатаГодВГрифеУтверждения" text:anchor-type="as-char" draw:z-index="0">
+						<style:style style:family="graphic" style:parent-style-name="ДатаПодписиГод">
+							<style:graphic-properties style:vertical-pos="top" style:vertical-rel="baseline" style:horizontal-pos="from-left" style:horizontal-rel="paragraph-content"/>
+						</style:style>
+						<draw:text-box fo:min-height="0.041cm" fo:min-width="0.4cm">
+							<text:p text:style-name="ПодписьДатаГод"><draw:frame draw:name="ДатаГодВГрифеУтвержденияПодстрочник" text:anchor-type="char" svg:x="0cm" svg:y="0cm" style:rel-width="99%" draw:z-index="0">
+								<style:style style:family="graphic" style:parent-style-name="БланкПодстрочникПоляВТексте">
+									<style:graphic-properties style:vertical-pos="from-top" style:vertical-rel="char" style:horizontal-pos="from-left" style:horizontal-rel="paragraph-content" loext:rel-width-rel="paragraph"/>
+								</style:style>
+								<draw:text-box fo:min-height="0.041cm">
+									<text:p text:style-name="Подстрочник"><text:s/></text:p>
+								</draw:text-box>
+							</draw:frame>20 <text:s text:c="4"/></text:p>
+						</draw:text-box>
+					</draw:frame> г.</text:p>
+					-->
+					<text:p text:style-name="ПустойАбзац"/>
+				</text:section>
+				<text:section text:name="Заголовок (ТЛ)">
+					<style:style style:family="section">
+						<style:section-properties style:editable="false"/>
+					</style:style>
+					<text:p text:style-name="ПустойАбзац"><draw:frame draw:name="ЗаголовокНаТитульномЛисте" text:anchor-type="paragraph" style:rel-width="100%" draw:z-index="6">
+						<style:style style:family="graphic" style:parent-style-name="БланкТЛЗаголовокДокумента">
+							<style:graphic-properties style:vertical-pos="middle" style:vertical-rel="page" loext:rel-width-rel="paragraph"/>
+						</style:style>
+						<draw:text-box fo:min-height="1cm">
+							<text:p text:style-name="БланкВидДокумента"><text:variable-get text:name="ВидДокумента">Методика поверки</text:variable-get></text:p>
+							<text:p text:style-name="БланкТЛЗаголовокДокумента">ГСИ. <text:variable-get text:name="ТипСИ">Спирометры такие-то</text:variable-get></text:p>
+							<!-- <text:p text:style-name="БланкТЛЗаголовокДокумента"><text:variable-get text:name="ВидДокумента">Методика поверки</text:variable-get></text:p> -->
+							<text:p text:style-name="БланкТЛРегДанныеРегНомер"><text:variable-get text:name="РегистрационныйНомер">ЦСМЕ.XXXXXX.001МП</text:variable-get></text:p>
+						</draw:text-box>
+					</draw:frame></text:p>
+				</text:section>
+			</loext:header-first>
+			<style:footer>
+				<text:p text:style-name="Footer"/>
+			</style:footer>
+			<loext:footer-first>
+				<text:p text:style-name="БланкТитульныйЛистМестоИГодИздания"><text:span text:style-name="БланкТитульныйЛистМестоСоставления"><text:variable-get text:name="МестоСоставления">г. Иваново</text:variable-get></text:span><text:s/>— <text:span text:style-name="БланкТитульныйЛистГодИздания"><text:variable-get text:name="ГодИздания">2020</text:variable-get></text:span></text:p>
+			</loext:footer-first>
 		</style:master-page>
 	</office:master-styles>
 </office:document-styles>

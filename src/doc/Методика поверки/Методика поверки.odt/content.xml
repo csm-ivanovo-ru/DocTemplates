@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<office:document-content xmlns:meta="urn:oasis:names:tc:opendocument:xmlns:meta:1.0" xmlns:office="urn:oasis:names:tc:opendocument:xmlns:office:1.0" xmlns:draw="urn:oasis:names:tc:opendocument:xmlns:drawing:1.0" xmlns:ooo="http://openoffice.org/2004/office" xmlns:fo="urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:style="urn:oasis:names:tc:opendocument:xmlns:style:1.0" xmlns:text="urn:oasis:names:tc:opendocument:xmlns:text:1.0" xmlns:dr3d="urn:oasis:names:tc:opendocument:xmlns:dr3d:1.0" xmlns:svg="urn:oasis:names:tc:opendocument:xmlns:svg-compatible:1.0" xmlns:chart="urn:oasis:names:tc:opendocument:xmlns:chart:1.0" xmlns:rpt="http://openoffice.org/2005/report" xmlns:table="urn:oasis:names:tc:opendocument:xmlns:table:1.0" xmlns:number="urn:oasis:names:tc:opendocument:xmlns:datastyle:1.0" xmlns:ooow="http://openoffice.org/2004/writer" xmlns:oooc="http://openoffice.org/2004/calc" xmlns:of="urn:oasis:names:tc:opendocument:xmlns:of:1.2" xmlns:css3t="http://www.w3.org/TR/css3-text/" xmlns:tableooo="http://openoffice.org/2009/table" xmlns:calcext="urn:org:documentfoundation:names:experimental:calc:xmlns:calcext:1.0" xmlns:drawooo="http://openoffice.org/2010/draw" xmlns:grddl="http://www.w3.org/2003/g/data-view#" xmlns:field="urn:openoffice:names:experimental:ooo-ms-interop:xmlns:field:1.0" xmlns:math="http://www.w3.org/1998/Math/MathML" xmlns:form="urn:oasis:names:tc:opendocument:xmlns:form:1.0" xmlns:script="urn:oasis:names:tc:opendocument:xmlns:script:1.0" xmlns:dom="http://www.w3.org/2001/xml-events" xmlns:xforms="http://www.w3.org/2002/xforms" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:formx="urn:openoffice:names:experimental:ooxml-odf-interop:xmlns:form:1.0" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:officeooo="http://openoffice.org/2009/office" xmlns:manifest="urn:oasis:names:tc:opendocument:xmlns:manifest:1.0" xmlns:loext="urn:org:documentfoundation:names:experimental:office:xmlns:loext:1.0" office:version="1.2">
+	<office:body>
+		<office:text text:use-soft-page-breaks="true">
+			<text:section text:name="Служебный">
+				<text:p text:style-name="НачалоСлужебнойСтраницы"/>
+				
+				<text:p text:style-name="ПоясненияКЗначениюПеременнойДокумента">Вид документа:</text:p>
+				<text:p text:style-name="ЗначениеПеременнойДокумента"><text:variable-set text:name="ВидДокумента" office:value-type="string">Методика поверки</text:variable-set></text:p>
+
+				<text:p text:style-name="ПоясненияКЗначениюПеременнойДокумента">Тип СИ в именительном падеже с заглавной буквы:</text:p>
+				<text:p text:style-name="ЗначениеПеременнойДокумента"><text:variable-set text:name="ТипСИ" office:value-type="string">Спирометры такие-то</text:variable-set></text:p>
+				
+				<text:p text:style-name="ПоясненияКЗначениюПеременнойДокумента">Тип СИ в родительном падеже со строчной буквы:</text:p>
+				<text:p text:style-name="ЗначениеПеременнойДокумента"><text:variable-set text:name="ТипСИ_РП" office:value-type="string">спирометров таких-то</text:variable-set></text:p>
+				
+				<text:p text:style-name="ПоясненияКЗначениюПеременнойДокумента">Номер методики поверки:</text:p>
+				<text:p text:style-name="ЗначениеПеременнойДокумента"><text:variable-set text:name="РегистрационныйНомер" office:value-type="string">ЦСМЕ.XXXXXX.001МП</text:variable-set></text:p>
+				
+				<text:p text:style-name="ПоясненияКЗначениюПеременнойДокумента">Краткое наименование ЦСМ:</text:p>
+				<text:p text:style-name="ЗначениеПеременнойДокумента"><text:variable-set text:name="ОрганизацияНаименование" office:value-type="string">ФБУ «Ивановский ЦСМ»</text:variable-set></text:p>
+				
+				<text:p text:style-name="ПоясненияКЗначениюПеременнойДокумента">Полное наименование ЦСМ:</text:p>
+				<text:p text:style-name="ЗначениеПеременнойДокумента"><text:variable-set text:name="ОрганизацияНаименованиеПолное" office:value-type="string">Федеральное бюджетное учреждение «Государственный региональный центр стандартизации, метрологии и испытаний в г. Санкт-Петербурге и Ленинградской области»</text:variable-set></text:p>
+				
+				<text:p text:style-name="ПоясненияКЗначениюПеременнойДокумента">Отдел ЦСМ (если используется при оформлении документов):</text:p>
+				<text:p text:style-name="ЗначениеПеременнойДокумента"><text:variable-set text:name="ПодразделениеДляБланка" office:value-type="string">ФБУ «Ивановский ЦСМ»</text:variable-set></text:p>
+				
+				<text:p text:style-name="ПоясненияКЗначениюПеременнойДокумента">Должность согласующего от ЦСМ:</text:p>
+				<text:p text:style-name="ЗначениеПеременнойДокумента"><text:variable-set text:name="СогласовалДолжностьИП" office:value-type="string">Директор</text:variable-set></text:p>
+				
+				<text:p text:style-name="ПоясненияКЗначениюПеременнойДокумента">Инициалы и фамилия согласующего от ЦСМ:</text:p>
+				<text:p text:style-name="ЗначениеПеременнойДокумента"><text:variable-set text:name="СогласовалПредставлениеВПодписиИП" office:value-type="string">Д. И. Кудрявцев</text:variable-set></text:p>
+				
+				<text:p text:style-name="ПоясненияКЗначениюПеременнойДокумента">Краткое наименование организации - заказчика:</text:p>
+				<text:p text:style-name="ЗначениеПеременнойДокумента"><text:variable-set text:name="ОрганизацияЗаказчикаНаименование" office:value-type="string">ООО «Заказчик»</text:variable-set></text:p>
+				
+				<text:p text:style-name="ПоясненияКЗначениюПеременнойДокумента">Должность разработчика:</text:p>
+				<text:p text:style-name="ЗначениеПеременнойДокумента"><text:variable-set text:name="ПодписалДолжностьИП" office:value-type="string">Инженер по метрологии</text:variable-set></text:p>
+				
+				<text:p text:style-name="ПоясненияКЗначениюПеременнойДокумента">Инициалы и фамилия разработчика:</text:p>
+				<text:p text:style-name="ЗначениеПеременнойДокумента"><text:variable-set text:name="ПодписалПредставлениеВПодписиИП" office:value-type="string">И. И. Иванов</text:variable-set></text:p>
+				
+				<text:p text:style-name="ПоясненияКЗначениюПеременнойДокумента">Должность руководителя разработчика:</text:p>
+				<text:p text:style-name="ЗначениеПеременнойДокумента"><text:variable-set text:name="ПодписалРуководительДолжностьИП" office:value-type="string">Начальник отдела</text:variable-set></text:p>
+				
+				<text:p text:style-name="ПоясненияКЗначениюПеременнойДокумента">Инициалы и фамилия руководителя разработчика:</text:p>
+				<text:p text:style-name="ЗначениеПеременнойДокумента"><text:variable-set text:name="ПодписалРуководительПредставлениеВПодписиИП" office:value-type="string">И. И. Иванова</text:variable-set></text:p>
+				
+				<text:p text:style-name="ПоясненияКЗначениюПеременнойДокумента">Место составление (город):</text:p>
+				<text:p text:style-name="ЗначениеПеременнойДокумента"><text:variable-set text:name="МестоСоставления" office:value-type="string">г. Иваново</text:variable-set></text:p>
+				
+				<text:p text:style-name="ПоясненияКЗначениюПеременнойДокумента">Год составления:</text:p>
+				<text:p text:style-name="ЗначениеПеременнойДокумента"><text:variable-set text:name="ГодИздания" office:value-type="string">2024</text:variable-set></text:p>
+				
+				<text:p text:style-name="ЗначениеПеременнойДокумента"/>
+			</text:section>
+			<text:section text:name="БланкОРДПервыйЛистМетодикиПоверки" text:protected="true">
+				<style:style style:family="section">
+					<style:section-properties style:editable="false"/>
+				</style:style>
+				<text:p text:style-name="БланкОРДПервыйЛистМетодикиПоверки"/>
+			</text:section>
+			<text:section text:name="Содержание">
+				<style:style style:family="section">
+					<style:section-properties style:editable="false"/>
+				</style:style>
+				<text:list xml:id="list4184995225" text:style-name="Numbering_20_123">
+					<text:list-item>
+						<text:h text:style-name="Heading_20_1" text:outline-level="1">Общие положения</text:h>
+					</text:list-item>
+				</text:list>
+				<text:p text:style-name="Основной">Настоящая методика поверки устанавливает методы и средства первичной и периодической поверки <text:variable-get text:name="ТипСИ_РП">спирометров такие-то</text:variable-get>, изготавливаемых <text:variable-get text:name="ОрганизацияЗаказчикаНаименование">ООО «Заказчик»</text:variable-get>.</text:p>
+				<text:p text:style-name="Основной">Прослеживаемость при поверке спирометров обеспечивается в соответствии с государственной поверочной схемой к ГЭТ 1-2022 «Государственный первичный эталон единиц вре-мени, частоты и национальной шкалы времени» в соответствии с Государственной поверочной схемой для средств измерений времени и частоты, утвержденной приказом Федерального агентства по техническому регулированию и метрологии от 26 сентября 2022 г. № 2360; к ГЭТ 2-202l «Государственный первичный эталон единицы длины – метра» в соответствии с Госу-дарственной поверочной схемой для средств измерений длины в диапазоне от 1∙10-9 до 100 м и длин волн в диапазоне от 0,2 до 50 мкм, утвержденной приказом Федерального агентства по техническому регулированию и метрологии от 29 декабря 2018 г. № 2840.</text:p>
+				<text:p text:style-name="Основной">Для обеспечения реализации методики поверки при определении метрологических характеристик применяется метод непосредственного сличения.</text:p>
+				<text:p text:style-name="Основной">Поверка спирометров в сокращенном объеме не допускается.</text:p>
+				<text:list xml:id="list145315194545245" text:continue-numbering="true" text:style-name="Numbering_20_123">
+					<text:list-item>
+						<text:h text:style-name="Heading_20_1" text:outline-level="1">Перечень операций поверки</text:h>
+					</text:list-item>
+					<text:list-item>
+						<text:list>
+							<text:list-item>
+								<text:p text:style-name="Основной">Для поверки спирометров должны быть выполнены операции, указанные в таблице 1.</text:p>
+							</text:list-item>
+							<text:list-item>
+								<text:p text:style-name="Основной">Пункты методики поверки...</text:p>
+							</text:list-item>
+						</text:list>
+					</text:list-item>
+					<text:list-item>
+						<text:h text:style-name="Heading_20_1" text:outline-level="1">Требования к условиям проведения поверки</text:h>
+					</text:list-item>
+					<text:list-item>
+						<text:list>
+							<text:list-item>
+								<text:p text:style-name="Основной">Пункты методики поверки...</text:p>
+							</text:list-item>
+						</text:list>
+					</text:list-item>
+					<text:list-item>
+						<text:h text:style-name="Heading_20_1" text:outline-level="1">Требования к специалистам, осуществляющим поверку</text:h>
+					</text:list-item>
+					<text:list-item>
+						<text:list>
+							<text:list-item>
+								<text:p text:style-name="Основной">Пункты методики поверки...</text:p>
+							</text:list-item>
+						</text:list>
+					</text:list-item>
+					<text:list-item>
+						<text:h text:style-name="Heading_20_1" text:outline-level="1">Метрологические и технические требования к средствам поверки</text:h>
+					</text:list-item>
+					<text:list-item>
+						<text:list>
+							<text:list-item>
+								<text:p text:style-name="Основной">Пункты методики поверки...</text:p>
+							</text:list-item>
+						</text:list>
+					</text:list-item>
+					<text:list-item>
+						<text:h text:style-name="Heading_20_1" text:outline-level="1">Требования (условия) по обеспечению безопасности проведения поверки</text:h>
+					</text:list-item>
+					<text:list-item>
+						<text:list>
+							<text:list-item>
+								<text:p text:style-name="Основной">Пункты методики поверки...</text:p>
+							</text:list-item>
+						</text:list>
+					</text:list-item>
+					<text:list-item>
+						<text:h text:style-name="Heading_20_1" text:outline-level="1">Внешний осмотр средства измерений</text:h>
+					</text:list-item>
+					<text:list-item>
+						<text:list>
+							<text:list-item>
+								<text:p text:style-name="Основной">Пункты методики поверки...</text:p>
+							</text:list-item>
+						</text:list>
+					</text:list-item>
+					<text:list-item>
+						<text:h text:style-name="Heading_20_1" text:outline-level="1">Подготовка к поверке и опробование средства измерений</text:h>
+					</text:list-item>
+					<text:list-item>
+						<text:list>
+							<text:list-item>
+								<text:p text:style-name="Основной">Пункты методики поверки...</text:p>
+							</text:list-item>
+						</text:list>
+					</text:list-item>
+					<text:list-item>
+						<text:h text:style-name="Heading_20_1" text:outline-level="1">Проверка программного обеспечения</text:h>
+					</text:list-item>
+					<text:list-item>
+						<text:list>
+							<text:list-item>
+								<text:p text:style-name="Основной">Пункты методики поверки...</text:p>
+							</text:list-item>
+						</text:list>
+					</text:list-item>
+					<text:list-item>
+						<text:h text:style-name="Heading_20_1" text:outline-level="1">Определение метрологических характеристик и подтверждение соответствия средства измерений метрологическим требованиям</text:h>
+					</text:list-item>
+					<text:list-item>
+						<text:list>
+							<text:list-item>
+								<text:p text:style-name="Основной">Пункты методики поверки...</text:p>
+							</text:list-item>
+						</text:list>
+					</text:list-item>
+					<text:list-item>
+						<text:h text:style-name="Heading_20_1" text:outline-level="1">Оформление результатов поверки</text:h>
+					</text:list-item>
+					<text:list-item>
+						<text:list>
+							<text:list-item>
+								<text:p text:style-name="Основной">Пункты методики поверки...</text:p>
+							</text:list-item>
+						</text:list>
+					</text:list-item>
+				</text:list>
+			</text:section>
+			<text:section text:name="Подпись">
+				<text:section-source text:section-name="Шаблон: подпись руководителя во внутреннем документе" xlink:type="simple" xlink:actuate="other" xlink:show="embed"/>
+			</text:section>
+			<text:section text:name="Подпись">
+				<text:section-source text:section-name="Шаблон: подпись во внутреннем документе" xlink:type="simple" xlink:actuate="other" xlink:show="embed"/>
+			</text:section>
+		</office:text>
+	</office:body>
+</office:document-content>
