@@ -34,7 +34,7 @@ jobs:
         uses: ./.github/actions/install-dependencies
 
       - name: Build .ott and .odt files
-        uses: IT-Service/Invoke-Build@v1.0.0
+        uses: IT-Service/Invoke-Build@v1.0.1
 
       - name: Install ODFToolkit
         if: steps.install-dependencies.outputs.maven-cache-hit != 'true'
