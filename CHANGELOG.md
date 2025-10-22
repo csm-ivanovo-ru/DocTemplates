@@ -44,6 +44,8 @@
 
 - обновлён IT-Service/restore-nuget-packages до v1.
   (обеспечена совместимость с actions/cache v4)
+- обновлён actions/setup-java to v5.0.0
+  (обеспечена совместимость с actions/cache v4)
 
 ## [3.2.0]
 
