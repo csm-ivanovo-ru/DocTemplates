@@ -38,6 +38,13 @@
 
 -->
 
+## [3.2.1]
+
+### Исправлено
+
+- обновлён IT-Service/restore-nuget-packages до v1.
+  (обеспечена совместимость с actions/cache v4)
+
 ## [3.2.0]
 
 ### Добавлено
@@ -1095,7 +1102,8 @@
 - шаблона переписки, внутренней и внешней (писем,
   служебных, докладных и объяснительных записок)
 
-[3.2.0]: https://github.com/csm-ivanovo-ru/DocTemplates/compare/3.2.0...HEAD
+[Unreleased]: https://github.com/csm-ivanovo-ru/DocTemplates/compare/3.2.1...HEAD
+[3.2.1]: https://github.com/csm-ivanovo-ru/DocTemplates/compare/3.2.0...3.2.1
 [3.2.0]: https://github.com/csm-ivanovo-ru/DocTemplates/compare/3.1.3...3.2.0
 [3.1.3]: https://github.com/csm-ivanovo-ru/DocTemplates/compare/3.1.2...3.1.3
 [3.1.2]: https://github.com/csm-ivanovo-ru/DocTemplates/compare/3.1.1...3.1.2
