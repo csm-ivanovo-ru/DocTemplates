@@ -1,7 +1,7 @@
 {
 	"name": "doc-templates",
 	"description": "Шаблоны документов Libre Office для ФБУ Ивановский ЦСМ",
-	"version": "3.2.0",
+	"version": "3.2.1",
 	"devDependencies": {
 		"@lumjs/gulp-transform": "^3.1.0",
 		"@types/gulp-newer": "^1.4.3",
