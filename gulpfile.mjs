@@ -16,8 +16,7 @@ import svgMin from 'gulp-svgmin';
 import through from 'through2';
 import { versionFromGitTag } from 'absolute-version';
 import SaxonJS from 'saxon-js';
-import ini from 'ini';
-import QRCode from 'qrcode';
+import { url2qr } from 'gulp-file2qr';
 
 //#region вычисление версии
 if (process.env.version) {
@@ -95,15 +94,7 @@ task('build:images:URL-QRCodes', function () {
 			dest: URI_QRCodesConfig.QRCodesPath,
 			ext: URI_QRCodesConfig.extname
 		}))
-		.pipe(transform((content, _) => {
-			return new Promise((resolve, reject) => {
-				const urlForQRCode = new URL(ini.parse(content.toString('utf8')).InternetShortcut.URL);
-				let PNGStream = new streamBuffers.WritableStreamBuffer()
-					.on('finish', () => { resolve(PNGStream.getContents()) });
-				QRCode.toFileStream(PNGStream, urlForQRCode.toString(), URI_QRCodesConfig.imageConfig);
-			})
-		}))
-		.pipe(rename({ extname: URI_QRCodesConfig.extname }))
+		.pipe(url2qr({ qrOptions: URI_QRCodesConfig.imageConfig }))
 		.pipe(dest(URI_QRCodesConfig.QRCodesPath))
 });
 
