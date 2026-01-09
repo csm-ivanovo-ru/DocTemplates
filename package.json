@@ -3,6 +3,7 @@
 	"description": "Шаблоны документов Libre Office для ФБУ Ивановский ЦСМ",
 	"version": "3.2.1",
 	"devDependencies": {
+		"@commitlint/types": "^20.3.1",
 		"@lumjs/gulp-transform": "^3.1.0",
 		"@types/gulp-newer": "^1.4.3",
 		"@types/gulp-rename": "^2.0.6",

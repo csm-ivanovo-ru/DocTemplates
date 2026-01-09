@@ -41,8 +41,11 @@ indent_style = tab
 indent_size = 4
 charset = utf-8-bom
 
-[*.{json,js,mjs}]
-indent_style = tab
+[*.{json,js,mjs,cjs,ts,tsx}]
+insert_final_newline = true
+trim_trailing_whitespace = true
+end_of_line = lf
+indent_style = space
 indent_size = 2
 
 [*.{xml,xsl,xslt,xsd,xba,xdl,xlb,xlc,rng,svg}]
