@@ -11,12 +11,12 @@ import transform from '@lumjs/gulp-transform';
 import clean from 'gulp-clean';
 import filter from 'gulp-filter';
 import vinylPaths from 'vinyl-paths';
-import sharp from 'sharp';
 import svgMin from 'gulp-svgmin';
 import through from 'through2';
 import { versionFromGitTag } from 'absolute-version';
 import SaxonJS from 'saxon-js';
 import { url2qr } from 'gulp-file2qr';
+import { sharp2 } from 'gulp-sharp2';
 
 //#region вычисление версии
 if (process.env.version) {
@@ -126,22 +126,20 @@ task('build:images:SVG2PNG',
 			{ encoding: false }
 		)
 			.pipe(newer({ dest: imagesConfig.PNGPath }))
-			.pipe(transform((content, file) => {
-				return sharp(
-					file.contents,
-					{
+			.pipe(sharp2((sharpObject) => sharpObject
+				.resize({ width: 600 })
+				.toColorspace('b-w')
+				.png({
+					compressionLevel: 9,
+					colors: 2
+				}),
+				{
+					sharpOptions: {
 						density: 600,
 						ignoreIcc: true
 					}
-				)
-					.resize({ width: 600 })
-					.toColorspace('b-w')
-					.png({
-						compressionLevel: 9,
-						colors: 2
-					})
-					.toBuffer();
-			}))
+				}
+			))
 			.pipe(rename({ extname: '.png' }))
 			.pipe(dest(imagesConfig.PNGPath))
 	}
