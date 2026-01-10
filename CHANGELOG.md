@@ -44,6 +44,16 @@
 
 - GitVersion заменён на NPM пакет `absolute-version`
   [csm-ivanovo-ru/DocTemplates#120](https://github.com/csm-ivanovo-ru/DocTemplates/issues/120)
+- изменена обработка изображений в шаблона по файлу манифеста
+  [csm-ivanovo-ru/DocTemplates#161](https://github.com/csm-ivanovo-ru/DocTemplates/issues/161)
+- при сборке изображения, отсутствующие в манифесте,
+  будут удалены из каталога Pictures
+  [csm-ivanovo-ru/DocTemplates#161](https://github.com/csm-ivanovo-ru/DocTemplates/issues/161)
+- инструменты формирование QR-кодов для URL
+  заменены на пакеты NodeJS - собственный gulp плагин `gulp-file2qr`
+  [csm-ivanovo-ru/DocTemplates#122](https://github.com/csm-ivanovo-ru/DocTemplates/issues/122)
+  [csm-ivanovo-ru/DocTemplates#160](https://github.com/csm-ivanovo-ru/DocTemplates/issues/160)
+- улучшена минимизация .png и .svg изображений
 
 ## [3.2.1]
 
