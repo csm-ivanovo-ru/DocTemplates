@@ -230,39 +230,30 @@ const sourceORDTemplateSrcPath = path.join(sourceORDTemplatePath, 'src');
 
 task(
   'build:template:ORD:Pictures',
-  () => {
+  async () => {
     const picturesPath = path.join(sourceORDTemplateSrcPath, 'Pictures');
-    return src(path.join(sourceORDTemplateSrcPath, 'META-INF/manifest.xml'), { encoding: false })
-      .pipe(through.obj(function (file, _, cb) {
 
-        var self = this;
+    // формируем список изображений по данным манифеста
+    const manifestPath = path.join(sourceORDTemplateSrcPath, 'META-INF/manifest.xml');
+    const manifestDOM = await SaxonJS.getResource({ file: manifestPath, type: 'xml' });
+    const picturesFileNames = SaxonJS.XPath.evaluate(
+      `/manifest:manifest/manifest:file-entry[
+                ( @manifest:media-type='image/png' or @manifest:media-type='image/svg+xml' )
+                and starts-with(@manifest:full-path, 'Pictures/')
+              ]/@manifest:full-path/string()`,
+      manifestDOM,
+      {
+        namespaceContext: {
+          manifest: 'urn:oasis:names:tc:opendocument:xmlns:manifest:1.0'
+        },
+        resultForm: 'array'
+      }
+    )
+      .map((docPicturePath) => path.basename(docPicturePath));
+    const preprocessedImages = picturesFileNames
+      .map((pictureFileName) => path.join(imagesConfig.preprocessedPath, pictureFileName));
 
-        SaxonJS.getResource({ file: file.path, type: 'xml' })
-          .then((manifest) => {
-            return SaxonJS.XPath.evaluate(
-              `/manifest:manifest/manifest:file-entry[
-										( @manifest:media-type='image/png' or @manifest:media-type='image/svg+xml' )
-										and starts-with(@manifest:full-path, 'Pictures/')
-									]/@manifest:full-path/string()`,
-              manifest,
-              {
-                namespaceContext: {
-                  manifest: 'urn:oasis:names:tc:opendocument:xmlns:manifest:1.0'
-                },
-                resultForm: 'array'
-              }
-            )
-              .map((docPicturePath) => '**/' + path.basename(docPicturePath));
-          })
-          .then((docPictures) => {
-            src([path.join(imagesConfig.preprocessedPath, '*.*')], { encoding: false })
-              .pipe(filter(docPictures))
-              .on('end', cb)
-              .on('error', cb)
-              .on('data', (file) => { self.push(file); });
-          });
-
-      }))
+    return src(preprocessedImages, { encoding: false })
       .pipe(newer(picturesPath))
       .pipe(dest(picturesPath))
   }
