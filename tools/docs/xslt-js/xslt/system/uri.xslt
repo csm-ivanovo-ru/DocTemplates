@@ -1,12 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?><xsl:package version="3.0"
-	id="SystemUri"
-	name="http://github.com/test-st-petersburg/DocTemplates/tools/xslt/system/uri.xslt"
-	package-version="2.3.0"
-	declared-modes="yes"
-	expand-text="no"
-	input-type-annotations="strip"
-	default-validation="strip"
-
 	xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
 	xmlns:err="http://www.w3.org/2005/xqt-errors"
 	xmlns:fn="http://www.w3.org/2005/xpath-functions"
@@ -16,6 +8,14 @@
 
 	xmlns:u="http://github.com/test-st-petersburg/DocTemplates/tools/xslt/system/uri"
 	xmlns:ur="http://github.com/test-st-petersburg/DocTemplates/tools/xslt/system/uri/regexps"
+
+	id="SystemUri"
+	name="http://github.com/test-st-petersburg/DocTemplates/tools/xslt/system/uri.xslt"
+	package-version="2.3.0"
+	declared-modes="yes"
+	expand-text="no"
+	input-type-annotations="strip"
+	default-validation="strip"
 >
 
 	<!-- https://saxonica.com/html/documentation/xsl-elements/analyze-string.html -->
