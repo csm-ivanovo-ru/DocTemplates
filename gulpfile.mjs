@@ -224,9 +224,9 @@ task('clean:images',
 
 //#region сборка шаблона
 
-// получаем список изображений из манифеста шаблона
-
 const sourceORDTemplateSrcPath = path.join(sourceORDTemplatePath, 'src');
+
+//#region сборка шаблона - подготовка изображений по манифесту
 
 async function getPicturesFileNamesFromManifest(documentFolderPath) {
   // формируем список изображений по данным манифеста
@@ -281,6 +281,8 @@ task('build:template:ORD:Pictures',
     'build:template:ORD:Pictures:deleteUnused'
   )
 );
+
+//#endregion сборка шаблона - подготовка изображений по манифесту
 
 task('build:template:ORD',
   series(
