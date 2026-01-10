@@ -16,7 +16,7 @@ import tmp from 'tmp-promise'
 import svgMin from 'gulp-svgmin';
 import through from 'through2';
 import { versionFromGitTag } from 'absolute-version';
-import SaxonJS from 'saxon-js';
+import SaxonJS from 'saxonjs-he';
 import { url2qr } from 'gulp-file2qr';
 import { sharp2 } from 'gulp-sharp2';
 import imagemin, { optipng, svgo } from 'gulp-imagemin';
@@ -244,10 +244,11 @@ task('build:tools:XSLT:SEF',
               logger.debug(`SEF temp file path: ${SEFTempFilePath}`);
               // https://www.saxonica.com/saxon-js/documentation2/index.html#!starting/export/compiling-using-XX
               spawn(
-                'xslt3',
+                'xslt3-he',
                 [
                   `-xsl:"${file.path}"`,
                   `-export:"${SEFTempFilePath}"`,
+                  // '-t',
                   '-nogo',
                   '-relocate:on'
                 ],
