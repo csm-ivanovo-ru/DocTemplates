@@ -228,35 +228,58 @@ task('clean:images',
 
 const sourceORDTemplateSrcPath = path.join(sourceORDTemplatePath, 'src');
 
-task(
-  'build:template:ORD:Pictures',
-  async () => {
-    const picturesPath = path.join(sourceORDTemplateSrcPath, 'Pictures');
-
-    // формируем список изображений по данным манифеста
-    const manifestPath = path.join(sourceORDTemplateSrcPath, 'META-INF/manifest.xml');
-    const manifestDOM = await SaxonJS.getResource({ file: manifestPath, type: 'xml' });
-    const picturesFileNames = SaxonJS.XPath.evaluate(
-      `/manifest:manifest/manifest:file-entry[
+async function getPicturesFileNamesFromManifest(documentFolderPath) {
+  // формируем список изображений по данным манифеста
+  const manifestPath = path.join(documentFolderPath, 'META-INF/manifest.xml');
+  const manifestDOM = await SaxonJS.getResource({ file: manifestPath, type: 'xml' });
+  const picturesFileNames = SaxonJS.XPath.evaluate(
+    `/manifest:manifest/manifest:file-entry[
                 ( @manifest:media-type='image/png' or @manifest:media-type='image/svg+xml' )
                 and starts-with(@manifest:full-path, 'Pictures/')
               ]/@manifest:full-path/string()`,
-      manifestDOM,
-      {
-        namespaceContext: {
-          manifest: 'urn:oasis:names:tc:opendocument:xmlns:manifest:1.0'
-        },
-        resultForm: 'array'
-      }
-    )
-      .map((docPicturePath) => path.basename(docPicturePath));
+    manifestDOM,
+    {
+      namespaceContext: {
+        manifest: 'urn:oasis:names:tc:opendocument:xmlns:manifest:1.0'
+      },
+      resultForm: 'array'
+    }
+  )
+    .map((docPicturePath) => path.basename(docPicturePath));
+  return picturesFileNames;
+}
+
+task(
+  'build:template:ORD:Pictures:update',
+  async () => {
+    const picturesFileNames = await getPicturesFileNamesFromManifest(sourceORDTemplateSrcPath);
     const preprocessedImages = picturesFileNames
       .map((pictureFileName) => path.join(imagesConfig.preprocessedPath, pictureFileName));
+    const picturesPath = path.join(sourceORDTemplateSrcPath, 'Pictures');
 
     return src(preprocessedImages, { encoding: false })
       .pipe(newer(picturesPath))
       .pipe(dest(picturesPath))
   }
+);
+
+task(
+  'build:template:ORD:Pictures:deleteUnused',
+  async () => {
+    const picturesFileNames = await getPicturesFileNamesFromManifest(sourceORDTemplateSrcPath);
+    const picturesPath = path.join(sourceORDTemplateSrcPath, 'Pictures');
+
+    return src(picturesPath, { read: false, allowEmpty: true })
+      .pipe(filter(file => !picturesFileNames.includes(path.basename(file.path))))
+      .pipe(clean())
+  }
+);
+
+task('build:template:ORD:Pictures',
+  parallel(
+    'build:template:ORD:Pictures:update',
+    'build:template:ORD:Pictures:deleteUnused'
+  )
 );
 
 task('build:template:ORD',
