@@ -36,6 +36,7 @@
     "jock.svg",
     "chrisjsewell.gulp-lattice",
     "dbaeumer.vscode-eslint",
-    "gittower.git-flow-next-extension"
+    "gittower.git-flow-next-extension",
+    "ms-ceintl.vscode-language-pack-ru"
   ]
 }
