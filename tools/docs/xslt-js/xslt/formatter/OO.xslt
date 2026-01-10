@@ -1,12 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?><xsl:package version="3.0"
-	id="OOFormatter"
-	name="http://github.com/test-st-petersburg/DocTemplates/tools/xslt/formatter/OO.xslt"
-	package-version="1.5.0"
-	declared-modes="yes"
-	expand-text="no"
-	input-type-annotations="strip"
-	default-validation="strip"
-
 	xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
 
 	xmlns:css3t="http://www.w3.org/TR/css3-text/"
@@ -51,6 +43,14 @@
 	xmlns:text="urn:oasis:names:tc:opendocument:xmlns:text:1.0"
 
 	xmlns:f="http://github.com/test-st-petersburg/DocTemplates/tools/xslt/formatter"
+
+	id="OOFormatter"
+	name="http://github.com/test-st-petersburg/DocTemplates/tools/xslt/formatter/OO.xslt"
+	package-version="1.5.0"
+	declared-modes="yes"
+	expand-text="no"
+	input-type-annotations="strip"
+	default-validation="strip"
 >
 
 	<xsl:use-package name="http://github.com/test-st-petersburg/DocTemplates/tools/xslt/formatter/basic.xslt" package-version="1.5">

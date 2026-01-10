@@ -1,12 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?><xsl:package version="3.0"
-	id="OOMacroLib"
-	name="http://github.com/test-st-petersburg/DocTemplates/tools/xslt/OODocumentProcessor/oo-macrolib.xslt"
-	package-version="2.3.0"
-	declared-modes="yes"
-	expand-text="no"
-	input-type-annotations="strip"
-	default-validation="strip"
-
 	xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
 	xmlns:err="http://www.w3.org/2005/xqt-errors"
 	xmlns:fn="http://www.w3.org/2005/xpath-functions"
@@ -22,6 +14,14 @@
 	xmlns:oom="http://github.com/test-st-petersburg/DocTemplates/tools/xslt/OODocumentProcessor"
 	xmlns:s="http://github.com/test-st-petersburg/DocTemplates/tools/xslt/system"
 	xmlns:u="http://github.com/test-st-petersburg/DocTemplates/tools/xslt/system/uri"
+
+	id="OOMacroLib"
+	name="http://github.com/test-st-petersburg/DocTemplates/tools/xslt/OODocumentProcessor/oo-macrolib.xslt"
+	package-version="2.3.0"
+	declared-modes="yes"
+	expand-text="no"
+	input-type-annotations="strip"
+	default-validation="strip"
 >
 
 	<xsl:import href="oo-defs.xslt"/>

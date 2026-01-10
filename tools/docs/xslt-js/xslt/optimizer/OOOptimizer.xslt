@@ -1,12 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?><xsl:package version="3.0"
-	id="OOOptimizer"
-	name="http://github.com/test-st-petersburg/DocTemplates/tools/xslt/optimizer/OOOptimizer.xslt"
-	package-version="1.5.0"
-	declared-modes="yes"
-	expand-text="no"
-	input-type-annotations="strip"
-	default-validation="strip"
-
 	xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
 
 	xmlns:array="http://www.w3.org/2005/xpath-functions/array"
@@ -54,6 +46,14 @@
 	xmlns:toolbar="http://openoffice.org/2001/toolbar"
 
 	xmlns:o="http://github.com/test-st-petersburg/DocTemplates/tools/xslt/optimizer"
+
+	id="OOOptimizer"
+	name="http://github.com/test-st-petersburg/DocTemplates/tools/xslt/optimizer/OOOptimizer.xslt"
+	package-version="1.5.0"
+	declared-modes="yes"
+	expand-text="no"
+	input-type-annotations="strip"
+	default-validation="strip"
 >
 
 	<?region Параметры преобразования?>
