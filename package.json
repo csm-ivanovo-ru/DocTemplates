@@ -1,64 +1,66 @@
 {
-	"type": "module",
-	"name": "doc-templates",
-	"version": "3.2.0",
-	"description": "Шаблоны документов Libre Office для ФБУ Ивановский ЦСМ",
-	"keywords": [
-		"ЦСМ",
-		"Шаблоны",
-		"OpenOffice"
-	],
-	"author": {
-		"name": "Sergei S. Betke",
-		"email": "Sergey.S.Betke@yandex.ru"
-	},
-	"homepage": "https://github.com/csm-ivanovo-ru/DocTemplates",
-	"repository": {
-		"type": "git",
-		"url": "https://github.com/csm-ivanovo-ru/DocTemplates.git"
-	},
-	"bugs": {
-		"url": "https://github.com/csm-ivanovo-ru/DocTemplates/issues"
-	},
-	"licenses": [
-		{
-			"type": "Apache-2.0",
-			"url": "https://github.com/csm-ivanovo-ru/DocTemplates/blob/master/LICENSE"
-		}
-	],
-	"engines": {
-		"node": ">=22.9"
-	},
-	"main": "gulpfile.mjs",
-	"scripts": {
-		"build": "gulp build",
-		"clean": "gulp clean",
-		"distclean": "gulp distclean",
-		"maintainer-clean": "gulp maintainer-clean"
-	},
-	"devDependencies": {
-		"@lumjs/gulp-transform": "^3.1.0",
-		"@types/gulp-newer": "^1.4.3",
-		"@types/gulp-rename": "^2.0.6",
-		"absolute-version": "^2.0.0",
-		"gulp": "^5.0.0",
-		"gulp-changed": "^5.0.2",
-		"gulp-clean": "^0.4.0",
-		"gulp-file2qr": "^1.1.1",
-		"gulp-filter": "^9.0.1",
-		"gulp-newer": "^1.4.0",
-		"gulp-rename": "^2.0.0",
-		"gulp-svgmin": "^4.1.0",
-		"gulplog": "^2.2.0",
-		"replace-ext": "^2.0.0",
-		"saxon-js": "^2.6.0",
-		"sharp": "^0.33.4",
-		"through2": "^4.0.2",
-		"tmp-promise": "^3.0.3",
-		"vinyl": "^3.0.0",
-		"xslt3": "^2.6.0"
-	},
-	"dependencies": {
-		"doc-templates": "file:"
-	}
+  "type": "module",
+  "name": "doc-templates",
+  "description": "Шаблоны документов Libre Office для ФБУ Ивановский ЦСМ",
+  "version": "3.2.1",
+  "devDependencies": {
+    "@commitlint/types": "^20.3.1",
+    "@lumjs/gulp-transform": "^3.1.0",
+    "@types/gulp-newer": "^1.4.3",
+    "@types/gulp-rename": "^2.0.6",
+    "absolute-version": "^2.0.0",
+    "gulp": "^5.0.0",
+    "gulp-changed": "^5.0.2",
+    "gulp-clean": "^0.4.0",
+    "gulp-file2qr": "^1.1.6",
+    "gulp-filter": "^9.0.1",
+    "gulp-imagemin": "^9.2.0",
+    "gulp-newer": "^1.4.0",
+    "gulp-rename": "^2.0.0",
+    "gulp-sharp2": "^1.1.1",
+    "gulp-svgmin": "^4.1.0",
+    "gulplog": "^2.2.0",
+    "replace-ext": "^2.0.0",
+    "saxon-js": "^2.7.0",
+    "stream-buffers": "^3.0.3",
+    "through2": "^4.0.2",
+    "vinyl": "^3.0.0",
+    "vinyl-paths": "^5.0.0",
+    "xslt3": "^2.6.0",
+    "tmp-promise": "^3.0.3"
+  },
+  "dependencies": {},
+  "homepage": "https://github.com/csm-ivanovo-ru/DocTemplates",
+  "author": {
+    "name": "Sergei S. Betke",
+    "email": "Sergey.S.Betke@yandex.ru"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/csm-ivanovo-ru/DocTemplates.git"
+  },
+  "bugs": {
+    "url": "https://github.com/csm-ivanovo-ru/DocTemplates/issues"
+  },
+  "licenses": [
+    {
+      "type": "Apache-2.0",
+      "url": "https://github.com/csm-ivanovo-ru/DocTemplates/blob/master/LICENSE"
+    }
+  ],
+  "engines": {
+    "node": ">=22.9"
+  },
+  "keywords": [
+    "ЦСМ",
+    "Шаблоны",
+    "OpenOffice"
+  ],
+  "scripts": {
+    "build": "gulp build",
+    "clean": "gulp clean",
+    "distclean": "gulp distclean",
+    "maintainer-clean": "gulp maintainer-clean"
+  },
+  "main": "gulpfile.mjs"
 }

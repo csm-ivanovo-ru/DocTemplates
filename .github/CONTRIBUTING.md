@@ -49,6 +49,12 @@
   winget install -e --id OpenJS.NodeJS
   ```
 
+* установите [NVM][]:
+
+  ```cmd
+  winget install -e --id CoreyButler.NVMforWindows
+  ```
+
 * установите [VSCode][]:
 
   ```cmd
@@ -102,3 +108,4 @@ code %userprofile%\documents\DocTemplates
 [Git]: https://github.com/git-guides/install-git#install-git-on-windows "Install Git on Windows"
 [VSCode]: https://code.visualstudio.com "Visual Studio Code"
 [NodeJS]: https://nodejs.org/
+[NVM]: https://github.com/coreybutler/nvm-windows "A node.js version management utility for Windows"

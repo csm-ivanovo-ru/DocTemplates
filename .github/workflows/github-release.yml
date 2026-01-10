@@ -19,7 +19,7 @@ jobs:
       version: "${{ github.ref_name }}"
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
@@ -28,7 +28,7 @@ jobs:
         uses: ./.github/actions/install-dependencies
 
       - name: Build .ott and .odt files
-        uses: IT-Service/Invoke-Build@v1.0.0
+        uses: IT-Service/Invoke-Build@v1.0.1
         with:
           task: "BuildAssets"
           verbose: true
@@ -42,13 +42,13 @@ jobs:
 
       - name: Create GitHub Release
         id: create-release
-        uses: softprops/action-gh-release@v0.1.15
+        uses: softprops/action-gh-release@v2.4.1
         with:
           body_path: "${{ steps.generate-release-notes.outputs.release-notes-path }}"
           files: "tmp/templatesAndDocs.zip"
 
       - name: Close the milestone
-        uses: Akkjon/close-milestone@v2.1.0
+        uses: Akkjon/close-milestone@v2.2.0
         with:
           milestone_name: "${{ env.version }}"
           # description: |
