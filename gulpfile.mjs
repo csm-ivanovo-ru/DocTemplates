@@ -269,7 +269,7 @@ task(
     const picturesFileNames = await getPicturesFileNamesFromManifest(sourceORDTemplateSrcPath);
     const picturesPath = path.join(sourceORDTemplateSrcPath, 'Pictures');
 
-    return src(picturesPath, { read: false, allowEmpty: true })
+    return src(path.join(picturesPath, '*'), { read: false, allowEmpty: true })
       .pipe(filter(file => !picturesFileNames.includes(path.basename(file.path))))
       .pipe(clean())
   }
