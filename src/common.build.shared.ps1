@@ -67,8 +67,6 @@ if ( -not ( Test-Path variable:RepoRootPath ) -or ( [System.String]::IsNullOrEmp
 [System.String] $BuildOODocumentPath = ( Join-Path -Path $DocsToolsPath -ChildPath 'Build-OODocument.ps1' -Resolve );
 [System.String] $ConvertToPlainXMLPath = ( Join-Path -Path $DocsToolsPath -ChildPath 'ConvertTo-PlainXML.ps1' -Resolve );
 [System.String] $OptimizePlainXMLPath = ( Join-Path -Path $DocsToolsPath -ChildPath 'Optimize-PlainXML.ps1' -Resolve );
-[System.String] $QRCodeToolsPath = ( Join-Path -Path $ToolsPath -ChildPath 'QRCode' -Resolve );
-[System.String] $OutQRCodePath = ( Join-Path -Path $QRCodeToolsPath -ChildPath 'Out-QRCode.ps1' -Resolve );
 
 [System.String] $vCardToolsPath = ( Join-Path -Path $ToolsPath -ChildPath 'xCard' -Resolve );
 [System.String] $OutVCardPath = ( Join-Path -Path $vCardToolsPath -ChildPath 'Out-vCardFile.ps1' -Resolve );

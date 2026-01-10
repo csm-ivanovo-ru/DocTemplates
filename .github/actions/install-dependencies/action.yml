@@ -22,12 +22,6 @@ runs:
         packages-config-path: tools/xslt/packages.config
         packages-directory-path: tools/xslt/packages
 
-    - name: Restore NuGet packages for QRCodes processing
-      uses: IT-Service/restore-nuget-packages@v1.0.3
-      with:
-        packages-config-path: tools/QRCode/packages.config
-        packages-directory-path: tools/QRCode/packages
-
     - name: Restore PowerShell modules
       uses: potatoqualitee/psmodulecache@v6.2
       with:
