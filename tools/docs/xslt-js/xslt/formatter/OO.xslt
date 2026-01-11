@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><xsl:package version="3.0"
+<?xml version="1.0" encoding="UTF-8"?><xsl:transform version="3.0"
 	xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
 
 	xmlns:css3t="http://www.w3.org/TR/css3-text/"
@@ -46,54 +46,47 @@
 
 	id="OOFormatter"
 	name="http://github.com/test-st-petersburg/DocTemplates/tools/xslt/formatter/OO.xslt"
-	package-version="1.5.0"
 	declared-modes="yes"
 	expand-text="no"
 	input-type-annotations="strip"
 	default-validation="strip"
 >
 
-	<xsl:use-package name="http://github.com/test-st-petersburg/DocTemplates/tools/xslt/formatter/basic.xslt" package-version="1.5">
-		<xsl:accept component="mode" names="f:outline" visibility="public"/>
-		<xsl:accept component="mode" names="f:outline-child" visibility="public"/>
-		<xsl:accept component="mode" names="f:outline-prohibited" visibility="final"/>
-		<xsl:accept component="mode" names="f:inline" visibility="public"/>
-		<xsl:accept component="mode" names="f:strip-space f:preserve-space" visibility="final"/>
-		<xsl:accept component="variable" names="f:new-line f:default-indent-line f:default-indent-chars" visibility="final"/>
-		<xsl:override>
+	<xsl:import href="basic.xslt"/>
 
-			<!-- правила для элементов, не подвергаемых форматированию -->
+	<!-- #region правила для элементов, не подвергаемых форматированию -->
 
-			<xsl:template mode="f:outline" match="
-				text:p | text:h
-				| text:span | text:a | text:note-citation | text:page-number | text:bookmark-ref
-				| text:table-of-content-entry-template | text:index-title-template
-				| office:meta/*
-				| dc:creator | dc:date
-				| loext:sender-initials
-				| text:variable-set | text:variable-get
-				| script-module:module
-				| config:config-item
-			">
-				<xsl:apply-templates select="." mode="f:outline-prohibited"/>
-			</xsl:template>
+	<xsl:template mode="f:outline" match="
+		text:p | text:h
+		| text:span | text:a | text:note-citation | text:page-number | text:bookmark-ref
+		| text:table-of-content-entry-template | text:index-title-template
+		| office:meta/*
+		| dc:creator | dc:date
+		| loext:sender-initials
+		| text:variable-set | text:variable-get
+		| script-module:module
+		| config:config-item
+	">
+		<xsl:apply-templates select="." mode="f:outline-prohibited"/>
+	</xsl:template>
 
-			<xsl:template mode="f:inline f:outline" match="(
-				text:p | text:h
-				| text:span | text:a | text:bookmark-ref
-				| text:variable-set | text:variable-get
-			)/text()">
-				<xsl:apply-templates select="." mode="f:preserve-space"/>
-			</xsl:template>
+	<xsl:template mode="f:inline f:outline" match="(
+		text:p | text:h
+		| text:span | text:a | text:bookmark-ref
+		| text:variable-set | text:variable-get
+	)/text()">
+		<xsl:apply-templates select="." mode="f:preserve-space"/>
+	</xsl:template>
 
-			<!-- форматирование текста модулей -->
+	<!-- #endregion правила для элементов, не подвергаемых форматированию -->
 
-			<xsl:template mode="f:inline f:outline" match="script-module:module/text()">
-				<xsl:value-of select="concat( $f:new-line, f:normalize-script-text( data() ), $f:new-line )" />
-			</xsl:template>
+	<!-- #region форматирование текста модулей -->
 
-		</xsl:override>
-	</xsl:use-package>
+	<xsl:template mode="f:inline f:outline" match="script-module:module/text()">
+		<xsl:value-of select="concat( $f:new-line, f:normalize-script-text( data() ), $f:new-line )" />
+	</xsl:template>
+
+	<!-- #endregion форматирование текста модулей -->
 
 	<xsl:function name="f:normalize-script-text" as="xs:string" visibility="private">
 		<xsl:param name="f:script-text" as="xs:string"/>
@@ -106,4 +99,4 @@
 		"/>
 	</xsl:function>
 
-</xsl:package>
+</xsl:transform>

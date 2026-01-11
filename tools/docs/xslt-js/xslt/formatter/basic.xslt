@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><xsl:package version="3.0"
+<?xml version="1.0" encoding="UTF-8"?><xsl:transform version="3.0"
 	xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
 	xmlns:xs="http://www.w3.org/2001/XMLSchema"
 
@@ -6,7 +6,6 @@
 
 	id="BasicXMLFormatter"
 	name="http://github.com/test-st-petersburg/DocTemplates/tools/xslt/formatter/basic.xslt"
-	package-version="1.5.0"
 	declared-modes="yes"
 	default-mode="f:outline"
 	expand-text="no"
@@ -158,4 +157,4 @@
 		</xsl:copy>
 	</xsl:template>
 
-</xsl:package>
+</xsl:transform>

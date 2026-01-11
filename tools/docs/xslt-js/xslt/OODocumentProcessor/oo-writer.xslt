@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><xsl:package version="3.0"
+<?xml version="1.0" encoding="UTF-8"?><xsl:transform version="3.0"
 	xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
 	xmlns:xs="http://www.w3.org/2001/XMLSchema"
 	xmlns:err="http://www.w3.org/2005/xqt-errors"
@@ -11,7 +11,6 @@
 
 	id="OOWriter"
 	name="http://github.com/test-st-petersburg/DocTemplates/tools/xslt/OODocumentProcessor/oo-writer.xslt"
-	package-version="1.5.0"
 	declared-modes="yes"
 	expand-text="no"
 	input-type-annotations="strip"
@@ -44,9 +43,7 @@
 		visibility="final"
 	/>
 
-	<xsl:use-package name="http://github.com/test-st-petersburg/DocTemplates/tools/xslt/formatter/OO.xslt" package-version="1.5">
-		<xsl:accept component="mode" names="f:outline f:inline" visibility="private"/>
-	</xsl:use-package>
+	<xsl:import href="../formatter/OO.xslt"/>
 
 	<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
 	<!-- запись препроцессированных файлов                                                         -->
@@ -60,8 +57,10 @@
 	/>
 
 	<xsl:template mode="p:create-preprocessed-document-files" match="/">
-		<xsl:context-item use="required" as="document-node( element( manifest:manifest ) )"/>
-		<xsl:variable name="p:manifest-binary" as="document-node( element( manifest:manifest ) )">
+		<xsl:context-item use="required" as="document-node( element() )"/>
+		<!-- <xsl:context-item use="required" as="document-node( element( manifest:manifest ) )"/> -->
+		<xsl:variable name="p:manifest-binary" as="document-node( element() )">
+		<!-- <xsl:variable name="p:manifest-binary" as="document-node( element( manifest:manifest ) )"> -->
 			<xsl:apply-templates select="." mode="p:select-manifest-binary"/>
 		</xsl:variable>
 		<xsl:result-document href="{ $p:manifest-binary-uri }"
@@ -96,9 +95,11 @@
 	/>
 
 	<xsl:template mode="p:create-outline-document-files p:create-inline-document-files" match="/">
-		<xsl:context-item use="required" as="document-node( element( manifest:manifest ) )"/>
+		<xsl:context-item use="required" as="document-node( element() )"/>
+		<!-- <xsl:context-item use="required" as="document-node( element( manifest:manifest ) )"/> -->
 		<!-- <xsl:context-item use="required" as="document-node( schema-element( manifest:manifest ) )"/> -->
-		<xsl:variable name="p:manifest" as="document-node( element( manifest:manifest ) )">
+		<xsl:variable name="p:manifest" as="document-node( element() )">
+		<!-- <xsl:variable name="p:manifest" as="document-node( element( manifest:manifest ) )"> -->
 			<xsl:apply-templates select="." mode="p:select-manifest"/>
 		</xsl:variable>
 		<xsl:variable name="p:manifest-doctype-system" as="xs:string" select="'Manifest.dtd'" use-when="$p:restore-doctype"/>
@@ -270,4 +271,4 @@
 		doctype-public="-//OpenOffice.org//DTD OfficeDocument 1.0//EN"
 	/>
 
-</xsl:package>
+</xsl:transform>
