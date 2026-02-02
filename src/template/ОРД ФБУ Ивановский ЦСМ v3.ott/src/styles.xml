@@ -207,6 +207,7 @@
 		<style:style style:name="БланкОРДПервыйЛистСТО" style:family="paragraph" style:parent-style-name="БланкОРДТитульныйЛист" style:class="extra"/>
 		<style:style style:name="БланкОРДПервыйЛистИнструкцииСистемыМенеджмента" style:family="paragraph" style:parent-style-name="БланкОРДТитульныйЛист" style:class="extra"/>
 		<style:style style:name="БланкОРДПервыйЛистИнструкцииПоОТ" style:family="paragraph" style:parent-style-name="БланкОРДТитульныйЛист" style:class="extra"/>
+		<style:style style:name="БланкОРДПервыйЛистДоговора" style:family="paragraph" style:parent-style-name="БланкОРДТитульныйЛист" style:class="extra" style:master-page-name="БланкОРДПервыйЛистБезШапки"/>
 		<style:style style:name="БланкОРДЛистСогласования" style:family="paragraph" style:parent-style-name="ПустойАбзац" style:next-style-name="Основной" style:class="extra"/>
 		<style:style style:name="БланкОРДЛНАЛистСогласования" style:family="paragraph" style:parent-style-name="ПустойАбзац" style:next-style-name="Основной" style:class="extra" style:master-page-name="БланкОРДЛистыСогласования"/>
 		<style:style style:name="Heading" style:family="paragraph" loext:hidden="true" style:parent-style-name="First_20_line_20_indent" style:next-style-name="Основной" style:class="text">
@@ -1081,6 +1082,32 @@
 					<text:p text:style-name="ПустойАбзац"/>
 					<text:p text:style-name="БланкЗаголовокДокумента"><text:variable-get text:name="Тема">О чём?</text:variable-get></text:p>
 					<text:p text:style-name="ПустойАбзац"/>
+				</text:section>
+			</loext:header-first>
+		</style:master-page>
+		<style:master-page style:name="БланкОРДПервыйЛистБезШапки" style:next-style-name="БланкОРДПоследующиеЛисты">
+			<style:page-layout style:page-usage="mirrored">
+				<style:page-layout-properties fo:page-width="21.001cm" fo:page-height="29.7cm" style:num-format="1" style:print-orientation="portrait" fo:margin-top="0.7cm" fo:margin-bottom="2cm" fo:margin-left="2cm" fo:margin-right="1cm" style:layout-grid-mode="none" style:footnote-max-height="0cm">
+					<style:footnote-sep style:width="0.018cm" style:distance-before-sep="0.101cm" style:distance-after-sep="0.101cm" style:line-style="solid" style:adjustment="left" style:rel-width="25%" style:color="#000000"/>
+				</style:page-layout-properties>
+				<style:header-style>
+					<style:header-footer-properties fo:min-height="0.998cm" fo:margin-left="0cm" fo:margin-right="0cm" fo:margin-bottom="0cm" style:dynamic-spacing="false"/>
+				</style:header-style>
+				<style:footer-style/>
+			</style:page-layout>
+			<style:header>
+				<text:p text:style-name="Header"/>
+			</style:header>
+			<loext:header-first>
+				<text:p text:style-name="Header"/>
+				<text:section text:name="Вид документа (ПЛБезШ)" text:protected="true">
+					<text:section-source text:section-name="Вид документа" xlink:type="simple" xlink:actuate="other" xlink:title="ПЛБезШ" xlink:show="replace"/>
+				</text:section>
+				<text:section text:name="Регистрационные данные документа (ПЛБезШ)" text:protected="true">
+					<text:section-source text:section-name="Регистрационные данные документа" xlink:type="simple" xlink:actuate="other" xlink:title="ПЛБезШ" xlink:show="embed"/>
+				</text:section>
+				<text:section text:name="Заголовок документа (ПЛБезШ)">
+					<text:section-source text:section-name="Заголовок документа" xlink:type="simple" xlink:actuate="other" xlink:title="ПЛБезШ" xlink:show="replace"/>
 				</text:section>
 			</loext:header-first>
 		</style:master-page>
